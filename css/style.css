@@ -55,3 +55,24 @@ footer {
     margin-top: 3rem;
     color: #666666;
 }
+/* Responsive styles for screens 768px wide and smaller */
+@media (max-width: 768px) {
+    header {
+        padding: 1rem;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    main {
+        padding: 0 1rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+}
+
