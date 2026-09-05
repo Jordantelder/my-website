@@ -35,6 +35,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--tts-voice", help="voice id (default RINN_TTS_VOICE or af_bella)")
     parser.add_argument("--tts-model", help="model name sent to the TTS server (default rinn; use 'kokoro' for Kokoro-FastAPI)")
     parser.add_argument("--tts-speed", type=float, help="speech speed multiplier")
+    parser.add_argument("--tts-api-key", help="API key for the TTS server, if it requires one (default RINN_TTS_API_KEY)")
     parser.add_argument("--model", help="Ollama model tag (default RINN_MODEL or qwen3.8:27b)")
     parser.add_argument("--host", help="Ollama server URL")
     parser.add_argument("--think", action="store_true", help="enable the model's thinking mode (slower first words; off by default for voice)")
@@ -93,6 +94,7 @@ def main(argv: Optional[Sequence[str]] = None, out: TextIO = sys.stdout, err: Te
             voice=args.tts_voice,
             model=args.tts_model,
             speed=args.tts_speed,
+            api_key=args.tts_api_key,
         )
         tts = TTSClient(tts_settings)
         if not tts.health():
@@ -109,7 +111,11 @@ def main(argv: Optional[Sequence[str]] = None, out: TextIO = sys.stdout, err: Te
                 print(f"note: voice {tts_settings.voice!r} is not in the server's list ({', '.join(available[:8])}); the server default will be used", file=err)
         except TTSError as exc:
             print(f"note: {exc}", file=err)
-        player = Player(device=_device_arg(args.speaker_device))
+        try:
+            player = Player(device=_device_arg(args.speaker_device))
+        except AudioError as exc:
+            print(f"error: {exc}\n(use --no-speak to run without audio output)", file=err)
+            return EXIT_AUDIO
         print(f"speech: {tts_settings.base_url} voice={tts_settings.voice}", file=out)
 
     recorder: Recorder | None = None

@@ -11,6 +11,10 @@ from rinn.llm import OllamaLLM
 from rinn.voice.audio import AudioError
 from rinn.voice.loop import VoiceLoop
 
+import re
+import threading
+import time
+
 from conftest import FakeOllamaClient, FakePlayer, FakeRecorder, FakeTTSClient, FakeTranscriber
 
 REPLY = (
@@ -34,13 +38,15 @@ def test_answer_streams_text_and_speaks_clean_sentences_in_order():
     result = loop.answer("Tell me about catheters.")
     assert result.answer.text == REPLY
     assert out.getvalue().strip() == REPLY  # console keeps the markdown and citations
+    # Chunk lengths are measured on the raw text, so the two short final sentences stay separate.
     assert tts.requests == [
         "Catheters vary by intended use.",
         "Cardiovascular catheters are typically Class II or III.",
-        "See for the product codes. Which type do you mean?",
-    ] or tts.requests[0] == "Catheters vary by intended use."
-    assert all("**" not in s and "[K183256.pdf]" not in s and "https://" not in s for s in tts.requests)
-    assert len(player.clips) == len(tts.requests) and result.sentences == tts.requests
+        "See for the product codes.",
+        "Which type do you mean?",
+    ]
+    assert result.sentences == tts.requests
+    assert [len(c.samples) for c in player.clips] == [int(0.01 * len(t) * 24000) for t in tts.requests]
     assert result.tts_errors == [] and err.getvalue() == ""
     assert client.calls[0]["think"] is False and client.calls[0]["stream"] is True
 
@@ -76,6 +82,53 @@ def test_listen_ignores_very_short_recordings_and_requires_configuration():
         loop2.listen()
 
 
+def test_streamed_lists_are_spoken_without_markers_or_glued_paragraphs():
+    reply = (
+        "Three tests apply:\n1. Biocompatibility per ISO 10993.\n2. Electrical safety per IEC 60601-1.\n"
+        "3. Sterilization validation.\n\n- Cytotoxicity\n- Sensitization\n- Irritation"
+    )
+    client = FakeOllamaClient(replies=[reply], thinking=None, piece_size=6)
+    tts, player = FakeTTSClient(), FakePlayer()
+    loop, out, _, _ = make_loop(client=client, tts=tts, player=player)
+    result = loop.answer("which tests?")
+    assert out.getvalue().strip() == reply  # console keeps the list formatting
+    assert not any(re.search(r"(^|[.!?:]\s)\d{1,2}[.)](\s|$)|(^|\s)[-*+]\s", s) for s in result.sentences), result.sentences
+    assert "Sterilization validation." in result.sentences
+    assert any("Cytotoxicity. Sensitization. Irritation" in s for s in result.sentences)
+
+
+class SlowTTS(FakeTTSClient):
+    def __init__(self, delay: float):
+        super().__init__()
+        self.delay = delay
+
+    def synthesize(self, text, voice=None, speed=None):
+        time.sleep(self.delay)
+        return super().synthesize(text, voice, speed)
+
+
+def test_interrupted_generation_cancels_pending_speech():
+    client = FakeOllamaClient(replies=["First sentence here. Second sentence here. Third sentence here. Fourth one."], thinking=None, stream_error=KeyboardInterrupt(), piece_size=12)
+    tts, player = SlowTTS(0.05), FakePlayer()
+    loop, _, _, _ = make_loop(client=client, tts=tts, player=player)
+    with pytest.raises(KeyboardInterrupt):
+        loop.answer("q")
+    assert player.stopped >= 1
+    assert len(tts.requests) <= 2  # whatever was already in flight, nothing more
+    assert not (loop._speech_thread and loop._speech_thread.is_alive())
+
+
+def test_prompt_returns_after_synthesis_and_stop_silences_playback():
+    client = FakeOllamaClient(replies=["An answer that is long enough to be spoken as one sentence."], thinking=None)
+    tts, player = FakeTTSClient(), FakePlayer()
+    loop, _, _, _ = make_loop(client=client, tts=tts, player=player)
+    result = loop.answer("q", wait_for_playback=False)
+    assert result.sentences == tts.requests == ["An answer that is long enough to be spoken as one sentence."]
+    before = player.stopped  # answer() already silenced any earlier speech once
+    loop.interrupt()
+    assert player.stopped == before + 1
+
+
 def test_run_handles_voice_typed_and_commands():
     client = FakeOllamaClient(replies=["Spoken answer.", "Typed answer."], thinking=None)
     tts, player = FakeTTSClient(), FakePlayer()
@@ -85,11 +138,11 @@ def test_run_handles_voice_typed_and_commands():
     code = loop.run(input_fn=lambda prompt: next(lines))
     assert code == 0
     text = out.getvalue()
-    assert "Press Enter to talk" in text
+    assert "Press Enter to talk" in text and "/stop silences RINN" in text
     assert "you (heard): spoken question" in text
     assert "Spoken answer." in text and "Typed answer." in text
     assert "conversation cleared" in text
-    assert player.stopped == 1
+    assert player.stopped >= 1  # /stop, plus the automatic silence before listening/answering
     assert client.calls[0]["messages"][-1]["content"] == "spoken question"
     assert client.calls[1]["messages"][-1]["content"] == "typed question"
     assert tts.requests == ["Spoken answer.", "Typed answer."]
@@ -108,3 +161,15 @@ def test_show_thinking_prints_reasoning_before_answer():
     loop, out, _, _ = make_loop(client=client, tts=None, player=None, show_thinking=True)
     loop.answer("q")
     assert out.getvalue().startswith("[thinking] let me think\n\nAnswer.")
+
+
+def test_ctrl_c_while_listening_returns_to_prompt():
+    class InterruptingRecorder(FakeRecorder):
+        def record_utterance(self, stop_event=None, on_state=None):
+            raise KeyboardInterrupt()
+
+    client = FakeOllamaClient(replies=["Answer."], thinking=None)
+    loop, out, err, _ = make_loop(client=client, tts=None, player=None, transcriber=FakeTranscriber(), recorder=InterruptingRecorder())
+    lines = iter(["", "typed", "/quit"])
+    assert loop.run(input_fn=lambda prompt: next(lines)) == 0
+    assert "(cancelled)" in err.getvalue() and "Answer." in out.getvalue()

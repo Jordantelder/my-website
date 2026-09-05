@@ -26,7 +26,9 @@ class FakeOllamaClient:
         stream_error: BaseException | None = None,
         show_error: BaseException | None = None,
         list_error: BaseException | None = None,
+        piece_size: int | None = None,
     ) -> None:
+        self.piece_size = piece_size
         self.replies = list(replies)
         self.models = list(models)
         self.thinking = thinking
@@ -73,8 +75,14 @@ class FakeOllamaClient:
         text = self._next_reply()
         if self.thinking:
             yield ollama.ChatResponse(model=model, message=ollama.Message(role="assistant", thinking=self.thinking))
-        half = max(1, len(text) // 2)
-        yield ollama.ChatResponse(model=model, message=ollama.Message(role="assistant", content=text[:half]))
+        if self.piece_size:
+            for start in range(0, len(text) - self.piece_size, self.piece_size):
+                yield ollama.ChatResponse(model=model, message=ollama.Message(role="assistant", content=text[start : start + self.piece_size]))
+            text = text[max(0, ((len(text) - 1) // self.piece_size) * self.piece_size):]
+            half = 0
+        else:
+            half = max(1, len(text) // 2)
+            yield ollama.ChatResponse(model=model, message=ollama.Message(role="assistant", content=text[:half]))
         if self.stream_error is not None:
             raise self.stream_error
         yield ollama.ChatResponse(
@@ -219,28 +227,35 @@ class FakeInputStream:
 
 
 class FakeOutputStream:
-    def __init__(self, sink, **kwargs):
+    def __init__(self, sink, write_delay=0.0, **kwargs):
         self.sink = sink
+        self.write_delay = write_delay
         self.kwargs = kwargs
+        self.closed = False
 
     def __enter__(self):
         return self
 
     def __exit__(self, *exc):
+        self.closed = True
         return False
 
     def write(self, data):
+        if self.write_delay:
+            time.sleep(self.write_delay)
         self.sink.append(np.array(data, copy=True).reshape(-1))
 
 
 class FakeSoundDevice:
     """Minimal stand-in for the sounddevice module."""
 
-    def __init__(self, input_blocks=(), output_sink=None):
+    def __init__(self, input_blocks=(), output_sink=None, write_delay=0.0):
         self.input_blocks = list(input_blocks)
         self.output_sink = output_sink if output_sink is not None else []
+        self.write_delay = write_delay
         self.input_kwargs = None
         self.output_kwargs = None
+        self.streams = []
 
     def InputStream(self, **kwargs):  # noqa: N802 - mirrors sounddevice
         self.input_kwargs = kwargs
@@ -248,7 +263,9 @@ class FakeSoundDevice:
 
     def OutputStream(self, **kwargs):  # noqa: N802
         self.output_kwargs = kwargs
-        return FakeOutputStream(self.output_sink, **kwargs)
+        stream = FakeOutputStream(self.output_sink, write_delay=self.write_delay, **kwargs)
+        self.streams.append(stream)
+        return stream
 
     def query_devices(self):
         return "  0 Fake Microphone, 1 in\n  1 Fake Speakers, 0 in 2 out"

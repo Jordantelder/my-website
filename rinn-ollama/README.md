@@ -134,7 +134,7 @@ CLI flags. Every value is optional.
 | Variable | Default | Meaning |
 | --- | --- | --- |
 | `RINN_MODEL` | `qwen3.8:27b` | Ollama model tag. Also `qwen3.8:27b-q8_0` (30 GB), `qwen3.8:27b-mlx` (Apple). |
-| `OLLAMA_HOST` | `http://localhost:11434` | Ollama server. `host:port` or a bare host is accepted; without a scheme the default port 11434 is assumed, exactly as `ollama` itself does. |
+| `OLLAMA_HOST` or `RINN_OLLAMA_HOST` | `http://localhost:11434` | Ollama server. `host:port` or a bare host is accepted; without a scheme the default port 11434 is assumed, as `ollama` itself does. A bind address (`0.0.0.0`, the value used to expose Ollama on the network) is read as this machine. `RINN_OLLAMA_HOST` wins when both are set. |
 | `RINN_TEMPERATURE` | `0.4` | Same value the original `app.py` used. |
 | `RINN_TOP_P` | `0.9` | Nucleus sampling. |
 | `RINN_NUM_CTX` | `32768` | Context window. Lower it (e.g. `16384`) if the GPU runs out of memory. |

@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import re
+
 import pytest
 
 from rinn.voice.chunker import SentenceChunker, strip_markdown_for_speech
@@ -37,6 +39,8 @@ def test_short_sentences_are_merged_until_min_chars():
         "Examples include catheters, e.g. urological ones, and implants. Then continue.",
         "The U.S. FDA reviews it. Then continue.",
         "Refer to Fig. 3 of the guidance. Then continue.",
+        "Some devices (e.g. catheters) are Class II. Then continue.",
+        "Use the predicate (i.e. the cleared device) as the basis. Then continue.",
     ],
 )
 def test_abbreviations_and_decimals_do_not_split(text):
@@ -93,3 +97,22 @@ def test_strip_markdown_for_speech():
     assert "See the guidance or for details." in spoken
     assert spoken.startswith("Testing Matrix")
     assert "First bullet" in spoken and "Numbered item" in spoken
+
+
+def test_list_items_become_separate_chunks_without_markers():
+    text = (
+        "Three tests apply:\n1. Biocompatibility per ISO 10993.\n2. Electrical safety per IEC 60601-1.\n"
+        "3. Sterilization validation.\n\n- Cytotoxicity\n- Sensitization\n- Irritation"
+    )
+    chunks = stream(SentenceChunker(min_chars=40, first_min_chars=15), text, step=6)
+    assert chunks[0] == "Three tests apply:"
+    assert not any(re.search(r"(^|[.!?:]\s)\d{1,2}[.)](\s|$)|(^|\s)[-*+]\s", c) for c in chunks), chunks
+    assert "Sterilization validation." in chunks  # a blank line never glues paragraphs together
+    joined = " ".join(chunks)
+    assert "Biocompatibility per ISO 10993." in joined and "Cytotoxicity. Sensitization. Irritation" in joined
+
+
+def test_headings_and_table_rows_start_new_chunks():
+    chunks = stream(SentenceChunker(min_chars=10, first_min_chars=5), "## Testing\n| Test | Standard |\n| Cytotoxicity | ISO 10993-5 |\nDone here.", step=5)
+    assert chunks[0] == "## Testing"
+    assert chunks[1].startswith("| Test") and chunks[2].startswith("| Cytotoxicity")

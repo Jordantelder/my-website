@@ -20,7 +20,7 @@ from contextlib import asynccontextmanager
 from typing import Any, AsyncIterator, Optional
 
 import numpy as np
-from fastapi import FastAPI, File, Form, HTTPException, Request, UploadFile
+from fastapi import Depends, FastAPI, File, Form, HTTPException, Request, UploadFile
 from fastapi.responses import JSONResponse, Response
 from pydantic import BaseModel, Field
 
@@ -31,10 +31,12 @@ from .stt import REGULATORY_PROMPT, FasterWhisperTranscriber, STTError, Transcri
 from .tts_backends import BACKEND_NAMES, BackendError, TTSBackend, build_backend
 
 MAX_INPUT_CHARS = 4000
+MAX_UPLOAD_BYTES = 25 * 1024 * 1024  # OpenAI's documented limit for this endpoint
+MAX_UPLOAD_SECONDS = 600.0
 
 
 class SpeechRequest(BaseModel):
-    input: str = Field(..., description="Text to speak")
+    input: str = Field(..., description="Text to speak", max_length=20000)
     model: str = "rinn"
     voice: Optional[str] = None
     response_format: str = "mp3"  # OpenAI's default; rinn-voice asks for wav
@@ -48,6 +50,7 @@ class ServerState:
         self.transcriber: Transcriber | None = None
         self.backend_error: str | None = None
         self.stt_error: str | None = None
+        self.api_key: str = ""  # empty = no authentication (loopback use)
 
 
 def encode_audio(clip: AudioClip, fmt: str) -> tuple[bytes, str]:
@@ -74,6 +77,21 @@ def encode_audio(clip: AudioClip, fmt: str) -> tuple[bytes, str]:
     raise HTTPException(status_code=400, detail=f"unsupported response_format {fmt!r}; use wav, mp3, flac, ogg or pcm")
 
 
+def read_capped(upload: UploadFile, limit: int) -> bytes:
+    """Read an upload in chunks, refusing anything over ``limit`` bytes."""
+    chunks: list[bytes] = []
+    total = 0
+    while True:
+        chunk = upload.file.read(1024 * 1024)
+        if not chunk:
+            break
+        total += len(chunk)
+        if total > limit:
+            raise HTTPException(status_code=413, detail=f"upload larger than {limit // (1024 * 1024)} MB")
+        chunks.append(chunk)
+    return b"".join(chunks)
+
+
 def decode_upload(data: bytes, filename: str) -> AudioClip:
     """Decode an uploaded audio file (wav natively; other formats via soundfile)."""
     from .audio import AudioError, wav_bytes_to_clip
@@ -93,10 +111,26 @@ def decode_upload(data: bytes, filename: str) -> AudioClip:
     return AudioClip(to_mono_float32(samples), int(rate))
 
 
-def create_app(backend: TTSBackend | None = None, transcriber: Transcriber | None = None, load_on_startup: bool = True) -> FastAPI:
+def create_app(
+    backend: TTSBackend | None = None,
+    transcriber: Transcriber | None = None,
+    load_on_startup: bool = True,
+    api_key: str | None = None,
+) -> FastAPI:
     state = ServerState()
     state.backend = backend
     state.transcriber = transcriber
+    state.api_key = (api_key if api_key is not None else os.environ.get("RINN_VOICE_SERVER_API_KEY", "")).strip()
+
+    def authorize(request: Request) -> None:
+        """When an API key is configured, /v1 routes require `Authorization: Bearer <key>`."""
+        if not state.api_key:
+            return
+        header = request.headers.get("authorization", "")
+        if header != f"Bearer {state.api_key}":
+            raise HTTPException(status_code=401, detail="missing or wrong API key (Authorization: Bearer ...)")
+
+    protected = [Depends(authorize)]
 
     @asynccontextmanager
     async def lifespan(_: FastAPI) -> AsyncIterator[None]:
@@ -141,17 +175,17 @@ def create_app(backend: TTSBackend | None = None, transcriber: Transcriber | Non
         }
         return JSONResponse(body, status_code=200 if ok else 503)
 
-    @app.get("/v1/models")
+    @app.get("/v1/models", dependencies=protected)
     def models() -> dict[str, Any]:
         return {"object": "list", "data": [{"id": "rinn", "object": "model", "owned_by": "rinn"}, {"id": "whisper-1", "object": "model", "owned_by": "rinn"}]}
 
-    @app.get("/v1/audio/voices")
+    @app.get("/v1/audio/voices", dependencies=protected)
     def voices() -> dict[str, Any]:
         if state.backend is None:
             raise HTTPException(status_code=503, detail=state.backend_error or "TTS backend not loaded")
         return {"voices": state.backend.voices()}
 
-    @app.post("/v1/audio/speech")
+    @app.post("/v1/audio/speech", dependencies=protected)
     def speech(req: SpeechRequest) -> Response:
         if state.backend is None:
             raise HTTPException(status_code=503, detail=state.backend_error or "TTS backend not loaded")
@@ -169,8 +203,8 @@ def create_app(backend: TTSBackend | None = None, transcriber: Transcriber | Non
         data, media = encode_audio(clip, req.response_format)
         return Response(content=data, media_type=media)
 
-    @app.post("/v1/audio/transcriptions")
-    async def transcriptions(
+    @app.post("/v1/audio/transcriptions", dependencies=protected)
+    def transcriptions(  # sync: FastAPI runs it in a worker thread, so Whisper never blocks TTS or /health
         request: Request,
         file: UploadFile = File(...),
         model: str = Form("whisper-1"),  # noqa: ARG001 - accepted for OpenAI compatibility
@@ -179,10 +213,15 @@ def create_app(backend: TTSBackend | None = None, transcriber: Transcriber | Non
     ) -> Any:
         if state.transcriber is None:
             raise HTTPException(status_code=501, detail=state.stt_error or "speech-to-text is not enabled; start the server with --stt large-v3-turbo")
-        data = await file.read()
+        declared = request.headers.get("content-length")
+        if declared and declared.isdigit() and int(declared) > MAX_UPLOAD_BYTES + 4096:
+            raise HTTPException(status_code=413, detail=f"upload larger than {MAX_UPLOAD_BYTES // (1024 * 1024)} MB")
+        data = read_capped(file, MAX_UPLOAD_BYTES)
         if not data:
             raise HTTPException(status_code=400, detail="empty audio upload")
         clip = decode_upload(data, file.filename or "audio")
+        if clip.duration > MAX_UPLOAD_SECONDS:
+            raise HTTPException(status_code=413, detail=f"audio longer than {int(MAX_UPLOAD_SECONDS)} seconds")
         try:
             text = state.transcriber.transcribe(clip.samples, clip.sample_rate)
         except STTError as exc:
@@ -202,7 +241,8 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="rinn-voice-server", description="OpenAI-compatible speech server for RINN (TTS + optional STT).")
     parser.add_argument("--backend", choices=BACKEND_NAMES, default=os.environ.get("RINN_TTS_BACKEND", "kokoro"), help="text-to-speech backend")
     parser.add_argument("--voice", help="default voice (kokoro voice id, e.g. af_bella / af_heart / am_michael)")
-    parser.add_argument("--host", default=os.environ.get("RINN_VOICE_SERVER_HOST", "127.0.0.1"), help="bind address (0.0.0.0 to reach it from Docker/WSL)")
+    parser.add_argument("--host", default=os.environ.get("RINN_VOICE_SERVER_HOST", "127.0.0.1"), help="bind address; 0.0.0.0 makes the server reachable from Docker/WSL AND from every device on your network, so pair it with --api-key")
+    parser.add_argument("--api-key", default=None, help="require this key as 'Authorization: Bearer <key>' on /v1 routes (default: RINN_VOICE_SERVER_API_KEY, or open)")
     parser.add_argument("--port", type=int, default=int(os.environ.get("RINN_VOICE_SERVER_PORT", "8880")))
     parser.add_argument("--stt", metavar="MODEL", help="enable /v1/audio/transcriptions with this faster-whisper model (e.g. large-v3-turbo)")
     parser.add_argument("--stt-device", default=None, help="cuda, cpu or auto for the STT model")
@@ -234,6 +274,7 @@ def apply_args_to_env(args: argparse.Namespace, env: dict[str, str]) -> None:
         "f5_nfe": "RINN_F5_NFE",
         "qwen_model": "RINN_QWEN_TTS_MODEL",
         "qwen_speaker": "RINN_QWEN_TTS_SPEAKER",
+        "api_key": "RINN_VOICE_SERVER_API_KEY",
     }
     for attr, key in mapping.items():
         value = getattr(args, attr, None)

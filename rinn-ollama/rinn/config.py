@@ -41,9 +41,12 @@ def _normalize_host(raw: str) -> str:
     """Return ``raw`` as a full ``scheme://host[:port]`` URL.
 
     Mirrors :class:`ollama.Client`: a value without a scheme gets ``http://``
-    and, when it also lacks a port, Ollama's default port 11434 (so
-    ``OLLAMA_HOST=0.0.0.0`` works). Values with an explicit scheme are kept as
-    given, so ``https://ollama.example.com`` stays on port 443.
+    and, when it also lacks a port, Ollama's default port 11434. Values with
+    an explicit scheme are kept as given, so ``https://ollama.example.com``
+    stays on port 443. A wildcard *bind* address (``0.0.0.0`` or ``::``, what
+    people export as ``OLLAMA_HOST`` to expose the server) is not connectable
+    on Windows, so it is rewritten to the loopback address, as Ollama's own
+    CLI does.
     """
     host = raw.strip()
     scheme, separator, rest = host.partition("://")
@@ -68,9 +71,13 @@ def _normalize_host(raw: str) -> str:
         raise ConfigError(f"invalid port in host {raw!r}") from exc
     if not parts.hostname or parts.netloc.endswith(":"):
         raise ConfigError(f"invalid host {raw!r}")
+    netloc = parts.netloc
+    if parts.hostname in ("0.0.0.0", "::"):
+        loopback = "127.0.0.1" if parts.hostname == "0.0.0.0" else "[::1]"
+        netloc = loopback if port is None else f"{loopback}:{port}"
     if port is None and not had_scheme:
-        host = f"{parts.scheme}://{parts.netloc}:{DEFAULT_PORT}{parts.path}"
-    return host
+        netloc = f"{netloc}:{DEFAULT_PORT}"
+    return f"{parts.scheme}://{netloc}{parts.path}"
 
 
 @dataclass(frozen=True)
@@ -157,7 +164,8 @@ class Settings:
         if model:
             kwargs["model"] = model
 
-        host = (values.get("OLLAMA_HOST") or values.get("RINN_OLLAMA_HOST") or "").strip()
+        # RINN_OLLAMA_HOST (client-only) wins over OLLAMA_HOST, which also configures the server.
+        host = (values.get("RINN_OLLAMA_HOST") or values.get("OLLAMA_HOST") or "").strip()
         if host:
             kwargs["host"] = host  # normalized in __post_init__
 

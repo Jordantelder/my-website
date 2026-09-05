@@ -18,6 +18,12 @@ _ABBREVIATIONS = {
     "cfr.", "rev.", "ed.", "pp.", "p.", "al.",
 }
 _CLAUSE_SPLIT_RE = re.compile(r"(?<=[,;:])\s+")
+# A newline followed by a list marker, heading, or table row starts a new chunk even
+# without terminal punctuation, so list items are spoken one at a time.
+_LINE_BREAK_RE = re.compile(r"\n(?=[ \t]*(?:\d+[.)]\s|[-*+•]\s|#{1,6}\s|\|))")
+_LEADING_MARKER_RE = re.compile(r"^\s*(?:\d+[.)]|[-*+•])\s+")
+_BARE_MARKER_RE = re.compile(r"^\s*(?:\d+[.)]|[-*+•])\s*$")
+_LEADING_PUNCT = "(\"'“‘[«"
 
 _CITATION_RE = re.compile(r"\[(?:WEB SOURCE:\s*)?[^\[\]]*?(?:https?://|\.pdf|\.txt|\.html?)[^\[\]]*\]", re.IGNORECASE)
 _SUBMISSION_TAG_RE = re.compile(r"\[(?:K|P|DEN)\d{6}(?:\.\w+)?\]")
@@ -86,11 +92,15 @@ class SentenceChunker:
         out: list[str] = []
         while True:
             paragraph = self._buffer.find("\n\n")
+            line_break = _LINE_BREAK_RE.search(self._buffer)
+            hard = min([i for i in (paragraph, line_break.start() if line_break else -1) if i != -1], default=-1)
             cut = self._find_boundary(self._buffer)
-            if paragraph != -1 and (cut is None or paragraph < cut):
-                # A blank line ends a chunk even without terminal punctuation.
-                head, self._buffer = self._buffer[:paragraph], self._buffer[paragraph + 2 :]
-                out.extend(self._accept_block(head))
+            if hard != -1 and (cut is None or hard < cut):
+                # A blank line, or a line that starts a list item / heading / table row,
+                # ends the chunk even without terminal punctuation.
+                is_paragraph = hard == paragraph
+                head, self._buffer = self._buffer[:hard], self._buffer[hard + (2 if is_paragraph else 1) :]
+                out.extend(self._accept_block(head, force=is_paragraph))
                 continue
             if cut is None:
                 break
@@ -100,7 +110,7 @@ class SentenceChunker:
 
     def flush(self) -> list[str]:
         out: list[str] = []
-        remainder = (self._pending + " " + self._buffer).strip()
+        remainder = self._join(self._pending, _LEADING_MARKER_RE.sub("", self._buffer, count=1))
         self._pending = ""
         self._buffer = ""
         if remainder:
@@ -114,7 +124,10 @@ class SentenceChunker:
         return self.first_min_chars if self._emitted == 0 else self.min_chars
 
     def _accept(self, sentence: str) -> list[str]:
-        candidate = (self._pending + " " + sentence).strip()
+        sentence = _LEADING_MARKER_RE.sub("", sentence, count=1)  # "1. item" -> "item" (markers are never spoken)
+        if _BARE_MARKER_RE.match(sentence):
+            return []
+        candidate = self._join(self._pending, sentence)
         if not candidate:
             return []
         if len(candidate) < self._threshold():
@@ -125,8 +138,12 @@ class SentenceChunker:
         self._emitted += len(pieces)
         return pieces
 
-    def _accept_block(self, block: str) -> list[str]:
-        """Emit the sentences inside a completed block (paragraph), then its remainder."""
+    def _accept_block(self, block: str, force: bool = False) -> list[str]:
+        """Emit the sentences inside a completed block, then its remainder.
+
+        With ``force`` (a blank line) anything still pending is released too, so a
+        paragraph is never glued to the next one.
+        """
         out: list[str] = []
         rest = block
         while True:
@@ -137,7 +154,23 @@ class SentenceChunker:
             out.extend(self._accept(sentence))
         if rest.strip():
             out.extend(self._accept(rest))
+        if force and self._pending:
+            pieces = self._split_long(self._pending)
+            self._pending = ""
+            self._emitted += len(pieces)
+            out.extend(pieces)
         return out
+
+    @staticmethod
+    def _join(pending: str, sentence: str) -> str:
+        pending, sentence = pending.strip(), sentence.strip()
+        if not pending:
+            return sentence
+        if not sentence:
+            return pending
+        if not pending.endswith((".", "!", "?", ":", ";", ",", "…")):
+            pending += "."  # a pause between merged fragments ("Cytotoxicity. Sensitization.")
+        return f"{pending} {sentence}"
 
     def _find_boundary(self, text: str, final: bool = False) -> int | None:
         for match in _BOUNDARY_RE.finditer(text):
@@ -145,9 +178,12 @@ class SentenceChunker:
             if end == len(text) and not text[end - 1].isspace() and not final:
                 return None  # sentence may still continue ("U.S." at the end of a fragment)
             head = text[: match.start()]
-            last_word = head.split()[-1].lower() if head.split() else ""
+            words = head.split()
+            last_word = words[-1].lower().lstrip(_LEADING_PUNCT) if words else ""
             if last_word in _ABBREVIATIONS or (len(last_word) == 2 and last_word[0].isalpha() and last_word.endswith(".")):
-                continue  # "e.g." / "A." initials
+                continue  # "e.g." / "(i.e." / "A." initials
+            if _BARE_MARKER_RE.match(head.rsplit("\n", 1)[-1]):
+                continue  # "1." at the start of a list item is not a sentence end
             return end
         return None
 

@@ -115,9 +115,10 @@ class Recorder:
     """Capture one utterance from the microphone.
 
     Recording starts immediately; speech is detected when the level rises well above the
-    noise floor measured during the first ``calibration_seconds``. Recording stops after
-    ``silence_seconds`` of quiet following speech, when ``max_seconds`` is reached, when
-    ``stop_event`` is set, or on a manual stop.
+    noise floor measured during the first ``calibration_seconds`` (median level, capped so
+    that normal speech is always detectable; a loud calibration window counts as speech).
+    Recording stops after ``silence_seconds`` of quiet following speech, when ``max_seconds``
+    of wall-clock time have passed, or when ``stop_event`` is set.
     """
 
     def __init__(
@@ -129,6 +130,8 @@ class Recorder:
         calibration_seconds: float = 0.4,
         speech_margin_db: float = 12.0,
         min_speech_db: float = -45.0,
+        loud_speech_db: float = -25.0,
+        already_talking_db: float = -30.0,
         block_ms: int = 30,
         sd: Any | None = None,
     ) -> None:
@@ -139,6 +142,8 @@ class Recorder:
         self.calibration_seconds = calibration_seconds
         self.speech_margin_db = speech_margin_db
         self.min_speech_db = min_speech_db
+        self.loud_speech_db = loud_speech_db  # speech at or above this level always counts, whatever the noise floor
+        self.already_talking_db = already_talking_db  # calibration this loud means the user is already speaking
         self.block_size = max(1, int(sample_rate * block_ms / 1000))
         self._sd = sd
 
@@ -156,6 +161,8 @@ class Recorder:
         elapsed = 0.0
         block_seconds = self.block_size / self.sample_rate
         threshold = self.min_speech_db
+        calibrated = False
+        deadline = time.monotonic() + self.max_seconds
 
         try:
             stream = sd.InputStream(
@@ -175,19 +182,29 @@ class Recorder:
             while True:
                 if stop_event is not None and stop_event.is_set():
                     break
+                if time.monotonic() >= deadline:
+                    break
                 try:
                     block = blocks.get(timeout=1.0)
                 except queue.Empty:
-                    if stop_event is not None and stop_event.is_set():
-                        break
                     continue
                 mono = to_mono_float32(block)
                 captured.append(mono)
                 elapsed += block_seconds
                 level = rms_db(mono)
-                if elapsed <= self.calibration_seconds:
+                if not calibrated:
                     noise_levels.append(level)
-                    threshold = max(self.min_speech_db, (max(noise_levels) if noise_levels else -80.0) + self.speech_margin_db)
+                    if elapsed < self.calibration_seconds:
+                        continue
+                    calibrated = True
+                    # The median ignores a brief click; the cap keeps normal speech detectable even in
+                    # a loud room. If the user was already talking, treat the calibration as speech.
+                    noise = float(np.median(noise_levels))
+                    threshold = min(max(noise + self.speech_margin_db, self.min_speech_db), self.loud_speech_db)
+                    if noise >= self.already_talking_db:
+                        speech_started = True
+                        if on_state:
+                            on_state("speech")
                     continue
                 if level >= threshold:
                     if not speech_started and on_state:
@@ -209,90 +226,122 @@ class Recorder:
         return AudioClip(samples, self.sample_rate)
 
 
+_CLOSE = object()  # queue sentinel that ends the worker thread
+
+
 class Player:
-    """Queue clips and play them in order on a background thread."""
+    """Queue clips and play them in order on a background thread.
+
+    ``wait`` blocks until every queued clip has been played (or dropped); ``stop`` drops
+    queued clips and interrupts the one playing; ``close`` ends the worker. The audio
+    module is resolved in the constructor so a missing PortAudio surfaces as an
+    ``AudioError`` on the caller's thread instead of a hang.
+    """
 
     def __init__(self, sample_rate: int = 24000, device: Optional[int | str] = None, sd: Any | None = None) -> None:
         self.sample_rate = sample_rate
         self.device = device
-        self._sd = sd
-        self._queue: "queue.Queue[Optional[AudioClip]]" = queue.Queue()
-        self._thread: threading.Thread | None = None
-        self._stop = threading.Event()
+        self._sd = sd if sd is not None else _sounddevice()
+        self._queue: "queue.Queue[Any]" = queue.Queue()
+        self._lock = threading.Lock()
+        self._pending = 0  # clips enqueued and not yet played or dropped
+        self._generation = 0  # bumped by stop(); the worker aborts a clip whose generation is stale
         self._idle = threading.Event()
         self._idle.set()
-        self._lock = threading.Lock()
+        self._thread: threading.Thread | None = None
+        self._closed = False
         self.errors: list[str] = []
 
     def enqueue(self, clip: AudioClip) -> None:
         if len(clip.samples) == 0:
             return
-        self._idle.clear()
-        self._queue.put(clip)
-        self._ensure_thread()
+        with self._lock:
+            if self._closed:
+                raise AudioError("player is closed")
+            self._pending += 1
+            self._idle.clear()
+            self._queue.put(clip)
+            self._ensure_thread_locked()
 
     def wait(self, timeout: float | None = None) -> bool:
-        """Block until everything queued has been played."""
+        """Block until everything queued has been played or dropped."""
         return self._idle.wait(timeout)
+
+    @property
+    def busy(self) -> bool:
+        return not self._idle.is_set()
 
     def stop(self) -> None:
         """Drop queued clips and interrupt the current one (barge-in)."""
-        self._stop.set()
-        while True:
-            try:
-                self._queue.get_nowait()
-            except queue.Empty:
-                break
-        self._queue.put(None)
+        with self._lock:
+            dropped = 0
+            while True:
+                try:
+                    item = self._queue.get_nowait()
+                except queue.Empty:
+                    break
+                if item is _CLOSE:
+                    self._queue.put(item)
+                    break
+                dropped += 1
+            self._pending = max(0, self._pending - dropped)
+            self._generation += 1
+            if self._pending == 0:
+                self._idle.set()
 
     def close(self) -> None:
         self.stop()
-        if self._thread is not None:
-            self._thread.join(timeout=5)
+        with self._lock:
+            self._closed = True
+            thread = self._thread
+            if thread is not None and thread.is_alive():
+                self._queue.put(_CLOSE)
+        if thread is not None:
+            thread.join(timeout=5)
 
     # -- internals ------------------------------------------------------------
 
-    def _ensure_thread(self) -> None:
-        with self._lock:
-            if self._thread is None or not self._thread.is_alive():
-                self._stop.clear()
-                self._thread = threading.Thread(target=self._run, name="rinn-player", daemon=True)
-                self._thread.start()
+    def _ensure_thread_locked(self) -> None:
+        if self._thread is None or not self._thread.is_alive():
+            self._thread = threading.Thread(target=self._run, name="rinn-player", daemon=True)
+            self._thread.start()
 
-    def _run(self) -> None:
-        sd = self._sd or _sounddevice()
-        try:
-            with sd.OutputStream(samplerate=self.sample_rate, channels=1, dtype="float32", device=self.device) as stream:
-                while True:
-                    try:
-                        clip = self._queue.get(timeout=2.0)
-                    except queue.Empty:
-                        if self._queue.empty():
-                            self._idle.set()
-                        continue
-                    if clip is None:
-                        self._idle.set()
-                        if self._stop.is_set():
-                            self._stop.clear()
-                            continue
-                        continue
-                    data = resample(clip.samples, clip.sample_rate, self.sample_rate)
-                    # Write in slices so stop() can interrupt long clips promptly.
-                    step = max(1, int(self.sample_rate * 0.25))
-                    for start in range(0, len(data), step):
-                        if self._stop.is_set():
-                            break
-                        stream.write(np.ascontiguousarray(data[start : start + step]).reshape(-1, 1))
-                    if self._queue.empty():
-                        self._idle.set()
-        except Exception as exc:  # noqa: BLE001 - surface device failures to the caller
+    def _finish_one(self) -> None:
+        with self._lock:
+            self._pending = max(0, self._pending - 1)
+            if self._pending == 0:
+                self._idle.set()
+
+    def _fail(self, exc: BaseException) -> None:
+        with self._lock:
             self.errors.append(f"{exc.__class__.__name__}: {exc}")
-            self._idle.set()
             while True:
                 try:
                     self._queue.get_nowait()
                 except queue.Empty:
                     break
+            self._pending = 0
+            self._idle.set()
+
+    def _run(self) -> None:
+        try:
+            with self._sd.OutputStream(samplerate=self.sample_rate, channels=1, dtype="float32", device=self.device) as stream:
+                while True:
+                    item = self._queue.get()
+                    if item is _CLOSE:
+                        return
+                    clip: AudioClip = item
+                    generation = self._generation
+                    data = resample(clip.samples, clip.sample_rate, self.sample_rate)
+                    # Write in slices so stop() can interrupt long clips promptly.
+                    step = max(1, int(self.sample_rate * 0.25))
+                    for start in range(0, len(data), step):
+                        if self._generation != generation:
+                            break
+                        stream.write(np.ascontiguousarray(data[start : start + step]).reshape(-1, 1))
+                    self._finish_one()
+        except Exception as exc:  # noqa: BLE001 - surface device failures to the caller
+            self._fail(exc)
 
 
 def silence(seconds: float, sample_rate: int) -> AudioClip:

@@ -64,17 +64,17 @@ and all the libraries used here have Windows wheels.
    **"Add python.exe to PATH"** before clicking *Install Now*.
    - *Checkpoint:* in a new Command Prompt, `python --version` prints `Python 3.11.x` or `3.12.x`.
 4. **Git for Windows**: <https://git-scm.com/download/win>, defaults are fine.
-5. **FFmpeg** (needed by F5-TTS and useful for audio checks). In Command Prompt run
-   `winget install --id Gyan.FFmpeg -e`, then open a new Command Prompt and check `ffmpeg -version`.
-6. **espeak-ng** (needed by the Kokoro stock voice). Download the latest `.msi` for Windows
-   from <https://github.com/espeak-ng/espeak-ng/releases> (file name like
-   `espeak-ng-X64.msi`), run it with defaults. Then set the two environment variables Kokoro's
-   phonemizer looks for: press `Win`, type `environment variables`, open *Edit the system
-   environment variables* > *Environment Variables...* > under *System variables* click *New...*
-   twice:
-   - Name `PHONEMIZER_ESPEAK_LIBRARY`, value `C:\Program Files\eSpeak NG\libespeak-ng.dll`
-   - Name `PHONEMIZER_ESPEAK_PATH`, value `C:\Program Files\eSpeak NG\espeak-ng.exe`
-   Click *OK* on every dialog and open a **new** Command Prompt afterwards.
+5. **FFmpeg, shared build** (needed only for the cloned voice in Step 6A, harmless otherwise).
+   F5-TTS reads audio through torchcodec, which needs FFmpeg's *shared* DLLs, not just
+   `ffmpeg.exe`. In Command Prompt run `winget install --id Gyan.FFmpeg.Shared -e`. Then put
+   its `bin` folder on your PATH: open a **new** Command Prompt and run
+   `dir /s /b "%LOCALAPPDATA%\Microsoft\WinGet\Packages\avcodec*.dll"`; copy the folder part of
+   the line it prints (it ends in `...\ffmpeg-<version>-full_build-shared\bin`). Press `Win`,
+   type `environment variables`, open *Edit environment variables for your account*, select
+   *Path* > *Edit...* > *New*, paste the folder, click *OK* on every dialog. Open another new
+   Command Prompt and check `ffmpeg -version`.
+6. **espeak-ng: nothing to install.** Kokoro brings its own copy through the `espeakng-loader`
+   package. Skip any system installer or `PHONEMIZER_*` variables other guides mention.
 7. **Microphone and speakers.** Right-click the speaker icon in the taskbar > *Sound settings*.
    Under *Input*, choose the microphone you will use and speak: the *Input volume* bar must
    move. Under *Output*, choose your speakers or headset. Also open *Settings > Privacy &
@@ -168,9 +168,9 @@ Keep this window open for as long as you want to talk to RINN.
    The first start downloads Kokoro (about 330 MB) and the Whisper model (about 1.6 GB).
    Wait for two lines: `TTS backend 'kokoro' ready; voices: ...` and `STT model 'large-v3-turbo' ready`,
    then `Uvicorn running on http://127.0.0.1:8880`.
-   - Voices: `af_bella` (female, highest rated), `af_heart` (female), `af_nicole`,
-     `am_michael` / `am_fenrir` / `am_puck` (male), `bf_emma` (British female).
-     Change with `--voice`.
+   - Voices: `af_heart` (female, top grade A on Kokoro's voice card), `af_bella` (female, A-,
+     the default here), `af_nicole`, `am_michael` / `am_fenrir` / `am_puck` (male), `bf_emma`
+     (British female). Change with `--voice`.
    - Leave `--stt` out if you only want text-to-speech from the server (the `rinn-voice`
      client loads its own Whisper model anyway; the server's STT is what Open WebUI uses).
 3. *Checkpoint:* in your browser open <http://127.0.0.1:8880/health>. You should see JSON with
@@ -203,12 +203,16 @@ Keep this window open for as long as you want to talk to RINN.
    in. The first sentence is spoken while the rest is still being written.
 3. Follow-up questions keep the conversation: if RINN asks a clarifying question, just press
    Enter and answer with a word or two, exactly like the text version.
-4. Useful keys and commands inside the session:
-   - **Enter** on an empty line: record a question.
-   - Type a question instead of speaking whenever you prefer.
-   - `/stop`: stop the current playback immediately.
+4. Useful keys and commands inside the session. The `you>` prompt comes back as soon as the
+   answer text is complete, so RINN may still be talking while you read it:
+   - **Enter** on an empty line: record a question (RINN goes quiet first, so the microphone
+     does not pick up the speakers).
+   - Type a question instead of speaking whenever you prefer; asking while RINN is still
+     talking cuts that speech off.
+   - `/stop`: silence RINN and drop whatever was still to be spoken.
    - `/reset`: forget the conversation.
-   - `/quit` (or `Ctrl+C`): exit.
+   - `/quit`: exit. `Ctrl+C` while an answer is being written aborts that answer and silences
+     RINN; at the prompt it exits.
 5. Options you may want (add to the command in step 1):
    - `--silence 0.8` ends recording after a shorter pause; `--silence 2.0` lets you think mid-sentence.
    - `--mic 3 --speaker 5` selects devices by the index from `rinn-voice --list-devices`.
@@ -232,12 +236,17 @@ Keep this window open for as long as you want to talk to RINN.
    cd /d %USERPROFILE%\my-website\rinn-ollama
    call .venv\Scripts\activate
    start "RINN speech server" cmd /k rinn-voice-server --backend kokoro --voice af_bella --stt large-v3-turbo
-   timeout /t 25 >nul
+   echo Waiting for the speech server to load its models...
+   :wait
+   curl -sf -o nul http://127.0.0.1:8880/health
+   if errorlevel 1 (timeout /t 2 >nul & goto wait)
    rinn-voice
+   pause
    ```
-   Double-clicking it opens the server in its own window, waits, then starts the voice
-   session. Once you switch to your cloned voice (Step 6), replace the server line with the
-   command from that step.
+   Double-clicking it opens the server in its own window, waits until the server reports
+   ready (the health check answers 503 while models load), then starts the voice session;
+   `pause` keeps the window open so you can read any error. Once you switch to your cloned
+   voice (Step 6), replace the server line with the command from that step.
 2. Right-click the `.bat` file > *Show more options* > *Send to* > *Desktop (create shortcut)*.
 3. To keep RINN's model loaded between questions, set `RINN_KEEP_ALIVE=30m` in
    `rinn-ollama\.env` (copy `.env.example` to `.env` first).
@@ -260,10 +269,17 @@ server; `rinn-voice` does not change at all.
    no music. Any file from your 10-hour sliced dataset works. Write down its exact transcript
    (what is said, word for word, with punctuation). Copy the clip to
    `%USERPROFILE%\my-website\rinn-ollama\voice\ref.wav` (create the folder).
-3. Install the backend in the environment:
+3. Install the backend in the environment and check that audio decoding works:
    ```bat
    pip install -e ".[f5tts]"
+   python -c "import torch, torchaudio; from torchcodec.decoders import AudioDecoder; print(torch.__version__, torchaudio.__version__, 'decoding ok')"
    ```
+   - *Checkpoint:* the last line prints the two versions and `decoding ok`. If it complains
+     about FFmpeg or `libtorchcodec`, Step 0.5 was skipped or the `bin` folder is not on PATH.
+     If it complains that torchcodec and torch versions do not match, install the torchcodec
+     release listed for your torch version in the table at
+     <https://github.com/pytorch/torchcodec#installing-torchcodec>, for example
+     `pip install "torchcodec==0.9.*"`, and run the check again.
 4. Stop the Kokoro server (`Ctrl+C` in its window) and start the F5-TTS server:
    ```bat
    rinn-voice-server --backend f5tts ^
@@ -271,9 +287,12 @@ server; `rinn-voice` does not change at all.
      --ref-audio voice\ref.wav --ref-text "Exact transcript of the reference clip." ^
      --stt large-v3-turbo
    ```
-   If the checkpoint was trained from the older `F5TTS_Base` architecture (the September 2025
-   default), add `--f5-model F5TTS_Base`; new fine-tunes use the default `F5TTS_v1_Base`.
-   Wait for `TTS backend 'f5tts' ready; voices: clone`.
+   Use the same architecture your fine-tune used: open `F5-TTS\ckpts\<project-name>\setting.json`
+   (the fine-tune app writes it) and look at `exp_name`. `F5TTS_v1_Base` has been the default
+   since March 2025 and needs no flag; if it says `F5TTS_Base`, add `--f5-model F5TTS_Base`.
+   If the file is missing, start without the flag. A wrong choice usually still loads but
+   sounds garbled, so if the checkpoint test below sounds wrong with a clean clip, try the
+   other value. Wait for `TTS backend 'f5tts' ready; voices: clone`.
 5. *Checkpoint:* repeat the PowerShell test from Step 3 with `"voice":"clone"` and listen.
    It should be your voice. If it sounds rushed or mumbled, use a different reference clip
    (shorter, clearer) and double-check the transcript matches it exactly.
@@ -296,7 +315,10 @@ server; `rinn-voice` does not change at all.
    rinn-voice-server --backend qwen3tts --qwen-model Qwen/Qwen3-TTS-12Hz-1.7B-Base --ref-audio voice\ref.wav --ref-text "Exact transcript." --stt large-v3-turbo
    ```
    The first run downloads the model (several GB).
-4. *Checkpoint and use:* same as 6A (`"voice":"clone"`, then `rinn-voice --tts-voice clone`).
+4. *Checkpoint and use:* repeat the PowerShell test from Step 3 with `"voice":"clone"` for the
+   zero-shot path, or your speaker name for the fine-tuned path. Then run
+   `rinn-voice --tts-voice clone` (zero-shot) or `rinn-voice --tts-voice your_speaker_name`
+   (fine-tuned; the same name you passed as `--qwen-speaker`).
 
 ### 6C. Fish Speech or another engine
 
@@ -312,16 +334,27 @@ values that server expects. Ask the server for WAV output; `rinn-voice` requests
 This gives a chat page with a microphone button, read-aloud answers, and a hands-free call
 mode, all backed by the same `rinn` model and the same speech server.
 
-1. Make the speech server reachable from Docker: stop it and restart it with `--host 0.0.0.0`
-   (everything else unchanged), for example
-   `rinn-voice-server --backend kokoro --voice af_bella --stt large-v3-turbo --host 0.0.0.0`.
-   Also let Ollama accept connections from Docker: press `Win`, type `environment variables`,
-   add a **User** variable `OLLAMA_HOST` with value `0.0.0.0`, click OK, then quit Ollama from
-   the tray icon (right-click > *Quit Ollama*) and start it again from the Start menu.
+1. Make the speech server reachable from Docker: stop it and restart it with two extra
+   flags, `--host 0.0.0.0` and `--api-key` followed by a password you choose (everything else
+   unchanged), for example
+   `rinn-voice-server --backend kokoro --voice af_bella --stt large-v3-turbo --host 0.0.0.0 --api-key rinn-local-2026`.
+   **Warning:** `--host 0.0.0.0` makes the server reachable from every device on your network;
+   the key is what stops them from using your GPU. When Windows shows a *Windows Security
+   Alert* for `python.exe`, tick **Private networks** only and click *Allow access*. From now
+   on `rinn-voice` needs the same key: run it as `rinn-voice --tts-api-key rinn-local-2026`
+   (or put `RINN_TTS_API_KEY=rinn-local-2026` in `.env`) and update the `.bat` file.
+   Also let Ollama accept connections from Docker: right-click the Ollama icon in the system
+   tray > *Settings*, turn on **Expose Ollama to the network**, and save. (Older Ollama builds
+   without that switch: add a **User** environment variable `OLLAMA_HOST` = `0.0.0.0`, then quit
+   Ollama from the tray icon and start it again from the Start menu; `rinn` and `rinn-voice`
+   treat that value as your own PC, so Track B keeps working.) Ollama has no password, so do
+   this only on a home or office network you trust, and tick *Private networks* only in its
+   firewall prompt as well.
 2. Start Open WebUI (Docker Desktop must be running). In Command Prompt:
    ```bat
-   docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -e OLLAMA_BASE_URL=http://host.docker.internal:11434 -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
+   docker run -d -p 127.0.0.1:3000:8080 --add-host=host.docker.internal:host-gateway -e OLLAMA_BASE_URL=http://host.docker.internal:11434 -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
    ```
+   (`127.0.0.1:3000` keeps the chat page reachable only from this PC.)
 3. Open <http://localhost:3000>. Click *Get started*, create the first account (it becomes the
    administrator).
 4. Check the model connection: click your name (bottom left) > *Admin Panel* > *Settings* >
@@ -330,12 +363,13 @@ mode, all backed by the same `rinn` model and the same speech server.
    picker at the top lists `rinn:latest`. Select it.
 5. Configure speech: *Admin Panel* > *Settings* > *Audio*.
    - **STT Settings**: *Speech-to-Text Engine* = `OpenAI`; *API Base URL* =
-     `http://host.docker.internal:8880/v1`; *API Key* = `not-needed`; *STT Model* = `whisper-1`.
+     `http://host.docker.internal:8880/v1`; *API Key* = the key you chose in 7.1
+     (`rinn-local-2026` in the example); *STT Model* = `whisper-1`.
      (Alternative with zero setup: *Web API*, which uses the browser's built-in recognition;
      note that Chrome and Edge send that audio to Google or Microsoft.)
    - **TTS Settings**: *Text-to-Speech Engine* = `OpenAI`; *API Base URL* =
-     `http://host.docker.internal:8880/v1`; *API Key* = `not-needed`; *TTS Model* = `rinn`;
-     *TTS Voice* = `af_bella` (or `clone` when the server runs your voice).
+     `http://host.docker.internal:8880/v1`; *API Key* = the same key; *TTS Model* = `rinn`;
+     *TTS Voice* = `af_bella` (or `clone` / your speaker name when the server runs your voice).
    - Click *Save*.
 6. Turn on read-aloud for yourself: click your name > *Settings* > *Audio* > enable
    *Auto-playback response*. Save.
@@ -370,16 +404,18 @@ Tick all of these and the system is complete:
 | `no kernel image is available for execution on the device` or `torch.cuda.is_available()` is `False` | PyTorch build without Blackwell (RTX 5090) support. Run `pip uninstall torch torchaudio` then `pip install torch torchaudio --index-url https://download.pytorch.org/whl/cu128`. Docker images with old PyTorch (some Kokoro-FastAPI GPU images) have the same problem; use the native `rinn-voice-server` instead. |
 | `Could not locate cublas64_12.dll` / `cudnn_ops64_9.dll` when Whisper loads | Run `pip install nvidia-cublas-cu12 "nvidia-cudnn-cu12==9.*"` inside the venv. If it persists, download the DLL bundle from <https://github.com/Purfview/whisper-standalone-win/releases/tag/libs> and unzip the DLLs next to `.venv\Scripts\python.exe`. Or use `--stt-device cpu --stt-model small.en` temporarily. |
 | `cannot open microphone` or `PortAudio library not found` | On Windows the `sounddevice` wheel bundles PortAudio, so reinstall: `pip install --force-reinstall sounddevice`. Check *Settings > Privacy & security > Microphone*. Run `rinn-voice --list-devices` and pass `--mic N` with your microphone's index. |
-| `(heard nothing)` every time | The microphone level is too low or the wrong device is default. In Windows *Sound settings* raise *Input volume* until the bar moves while you speak; or pass `--mic N`. Speak within the first second after pressing Enter (the first 0.4 s calibrate the noise floor). |
+| `(heard nothing)` every time | The microphone level is too low or the wrong device is default. In Windows *Sound settings* raise *Input volume* until the bar moves while you speak; or pass `--mic N`. Wait for the `listening...` line, then start speaking; talk at a normal volume from within a metre of the microphone. |
 | Transcript is wrong for regulatory terms | Use `--stt-model large-v3-turbo` (default) rather than `small`; speak numbers as words ("five ten k"); the model is already primed with FDA vocabulary. |
 | `no TTS server at http://127.0.0.1:8880/v1` | The server window is closed or still loading. Start it (Step 3) and wait for `Uvicorn running`. |
-| Kokoro fails with `espeak` / `phonemizer` errors | espeak-ng is not installed or the two `PHONEMIZER_ESPEAK_*` variables are missing (Step 0.6). Open a new Command Prompt after setting them. |
-| F5-TTS output is mumbled, rushed, or in the wrong voice | Reference clip longer than 12 s, noisy, or its transcript does not match. Use a 6 to 10 s clean clip and the exact words. Try a different checkpoint step. |
-| F5-TTS says `ffmpeg not found` | Install FFmpeg (Step 0.5) and open a new Command Prompt. |
+| Kokoro fails with `espeak` / `phonemizer` errors | The bundled espeak-ng did not install cleanly. In the venv run `pip install --force-reinstall espeakng-loader "misaki[en]"` and retry; no system espeak-ng or `PHONEMIZER_*` variables are involved. |
+| F5-TTS output is mumbled, rushed, or in the wrong voice | Reference clip longer than 12 s, noisy, or its transcript does not match: use a 6 to 10 s clean clip and the exact words. If the clip is fine, `--f5-model` does not match the checkpoint's `exp_name` (Step 6A.4): try the other value. Also try a different checkpoint step. |
+| F5-TTS fails with `size mismatch` / `Missing key(s)` when loading | The `--f5-model` architecture does not match the checkpoint. Switch between `F5TTS_v1_Base` (no flag) and `--f5-model F5TTS_Base`. |
+| F5-TTS says `ffmpeg`, `libtorchcodec`, `TorchCodec is required`, or `avcodec` cannot be found | torchaudio decodes audio through torchcodec, which needs the FFmpeg *shared* DLLs on PATH (Step 0.5, `Gyan.FFmpeg.Shared`, `bin` folder added to *Path*), and a torchcodec release matching your torch version (Step 6A.3). Open a new Command Prompt after changing PATH. |
 | Speech starts late (10 s or more) | Thinking mode is on (`--think`); leave it off for voice. Ollama unloaded the model after idle time: set `RINN_KEEP_ALIVE=30m`. F5-TTS at 32 steps: try `--f5-nfe 16`. |
 | Sentences are cut oddly or citations are read aloud | The server strips Markdown and `[K123456.pdf]` tags; if you use another TTS server, `rinn-voice` strips them before sending. Report any leftover pattern so the filter can be extended. |
-| Open WebUI cannot reach Ollama (`Connection error`) | Ollama must listen on all interfaces (`OLLAMA_HOST=0.0.0.0`, then restart Ollama), and the URL must be `http://host.docker.internal:11434`. |
-| Open WebUI TTS/STT fails | The speech server must run with `--host 0.0.0.0` and the URL in Open WebUI must be `http://host.docker.internal:8880/v1`. Test it from the browser: <http://127.0.0.1:8880/docs>. |
+| Open WebUI cannot reach Ollama (`Connection error`) | Ollama must listen on all interfaces (Settings > *Expose Ollama to the network*, or `OLLAMA_HOST=0.0.0.0`, then quit and restart Ollama), and the URL must be `http://host.docker.internal:11434`. |
+| Open WebUI TTS/STT fails, or shows `401` | The speech server must run with `--host 0.0.0.0 --api-key ...`, the URL in Open WebUI must be `http://host.docker.internal:8880/v1`, and the *API Key* fields must hold the same key. Test it from the browser: <http://127.0.0.1:8880/docs>. |
+| `rinn-voice` says `401 missing or wrong API key` | The server was started with `--api-key`; pass the same value with `--tts-api-key` or `RINN_TTS_API_KEY`. |
 | Browser never asks for microphone permission | Use `http://localhost:3000`, not the PC's IP; browsers require HTTPS for microphones except on localhost. |
 | `ollama pull` is slow or fails | Retry; it resumes. Check free disk space (about 20 GB needed for the model, plus 5 GB for speech models). |
 
@@ -417,12 +453,13 @@ Environment variables (all optional; flags override them):
 
 | Variable | Used by | Meaning |
 | --- | --- | --- |
-| `RINN_TTS_URL`, `RINN_TTS_VOICE`, `RINN_TTS_MODEL`, `RINN_TTS_SPEED` | `rinn-voice` | Where the speech server is and which voice to ask for |
+| `RINN_TTS_URL`, `RINN_TTS_VOICE`, `RINN_TTS_MODEL`, `RINN_TTS_SPEED`, `RINN_TTS_API_KEY` | `rinn-voice` | Where the speech server is, which voice to ask for, and its key if one is set |
 | `RINN_TTS_BACKEND` | server | `kokoro`, `f5tts`, `qwen3tts` |
+| `RINN_VOICE_SERVER_HOST`, `RINN_VOICE_SERVER_PORT`, `RINN_VOICE_SERVER_API_KEY` | server | Bind address (default `127.0.0.1`), port (`8880`), and the optional key that protects the `/v1` routes |
 | `RINN_STT_MODEL`, `RINN_STT_DEVICE`, `RINN_STT_COMPUTE` | server | Enable and configure the transcription endpoint |
 | `RINN_F5_CKPT`, `RINN_F5_VOCAB`, `RINN_F5_MODEL`, `RINN_F5_REF_AUDIO`, `RINN_F5_REF_TEXT`, `RINN_F5_NFE`, `RINN_F5_SEED` | server | F5-TTS clone |
 | `RINN_QWEN_TTS_MODEL`, `RINN_QWEN_TTS_SPEAKER`, `RINN_QWEN_TTS_REF_AUDIO`, `RINN_QWEN_TTS_REF_TEXT`, `RINN_QWEN_TTS_LANGUAGE` | server | Qwen3-TTS clone |
-| `RINN_MODEL`, `OLLAMA_HOST`, `RINN_THINK`, `RINN_KEEP_ALIVE` | both | RINN model settings (see the project README) |
+| `RINN_MODEL`, `OLLAMA_HOST` / `RINN_OLLAMA_HOST`, `RINN_THINK`, `RINN_KEEP_ALIVE` | both | RINN model settings (see the project README). `RINN_OLLAMA_HOST` wins over `OLLAMA_HOST`, and a bind address such as `0.0.0.0` is read as this PC. |
 
 What "real time" means here: the text is printed token by token as Ollama produces it; the
 audio lags by about one sentence because a sentence must be complete before it can be

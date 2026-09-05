@@ -28,7 +28,10 @@ class VoiceLoop:
     """Wire RINN's streamed text into sentence-level speech.
 
     While the model is still generating sentence N+1, sentence N is being synthesized and
-    sentence N-1 is playing, which is what makes the reply feel live.
+    sentence N-1 is playing, which is what makes the reply feel live. In the interactive
+    session the prompt returns as soon as the reply has been synthesized, so playback can
+    continue in the background and be cut short with ``/stop`` or by asking the next
+    question.
     """
 
     def __init__(
@@ -54,6 +57,8 @@ class VoiceLoop:
         self.speak_filter = speak_filter
         self.chunker_factory = chunker_factory
         self.show_thinking = show_thinking
+        self._speech_thread: threading.Thread | None = None
+        self._cancel = threading.Event()
 
     @property
     def speaking_enabled(self) -> bool:
@@ -61,10 +66,11 @@ class VoiceLoop:
 
     # -- speech in ------------------------------------------------------------
 
-    def listen(self) -> str:
+    def listen(self, stop_event: threading.Event | None = None) -> str:
         """Record one utterance and return its transcript ("" when nothing was heard)."""
         if self.recorder is None or self.transcriber is None:
             raise AudioError("microphone input is not configured (no recorder/transcriber)")
+        self.interrupt()  # never record while RINN is still talking
 
         def state(name: str) -> None:
             if name == "listening":
@@ -72,7 +78,7 @@ class VoiceLoop:
             elif name == "speech":
                 print("hearing you...", file=self.out, flush=True)
 
-        clip = self.recorder.record_utterance(on_state=state)
+        clip = self.recorder.record_utterance(stop_event=stop_event, on_state=state)
         if clip.duration < 0.3:
             return ""
         print("transcribing...", file=self.out, flush=True)
@@ -80,18 +86,26 @@ class VoiceLoop:
 
     # -- speech out -----------------------------------------------------------
 
-    def answer(self, question: str, context: Iterable[ContextDoc] | None = None) -> SpokenAnswer:
-        """Ask RINN and stream the answer to the console and, if configured, the speaker."""
-        result = SpokenAnswer(answer=None)  # type: ignore[arg-type]
+    def answer(self, question: str, context: Iterable[ContextDoc] | None = None, wait_for_playback: bool = True) -> SpokenAnswer:
+        """Ask RINN and stream the answer to the console and, if configured, the speaker.
+
+        Returns once the model has finished and every sentence has been handed to the
+        speaker. With ``wait_for_playback`` it also waits for the audio to finish.
+        If the model call fails or is interrupted, pending speech is cancelled.
+        """
+        self.interrupt()  # a new question silences whatever is still being spoken
         chunker = self.chunker_factory()
         sentences: "queue.Queue[Optional[str]]" = queue.Queue()
         spoken: list[str] = []
         tts_errors: list[str] = []
+        cancel = threading.Event()
+        self._cancel = cancel
+        speaking = self.speaking_enabled
 
         def synth_worker() -> None:
             while True:
                 sentence = sentences.get()
-                if sentence is None:
+                if sentence is None or cancel.is_set():
                     return
                 speech_text = self.speak_filter(sentence).strip()
                 if not speech_text or self.tts is None or self.player is None:
@@ -101,12 +115,19 @@ class VoiceLoop:
                 except (TTSError, ValueError) as exc:
                     tts_errors.append(str(exc))
                     continue
+                if cancel.is_set():
+                    return
                 spoken.append(speech_text)
-                self.player.enqueue(clip)
+                try:
+                    self.player.enqueue(clip)
+                except AudioError as exc:
+                    tts_errors.append(str(exc))
+                    return
 
         worker = threading.Thread(target=synth_worker, name="rinn-tts", daemon=True)
-        if self.speaking_enabled:
+        if speaking:
             worker.start()
+            self._speech_thread = worker
 
         in_thinking = False
 
@@ -125,35 +146,59 @@ class VoiceLoop:
                 in_thinking = False
             self.out.write(chunk.text)
             self.out.flush()
-            if self.speaking_enabled:
+            if speaking:
                 for sentence in chunker.feed(chunk.text):
                     sentences.put(sentence)
 
+        completed = False
         try:
             answer = self.assistant.ask(question, context=context, on_chunk=on_chunk)
+            completed = True
         finally:
             self.out.write("\n")
             self.out.flush()
-            if self.speaking_enabled:
-                for sentence in chunker.flush():
-                    sentences.put(sentence)
-                sentences.put(None)
-                worker.join()
-                self.player.wait()
-                if self.player.errors:
-                    tts_errors.extend(self.player.errors)
-                    self.player.errors.clear()
+            if speaking:
+                if completed:
+                    for sentence in chunker.flush():
+                        sentences.put(sentence)
+                    sentences.put(None)
+                    while worker.is_alive():  # interruptible join
+                        worker.join(0.2)
+                else:
+                    cancel.set()
+                    _drain(sentences)
+                    sentences.put(None)
+                    if self.player is not None:
+                        self.player.stop()
+                    worker.join(timeout=5)
 
-        result.answer = answer
-        result.sentences = spoken
-        result.tts_errors = tts_errors
+        if speaking and wait_for_playback:
+            self.wait_for_speech()
+        if speaking and self.player is not None and self.player.errors:
+            tts_errors.extend(self.player.errors)
+            self.player.errors.clear()
         if tts_errors:
             print(f"[speech problem: {tts_errors[0]}]", file=self.err)
-        return result
+        return SpokenAnswer(answer=answer, sentences=spoken, tts_errors=tts_errors)
+
+    def wait_for_speech(self, poll: float = 0.2) -> None:
+        """Block until synthesis and playback are done (polling so Ctrl+C is honoured)."""
+        thread = self._speech_thread
+        while thread is not None and thread.is_alive():
+            thread.join(poll)
+        if self.player is not None:
+            while not self.player.wait(poll):
+                pass
 
     def interrupt(self) -> None:
+        """Stop speaking: drop queued sentences and cut off the current clip."""
+        self._cancel.set()
         if self.player is not None:
             self.player.stop()
+        thread = self._speech_thread
+        if thread is not None and thread.is_alive():
+            thread.join(timeout=2)
+        self._speech_thread = None
 
     # -- interactive session --------------------------------------------------
 
@@ -165,6 +210,7 @@ class VoiceLoop:
         print(
             f"RINN voice ({self.assistant.llm.model}) ready. "
             + ("Press Enter to talk, or type a question. " if mic else "Type a question. ")
+            + ("/stop silences RINN, " if self.speaking_enabled else "")
             + "/quit to exit.",
             file=self.out,
         )
@@ -173,8 +219,10 @@ class VoiceLoop:
                 line = input_fn("you> ").strip()
             except (EOFError, KeyboardInterrupt):
                 print(file=self.out)
+                self.interrupt()
                 return 0
             if line in ("/quit", "/exit"):
+                self.interrupt()
                 return 0
             if line == "/reset":
                 self.assistant.reset()
@@ -188,6 +236,9 @@ class VoiceLoop:
                     continue
                 try:
                     line = self.listen()
+                except KeyboardInterrupt:
+                    print("(cancelled)", file=self.err)
+                    continue
                 except (AudioError, STTError) as exc:
                     print(f"error: {exc}", file=self.err)
                     continue
@@ -197,9 +248,17 @@ class VoiceLoop:
                 print(f"you (heard): {line}", file=self.out)
             print("rinn> ", end="", file=self.out, flush=True)
             try:
-                self.answer(line, context=docs)
+                self.answer(line, context=docs, wait_for_playback=False)
             except KeyboardInterrupt:
                 self.interrupt()
                 print("(interrupted)", file=self.err)
             except LLMError as exc:
                 print(f"error: {exc}", file=self.err)
+
+
+def _drain(q: "queue.Queue[Optional[str]]") -> None:
+    while True:
+        try:
+            q.get_nowait()
+        except queue.Empty:
+            return

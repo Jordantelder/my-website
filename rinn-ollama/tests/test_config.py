@@ -88,7 +88,9 @@ def test_with_overrides_skips_none():
 @pytest.mark.parametrize(
     "raw, expected",
     [
-        ("0.0.0.0", "http://0.0.0.0:11434"),                     # what people export for `ollama serve`
+        ("0.0.0.0", "http://127.0.0.1:11434"),   # the bind address people export for `ollama serve` is not connectable on Windows
+        ("http://0.0.0.0:11434", "http://127.0.0.1:11434"),
+        ("[::]", "http://[::1]:11434"),
         ("192.168.1.20", "http://192.168.1.20:11434"),
         ("gpu-box:11434", "http://gpu-box:11434"),
         ("HTTP://gpu-box:11434", "http://gpu-box:11434"),
@@ -111,3 +113,8 @@ def test_invalid_hosts_are_rejected(raw):
 
 def test_env_example_parses_to_defaults():
     assert Settings.from_env(env={}, dotenv_path=ROOT / ".env.example") == Settings()
+
+
+def test_client_specific_host_variable_wins_over_ollama_host():
+    env = {"OLLAMA_HOST": "0.0.0.0", "RINN_OLLAMA_HOST": "gpu-box:11434"}
+    assert Settings.from_env(env=env, load_dotenv_file=False).host == "http://gpu-box:11434"

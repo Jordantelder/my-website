@@ -1,5 +1,8 @@
 from __future__ import annotations
 
+import threading
+import time
+
 import numpy as np
 import pytest
 
@@ -53,6 +56,40 @@ def test_recorder_stops_after_silence_following_speech():
     assert sd.input_kwargs["samplerate"] == 16000 and sd.input_kwargs["channels"] == 1
 
 
+def test_recorder_detects_speech_that_starts_during_calibration():
+    script = blocks(0.2, 0.001) + blocks(2.0, 0.3) + blocks(3.0, 0.001)
+    clip = Recorder(sample_rate=16000, silence_seconds=1.2, max_seconds=10, sd=FakeSoundDevice(input_blocks=script)).record_utterance()
+    assert 3.0 <= clip.duration <= 4.0  # kept the speech that overlapped the calibration window
+
+
+def test_recorder_detects_speech_in_a_loud_room():
+    # noise around -33 dBFS, speech around -23 dBFS: less than the 12 dB margin above the floor
+    script = blocks(0.6, 0.03) + blocks(1.2, 0.1) + blocks(3.0, 0.03)
+    states: list[str] = []
+    clip = Recorder(sample_rate=16000, silence_seconds=1.2, max_seconds=10, sd=FakeSoundDevice(input_blocks=script)).record_utterance(on_state=states.append)
+    assert "speech" in states and 2.5 <= clip.duration <= 3.6
+
+
+def test_recorder_gives_up_on_a_stalled_microphone():
+    class SilentStream:
+        def __init__(self, **kwargs):
+            pass
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *exc):
+            return False
+
+    class StalledSD:
+        def InputStream(self, **kwargs):  # noqa: N802
+            return SilentStream(**kwargs)
+
+    started = time.perf_counter()
+    clip = Recorder(max_seconds=0.5, sd=StalledSD()).record_utterance()
+    assert clip.duration == 0.0 and time.perf_counter() - started < 3.0
+
+
 def test_recorder_returns_empty_clip_when_nothing_is_said():
     sd = FakeSoundDevice(input_blocks=blocks(2.0, 0.001))
     clip = Recorder(sample_rate=16000, max_seconds=1.0, sd=sd).record_utterance()
@@ -69,7 +106,7 @@ def test_recorder_reports_unopenable_microphone():
     assert "cannot open microphone" in str(excinfo.value)
 
 
-def test_player_plays_clips_in_order_and_resamples():
+def test_player_plays_clips_in_order_and_resamples_and_closes_promptly():
     sink: list[np.ndarray] = []
     sd = FakeSoundDevice(output_sink=sink)
     player = Player(sample_rate=24000, sd=sd)
@@ -83,13 +120,67 @@ def test_player_plays_clips_in_order_and_resamples():
     assert len(written) == len(expected)
     assert np.allclose(written, expected, atol=1e-6)
     assert player.errors == []
+    started = time.perf_counter()
+    player.close()
+    assert time.perf_counter() - started < 0.5
+    assert not player._thread.is_alive()
+    assert sd.streams[-1].closed
+    with pytest.raises(AudioError):
+        player.enqueue(second)
+
+
+def test_player_ignores_empty_clips():
+    player = Player(sd=FakeSoundDevice())
+    player.enqueue(AudioClip(np.zeros(0, dtype=np.float32), 24000))
+    assert player.wait(timeout=1)
     player.close()
 
 
-def test_player_ignores_empty_clips_and_stop_clears_queue():
-    sd = FakeSoundDevice()
-    player = Player(sd=sd)
-    player.enqueue(AudioClip(np.zeros(0, dtype=np.float32), 24000))
-    assert player.wait(timeout=1)
+def test_stop_before_first_clip_does_not_lose_the_next_one():
+    sink: list[np.ndarray] = []
+    player = Player(sd=FakeSoundDevice(output_sink=sink))
+    player.stop()  # e.g. "/stop" typed before anything was said
+    player.enqueue(AudioClip(tone(1.0, 24000), 24000))
+    assert player.wait(timeout=5)
+    assert len(np.concatenate(sink)) == 24000
+    player.close()
+
+
+def test_stop_interrupts_a_long_clip_and_playback_resumes_afterwards():
+    sink: list[np.ndarray] = []
+    player = Player(sd=FakeSoundDevice(output_sink=sink, write_delay=0.02))
+    player.enqueue(AudioClip(tone(5.0, 24000), 24000))  # 20 slices of 0.25 s
+    deadline = time.perf_counter() + 2
+    while len(sink) < 2 and time.perf_counter() < deadline:
+        time.sleep(0.005)
     player.stop()
+    assert player.wait(timeout=5)
+    assert 2 <= len(sink) < 20
+    before = len(sink)
+    player.enqueue(AudioClip(tone(0.5, 24000), 24000))
+    assert player.wait(timeout=5)
+    assert len(sink) == before + 2 and player.errors == []
+    player.close()
+
+
+def test_player_reports_missing_portaudio_at_construction(monkeypatch):
+    import rinn.voice.audio as audio_module
+
+    def boom():
+        raise AudioError("PortAudio library not found")
+
+    monkeypatch.setattr(audio_module, "_sounddevice", boom)
+    with pytest.raises(AudioError):
+        Player()
+
+
+def test_player_records_device_failures_instead_of_hanging():
+    class BrokenSD:
+        def OutputStream(self, **kwargs):  # noqa: N802
+            raise RuntimeError("Error opening OutputStream: Invalid device")
+
+    player = Player(sd=BrokenSD())
+    player.enqueue(AudioClip(tone(0.2, 24000), 24000))
+    assert player.wait(timeout=5)
+    assert player.errors and "Invalid device" in player.errors[0]
     player.close()

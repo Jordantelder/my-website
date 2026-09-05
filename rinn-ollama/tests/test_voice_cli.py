@@ -7,6 +7,8 @@ import pytest
 from rinn.llm import OllamaLLM
 from rinn.voice import cli
 
+from rinn.voice.audio import AudioError
+
 from conftest import FakeOllamaClient, FakePlayer, FakeTTSClient, FakeTranscriber
 
 
@@ -42,7 +44,7 @@ def test_list_devices(isolated_env, monkeypatch):
 def test_ask_speaks_answer_and_defaults_thinking_off(isolated_env, monkeypatch):
     code, out, err, client, tts, player = run(["--ask", "What is a predicate?"], monkeypatch)
     assert code == 0 and "Spoken answer." in out
-    assert tts.requests == ["Spoken answer. Second sentence here."] or tts.requests[0].startswith("Spoken answer.")
+    assert tts.requests == ["Spoken answer. Second sentence here."]
     assert len(player.clips) == len(tts.requests)
     assert client.calls[0]["think"] is False
     assert player.closed and tts.closed
@@ -89,3 +91,32 @@ def test_interactive_voice_session_with_injected_transcriber(isolated_env, monke
 def test_empty_ask(isolated_env, monkeypatch):
     code, _, err, *_ = run(["--ask", "  "], monkeypatch)
     assert code == cli.EXIT_ERROR and "no question given" in err
+
+
+def test_missing_portaudio_exits_cleanly(isolated_env, monkeypatch):
+    client = FakeOllamaClient()
+    monkeypatch.setattr(cli, "OllamaLLM", lambda settings: OllamaLLM(settings, client=client))
+    monkeypatch.setattr(cli, "TTSClient", lambda settings: FakeTTSClient())
+
+    def broken_player(device=None):
+        raise AudioError("PortAudio library not found")
+
+    monkeypatch.setattr(cli, "Player", broken_player)
+    out, err = io.StringIO(), io.StringIO()
+    code = cli.main(["--ask", "hi"], out=out, err=err)
+    assert code == cli.EXIT_AUDIO and "PortAudio" in err.getvalue() and "--no-speak" in err.getvalue()
+
+
+def test_tts_api_key_flag_reaches_settings(isolated_env, monkeypatch):
+    captured = {}
+
+    def fake_tts(settings):
+        captured["settings"] = settings
+        return FakeTTSClient()
+
+    client = FakeOllamaClient()
+    monkeypatch.setattr(cli, "OllamaLLM", lambda settings: OllamaLLM(settings, client=client))
+    monkeypatch.setattr(cli, "TTSClient", fake_tts)
+    monkeypatch.setattr(cli, "Player", lambda device=None: FakePlayer())
+    code = cli.main(["--ask", "hi", "--tts-api-key", "s3cret", "--tts-url", "http://gpu-box:8880/v1/"], out=io.StringIO(), err=io.StringIO())
+    assert code == 0 and captured["settings"].api_key == "s3cret" and captured["settings"].base_url == "http://gpu-box:8880/v1"
