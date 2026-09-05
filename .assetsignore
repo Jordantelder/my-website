@@ -3,8 +3,9 @@
 # _headers and _redirects on its own. Keep everything that is not website
 # content out of the upload.
 
-# The RINN Python project (never website files)
+# The Python projects (never website files)
 rinn-ollama/
+voicebox/
 
 # Repository and tooling files
 .git/

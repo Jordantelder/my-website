@@ -133,6 +133,33 @@ def test_startup_loads_backend_and_stt_from_environment(monkeypatch):
         assert c.post("/v1/audio/transcriptions", files={"file": ("q.wav", wav, "audio/wav")}).json() == {"text": "loaded large-v3-turbo on auto"}
 
 
+def test_stt_prompt_flag_and_environment(monkeypatch):
+    env: dict[str, str] = {}
+    apply_args_to_env(build_parser().parse_args(["--stt", "large-v3-turbo"]), env)
+    assert "RINN_STT_PROMPT" not in env  # default: the transcriber's own (RINN) vocabulary hint
+    apply_args_to_env(build_parser().parse_args(["--stt", "large-v3-turbo", "--stt-prompt", ""]), env)
+    assert env["RINN_STT_PROMPT"] == ""  # explicit empty string = no hint, for other projects sharing the server
+    apply_args_to_env(build_parser().parse_args(["--stt-prompt", "Maple, Telder"]), env)
+    assert env["RINN_STT_PROMPT"] == "Maple, Telder"
+
+    seen: list[dict] = []
+    monkeypatch.setenv("RINN_TTS_BACKEND", "silence")
+    monkeypatch.setenv("RINN_STT_MODEL", "large-v3-turbo")
+    monkeypatch.setattr(server_module, "FasterWhisperTranscriber", lambda **kwargs: (seen.append(kwargs), FakeTranscriber("ok"))[1])
+    monkeypatch.delenv("RINN_STT_PROMPT", raising=False)
+    with TestClient(create_app()):
+        pass
+    assert "initial_prompt" not in seen[-1]  # untouched default
+    monkeypatch.setenv("RINN_STT_PROMPT", "")
+    with TestClient(create_app()):
+        pass
+    assert seen[-1]["initial_prompt"] is None
+    monkeypatch.setenv("RINN_STT_PROMPT", "Maple, Telder")
+    with TestClient(create_app()):
+        pass
+    assert seen[-1]["initial_prompt"] == "Maple, Telder"
+
+
 def test_startup_failures_are_reported_by_health_and_endpoints(monkeypatch):
     monkeypatch.setenv("RINN_TTS_BACKEND", "nope")
     monkeypatch.setenv("RINN_STT_MODEL", "large-v3-turbo")

@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1E2422">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="apple-touch-icon" href="/icon-192.png">
+<link rel="icon" href="/icon-192.png" type="image/png">
+<title>Voicebox</title>
+<style>
+  :root { color-scheme: light dark; --bg: #f4f5f7; --panel: #ffffff; --ink: #14181d; --muted: #5b6672; --accent: #2f6f9f; --hot: #c0392b; --ok: #2e8b57; --rule: #d8dde3; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #101418; --panel: #171c22; --ink: #e8ecf0; --muted: #9aa6b2; --accent: #6fb0e0; --hot: #e06a5c; --ok: #5fc08a; --rule: #2a323b; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; min-height: 100dvh; display: grid; grid-template-rows: auto 1fr auto; }
+  header { padding: 14px 18px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--rule); }
+  header h1 { font-size: 18px; margin: 0; letter-spacing: .02em; }
+  header button { background: none; border: 1px solid var(--rule); color: var(--muted); border-radius: 8px; padding: 6px 10px; font-size: 13px; }
+  main { padding: 16px 18px; overflow-y: auto; display: grid; gap: 12px; align-content: start; }
+  .msg { background: var(--panel); border: 1px solid var(--rule); border-radius: 12px; padding: 12px 14px; max-width: 60ch; }
+  .msg.you { justify-self: end; border-color: var(--accent); }
+  .msg .who { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+  .msg.err { border-color: var(--hot); color: var(--hot); }
+  .msg .src { font-size: 12px; color: var(--muted); margin-top: 6px; }
+  footer { padding: 14px 18px calc(18px + env(safe-area-inset-bottom)); border-top: 1px solid var(--rule); display: grid; gap: 10px; justify-items: center; }
+  #talk { width: 100%; max-width: 420px; height: 96px; border-radius: 48px; border: 0; font-size: 20px; font-weight: 600; color: #fff; background: var(--accent); touch-action: none; user-select: none; -webkit-user-select: none; }
+  #talk.rec { background: var(--hot); }
+  #talk.busy { background: var(--muted); }
+  #talk:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+  #status { font-size: 13px; color: var(--muted); min-height: 1.2em; }
+  form.type { display: flex; gap: 8px; width: 100%; max-width: 420px; }
+  form.type input { flex: 1; padding: 10px 12px; border-radius: 8px; border: 1px solid var(--rule); background: var(--panel); color: var(--ink); font-size: 15px; }
+  form.type button { padding: 10px 14px; border-radius: 8px; border: 1px solid var(--rule); background: var(--panel); color: var(--ink); }
+  dialog { border: 1px solid var(--rule); border-radius: 12px; background: var(--panel); color: var(--ink); max-width: 420px; width: calc(100% - 32px); }
+  dialog label { display: grid; gap: 4px; margin: 10px 0; font-size: 14px; }
+  dialog input, dialog textarea { padding: 8px 10px; border-radius: 8px; border: 1px solid var(--rule); background: var(--bg); color: var(--ink); font-size: 15px; }
+  dialog menu { display: flex; gap: 8px; justify-content: flex-end; padding: 0; margin: 12px 0 0; }
+  dialog button { padding: 8px 14px; border-radius: 8px; border: 1px solid var(--rule); background: var(--bg); color: var(--ink); }
+  .hint { font-size: 12px; color: var(--muted); }
+</style>
+</head>
+<body>
+<header>
+  <h1>Voicebox</h1>
+  <div>
+    <button id="noteBtn" type="button" aria-label="Add a note">+ Note</button>
+    <button id="setupBtn" type="button" aria-label="Settings">Settings</button>
+  </div>
+</header>
+<main id="log" aria-live="polite">
+  <div class="msg"><div class="who">Voicebox</div>Hold the button and speak. Let go when you are done. You can also type below, or say "remember that ..." to save a note.</div>
+</main>
+<footer>
+  <button id="talk" type="button" aria-pressed="false">Hold to talk</button>
+  <div id="status" role="status"></div>
+  <form class="type" id="typeForm"><input id="typed" placeholder="Or type a question" autocomplete="off"><button type="submit">Send</button></form>
+</footer>
+
+<dialog id="setup">
+  <form method="dialog">
+    <strong>Settings</strong>
+    <label>API key <input id="apiKey" type="password" autocomplete="off"></label>
+    <label>Device name <input id="session" placeholder="phone"></label>
+    <label><input id="autoplay" type="checkbox" checked style="width:auto"> Play answers aloud</label>
+    <menu><button value="reset" type="button" id="resetBtn">Forget conversation</button><button value="ok">Save</button></menu>
+  </form>
+</dialog>
+
+<dialog id="note">
+  <form method="dialog">
+    <strong>Add a note</strong>
+    <label>Title (optional) <input id="noteTitle"></label>
+    <label>Note <textarea id="noteText" rows="5" required></textarea></label>
+    <menu><button value="cancel" type="button" onclick="document.getElementById('note').close('cancel')">Cancel</button><button value="ok" id="noteSave">Save</button></menu>
+  </form>
+</dialog>
+
+<script>
+(function () {
+  const $ = (id) => document.getElementById(id);
+  const store = { get: (k, d) => { try { return localStorage.getItem('voicebox:' + k) ?? d; } catch (e) { return d; } }, set: (k, v) => { try { localStorage.setItem('voicebox:' + k, v); } catch (e) {} } };
+  const cfg = () => ({ url: '', key: store.get('key', ''), session: store.get('session', '') || 'phone-' + store.get('id', ''), autoplay: store.get('autoplay', '1') === '1' });  // url stays '' : the page talks to the server that served it
+  if (!store.get('id', '')) store.set('id', Math.random().toString(36).slice(2, 8));
+  const headers = () => { const h = {}; const k = cfg().key; if (k) h['Authorization'] = 'Bearer ' + k; return h; };
+  const log = $('log'), talk = $('talk'), status = $('status');
+
+  function add(cls, who, text) { const d = document.createElement('div'); d.className = 'msg ' + cls; d.innerHTML = '<div class="who"></div><div class="body"></div>'; d.querySelector('.who').textContent = who; d.querySelector('.body').textContent = text; log.appendChild(d); log.scrollTop = log.scrollHeight; return d; }
+
+  // ---- audio playback: PCM16 chunks scheduled back to back ----
+  // One AudioContext for the life of the page: iOS only lets a context start inside a user gesture,
+  // so it is created/resumed from the button and form handlers and never closed.
+  let ctx = null, nextStart = 0, playing = [];
+  function ensureCtx() { if (!ctx) ctx = new (window.AudioContext || window.webkitAudioContext)(); if (ctx.state === 'suspended') ctx.resume(); return ctx; }
+  function playPcm16(b64, rate) {
+    const c = ensureCtx(); const bytes = atob(b64); const n = bytes.length / 2; if (!n) return; const buf = c.createBuffer(1, n, rate); const ch = buf.getChannelData(0);
+    for (let i = 0; i < n; i++) { const lo = bytes.charCodeAt(2 * i), hi = bytes.charCodeAt(2 * i + 1); let v = (hi << 8) | lo; if (v >= 32768) v -= 65536; ch[i] = v / 32768; }
+    const src = c.createBufferSource(); src.buffer = buf; src.connect(c.destination);
+    const at = Math.max(c.currentTime + 0.05, nextStart); src.start(at); nextStart = at + buf.duration;
+    playing.push(src); src.onended = () => { playing = playing.filter(s => s !== src); };
+  }
+  function stopPlayback() { playing.forEach(s => { try { s.stop(); } catch (e) {} }); playing = []; nextStart = 0; }
+
+  // ---- send a turn and stream events ----
+  let busy = false;
+  async function sendTurn(form) {
+    if (busy) return; busy = true; talk.classList.add('busy'); talk.textContent = 'Thinking...';
+    stopPlayback();
+    const c = cfg(); form.append('session', c.session); form.append('speak', c.autoplay ? 'true' : 'false');
+    let reply = null;
+    try {
+      const res = await fetch((c.url || '') + '/turn', { method: 'POST', body: form, headers: headers() });
+      if (res.status === 401) throw new Error('The server wants an API key. Open Settings.');
+      if (!res.ok) throw new Error('Server error ' + res.status + ': ' + (await res.text()).slice(0, 200));
+      const reader = res.body.getReader(); const dec = new TextDecoder(); let buf = '';
+      while (true) {
+        const { value, done } = await reader.read(); if (done) break;
+        buf += dec.decode(value, { stream: true });
+        let nl; while ((nl = buf.indexOf('\n')) >= 0) { const line = buf.slice(0, nl).trim(); buf = buf.slice(nl + 1); if (line) handle(JSON.parse(line)); }
+      }
+    } catch (err) { add('err', 'Problem', err.message || String(err)); }
+    finally { busy = false; talk.classList.remove('busy'); setListening(false); status.textContent = ''; }
+
+    function handle(ev) {
+      if (ev.type === 'transcript') { add('you', 'You', ev.text); status.textContent = 'Answering...'; }
+      else if (ev.type === 'text') { if (!reply) reply = add('', 'Voicebox', ''); reply.querySelector('.body').textContent += ev.text; log.scrollTop = log.scrollHeight; }
+      else if (ev.type === 'audio') { if (cfg().autoplay) playPcm16(ev.pcm16, ev.sample_rate || 24000); status.textContent = 'Speaking...'; }
+      else if (ev.type === 'note_saved') { add('', 'Saved note', ev.text + ' (' + ev.detail + ')'); }
+      else if (ev.type === 'error') { add('err', 'Problem', ev.detail); }
+      else if (ev.type === 'done') { if (reply && ev.sources && ev.sources.length) { const s = document.createElement('div'); s.className = 'src'; s.textContent = 'Notes consulted: ' + ev.sources.join(', '); reply.appendChild(s); } }
+    }
+  }
+
+  // ---- hold to talk with MediaRecorder ----
+  let recorder = null, chunks = [], stream = null, held = false, starting = false;
+  function setListening(on) { talk.classList.toggle('rec', on); talk.setAttribute('aria-pressed', on ? 'true' : 'false'); talk.textContent = on ? 'Listening... release to send' : 'Hold to talk'; }
+  async function startRec() {
+    if (busy || recorder || starting) return;
+    if (!window.MediaRecorder || !navigator.mediaDevices) { add('err', 'Microphone', 'This browser cannot record audio here. Type your question instead.'); return; }
+    starting = true;
+    try { stream = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: true, noiseSuppression: true } }); }
+    catch (e) { starting = false; add('err', 'Microphone', 'Microphone access was refused. On a phone the page must be opened over HTTPS (see the plan: tailscale serve).'); return; }
+    starting = false;
+    // The first time, the finger lifted to tap "Allow" on the permission prompt: do not start an unattended recording.
+    if (!held) { stream.getTracks().forEach(t => t.stop()); status.textContent = 'Microphone ready. Hold the button and speak.'; return; }
+    ensureCtx();
+    const mime = ['audio/webm;codecs=opus', 'audio/webm', 'audio/mp4', 'audio/ogg;codecs=opus'].find(m => MediaRecorder.isTypeSupported(m)) || '';
+    try {
+      recorder = new MediaRecorder(stream, mime ? { mimeType: mime } : undefined); chunks = [];
+      recorder.ondataavailable = (e) => { if (e.data && e.data.size) chunks.push(e.data); };
+      recorder.onerror = () => { add('err', 'Microphone', 'Recording failed. Try again, or type your question.'); };
+      recorder.onstop = () => {
+        stream.getTracks().forEach(t => t.stop());
+        const blob = new Blob(chunks, { type: recorder.mimeType || 'audio/webm' }); recorder = null;
+        if (blob.size < 2000) { status.textContent = 'Too short. Hold the button while you speak.'; return; }
+        const ext = (blob.type.includes('mp4') ? 'm4a' : blob.type.includes('ogg') ? 'ogg' : 'webm');
+        const form = new FormData(); form.append('audio', blob, 'turn.' + ext); sendTurn(form);
+      };
+      recorder.start(250);
+    } catch (e) { stream.getTracks().forEach(t => t.stop()); recorder = null; add('err', 'Microphone', 'This browser cannot record audio here. Type your question instead.'); return; }
+    setListening(true); status.textContent = '';
+    if (navigator.vibrate) navigator.vibrate(20);
+  }
+  function stopRec() { held = false; if (recorder && recorder.state !== 'inactive') { recorder.stop(); } setListening(false); }
+  talk.addEventListener('pointerdown', (e) => { e.preventDefault(); held = true; talk.setPointerCapture(e.pointerId); startRec(); });
+  talk.addEventListener('pointerup', (e) => { e.preventDefault(); stopRec(); });
+  talk.addEventListener('pointercancel', stopRec);
+  talk.addEventListener('keydown', (e) => { if (e.code === 'Space' && !e.repeat) { e.preventDefault(); held = true; startRec(); } });
+  talk.addEventListener('keyup', (e) => { if (e.code === 'Space') { e.preventDefault(); stopRec(); } });
+  talk.addEventListener('contextmenu', (e) => e.preventDefault());
+
+  // ---- typed questions ----
+  $('typeForm').addEventListener('submit', (e) => { e.preventDefault(); const q = $('typed').value.trim(); if (!q) return; if (cfg().autoplay) ensureCtx(); $('typed').value = ''; add('you', 'You', q); const f = new FormData(); f.append('text', q); sendTurn(f); });
+
+  // ---- settings and notes ----
+  const setup = $('setup');
+  $('setupBtn').addEventListener('click', () => { $('apiKey').value = store.get('key', ''); $('session').value = store.get('session', ''); $('autoplay').checked = store.get('autoplay', '1') === '1'; setup.returnValue = ''; setup.showModal(); });
+  setup.addEventListener('close', () => { if (setup.returnValue === 'ok') { store.set('key', $('apiKey').value.trim()); store.set('session', $('session').value.trim()); store.set('autoplay', $('autoplay').checked ? '1' : '0'); } });
+  $('resetBtn').addEventListener('click', async () => { const c = cfg(); try { await fetch((c.url || '') + '/session/' + encodeURIComponent(c.session) + '/reset', { method: 'POST', headers: headers() }); add('', 'Voicebox', 'Conversation cleared.'); } catch (e) { add('err', 'Problem', 'Could not reach the server.'); } setup.close('cancel'); });
+  const note = $('note');
+  $('noteBtn').addEventListener('click', () => { $('noteTitle').value = ''; $('noteText').value = ''; note.returnValue = ''; note.showModal(); });
+  note.addEventListener('close', async () => {
+    if (note.returnValue !== 'ok' || !$('noteText').value.trim()) return;
+    const c = cfg();
+    try {
+      const res = await fetch((c.url || '') + '/knowledge/notes', { method: 'POST', headers: { ...headers(), 'Content-Type': 'application/json' }, body: JSON.stringify({ text: $('noteText').value.trim(), title: $('noteTitle').value.trim() || null }) });
+      if (res.status === 401) throw new Error('The server wants an API key. Open Settings.');
+      if (!res.ok) throw new Error('Server error ' + res.status);
+      const body = await res.json(); add('', 'Saved note', body.saved);
+    } catch (e) { add('err', 'Problem', e.message || String(e)); }
+  });
+})();
+</script>
+</body>
+</html>

@@ -146,11 +146,17 @@ def create_app(
             stt_model = os.environ.get("RINN_STT_MODEL", "").strip()
             if stt_model:
                 try:
+                    stt_kwargs: dict[str, Any] = {}
+                    if "RINN_STT_PROMPT" in os.environ:
+                        # Vocabulary hint for Whisper. Empty means none: other projects sharing this
+                        # server (Voicebox) must not inherit RINN's regulatory vocabulary.
+                        stt_kwargs["initial_prompt"] = os.environ["RINN_STT_PROMPT"].strip() or None
                     state.transcriber = FasterWhisperTranscriber(
                         model=stt_model,
                         device=os.environ.get("RINN_STT_DEVICE", "auto"),
                         compute_type=os.environ.get("RINN_STT_COMPUTE", "default"),
                         language=os.environ.get("RINN_STT_LANGUAGE", "en") or None,
+                        **stt_kwargs,
                     )
                     print(f"[rinn-voice-server] STT model '{stt_model}' ready", flush=True)
                 except STTError as exc:
@@ -246,6 +252,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--port", type=int, default=int(os.environ.get("RINN_VOICE_SERVER_PORT", "8880")))
     parser.add_argument("--stt", metavar="MODEL", help="enable /v1/audio/transcriptions with this faster-whisper model (e.g. large-v3-turbo)")
     parser.add_argument("--stt-device", default=None, help="cuda, cpu or auto for the STT model")
+    parser.add_argument("--stt-prompt", default=None, metavar="TEXT", help="vocabulary hint given to Whisper (default: RINN's regulatory terms; pass \"\" for none, e.g. when another project uses this server)")
     parser.add_argument("--device", help="torch device for the TTS backend (default: auto)")
     # F5-TTS
     parser.add_argument("--f5-ckpt", help="fine-tuned F5-TTS checkpoint (.pt/.safetensors)")
@@ -280,6 +287,8 @@ def apply_args_to_env(args: argparse.Namespace, env: dict[str, str]) -> None:
         value = getattr(args, attr, None)
         if value is not None and value != "":
             env[key] = str(value)
+    if getattr(args, "stt_prompt", None) is not None:
+        env["RINN_STT_PROMPT"] = args.stt_prompt  # an empty string is meaningful: no vocabulary hint
     if getattr(args, "ref_audio", None):
         env["RINN_F5_REF_AUDIO"] = args.ref_audio
         env["RINN_QWEN_TTS_REF_AUDIO"] = args.ref_audio
