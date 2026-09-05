@@ -1,0 +1,3 @@
+# Cloudflare Workers static assets: wrangler.jsonc serves this whole directory.
+# Never publish the Python project as website files.
+rinn-ollama/
