@@ -11,11 +11,13 @@ import re
 from dataclasses import dataclass, replace
 from pathlib import Path
 from typing import Any, Callable, Mapping, Optional
+from urllib.parse import urlsplit
 
 from dotenv import dotenv_values
 
 DEFAULT_MODEL = "qwen3.8:27b"
 DEFAULT_HOST = "http://localhost:11434"
+DEFAULT_PORT = 11434
 
 _MODEL_TAG_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._\-/]*(:[A-Za-z0-9._\-]+)?$")
 _TRUE = {"1", "true", "yes", "on"}
@@ -36,9 +38,38 @@ def _parse_bool(raw: str, key: str) -> bool:
 
 
 def _normalize_host(raw: str) -> str:
-    host = raw.strip().rstrip("/")
-    if not host.startswith(("http://", "https://")):
+    """Return ``raw`` as a full ``scheme://host[:port]`` URL.
+
+    Mirrors :class:`ollama.Client`: a value without a scheme gets ``http://``
+    and, when it also lacks a port, Ollama's default port 11434 (so
+    ``OLLAMA_HOST=0.0.0.0`` works). Values with an explicit scheme are kept as
+    given, so ``https://ollama.example.com`` stays on port 443.
+    """
+    host = raw.strip()
+    scheme, separator, rest = host.partition("://")
+    if separator:
+        if scheme.lower() not in ("http", "https"):
+            raise ConfigError(f"unsupported scheme {scheme!r} in host {raw!r}; use http:// or https://")
+        rest = rest.rstrip("/")
+        if not rest:
+            raise ConfigError(f"invalid host {raw!r}")
+        host = f"{scheme.lower()}://{rest}"
+        had_scheme = True
+    else:
+        host = host.rstrip("/")
+        if not host:
+            raise ConfigError("host must not be empty")
         host = f"http://{host}"
+        had_scheme = False
+    parts = urlsplit(host)
+    try:
+        port = parts.port
+    except ValueError as exc:
+        raise ConfigError(f"invalid port in host {raw!r}") from exc
+    if not parts.hostname or parts.netloc.endswith(":"):
+        raise ConfigError(f"invalid host {raw!r}")
+    if port is None and not had_scheme:
+        host = f"{parts.scheme}://{parts.netloc}:{DEFAULT_PORT}{parts.path}"
     return host
 
 
@@ -47,7 +78,7 @@ class Settings:
     """Everything needed to talk to Ollama as RINN."""
 
     model: str = DEFAULT_MODEL
-    host: str = DEFAULT_HOST
+    host: str = DEFAULT_HOST  # normalized to scheme://host:port on construction
     temperature: float = 0.4
     top_p: float = 0.9
     num_ctx: int = 32768
@@ -64,8 +95,7 @@ class Settings:
     def __post_init__(self) -> None:
         if not self.model or not _MODEL_TAG_RE.match(self.model):
             raise ConfigError(f"invalid model tag {self.model!r}; expected something like 'qwen3.8:27b'")
-        if not self.host.startswith(("http://", "https://")):
-            raise ConfigError(f"host must start with http:// or https://, got {self.host!r}")
+        object.__setattr__(self, "host", _normalize_host(self.host))
         if not 0.0 <= self.temperature <= 2.0:
             raise ConfigError(f"temperature must be between 0.0 and 2.0, got {self.temperature}")
         if not 0.0 < self.top_p <= 1.0:
@@ -129,7 +159,7 @@ class Settings:
 
         host = (values.get("OLLAMA_HOST") or values.get("RINN_OLLAMA_HOST") or "").strip()
         if host:
-            kwargs["host"] = _normalize_host(host)
+            kwargs["host"] = host  # normalized in __post_init__
 
         numeric: tuple[tuple[str, str, Callable[[str], Any]], ...] = (
             ("RINN_TEMPERATURE", "temperature", float),

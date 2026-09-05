@@ -4,7 +4,7 @@ from datetime import datetime
 
 import pytest
 
-from rinn.assistant import ContextDoc, RinnAssistant, build_user_message, extract_sources, format_context
+from rinn.assistant import ContextDoc, RinnAssistant, build_user_message, extract_mentions, extract_sources, format_context
 from rinn.config import Settings
 from rinn.llm import OllamaLLM
 from rinn.persona import CONTEXT_HEADING, SYSTEM_PROMPT
@@ -106,7 +106,35 @@ def test_extract_sources_orders_cited_docs_first_then_uncited():
     assert extract_sources(text, docs) == ["https://x.example/p", "A.pdf", "B.pdf"]
 
 
-def test_extract_sources_scrapes_when_no_context():
-    text = "Per K183256.pdf and K191948, see https://www.fda.gov/guidance. Also DEN200001."
-    assert extract_sources(text, []) == ["K183256.pdf", "K191948", "DEN200001", "https://www.fda.gov/guidance"]
-    assert extract_sources("no cites here", []) == []
+def test_sources_come_only_from_provided_context():
+    text = "Per K183256.pdf and https://www.fda.gov/guidance this is so."
+    assert extract_sources(text, []) == []  # nothing supplied, nothing is a source
+
+
+def test_extract_mentions_scrapes_identifiers_and_cleans_markdown():
+    text = (
+        "Per K183256.pdf and K191948, see **https://www.fda.gov/media/71018/download** and "
+        "`https://ecfr.gov/x`, also (https://example.org/a). DEN200001 and P170019 too. Repeat K191948."
+    )
+    assert extract_mentions(text) == [
+        "K183256.pdf",
+        "K191948",
+        "DEN200001",
+        "P170019",
+        "https://www.fda.gov/media/71018/download",
+        "https://ecfr.gov/x",
+        "https://example.org/a",
+    ]
+    assert extract_mentions("no cites here") == []
+    assert extract_mentions("K183256.pdf again", exclude=["K183256.pdf"]) == []
+
+
+def test_answer_separates_sources_from_unverified_mentions():
+    client = FakeOllamaClient(replies=["Grounded in [K183256.pdf]; FDA also cleared K999999 per https://www.fda.gov/z."])
+    answer = make(client).ask("q", context=[ContextDoc("K183256.pdf", "summary")])
+    assert answer.sources == ["K183256.pdf"]
+    assert answer.mentions == ["K999999", "https://www.fda.gov/z"]
+
+    client = FakeOllamaClient(replies=["From general knowledge: K999999 (unverified)."])
+    answer = make(client).ask("q")
+    assert answer.sources == [] and answer.mentions == ["K999999"]

@@ -23,6 +23,12 @@ def test_prompt_keeps_original_operational_instructions():
     assert '"""' not in SYSTEM_PROMPT  # must stay embeddable in a Modelfile
 
 
+def test_prompt_forbids_fabricated_sources_and_trailing_source_lists():
+    assert "Never invent a source" in SYSTEM_PROMPT
+    assert "general knowledge and is unverified" in SYSTEM_PROMPT
+    assert 'Do not append a separate "Sources" list' in SYSTEM_PROMPT  # export.py owns the Sources section
+
+
 def test_disclaimer_is_verbatim_report_footer():
     assert DISCLAIMER.startswith("RINN is a research aid for U.S. FDA regulatory affairs.")
     assert DISCLAIMER.endswith("This is not legal advice.")

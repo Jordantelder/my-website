@@ -52,7 +52,9 @@ rinn-ollama/
 │   └── build_modelfile.py    # regenerate Modelfile (--check in CI)
 ├── tests/                    # pytest suite with a fake Ollama client (no server needed)
 ├── .env.example
-└── pyproject.toml
+├── pyproject.toml            # package metadata; `pip install -e ".[dev]"`
+├── requirements.txt          # plain pip alternative
+└── requirements-dev.txt
 ```
 
 ## Quick start
@@ -107,7 +109,7 @@ CLI flags. Every value is optional.
 | Variable | Default | Meaning |
 | --- | --- | --- |
 | `RINN_MODEL` | `qwen3.8:27b` | Ollama model tag. Also `qwen3.8:27b-q8_0` (30 GB), `qwen3.8:27b-mlx` (Apple). |
-| `OLLAMA_HOST` | `http://localhost:11434` | Ollama server. `host:port` without a scheme is accepted. |
+| `OLLAMA_HOST` | `http://localhost:11434` | Ollama server. `host:port` or a bare host is accepted; without a scheme the default port 11434 is assumed, exactly as `ollama` itself does. |
 | `RINN_TEMPERATURE` | `0.4` | Same value the original `app.py` used. |
 | `RINN_TOP_P` | `0.9` | Nucleus sampling. |
 | `RINN_NUM_CTX` | `32768` | Context window. Lower it (e.g. `16384`) if the GPU runs out of memory. |
@@ -117,12 +119,22 @@ CLI flags. Every value is optional.
 | `RINN_THINK` | `true` | Qwen3.8 thinking mode. `false` for faster, shallower answers. |
 | `RINN_SHOW_THINKING` | `false` | Print the reasoning stream and include it in exports. |
 | `RINN_KEEP_ALIVE` | `10m` | How long Ollama keeps the model loaded after a request. |
-| `RINN_TIMEOUT` | `600` | Seconds to wait for a response. |
+| `RINN_TIMEOUT` | `600` | Seconds to wait for a response. Connecting to the server is capped at 10 seconds so a wrong host fails fast. |
 | `RINN_MAX_HISTORY_TURNS` | `20` | Question/answer pairs kept in the conversation. |
 | `RINN_EXTRA_INSTRUCTIONS` | unset | Appended to the system prompt for a deployment. |
 
 CLI flags `--model`, `--host`, `--temperature`, `--num-ctx`, `--no-think`,
 `--show-thinking` override the corresponding variables for one run.
+
+### Sources in reports
+
+A report's **Sources** section lists only the documents that were actually
+supplied as context (`--context`, `/context`, or `ContextDoc` objects), in the
+order the answer cited them. Submission numbers or URLs the model wrote from
+memory are collected under **Mentioned in answer (unverified)** instead, and
+the system prompt tells the model to say when it is answering from general
+knowledge. Pressing Ctrl-C while an answer streams aborts that answer without
+adding it to the conversation.
 
 If the model rejects the `think` parameter (a base model without a thinking
 capability), the client retries once without it and keeps it off for the rest
@@ -168,5 +180,5 @@ python scripts/build_modelfile.py --check  # fails if Modelfile is stale
 
 This project lives inside the `my-website` repository, whose Cloudflare
 Workers configuration uploads the repository root as static assets. The root
-`.assetsignore` excludes `rinn-ollama/` so nothing here is published with the
-website.
+`.assetsignore` excludes `rinn-ollama/` (and repository files such as `.git/`
+and `wrangler.jsonc`) so nothing here is published with the website.

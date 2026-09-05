@@ -16,8 +16,11 @@ from .config import Settings
 from .llm import ChunkCallback, OllamaLLM, Reply
 from .persona import CONTEXT_HEADING, build_system_prompt
 
-_URL_RE = re.compile(r"https?://[^\s\]\)>\"']+")
+# Markdown emphasis and code-span characters are excluded so "**https://x**" and
+# "`https://x`" do not leak their delimiters into the scraped URL.
+_URL_RE = re.compile(r"https?://[^\s\]\)>\"'*`]+")
 _SUBMISSION_RE = re.compile(r"\b(?:K|P|DEN)\d{6}(?:\.(?:pdf|txt))?\b")
+_TRAILING_PUNCTUATION = ".,;:*_`~"
 
 
 @dataclass(frozen=True)
@@ -43,7 +46,13 @@ class ContextDoc:
 
 @dataclass
 class Answer:
-    """One question/answer exchange, ready for display or export."""
+    """One question/answer exchange, ready for display or export.
+
+    ``sources`` are the documents that were actually supplied as context.
+    ``mentions`` are identifiers (510(k)/PMA/De Novo numbers, URLs) the model
+    wrote into the answer without a matching context document; they are
+    unverified and reports label them as such.
+    """
 
     question: str
     text: str
@@ -51,6 +60,7 @@ class Answer:
     generated_at: datetime
     thinking: Optional[str] = None
     sources: list[str] = field(default_factory=list)
+    mentions: list[str] = field(default_factory=list)
     prompt_tokens: Optional[int] = None
     completion_tokens: Optional[int] = None
 
@@ -77,34 +87,38 @@ def build_user_message(question: str, docs: Sequence[ContextDoc]) -> str:
 
 
 def extract_sources(text: str, docs: Sequence[ContextDoc]) -> list[str]:
-    """Sources for the report footer.
+    """Sources for the report: every provided document, cited ones first.
 
-    With context: every provided document, cited ones first in order of first
-    citation. Without context: a best-effort scrape of URLs and FDA submission
-    numbers the model mentioned.
+    Only documents that were actually supplied count as sources; anything the
+    model cites from memory is reported separately by :func:`extract_mentions`.
     """
+    ranked = []
+    for doc in docs:
+        position = text.find(doc.tag())
+        if position == -1:
+            position = text.find(doc.source)
+        ranked.append((position if position != -1 else len(text) + 1, doc.source))
     ordered: list[str] = []
-
-    def add(source: str) -> None:
+    for _, source in sorted(ranked, key=lambda item: item[0]):
         if source not in ordered:
             ordered.append(source)
+    return ordered
 
-    if docs:
-        ranked = []
-        for doc in docs:
-            position = text.find(doc.tag())
-            if position == -1:
-                position = text.find(doc.source)
-            ranked.append((position if position != -1 else len(text) + 1, doc.source))
-        for _, source in sorted(ranked, key=lambda item: item[0]):
-            add(source)
-        return ordered
+
+def extract_mentions(text: str, exclude: Iterable[str] = ()) -> list[str]:
+    """Submission numbers and URLs the model mentioned that are not in ``exclude``."""
+    known = set(exclude)
+    found: list[str] = []
+
+    def add(item: str) -> None:
+        if item and item not in known and item not in found:
+            found.append(item)
 
     for match in _SUBMISSION_RE.finditer(text):
         add(match.group(0))
     for match in _URL_RE.finditer(text):
-        add(match.group(0).rstrip(".,;:"))
-    return ordered
+        add(match.group(0).rstrip(_TRAILING_PUNCTUATION))
+    return found
 
 
 class RinnAssistant:
@@ -145,13 +159,15 @@ class RinnAssistant:
         self.history.append({"role": "assistant", "content": reply.content})
         self._trim_history()
 
+        sources = extract_sources(reply.content, docs)
         return Answer(
             question=question,
             text=reply.content,
             model=reply.model,
             generated_at=self._clock(),
             thinking=reply.thinking,
-            sources=extract_sources(reply.content, docs),
+            sources=sources,
+            mentions=extract_mentions(reply.content, exclude=sources),
             prompt_tokens=reply.prompt_tokens,
             completion_tokens=reply.completion_tokens,
         )

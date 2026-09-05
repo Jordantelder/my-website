@@ -10,7 +10,12 @@ from rinn.llm import OllamaLLM
 
 
 class FakeOllamaClient:
-    """Stand-in for ollama.Client that never touches the network."""
+    """Stand-in for ollama.Client that never touches the network.
+
+    Mirrors the real client's timing: for ``stream=True`` nothing happens until
+    the caller iterates, so request errors surface on the first ``next()``.
+    ``stream_error`` is raised after the first content chunk has been yielded.
+    """
 
     def __init__(
         self,
@@ -18,6 +23,7 @@ class FakeOllamaClient:
         models: Iterable[str] = ("qwen3.8:27b",),
         thinking: str | None = "thinking about it",
         chat_errors: Iterable[BaseException] = (),
+        stream_error: BaseException | None = None,
         show_error: BaseException | None = None,
         list_error: BaseException | None = None,
     ) -> None:
@@ -25,6 +31,7 @@ class FakeOllamaClient:
         self.models = list(models)
         self.thinking = thinking
         self.chat_errors = list(chat_errors)
+        self.stream_error = stream_error
         self.show_error = show_error
         self.list_error = list_error
         self.calls: list[dict[str, Any]] = []
@@ -33,7 +40,7 @@ class FakeOllamaClient:
         if self.show_error is not None:
             raise self.show_error
         if model not in self.models:
-            raise ollama.ResponseError(f'model "{model}" not found, try pulling it first', 404)
+            raise ollama.ResponseError(f"model '{model}' not found", 404)
         return ollama.ShowResponse(model_info={}, capabilities=["completion", "thinking"])
 
     def list(self) -> ollama.ListResponse:
@@ -43,27 +50,33 @@ class FakeOllamaClient:
 
     def chat(self, **kwargs: Any):
         self.calls.append(kwargs)
+        if kwargs.get("stream"):
+            return self._stream(kwargs["model"])  # generator: runs on first next(), like ollama.Client
         if self.chat_errors:
             raise self.chat_errors.pop(0)
-        text = self.replies.pop(0) if self.replies else "stub answer"
-        model = kwargs["model"]
-        if kwargs.get("stream"):
-            return self._stream(model, text)
         return ollama.ChatResponse(
-            model=model,
+            model=kwargs["model"],
             done=True,
             done_reason="stop",
             prompt_eval_count=11,
             eval_count=7,
             total_duration=1234,
-            message=ollama.Message(role="assistant", content=text, thinking=self.thinking),
+            message=ollama.Message(role="assistant", content=self._next_reply(), thinking=self.thinking),
         )
 
-    def _stream(self, model: str, text: str):
+    def _next_reply(self) -> str:
+        return self.replies.pop(0) if self.replies else "stub answer"
+
+    def _stream(self, model: str):
+        if self.chat_errors:
+            raise self.chat_errors.pop(0)
+        text = self._next_reply()
         if self.thinking:
             yield ollama.ChatResponse(model=model, message=ollama.Message(role="assistant", thinking=self.thinking))
         half = max(1, len(text) // 2)
         yield ollama.ChatResponse(model=model, message=ollama.Message(role="assistant", content=text[:half]))
+        if self.stream_error is not None:
+            raise self.stream_error
         yield ollama.ChatResponse(
             model=model,
             done=True,

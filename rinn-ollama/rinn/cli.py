@@ -17,6 +17,7 @@ EXIT_OK = 0
 EXIT_ERROR = 1
 EXIT_OLLAMA_UNAVAILABLE = 2
 EXIT_MODEL_MISSING = 3
+EXIT_INTERRUPTED = 130
 
 HELP_TEXT = """Commands:
   /help              show this help
@@ -63,7 +64,7 @@ def load_context_files(paths: Sequence[str]) -> list[ContextDoc]:
     """Read plain-text files as context documents (source = file name)."""
     docs: list[ContextDoc] = []
     for raw in paths:
-        path = Path(raw)
+        path = Path(raw).expanduser()
         text = path.read_text(encoding="utf-8", errors="replace")
         docs.append(ContextDoc(source=path.name, text=text, kind="file"))
     return docs
@@ -129,15 +130,31 @@ def ask_and_print(assistant: RinnAssistant, question: str, docs: list[ContextDoc
     return answer
 
 
+def write_report(assistant: RinnAssistant, answer: Answer, path: str, out: TextIO, err: TextIO) -> bool:
+    """Save ``answer`` as Markdown; report problems instead of raising."""
+    target = Path(path).expanduser()
+    existed = target.is_file()
+    try:
+        saved = save_markdown(answer, target, include_thinking=assistant.settings.show_thinking)
+    except OSError as exc:
+        print(f"cannot write {target}: {exc}", file=err)
+        return False
+    suffix = " (replaced existing file)" if existed else ""
+    print(f"saved report to {saved}{suffix}", file=out)
+    return True
+
+
 def run_once(assistant: RinnAssistant, question: str, docs: list[ContextDoc], export: str | None, out: TextIO, err: TextIO) -> int:
     try:
         answer = ask_and_print(assistant, question, docs, out)
     except LLMError as exc:
         print(f"error: {exc}", file=err)
         return _exit_code_for(exc)
-    if export:
-        path = save_markdown(answer, export, include_thinking=assistant.settings.show_thinking)
-        print(f"saved report to {path}", file=err)
+    except KeyboardInterrupt:
+        print("(interrupted)", file=err)
+        return EXIT_INTERRUPTED
+    if export and not write_report(assistant, answer, export, err, err):
+        return EXIT_ERROR
     return EXIT_OK
 
 
@@ -181,8 +198,7 @@ def run_repl(assistant: RinnAssistant, docs: list[ContextDoc], out: TextIO, err:
                 elif not argument:
                     print("usage: /export PATH", file=err)
                 else:
-                    path = save_markdown(last_answer, argument, include_thinking=assistant.settings.show_thinking)
-                    print(f"saved report to {path}", file=out)
+                    write_report(assistant, last_answer, argument, out, err)
             else:
                 print(f"unknown command {command}; type /help", file=err)
             continue
@@ -190,6 +206,8 @@ def run_repl(assistant: RinnAssistant, docs: list[ContextDoc], out: TextIO, err:
         print("rinn> ", end="", file=out, flush=True)
         try:
             last_answer = ask_and_print(assistant, line, docs, out)
+        except KeyboardInterrupt:
+            print("(interrupted; the question was not added to the conversation)", file=err)
         except LLMError as exc:
             print(f"error: {exc}", file=err)
             if isinstance(exc, (OllamaUnavailable, ModelNotAvailable)):
@@ -217,6 +235,10 @@ def main(argv: Sequence[str] | None = None, out: TextIO = sys.stdout, err: TextI
         print(build_system_prompt(settings.extra_instructions), file=out)
         return EXIT_OK
 
+    if args.ask is not None and not args.ask.strip():
+        print("no question given (use --ask QUESTION or pipe text on stdin)", file=err)
+        return EXIT_ERROR
+
     llm = OllamaLLM(settings)
     if args.check:
         return run_check(llm, out, err)
@@ -240,7 +262,7 @@ def main(argv: Sequence[str] | None = None, out: TextIO = sys.stdout, err: TextI
     if not sys.stdin.isatty():
         question = sys.stdin.read()
         if not question.strip():
-            print("no question given (use --ask or pipe text on stdin)", file=err)
+            print("no question given (use --ask QUESTION or pipe text on stdin)", file=err)
             return EXIT_ERROR
         return run_once(assistant, question, docs, args.export, out, err)
     return run_repl(assistant, docs, out, err)

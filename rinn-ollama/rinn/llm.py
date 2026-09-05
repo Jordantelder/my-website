@@ -9,19 +9,24 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any, Callable, Iterator, Mapping, Optional, Sequence
 
+import httpx
 import ollama
-
-try:  # httpx is the transport underneath the ollama client
-    import httpx
-
-    _TRANSPORT_ERRORS: tuple[type[BaseException], ...] = (ConnectionError, httpx.TransportError)
-except ImportError:  # pragma: no cover - httpx is a hard dependency of ollama
-    _TRANSPORT_ERRORS = (ConnectionError,)
 
 from .config import Settings
 
 Message = Mapping[str, Any]
 ChunkCallback = Callable[["Chunk"], None]
+
+# Bound TCP connect separately from generation so an unreachable remote host
+# fails in seconds instead of waiting the full read timeout.
+CONNECT_TIMEOUT_SECONDS = 10.0
+
+# The ollama client turns httpx.ConnectError into the builtin ConnectionError for
+# non-streaming calls and lets httpx errors through for streaming ones.
+_TRANSPORT_ERRORS: tuple[type[BaseException], ...] = (ConnectionError, httpx.TransportError)
+# A server that answers HTTP but is not Ollama yields json.JSONDecodeError (HTML
+# body) or pydantic ValidationError (other JSON); both are ValueError subclasses.
+_UNEXPECTED_RESPONSE_ERRORS: tuple[type[BaseException], ...] = (ValueError,)
 
 
 class LLMError(RuntimeError):
@@ -66,7 +71,10 @@ class OllamaLLM:
 
     def __init__(self, settings: Settings, client: Any | None = None) -> None:
         self.settings = settings
-        self._client = client if client is not None else ollama.Client(host=settings.host, timeout=settings.timeout)
+        if client is None:
+            timeout = httpx.Timeout(settings.timeout, connect=min(CONNECT_TIMEOUT_SECONDS, settings.timeout))
+            client = ollama.Client(host=settings.host, timeout=timeout)
+        self._client = client
         # Flipped to False if the server rejects the ``think`` parameter for this model.
         self._think_supported = True
 
@@ -78,21 +86,11 @@ class OllamaLLM:
 
     def ensure_model(self) -> None:
         """Raise ``ModelNotAvailable`` or ``OllamaUnavailable`` if RINN cannot run."""
-        try:
-            self._client.show(self.model)
-        except ollama.ResponseError as exc:
-            raise self._translate(exc) from exc
-        except _TRANSPORT_ERRORS as exc:
-            raise self._unavailable(exc) from exc
+        self._guard(lambda: self._client.show(self.model))
 
     def available_models(self) -> list[str]:
         """Names of the models present on the server."""
-        try:
-            listing = self._client.list()
-        except ollama.ResponseError as exc:
-            raise self._translate(exc) from exc
-        except _TRANSPORT_ERRORS as exc:
-            raise self._unavailable(exc) from exc
+        listing = self._guard(self._client.list)
         return [entry.model for entry in listing.models if entry.model]
 
     # -- chat -----------------------------------------------------------------
@@ -125,13 +123,12 @@ class OllamaLLM:
 
         if first is not None:
             consume(first)
-        try:
+
+        def drain() -> None:
             for part in rest:
                 consume(part)
-        except ollama.ResponseError as exc:
-            raise self._translate(exc) from exc
-        except _TRANSPORT_ERRORS as exc:
-            raise self._unavailable(exc) from exc
+
+        self._guard(drain)
 
         if last is None:
             raise LLMError(f"Ollama returned an empty stream for model {self.model!r}")
@@ -157,6 +154,17 @@ class OllamaLLM:
             kwargs["think"] = self.settings.think
         return kwargs
 
+    def _guard(self, fn: Callable[[], Any]) -> Any:
+        """Run ``fn`` translating every Ollama/transport failure into an ``LLMError``."""
+        try:
+            return fn()
+        except ollama.ResponseError as exc:
+            raise self._translate(exc) from exc
+        except _TRANSPORT_ERRORS as exc:
+            raise self._unavailable(exc) from exc
+        except _UNEXPECTED_RESPONSE_ERRORS as exc:
+            raise self._unexpected(exc) from exc
+
     def _call(self, fn: Callable[[dict[str, Any]], Any], messages: list[dict[str, Any]], stream: bool) -> Any:
         kwargs = self._kwargs(messages, stream)
         try:
@@ -166,15 +174,12 @@ class OllamaLLM:
                 # Base model without a thinking capability: retry once without the flag.
                 self._think_supported = False
                 kwargs.pop("think")
-                try:
-                    return fn(kwargs)
-                except ollama.ResponseError as retry_exc:
-                    raise self._translate(retry_exc) from retry_exc
-                except _TRANSPORT_ERRORS as retry_exc:
-                    raise self._unavailable(retry_exc) from retry_exc
+                return self._guard(lambda: fn(kwargs))
             raise self._translate(exc) from exc
         except _TRANSPORT_ERRORS as exc:
             raise self._unavailable(exc) from exc
+        except _UNEXPECTED_RESPONSE_ERRORS as exc:
+            raise self._unexpected(exc) from exc
 
     @staticmethod
     def _is_think_rejection(exc: ollama.ResponseError) -> bool:
@@ -193,15 +198,25 @@ class OllamaLLM:
 
     def _translate(self, exc: ollama.ResponseError) -> LLMError:
         message = str(exc.error)
-        if exc.status_code == 404 or "not found" in message.lower():
+        lowered = message.lower()
+        # Ollama phrases a missing model as `model 'X' not found` (HTTP 404) or, inside a
+        # stream, as an error line with no HTTP status. A bare 404 from a proxy is not that.
+        if "not found" in lowered and "model" in lowered:
             return ModelNotAvailable(
                 f"model {self.model!r} is not available on {self.settings.host}. "
                 f"Pull it with:  ollama pull {self.model}"
             )
-        return LLMError(f"Ollama error for model {self.model!r}: {message} (status {exc.status_code})")
+        status = f" (status {exc.status_code})" if exc.status_code >= 0 else ""
+        return LLMError(f"Ollama error for model {self.model!r}: {message}{status}")
 
     def _unavailable(self, exc: BaseException) -> OllamaUnavailable:
         return OllamaUnavailable(
             f"cannot reach Ollama at {self.settings.host} ({exc.__class__.__name__}: {exc}). "
             "Is `ollama serve` running?"
+        )
+
+    def _unexpected(self, exc: BaseException) -> LLMError:
+        return LLMError(
+            f"unexpected response from {self.settings.host}; is this an Ollama server? "
+            f"({exc.__class__.__name__}: {str(exc).splitlines()[0] if str(exc) else exc.__class__.__name__})"
         )

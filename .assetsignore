@@ -1,3 +1,19 @@
-# Cloudflare Workers static assets: wrangler.jsonc serves this whole directory.
-# Never publish the Python project as website files.
+# Cloudflare Workers static assets: wrangler.jsonc serves this whole directory
+# ("assets.directory": "."), and wrangler only excludes .assetsignore,
+# _headers and _redirects on its own. Keep everything that is not website
+# content out of the upload.
+
+# The RINN Python project (never website files)
 rinn-ollama/
+
+# Repository and tooling files
+.git/
+.gitignore
+.github/
+wrangler.jsonc
+.wrangler/
+node_modules/
+
+# Local secrets, if ever present
+.dev.vars*
+.env*

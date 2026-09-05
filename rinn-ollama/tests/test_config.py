@@ -1,8 +1,12 @@
 from __future__ import annotations
 
+from pathlib import Path
+
 import pytest
 
 from rinn.config import ConfigError, Settings
+
+ROOT = Path(__file__).resolve().parent.parent
 
 
 def test_defaults_match_rinn_model():
@@ -57,6 +61,7 @@ def test_ignores_blank_values():
         ({"RINN_THINK": "maybe"}, "RINN_THINK"),
         ({"RINN_NUM_CTX": "12"}, "num_ctx"),
         ({"RINN_MODEL": "bad tag!"}, "model tag"),
+        ({"OLLAMA_HOST": "ftp://gpu-box"}, "scheme"),
         ({"RINN_TOP_P": "0"}, "top_p"),
         ({"RINN_NUM_PREDICT": "0"}, "num_predict"),
     ],
@@ -78,3 +83,31 @@ def test_with_overrides_skips_none():
     assert base.with_overrides(model=None, temperature=None) is base
     changed = base.with_overrides(model="qwen3.8:27b-q8_0", think=False)
     assert changed.model == "qwen3.8:27b-q8_0" and changed.think is False and changed.temperature == 0.4
+
+
+@pytest.mark.parametrize(
+    "raw, expected",
+    [
+        ("0.0.0.0", "http://0.0.0.0:11434"),                     # what people export for `ollama serve`
+        ("192.168.1.20", "http://192.168.1.20:11434"),
+        ("gpu-box:11434", "http://gpu-box:11434"),
+        ("HTTP://gpu-box:11434", "http://gpu-box:11434"),
+        ("http://gpu-box:11434/", "http://gpu-box:11434"),
+        ("https://ollama.example.com", "https://ollama.example.com"),  # explicit scheme keeps port 443
+        ("http://localhost", "http://localhost"),                    # explicit scheme, no port: as ollama does
+        ("[::1]", "http://[::1]:11434"),
+    ],
+)
+def test_host_normalization_matches_ollama_client(raw, expected):
+    assert Settings(host=raw).host == expected
+    assert Settings.from_env(env={"OLLAMA_HOST": raw}, load_dotenv_file=False).host == expected
+
+
+@pytest.mark.parametrize("raw", ["", "   ", "ftp://gpu-box", "http://", "http:///", "gpu-box:notaport", "gpu-box:", "http://gpu-box:"])
+def test_invalid_hosts_are_rejected(raw):
+    with pytest.raises(ConfigError):
+        Settings(host=raw)
+
+
+def test_env_example_parses_to_defaults():
+    assert Settings.from_env(env={}, dotenv_path=ROOT / ".env.example") == Settings()

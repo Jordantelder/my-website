@@ -3,7 +3,7 @@ from __future__ import annotations
 from datetime import datetime
 
 from rinn.assistant import Answer
-from rinn.export import render_markdown, save_markdown
+from rinn.export import MENTIONS_HEADING, render_markdown, save_markdown
 from rinn.persona import DISCLAIMER, REPORT_TITLE
 
 
@@ -42,3 +42,19 @@ def test_sources_section_omitted_when_empty():
 def test_save_creates_parent_directories(tmp_path):
     target = save_markdown(sample(), tmp_path / "exports" / "answer.md")
     assert target.read_text(encoding="utf-8") == render_markdown(sample())
+
+
+def test_unverified_mentions_are_labelled_separately():
+    answer = sample()
+    answer.mentions = ["K999999", "https://www.fda.gov/z"]
+    md = render_markdown(answer)
+    assert f"## {MENTIONS_HEADING}\n\n- K999999\n- https://www.fda.gov/z\n" in md
+    assert md.index("## Sources") < md.index(f"## {MENTIONS_HEADING}")
+    answer.mentions = []
+    assert MENTIONS_HEADING not in render_markdown(answer)
+
+
+def test_save_expands_tilde(tmp_path, monkeypatch):
+    monkeypatch.setenv("HOME", str(tmp_path))
+    target = save_markdown(sample(), "~/reports/answer.md")
+    assert target == tmp_path / "reports" / "answer.md" and target.exists()
