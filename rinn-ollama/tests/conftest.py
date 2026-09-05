@@ -101,3 +101,154 @@ def fake_client() -> FakeOllamaClient:
 @pytest.fixture
 def llm(settings: Settings, fake_client: FakeOllamaClient) -> OllamaLLM:
     return OllamaLLM(settings, client=fake_client)
+
+
+# ---------------------------------------------------------------------------
+# Voice-layer fakes (no microphone, speaker, TTS server, or Whisper model needed)
+# ---------------------------------------------------------------------------
+import threading
+import time
+
+import numpy as np
+
+from rinn.voice.audio import AudioClip
+from rinn.voice.tts_client import TTSError
+
+
+class FakeTTSClient:
+    """Stands in for TTSClient: records requested sentences, returns short clips."""
+
+    def __init__(self, fail_on: Iterable[str] = (), healthy: bool = True, voices: Iterable[str] = ("af_bella", "af_heart")):
+        self.requests: list[str] = []
+        self.fail_on = set(fail_on)
+        self.healthy = healthy
+        self._voices = list(voices)
+        self.closed = False
+
+    def health(self) -> bool:
+        return self.healthy
+
+    def voices(self) -> list[str]:
+        return list(self._voices)
+
+    def synthesize(self, text: str, voice=None, speed=None) -> AudioClip:
+        self.requests.append(text)
+        if text in self.fail_on:
+            raise TTSError(f"synthesis failed for {text!r}")
+        samples = np.full(int(0.01 * len(text) * 24000), 0.1, dtype=np.float32)
+        return AudioClip(samples, 24000)
+
+    def close(self) -> None:
+        self.closed = True
+
+
+class FakePlayer:
+    """Stands in for Player: records clips in order."""
+
+    def __init__(self):
+        self.clips: list[AudioClip] = []
+        self.errors: list[str] = []
+        self.stopped = 0
+        self.closed = False
+
+    def enqueue(self, clip: AudioClip) -> None:
+        self.clips.append(clip)
+
+    def wait(self, timeout=None) -> bool:
+        return True
+
+    def stop(self) -> None:
+        self.stopped += 1
+
+    def close(self) -> None:
+        self.closed = True
+
+
+class FakeTranscriber:
+    def __init__(self, text: str = "what testing does a single-use endoscope need"):
+        self.text = text
+        self.calls: list[tuple[int, int]] = []
+
+    def transcribe(self, samples, sample_rate) -> str:
+        self.calls.append((len(samples), sample_rate))
+        return self.text
+
+
+class FakeRecorder:
+    def __init__(self, seconds: float = 2.0, sample_rate: int = 16000):
+        self.seconds = seconds
+        self.sample_rate = sample_rate
+        self.calls = 0
+
+    def record_utterance(self, stop_event=None, on_state=None) -> AudioClip:
+        self.calls += 1
+        if on_state:
+            on_state("listening")
+            on_state("speech")
+        return AudioClip(np.zeros(int(self.seconds * self.sample_rate), dtype=np.float32), self.sample_rate)
+
+
+class FakeInputStream:
+    """Feeds scripted blocks to the sounddevice-style callback on a background thread."""
+
+    def __init__(self, blocks, **kwargs):
+        self.callback = kwargs["callback"]
+        self.kwargs = kwargs
+        self.blocks = list(blocks)
+        self._stop = threading.Event()
+        self._thread = None
+
+    def __enter__(self):
+        self._thread = threading.Thread(target=self._feed, daemon=True)
+        self._thread.start()
+        return self
+
+    def __exit__(self, *exc):
+        self._stop.set()
+        if self._thread is not None:
+            self._thread.join(timeout=2)
+
+    def _feed(self):
+        index = 0
+        template = self.blocks[-1] if self.blocks else np.zeros((480, 1), dtype=np.float32)
+        while not self._stop.is_set():
+            block = self.blocks[index] if index < len(self.blocks) else np.zeros_like(template)
+            index += 1
+            self.callback(block, len(block), None, None)
+            time.sleep(0.0005)
+
+
+class FakeOutputStream:
+    def __init__(self, sink, **kwargs):
+        self.sink = sink
+        self.kwargs = kwargs
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *exc):
+        return False
+
+    def write(self, data):
+        self.sink.append(np.array(data, copy=True).reshape(-1))
+
+
+class FakeSoundDevice:
+    """Minimal stand-in for the sounddevice module."""
+
+    def __init__(self, input_blocks=(), output_sink=None):
+        self.input_blocks = list(input_blocks)
+        self.output_sink = output_sink if output_sink is not None else []
+        self.input_kwargs = None
+        self.output_kwargs = None
+
+    def InputStream(self, **kwargs):  # noqa: N802 - mirrors sounddevice
+        self.input_kwargs = kwargs
+        return FakeInputStream(self.input_blocks, **kwargs)
+
+    def OutputStream(self, **kwargs):  # noqa: N802
+        self.output_kwargs = kwargs
+        return FakeOutputStream(self.output_sink, **kwargs)
+
+    def query_devices(self):
+        return "  0 Fake Microphone, 1 in\n  1 Fake Speakers, 0 in 2 out"

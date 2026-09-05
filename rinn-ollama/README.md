@@ -46,7 +46,14 @@ rinn-ollama/
 │   ├── assistant.py          # RinnAssistant: memory, ContextDoc grounding, source list
 │   ├── export.py             # Markdown report in the RINN_answer layout
 │   ├── modelfile.py          # renders the Modelfile from persona + settings
-│   └── cli.py                # `rinn` / `python -m rinn`
+│   ├── cli.py                # `rinn` / `python -m rinn`
+│   └── voice/                # microphone in, speech out (see docs/VOICE_ASSISTANT_PLAN.md)
+│       ├── cli.py            # `rinn-voice`: talk to RINN, hear the answer
+│       ├── server.py         # `rinn-voice-server`: OpenAI-compatible TTS (+ Whisper STT) server
+│       ├── tts_backends.py   # kokoro (stock voices), f5tts / qwen3tts (your cloned voice)
+│       ├── loop.py, chunker.py, audio.py, stt.py, tts_client.py
+├── docs/
+│   └── VOICE_ASSISTANT_PLAN.md  # click-by-click setup plan for the voice assistant
 ├── scripts/
 │   ├── create_model.sh       # pull base model, build `rinn` in Ollama
 │   └── build_modelfile.py    # regenerate Modelfile (--check in CI)
@@ -100,6 +107,24 @@ answer = assistant.ask("Which bench tests were reported?", context=docs,
                        on_chunk=lambda c: print(c.text, end="") if c.kind == "content" else None)
 save_markdown(answer, "exports/K183256.md")
 ```
+
+## Talk to RINN (voice)
+
+The voice layer adds two commands. `rinn-voice-server` is an OpenAI-compatible speech
+server (text-to-speech with Kokoro stock voices or your own cloned voice via F5-TTS or
+Qwen3-TTS, plus an optional faster-whisper transcription endpoint). `rinn-voice` records
+your question, transcribes it, streams RINN's answer to the console, and speaks it
+sentence by sentence while the rest is still being generated.
+
+```bash
+pip install -e ".[voice,server,kokoro]"        # plus PyTorch with CUDA, see the plan
+rinn-voice-server --backend kokoro --voice af_bella --stt large-v3-turbo   # window 1
+rinn-voice                                                                 # window 2
+```
+
+The complete, click-by-click setup for Windows 11 with an RTX 5090, including switching
+to a cloned voice and an Open WebUI browser option, is in
+[`docs/VOICE_ASSISTANT_PLAN.md`](docs/VOICE_ASSISTANT_PLAN.md).
 
 ## Configuration
 
