@@ -231,6 +231,7 @@ class Client:
     model: str = DEFAULT_MODEL
     timeout: int = 300
     thinking: bool = False
+    local: bool = False
     retries: int = 4
     usage: Usage = field(default_factory=Usage)
 
@@ -260,7 +261,11 @@ class Client:
             else:
                 body["response_format"] = {"type": "json_object"}
 
-        if not self.thinking:
+        if self.local:
+            # Local servers (Ollama, vLLM, LM Studio) reject params they do
+            # not know. Send only what the OpenAI spec defines.
+            body.pop("seed", None)
+        elif not self.thinking:
             # Qwen3 models reason by default; non-streaming calls are simpler
             # (and cheaper) with it off. Drop this if you want the reasoning.
             body["enable_thinking"] = False
@@ -641,11 +646,14 @@ def emit(result: dict, args: argparse.Namespace) -> None:
 
 def make_client(args: argparse.Namespace) -> Client:
     key = os.environ.get(API_KEY_ENV)
+    if not key and args.local:
+        key = "local"  # local servers ignore the bearer token
     if not key:
         sys.exit(f"error: set {API_KEY_ENV} (get one from the Alibaba Cloud "
                  f"Model Studio console)")
     return Client(api_key=key, base_url=args.base_url, model=args.model,
-                  timeout=args.timeout, thinking=args.thinking)
+                  timeout=args.timeout, thinking=args.thinking,
+                  local=args.local)
 
 
 # --------------------------------------------------------------------------
@@ -679,6 +687,9 @@ def main(argv: list[str] | None = None) -> int:
                         help="let the model reason before answering")
         sp.add_argument("--strict-schema", action="store_true",
                         help="use response_format=json_schema (needs support)")
+        sp.add_argument("--local", action="store_true",
+                        help="target a local OpenAI-compatible server "
+                             "(Ollama/vLLM/LM Studio); omits vendor params")
         sp.add_argument("--dry-run", action="store_true",
                         help="show what would be sent; make no API call")
 

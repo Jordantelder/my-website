@@ -94,6 +94,28 @@ happened rather than guessing from source.
 Start with `--fail-on critical` only. Widen it once you've seen a few weeks of
 findings and know the false-positive rate.
 
+## Running on your own GPU
+
+Nothing in this harness uses your GPU — `qwen3.8-max` runs on Alibaba's
+hardware and your machine only does text I/O over HTTPS. If you want the work
+done locally instead, point the harness at an open-weight Qwen served by
+Ollama. Same protocol, so only two variables change:
+
+```bash
+ollama pull qwen3-coder:30b
+export QWEN_BASE_URL=http://localhost:11434/v1
+export QWEN_MODEL=qwen3-coder:30b
+python3 qwen_eval.py review 'src/**/*.py' --local
+```
+
+`--local` omits the vendor-specific parameters (`enable_thinking`, `seed`) that
+local servers reject, and lets `DASHSCOPE_API_KEY` go unset.
+
+Rough VRAM at Q4_K_M: `qwen3-coder:30b` ~19 GB (24 GB card), `qwen2.5-coder:14b`
+~9 GB (16 GB card), `qwen2.5-coder:7b` ~5 GB (8 GB card). Expect weaker findings
+than the Max tier — a 30B local model is a useful pre-commit filter, not a
+replacement for the hosted model in CI.
+
 ## Notes and limits
 
 - **Determinism.** `temperature=0`, `top_p=1`, `seed=42` make runs repeatable in
