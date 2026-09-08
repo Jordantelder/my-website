@@ -1,0 +1,7 @@
+# Searches to ALLOW even though a keyword rule would block them (one per line).
+# Each line becomes an exception rule for every search site, e.g.
+#   @@||google.*/search?*q=*demon*slayer*$document
+# Re-run  python3 generate.py  after editing.  Examples (remove the leading '#' to enable):
+#demon slayer
+#asexual reproduction
+#tasmanian devil

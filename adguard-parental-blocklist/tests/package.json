@@ -1,0 +1,8 @@
+{
+  "name": "adguard-parental-blocklist-tests",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@adguard/tsurlfilter": "^6.0.3"
+  }
+}
