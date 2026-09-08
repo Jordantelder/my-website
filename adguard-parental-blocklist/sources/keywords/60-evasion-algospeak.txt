@@ -1,0 +1,44 @@
+# Evasion spellings, algospeak, bypass searches and foreign-language equivalents
+#
+# Format:   term [flags]: variant, variant   # note
+#   [word]     = match as a whole word only (needed when the term appears inside innocent words)
+#   [optional] = disabled by default because it also blocks innocent searches; enable by deleting the flag
+# Terms match anywhere in the search query, case-insensitively; spaces/hyphens are wildcards.
+
+p o r n [word]: p.o.r.n, p-o-r-n, s e x, s.e.x, s-e-x, n s f w, n.s.f.w, l g b t, l.g.b.t, g a y, g.a.y, l e s b i a n, b i s e x u a l, t r a n s, d e m o n, f u r r y, y i f f   # letters typed with spaces or dots
+nip nops: nipnops
+le dollar bean: le%24bian, ledollarbean
+leg booty: legbooty
+alphabet mafia: alphabet people, alphabet community, alphabet gang
+friends of dorothy
+accountant [optional, word]   # sex-work algospeak; also a real job
+grape [optional, word]: graped   # algospeak for rape; also the fruit
+lesbi: lesbiana, lesbianas, lesbienne, lesbisch, lesben, lesbe, l%c3%a9sbica, lesbica, l3sbian, l3sb1an, lesbean, lesbeans   # substring: covers lesbian, lesbians and the foreign spellings
+bisexuell: bissexual, bisessuale, b1sexual, b1 sexual
+transexual: travesti, transgenre, tr4ns
+g4y [word]: gai, g4ys
+bypass adguard: get past adguard, disable adguard, turn off adguard, remove adguard, adguard bypass, uninstall adguard, adguard dns bypass, adguard off
+bypass safesearch: safesearch off, turn off safesearch, disable safesearch, safe search off, turn off safe search, disable safe search, safesearch bypass, remove safesearch, safe search bypass, safesearch disable
+bypass parental controls: parental controls bypass, get around parental controls, turn off parental controls, disable parental controls, remove parental controls, parental control hack, parental control bypass, hack parental controls, parental controls off, parental control off
+bypass screen time: screen time bypass, screen time hack, screen time hacks, screen time passcode, screen time glitch, get around screen time, disable screen time, screen time tricks, screen time trick
+bypass family link: family link bypass, family link hack, remove family link, uninstall family link, family link glitch, get around family link, disable family link
+bypass family safety: family safety bypass, microsoft family bypass, microsoft family safety bypass
+bypass restricted mode: restricted mode off, turn off restricted mode, disable restricted mode, restricted mode bypass
+change dns: how to change dns, private dns, custom dns, dns changer, dns over https, dns over tls, secure dns, encrypted dns, doh setting, set dns, cloudflare dns, google dns, quad9, nextdns, controld, dns settings, change my dns
+vpn [word]: vpns, free vpn, vpn free, vpn download, best vpn, vpn app, vpn apps, vpn chrome, vpn extension, unblock vpn, proton vpn, nord vpn, express vpn, hotspot shield, hola vpn, urban vpn, turbo vpn, touch vpn, warp cloudflare
+nordvpn: expressvpn, surfshark, windscribe, tunnelbear, protonvpn, browsec, zenmate, betternet, turbovpn, psiphon, ultrasurf, hotspotshield, cyberghost, ipvanish, mullvad, hidemyass, setupvpn, veepn, x-vpn
+proxy [optional, word]: proxies, proxy site, proxy sites, proxy server, proxy browser, web proxy, free proxy   # 'proxy' alone also 'proxy war' in history class
+proxysite: croxyproxy, croxy proxy, croxy, kproxy, 4everproxy, hide me proxy, hidester, blockaway, proxyium, plainproxies, filterbypass, unblockvideos, proxy site unblock
+unblock website: unblock websites, unblock sites, site unblocker, website unblocker, how to unblock, unblock youtube, unblock tiktok, unblock discord, unblock reddit, unblock instagram, unblock snapchat, unblock twitter, unblock x, unblocker
+unblocked [optional]   # 'unblocked games' is not adult content, but is used to get around school filters
+tor browser: tor download, tor project, onion browser, torbrowser, orbot, tor for android, tor for iphone
+dark web: darkweb, deep web, deepweb, onion sites, onion links, hidden wiki, darknet
+translate proxy: google translate proxy, translate unblock, unblock with google translate, google translate trick, translate.goog, translate goog
+wayback unblock: wayback machine unblock, archive unblock, archive.org unblock, cached version, google cache, cachedview
+bypass dns: dns bypass, bypass dns filter, bypass dns block, bypass web filter, web filter bypass, bypass content filter, content filter bypass, bypass blocker, bypass website blocker, get past website blocker, bypass firewall, firewall bypass, bypass school filter, school filter bypass, bypass wifi restrictions, wifi restrictions bypass, bypass router block, get around wifi block, bypass wifi block
+bypass circle: bypass bark, bypass qustodio, bypass net nanny, bypass covenant eyes, bypass opendns, bypass nextdns, bypass cleanbrowsing, bypass canopy, bypass mobicip, bypass norton family, bypass kaspersky safe kids
+incognito porn: private browsing porn, porn without history
+ero [word]: eroge
+akuma [optional]   # Japanese 'demon'; also a Street Fighter character
+co%c3%b1o
+seins [word]

@@ -1,0 +1,182 @@
+# Erotica, adult fanfiction, NSFW AI chatbots, AI image generators and nudify tools
+#
+# One domain per line.  '?' at the start = optional (commented out in the default output).
+# Text after '#' is a note.  Subdomains are blocked automatically (||domain^).
+
+adult-fanfiction.org    # Adult FanFiction archive, explicit-only
+adultfanfiction.org     # alternate/redirect domain for Adult FanFiction
+agnai.chat              # Agnaistic roleplay frontend, NSFW-capable
+aicharactercards.com    # AI character card hub with NSFW cards
+aisekai.ai              # Aisekai character chat
+ao3.org                 # short redirect domain for AO3
+archiveofourown.org     # AO3; unfiltered explicit fanfiction, 13+ TOS
+asstr.org               # alt.sex.stories text repository
+bdsmcafe.com            # BDSM stories and community
+bdsmlibrary.com         # BDSM story library
+bigclosetr.us           # BigCloset TopShelf TG fiction, includes adult
+booru.plus              # Pygmalion character card booru
+botify.ai               # Botify AI character chat with romance
+botprompts.net          # bot prompt/character hub used for NSFW RP bots
+c.ai                    # Character.AI short-link domain
+candy.ai                # adult AI girlfriend with image generation
+caveduck.io             # Caveduck character chat
+chai-research.com       # Chai app site
+chai.ml                 # older Chai app domain
+character-tavern.com    # Character Tavern card hub
+character.ai            # Character.AI roleplay chatbots; 13+ TOS, romance-heavy
+characterhub.org        # Chub alternate domain
+charstar.ai             # Charstar character chat
+chatfai.com             # ChatFAI character chat
+chub.ai                 # Chub/Venus character card hub and chat, heavy NSFW
+chyoa.com               # interactive adult choose-your-own-adventure stories
+civitai.com             # Stable Diffusion model hub, heavy NSFW
+clothoff.io             # ClothOff nudify app
+clothoff.net            # ClothOff alternate domain
+crack.wrtn.ai           # Wrtn Crack character roleplay subdomain
+createporn.com          # CreatePorn AI generator
+crushon.ai              # CrushOn NSFW character chat
+cyoc.net                # Choose Your Own Change: adult interactive transformation stories
+deep-nude.ai            # DeepNude successor
+deepfakesweb.com        # Deepfakes Web video tool
+deepnude.cc             # DeepNude clone
+deepnude.to             # DeepNude clone
+deepnudenow.com         # DeepNude clone (historic)
+deepsukebe.io           # DeepSukebe nudify site
+deepswap.ai             # DeepSwap face-swap video tool
+digi.ai                 # Digi AI romance companion app
+dopple.ai               # Dopple AI character chat
+dreamgf.ai              # adult AI girlfriend and image generator
+dreamtavern.ai          # DreamTavern NSFW roleplay
+eroticstories.com       # erotic story archive
+evaapp.ai               # EVA AI companion app site
+faceswapper.ai          # face-swap tool
+fantasy.ai              # Fantasy AI adult companion
+fantasygf.ai            # FantasyGF adult companion
+ficbook.net             # Russian fanfiction archive with explicit content
+fictionmania.tv         # TG/transformation fiction archive, largely adult
+figgs.ai                # Figgs AI NSFW roleplay
+gayauthors.org          # gay fiction site with explicit stories
+gaydemon.com            # gay erotic stories and adult content
+girlfriendgpt.com       # GirlfriendGPT adult companion
+gptgirlfriend.online    # GPT Girlfriend adult chat
+hammerai.com            # HammerAI uncensored character chat
+harpy.chat              # Harpy AI character chat
+hentai-foundry.com      # adult art and story archive
+herahaven.ai            # HeraHaven adult companion
+hiwaifu.com             # HiWaifu companion app
+icegirls.ai             # IceGirls AI NSFW generator
+indiansexstories2.net   # Indian sex stories archive
+janitorai.com           # JanitorAI NSFW character chat
+jannyai.com             # JannyAI character card hub tied to JanitorAI
+joyland.ai              # Joyland character roleplay
+juicysexstories.com     # erotic story archive
+kajiwoto.ai             # Kajiwoto companion chat
+kindroid.ai             # Kindroid uncensored companion
+kristenarchives.com     # Kristen's Archive erotic stories (also hosted on asstr)
+kupid.ai                # adult AI girlfriend
+linky-ai.com            # Linky AI companion app site
+linky-ai.eu             # Linky AI alternate domain
+literotica.com          # largest free erotic story archive
+lovescape.com           # Lovescape adult companion
+lushstories.com         # erotic story community with chat
+luvr.ai                 # Luvr adult companion
+mage.space              # Mage.space generator with NSFW mode
+mcstories.com           # Erotic Mind-Control Story Archive
+moemate.io              # Moemate character companion
+moescape.ai             # Moescape (Yodayo rebrand)
+mrdeepfakes.com         # largest deepfake porn forum (shut down 2025)
+muah.ai                 # Muah AI uncensored companion
+myanima.ai              # Anima AI girlfriend/boyfriend
+mydreamcompanion.com    # Dream Companion adult chat
+nastia.ai               # Nastia uncensored companion
+nectar.ai               # Nectar adult companion/image gen
+nifty.org               # Nifty Erotic Stories Archive (gay/lesbian/trans erotica)
+nomi.ai                 # Nomi AI companion with romantic/ERP modes
+novelai.net             # NovelAI uncensored story and image generation
+noveltrove.com          # erotic story site
+nudify.me               # nudify alternate domain
+nudify.online           # Nudify undress site
+ourdream.ai             # OurDream adult companion
+paradot.ai              # Paradot companion
+pephop.ai               # PepHop NSFW character chat
+pixai.art               # PixAI anime generator with NSFW
+polyai.ai               # former Poly.AI app domain
+polybuzz.ai             # PolyBuzz (formerly Poly.AI) character chat
+polybuzz.buzz           # PolyBuzz mirror domain
+polybuzz.com            # PolyBuzz alternate domain
+pornderful.ai           # Pornderful AI porn generator
+pornify.cc              # Pornify AI porn generator
+pornjourney.ai          # PornJourney AI porn generator
+pornjoy.ai              # PornJoy AI porn generator
+pornpen.ai              # PornPen AI porn generator
+pornworks.ai            # PornWorks AI porn generator
+pornx.ai                # PornX AI porn generator
+promptchan.ai           # Promptchan AI porn generator
+promptchan.com          # Promptchan alternate domain
+pygmalion.chat          # PygmalionAI chat site, uncensored RP models
+replika.ai              # Replika alternate domain
+replika.com             # Replika companion, romantic partner mode, 18+
+risuai.net              # RisuAI roleplay app and RisuRealm card hub
+risuai.xyz              # RisuAI alternate domain
+romanticai.com          # Romantic AI companion
+sakura.fm               # Sakura FM NSFW character chat
+seaart.ai               # SeaArt generator and character chat with NSFW
+secretdesires.ai        # Secret Desires adult companion
+seduced.ai              # Seduced AI porn generator
+sexstories.com          # xnxx-operated sex story archive
+sexstoriespost.com      # erotic story archive
+sexy.ai                 # Sexy.ai NSFW generator
+smexy.ai                # Smexy AI NSFW generator
+sofurry.com             # furry story/art archive with heavy adult content
+soulgen.ai              # SoulGen alternate domain
+soulgen.net             # SoulGen AI girl generator
+soulkyn.com             # Soulkyn adult companion
+spicychat.ai            # SpicyChat NSFW roleplay
+squidgeworld.org        # AO3-style archive with explicit works
+storiesonline.net       # Stories Online adult fiction archive
+sugarlab.ai             # SugarLab AI porn generator
+swapface.org            # SwapFace real-time face swap
+talkie-ai.com           # Talkie AI character chat app site
+tensor.art              # Tensor.Art model hub/generator with NSFW
+tfgames.site            # hub for adult transformation games and stories
+tgcomics.com            # adult TG comics and stories
+tgstorytime.com         # TG fiction archive with adult content
+unclothy.com            # undress app
+undress.app             # undress/nudify app
+undressbaby.com         # undress app
+unstability.ai          # Unstability AI uncensored generator
+writeholo.com           # HoloAI uncensored story tool (defunct)
+wyvern.chat             # Wyvern AI roleplay
+xoul.ai                 # Xoul AI roleplay (defunct)
+yodayo.com              # Yodayo NSFW anime chat and image gen
+zeta-ai.io              # Zeta character roleplay app (Scatter Lab)
+? aidungeon.com           # AI Dungeon, unfiltered mode available
+? aidungeon.io            # AI Dungeon older domain
+? aihorde.net             # AI Horde crowd-sourced text/image gen, NSFW-capable
+? asianfanfics.com        # K-pop fanfiction with mature content
+? backyard.ai             # Backyard AI (ex-Faraday) character chat
+? civitai.green           # Civitai SFW-only mirror
+? dezgo.com               # Dezgo generator with NSFW-capable models
+? dreamily.ai             # Dreamily AI story tool
+? fanfiction.net          # mainstream fanfiction, M-rated content present
+? fanfiktion.de           # German fanfiction archive with adult section
+? faraday.dev             # former Faraday domain
+? fictionpress.com        # fanfiction.net sibling for original fiction
+? ficwad.com              # fanfiction archive with adult ratings
+? fimfiction.net          # MLP fanfiction with mature toggle
+? flowgpt.com             # prompt/bot sharing site with many NSFW characters
+? inkitt.com              # story platform with mature/romance content
+? koboldai.net            # KoboldAI Lite web client (uncensored models)
+? mediaminer.org          # anime fanfiction/fanart with adult section
+? myshell.ai              # MyShell bot platform with companion bots
+? perchance.org           # Perchance generators incl. unfiltered AI image/chat
+? quotev.com              # teen story/quiz site with mature stories
+? reface.ai               # mainstream face-swap app
+? scribblehub.com         # web novel site with adult tags
+? sillytavern.app         # SillyTavern docs/download; self-hosted RP frontend
+? sinkin.ai               # SinkIn hosted SD models, NSFW-capable
+? smashwords.com          # self-publishing store with a very large erotica catalog
+? spiritfanfiction.com    # Brazilian fanfiction archive with adult content
+? stablediffusionweb.com  # web SD generator, NSFW-capable
+? wattpad.com             # mainstream story platform with mature content
+? writing.com             # general writing site whose interactive stories are largely adult/TF

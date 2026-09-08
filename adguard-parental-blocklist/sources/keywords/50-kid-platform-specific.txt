@@ -1,0 +1,64 @@
+# Roblox, Minecraft, Discord, TikTok, fanfiction, rule 34 and AI-specific terms
+#
+# Format:   term [flags]: variant, variant   # note
+#   [word]     = match as a whole word only (needed when the term appears inside innocent words)
+#   [optional] = disabled by default because it also blocks innocent searches; enable by deleting the flag
+# Terms match anywhere in the search query, case-insensitively; spaces/hyphens are wildcards.
+
+roblox condo: condo game, condo games, roblox condos, condos roblox, condo roblox, condo discord, condo server, condo servers, condo link, condo links, condo uploads, condo uploader
+scented con: scented cons, scentedcon
+r63: rule 63, roblox r63
+rule 34: rule34, r34, rule thirty four, rule-34, r-34, rule34xxx
+roblox hookup: roblox dating, roblox online dating, roblox oder, oder roblox, oders, roblox strip club, roblox erp, roblox inappropriate games, roblox inappropriate, roblox bypassed audios, bypassed audio, bypassed audios, bypassed decals, bypassed decal, roblox bypass
+roblox exploit [optional]: roblox executor, roblox script executor, roblox exploits, roblox executors
+jenny mod: minecraft jenny, jennymod, minecraft sex mod, minecraft nsfw mod, minecraft strip mod, minecraft nude mod, minecraft ellie mod
+nsfw discord: nsfw server, nsfw servers, discord nsfw, 18+ discord, discord 18+, discord hookup, discord dating server, discord dating, discord kitten, discord kittens
+egirl: egirls, e-girls
+premium snapchat: snap premium, premium snap, premium snaps
+cornhub: corn hub
+corn [optional, word]   # algospeak for porn, also the vegetable
+seggs: seggsy, seggsual, seggz, segs, s3ggs
+spicy content: spicy vids, spicy videos, spicy tiktok, spicy wattpad, spicy fanfic, spicy fic, spicy chapter, spicy scene, spicy book, spicy books, spicy romance, spicy roleplay, spicy rp
+spicy [optional]
+smut: smutty, smut fanfic, smut books, smut book, smut fic
+lemon fanfic: lemon fic, lemon wattpad, lemon ao3, lime fanfic, lime fic, gacha lemon
+explicit fanfic: explicit fic, explicit fanfiction, explicit wattpad, ao3 explicit, rating e ao3, e rated fanfic, explicit content
+dirty fanfic: dirty fic, dirty wattpad, dirty roleplay, dirty rp, dirty talk, dirty story, dirty stories
+erotic: erotica, erotik
+erp [word]   # erotic roleplay; whole word: does not block 'enterprise'
+clop [word]: clopper, clopping, clopfic   # whole word: does not block cyclops
+ankha zone: ankha, zone-tan, zone tan, zone sama, zone-sama, minus8
+gacha heat: gacha life heat, gacha club heat, gachaheat, gacha heater, gacha heaters
+bowsette
+hot anime girl: hot anime girls, anime girl hot
+cai no filter: c.ai no filter, character ai no filter, character.ai jailbreak, cai jailbreak, character ai jailbreak, character ai alternative, ai without filter, ai chat no filter, no filter ai, unfiltered ai, uncensored ai, ai no filter, nsfw ai
+ai girlfriend: ai gf, virtual girlfriend, ai boyfriend, ai bf, virtual boyfriend, ai waifu
+ai companion [optional]
+ai roleplay [optional]: ai rp
+nudify: nudifier, undress ai, undress app, undressing ai, ai undress, clothes remover, cloth remover, clothing remover, remove clothes ai, ai clothes remover, deepnude, deep nude, deepnudes, nude generator, nudes generator, undress her, undress anyone
+x-ray app: xray app, x ray app, see through clothes app, see through clothes
+deepfake: deep fake, deepfakes
+perchance ai: perchance image generator, perchance character, perchance chat
+civitai
+janitor ai: janitorai, janitor.ai
+crushon: crushon ai, crushon.ai
+spicychat: spicy chat ai, spicychat.ai
+chai app: chai ai
+candy ai: candy.ai
+kupid ai
+dreamgf
+nomi ai: nomi.ai
+replika
+kindroid
+talkie ai
+polybuzz
+sakura fm: sakura.fm
+chub ai: chub.ai, venus chub
+yodayo: moescape
+pephop
+muah ai: muah.ai
+joyland ai
+figgs ai
+risuai
+novelai: novel ai
+age restricted bypass: age verification bypass, bypass age verification, age check bypass, get past age verification, age restriction bypass, bypass age restriction

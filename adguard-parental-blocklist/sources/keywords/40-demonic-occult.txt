@@ -1,0 +1,83 @@
+# Demons, satanism, summoning, ouija, witchcraft and demon-themed media
+#
+# Format:   term [flags]: variant, variant   # note
+#   [word]     = match as a whole word only (needed when the term appears inside innocent words)
+#   [optional] = disabled by default because it also blocks innocent searches; enable by deleting the flag
+# Terms match anywhere in the search query, case-insensitively; spaces/hyphens are wildcards.
+
+demon [word]: demons, demonic, demonology, demonologist, demonolatry, demoness, deamon, deamons, demonn   # whole word: does not block demonstrate, demonetized. Does block 'Demon Slayer' (see sources/allow.txt)
+demonio: demonios, d%c3%a9mon, d%c3%a4mon, dem%c3%b4nio
+demone [word]: demoni
+daemon [optional, word]
+satan: satanic, satanism, satanist, satanas, satan%c3%a1s, sat4n, s4tan   # substring: also covers 'church of satan', 'hail satan', 'joy of satan'
+lucifer [word]: luciferian, luciferians, lucifers   # whole word: does not block luciferase
+baphomet: bafomet
+beelzebub: belzebub, beelzebul
+belial
+asmodeus
+astaroth
+azazel
+abaddon: apollyon
+mammon [word]
+moloch
+lilith [optional, word]   # Diablo IV boss, Borderlands character, a first name
+samael
+pazuzu
+zozo [word]
+incubus: incubi
+succubus: succubi
+cambion
+antichrist: anti christ, anti-christ
+666 [word]
+number of the beast: mark of the beast
+inverted cross: upside down cross, upside-down cross
+pentagram: pentacle, inverted pentagram
+sigil: sigils, sigil magic   # also game items (Elder Scrolls, Destiny)
+goetia: ars goetia, goetic
+lesser key of solomon: key of solomon, keys of solomon, clavicula salomonis
+grimoire [optional]: grimoires   # also game items
+necronomicon [optional]
+necromancy
+black magic: black magick, magia negra, magie noire, schwarze magie
+dark magic [optional]: dark magick, dark arts   # also Yu-Gi-Oh 'Dark Magician' and Harry Potter 'dark arts'
+magick: magick spells
+witchcraft: witch craft, witchcraft spells, brujeria, brujer%c3%ada, sorcellerie, hexerei, bruxaria, stregoneria   # also blocks 'Hogwarts School of Witchcraft and Wizardry'
+witch spells: real spells, spells that work, spell casting, spellcasting, how to cast a spell, spells for beginners, beginner spells, love spell, love spells, revenge spell, money spell, protection spell, banishing spell, hex spell, curse spell, hechizos, hechizo
+cast a spell [optional]
+spellbook [optional]: spell book
+curse someone: how to curse, curse a person, put a curse, how to put a curse
+hex someone: how to hex, hex a person, put a hex, hexing
+voodoo: voodoo doll, vodou, voodoo spells, voodoo spell
+hoodoo
+santeria [optional]
+wicca: wiccan, wiccans
+pagan [optional]: paganism
+ritual sacrifice: blood ritual, blood pact, blood sacrifice, animal sacrifice, human sacrifice
+devil worship: devil worshipper, devil worshipping, worship the devil, devil worshiper
+sell your soul: sell my soul, sell soul, selling your soul, soul contract, deal with the devil, pact with the devil, devil's contract
+devil [optional, word]: devils   # also blocks Tasmanian devil, devil fruit, deviled eggs, Devil May Cry
+ouija: ouija board, ouiji, oujia, ouiija, wiji board, weegee board, spirit board, talking board, witch board
+seance: s%c3%a9ance, seanse, sceance
+summon a ghost: summon ghosts, summon spirits, summon a spirit, spirit summoning, ghost summoning, how to summon spirits, summoning ritual, summoning spell, summoning circle
+charlie charlie: charlie charlie challenge
+bloody mary [optional]   # mirror game, also a cocktail
+three kings ritual: elevator game, midnight game, hooded man ritual, one man hide and seek, hide and seek alone
+shadow people: shadow person, shadow man, shadow figures
+possessed [word]: possesed
+exorcism: exorcist, exorcise, exorcisms   # also blocks the anime 'Blue Exorcist'
+tarot [optional]: tarot reading, tarot cards
+astral projection [optional]
+third eye [optional]
+occult: occultism, occultist
+hazbin: hazbin hotel, hazbinhotel, hasbin hotel, hazbinhotel season
+helluva: helluva boss, helluvaboss
+vivziepop: vivzie, spindlehorse
+alastor [word]
+angel dust
+blitzo
+stolas
+loona helluva: loona hazbin
+charlie morningstar
+devilman: devilman crybaby
+chainsaw man [optional]: chainsawman
+jujutsu kaisen [optional]

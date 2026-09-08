@@ -1,0 +1,266 @@
+# Social and user-content platforms where this content concentrates
+#
+# One domain per line.  '?' at the start = optional (commented out in the default output).
+# Text after '#' is a note.  Subdomains are blocked automatically (||domain^).
+
+adf.ly                            # ad shortener (defunct, still linked)
+allmylinks.com                    # link-in-bio used almost exclusively by adult creators
+aminoapps.com                     # Amino; fandom communities (Gacha, furry, LGBTQ) with grooming and NSFW history [Blocked services toggle: Amino]
+anonfiles.com                     # defunct anonymous file host, still linked
+anotepad.com                      # anonymous notes
+archiveofourown.com               # AO3 redirect domain
+baraag.net                        # Mastodon instance dedicated to NSFW/lolicon anime art [Blocked services toggle: Mastodon]
+beastars.fandom.com               # Beastars wiki (sexual anthro-animal anime)
+bigo.tv                           # BIGO LIVE; sexualised live streams and stranger chat [Blocked services toggle: BIGO LIVE]
+bitchute.com                      # BitChute; unmoderated video
+bloxecutor.com                    # executor download directory
+bypass.tools                      # executor list and key-system bypass
+codex.lol                         # Codex mobile executor
+controlc.com                      # ControlC pastes used for link dumps
+coomer.party                      # Coomer legacy domain
+coomer.su                         # OnlyFans leak archive
+deltaexploits.gg                  # Delta executor
+devilman.fandom.com               # Devilman wiki (demons, explicit)
+direct-link.net                   # Linkvertise domain
+disboard.org                      # largest Discord server list; NSFW and condo/scented-con tags searchable
+discadia.com                      # Discord server list with NSFW tag pages
+discodus.com                      # Discord server list; has public 'scented cons' tag pages
+discord.me                        # Discord server list with NSFW category
+discord.st                        # Discord Street server list
+discordbee.com                    # Discord server list
+discordhome.com                   # Discord server list
+discordhub.com                    # Discord server list
+discordlist.gg                    # Discord server list
+discords.com                      # Discord server list with NSFW category
+discordservers.com                # Discord server list
+discordservers.me                 # Discord server list
+disforge.com                      # Discord server list
+e621.net                          # furry porn booru
+edramatica.com                    # Encyclopedia Dramatica current mirror/forum; shock porn and gore
+encyclopediadramatica.online      # Encyclopedia Dramatica former mirror
+encyclopediadramatica.rs          # Encyclopedia Dramatica former mirror
+encyclopediadramatica.wiki        # Encyclopedia Dramatica former mirror
+f95zone.com                       # adult games forum alternate domain
+f95zone.to                        # adult games forum
+fanbox.cc                         # Pixiv Fanbox creator subscriptions, largely R-18
+fansly.com                        # adult subscription platform
+fluxteam.net                      # Fluxus executor
+furaffinity.net                   # largest furry art site; adult art behind account toggle
+furry.engineer                    # furry Mastodon instance [Blocked services toggle: Mastodon]
+getsolara.dev                     # Solara executor
+getwave.gg                        # Wave executor
+ghostbin.co                       # Ghostbin encrypted pastes
+ghostbin.com                      # Ghostbin original domain
+graph.org                         # Telegraph mirror domain
+guilds.me                         # Discord server list that indexes scented-con/condo servers
+hazbinhotel.fandom.com            # Hazbin Hotel wiki (adult demon/sex-worker cartoon popular with pre-teens)
+helluvaboss.fandom.com            # Helluva Boss wiki (adult demon cartoon)
+highschooldxd.fandom.com          # High School DxD wiki (demons + ecchi)
+hydrogen.lat                      # Hydrogen executor
+inkbunny.net                      # furry art site, explicit content permitted
+interspeciesreviewers.fandom.com  # Interspecies Reviewers wiki (explicit anime)
+jannymod.com                      # Jenny Mod distribution (typo-squat)
+jennymod-official.com             # Jenny Mod distribution
+jennymod.co                       # Jenny Mod distribution
+jennymod.net                      # Jenny Mod (sexual Minecraft mod) distribution
+jennymod.pro                      # Jenny Mod distribution
+jennymodmc.com                    # Jenny Mod distribution
+jennymodsminecraft.com            # Jenny Mod distribution
+jennysmod.com                     # Jenny Mod distribution
+jennysmods.com                    # Jenny Mod distribution
+jpst.it                           # JustPaste.it short domain
+justpaste.it                      # JustPaste.it anonymous pages with images
+kemono.party                      # Kemono legacy domain
+kemono.su                         # Patreon/Fanbox NSFW leak archive
+killingstalking.fandom.com        # Killing Stalking wiki (explicit BL manhwa)
+kiwifarms.net                     # Kiwi Farms doxing/harassment forum, primary domain
+kiwifarms.ru                      # Kiwi Farms mirror (2022)
+kiwifarms.st                      # Kiwi Farms mirror
+kiwifarms.top                     # Kiwi Farms mirror
+krnl.ca                           # KRNL executor
+krnl.place                        # KRNL executor (older domain)
+lbry.tv                           # LBRY legacy front-end for Odysee
+legra.ph                          # Telegraph mirror (te.legra.ph)
+lemmynsfw.com                     # NSFW-only Lemmy (Reddit alternative) instance
+link-center.net                   # Linkvertise domain
+link-hub.net                      # Linkvertise domain
+link-target.net                   # Linkvertise domain
+link-to.net                       # Linkvertise domain
+linkvertise.com                   # ad-gate shortener that fronts nearly all Roblox executor, script and mod downloads
+lolcow.farm                       # lolcow imageboard
+loot-link.com                     # Loot Labs link domain
+lootlabs.gg                       # Loot Labs key-system ad gate for executors
+mangago.me                        # manga aggregator dominated by yaoi/adult titles
+meow.social                       # furry Mastodon instance, adult furry art common [Blocked services toggle: Mastodon]
+myreadingmanga.info               # BL/yaoi adult manga aggregator
+narvii.com                        # Amino media CDN [Blocked services toggle: Amino]
+nezur.io                          # Nezur executor
+nitter.net                        # original Nitter X front-end; bypass for X block
+nitter.poast.org                  # Nitter instance; bypass for X block
+nitter.privacydev.net             # Nitter instance; bypass for X block
+notes.io                          # anonymous notes
+odysee.com                        # Odysee/LBRY; minimal moderation, adult and extremist video
+onionfarms.com                    # Kiwi Farms spin-off forum
+onlyfans.com                      # adult subscription platform [Blocked services toggle: OnlyFans]
+ouo.io                            # ad shortener used to hide pirate/adult links
+paste.ee                          # anonymous paste site
+pastelink.net                     # anonymous paste site
+pawoo.net                         # Japanese Mastodon instance, R-18 art permitted and abundant [Blocked services toggle: Mastodon]
+plus1scripts.net                  # script hub and executor guides
+prisonschool.fandom.com           # Prison School wiki (ecchi)
+privatebin.net                    # encrypted paste site
+redditp.com                       # Reddit slideshow viewer used for NSFW subreddits without an account
+redgifs.com                       # NSFW GIF host that backs most Reddit porn posts
+redoofhealer.fandom.com           # Redo of Healer wiki (explicit anime)
+rekonise.com                      # key-system gate for executors
+rentry.co                         # Rentry markdown pastes; standard place for leak/NSFW link lists
+rentry.org                        # Rentry alternate domain
+roblox-exploits.com               # executor download directory
+robloxexecutorstatus.com          # executor status/download directory
+robloxscripts.com                 # script hub incl. NSFW animation/R6 scripts
+rscripts.net                      # Rscripts script hub
+scriptblox.com                    # ScriptBlox script hub
+scriptpastebin.com                # Roblox script paste site
+scrolller.com                     # Reddit image scraper, overwhelmingly NSFW subreddit galleries, no login
+shorte.st                         # ad shortener used to hide pirate/adult links
+sirhurt.net                       # Sirhurt executor
+sotwe.com                         # account-free X profile viewer heavily used to browse NSFW accounts
+spdmteam.com                      # Arceus X mobile executor
+subscribestar.adult               # adult-only Patreon alternative
+subscribestar.com                 # SubscribeStar main domain
+synapse.to                        # Synapse X executor
+tango.me                          # Tango live; adult-oriented gifting streams
+teddit.net                        # privacy Reddit front-end; bypasses a Reddit block
+telegra.ph                        # Telegraph anonymous pages used for porn galleries and link dumps
+textbin.net                       # anonymous paste site
+theexecutor.dev                   # executor download directory
+throwbin.io                       # paste site used for leaks
+top.gg                            # bot and server list; NSFW server and bot listings
+tumbex.com                        # Tumblr viewer built for browsing NSFW blogs without an account
+tumbral.com                       # Tumblr blog viewer, NSFW-heavy
+tumgir.com                        # Tumblr blog viewer, NSFW-heavy
+twstalker.com                     # account-free X profile viewer
+urbandictionary.com               # crowd-sourced sexual slang definitions; strongly recommended block
+urbanup.com                       # Urban Dictionary short-link domain
+v3rm.net                          # V3rmillion mirror
+v3rmillion.net                    # V3rmillion exploit forum
+vegax.gg                          # Vega X executor
+wearedevs.net                     # WeAreDevs exploit/executor hub (JJSploit)
+weasyl.com                        # furry art site with adult content
+whisper.sh                        # Whisper anonymous confessions, sexual content and stranger contact
+wikifur.com                       # WikiFur furry fandom encyclopedia (en.wikifur.com)
+work.ink                          # key-system ad gate for executors
+xcancel.com                       # active Nitter front-end; lets a child read X without an account and bypasses an X block
+yiff.life                         # furry NSFW Mastodon instance [Blocked services toggle: Mastodon]
+younow.com                        # teen livestreaming app with history of sexual exploitation
+yubo.live                         # Yubo teen swipe/livestream app
+? 9cache.com                        # 9GAG image/video CDN [Blocked services toggle: 9GAG]
+? 9gag.com                          # 9GAG; NSFW section and sexual memes [Blocked services toggle: 9GAG]
+? 9minecraft.net                    # mod aggregator that lists Jenny-style adult mods alongside normal ones
+? bato.to                           # manga aggregator with adult titles
+? beacons.ai                        # link-in-bio used by adult creators
+? bilibili.com                      # Bilibili; suggestive anime/cosplay content [Blocked services toggle: Bilibili]
+? boosty.to                         # Russian Patreon alternative, NSFW-heavy
+? booth.pm                          # Pixiv marketplace with R-18 goods
+? bsky.app                          # Bluesky web app; explicit content allowed behind client-side labels a child can switch off [Blocked services toggle: Bluesky]
+? bsky.network                      # Bluesky relay/CDN infrastructure [Blocked services toggle: Bluesky]
+? bsky.social                       # Bluesky default account host / PDS [Blocked services toggle: Bluesky]
+? carrd.co                          # one-page sites; common for NSFW artist/creator link pages
+? catbox.moe                        # anonymous image/video host, NSFW-heavy
+? cdninstagram.com                  # Instagram media CDN [Blocked services toggle: Instagram]
+? chainsaw-man.fandom.com           # Chainsaw Man wiki (devils, gore, sexual themes)
+? dailymotion.com                   # Dailymotion; weak moderation, adult clips [Blocked services toggle: Dailymotion]
+? deviantart.com                    # DeviantArt; mature filter is account-side, huge fetish/furry/TF art
+? deviantart.net                    # DeviantArt asset CDN
+? discord.com                       # Discord API/web; #1 vector for condo links, NSFW servers and grooming; blocking this domain also disables the desktop/mobile app [Blocked services toggle: Discord]
+? discord.gg                        # Discord invite links [Blocked services toggle: Discord]
+? discord.media                     # Discord voice/video servers [Blocked services toggle: Discord]
+? discordapp.com                    # Discord legacy domain and cdn.discordapp.com attachments [Blocked services toggle: Discord]
+? discordapp.net                    # Discord media proxy CDN (media.discordapp.net) [Blocked services toggle: Discord]
+? discordbotlist.com                # Discord bot list incl. NSFW bots
+? dlive.tv                          # lightly moderated streaming platform
+? dmcdn.net                         # Dailymotion CDN [Blocked services toggle: Dailymotion]
+? dpaste.com                        # developer paste site
+? funnyjunk.com                     # meme site with NSFW channels
+? gamejolt.com                      # indie game community (FNAF fan games) with mature content
+? gofile.io                         # anonymous file host used for NSFW/leak drops
+? guilded.gg                        # Roblox-owned Discord clone; exploit, script and condo communities moved here
+? hastebin.com                      # developer paste site
+? ifunny.co                         # iFunny; unmoderated adult and shock memes, popular with pre-teens
+? imgur.com                         # Imgur; mature/NSFW galleries and Reddit-linked porn albums [Blocked services toggle: Imgur]
+? imgur.io                          # Imgur alternate domain [Blocked services toggle: Imgur]
+? instagram.com                     # Instagram; 13+, sexualised Reels/Explore, adult-creator promo [Blocked services toggle: Instagram]
+? itch.io                           # indie game store with large adult/NSFW game section
+? jtvnw.net                         # Twitch static/thumbnail CDN [Blocked services toggle: Twitch]
+? kick.com                          # Kick; far looser moderation than Twitch, gambling and sexual streams; strongly recommended for 6-12 [Blocked services toggle: Kick]
+? kik.com                           # Kik messenger, notorious for adult content and stranger contact [Blocked services toggle: Kik]
+? knowyourmeme.com                  # documents NSFW memes, rule34, fetish and 'gacha heat' subcultures with examples
+? kym-cdn.com                       # Know Your Meme image CDN
+? lemmy.world                       # largest Lemmy instance; federates NSFW communities with no age gate
+? likee.com                         # Likee alternate domain
+? likee.video                       # Likee short-video app repeatedly flagged for sexualised minors
+? lucifer.fandom.com                # Lucifer TV series wiki (devil protagonist)
+? mangadex.network                  # MangaDex image CDN
+? mangadex.org                      # MangaDex; pornographic manga tagged but not age-gated
+? mastodon.art                      # art instance; NSFW allowed behind content warnings [Blocked services toggle: Mastodon]
+? mastodon.online                   # second official Mastodon instance [Blocked services toggle: Mastodon]
+? mastodon.social                   # flagship Mastodon instance; federated NSFW visible via search/timelines [Blocked services toggle: Mastodon]
+? memedroid.com                     # meme app with NSFW section
+? misskey.io                        # large Japanese fediverse instance with heavy R-18 art [Blocked services toggle: Mastodon]
+? mstdn.jp                          # large Japanese Mastodon instance, lax NSFW policy [Blocked services toggle: Mastodon]
+? musical.ly                        # TikTok legacy domain [Blocked services toggle: TikTok]
+? newgrounds.com                    # Newgrounds; adult-rated games, animations and art portal
+? ngfiles.com                       # Newgrounds file CDN
+? pastebin.com                      # Pastebin; used to share link dumps and Roblox scripts
+? patreon.com                       # Patreon; large NSFW art/comic creator base
+? pin.it                            # Pinterest short links [Blocked services toggle: Pinterest]
+? pinimg.com                        # Pinterest image CDN [Blocked services toggle: Pinterest]
+? pinterest.com                     # Pinterest; fetish, furry and 'gacha heat' style boards surface in search [Blocked services toggle: Pinterest]
+? pixeldrain.com                    # anonymous file host used for leak drops
+? pixiv.net                         # Pixiv; R-18 anime art behind an account toggle
+? pximg.net                         # Pixiv image CDN
+? quora.com                         # Quora; explicit sexual answers and stories rank in search, no filtering
+? quoracdn.net                      # Quora CDN
+? redd.it                           # Reddit short links plus i.redd.it / v.redd.it media [Blocked services toggle: Reddit]
+? reddit.com                        # 13+ platform; NSFW subreddits one click away and covers old.reddit.com; strongly recommended for 6-12 [Blocked services toggle: Reddit]
+? redditmedia.com                   # Reddit media/embed CDN [Blocked services toggle: Reddit]
+? redditstatic.com                  # Reddit static assets CDN [Blocked services toggle: Reddit]
+? rickandmorty.fandom.com           # Rick and Morty wiki (adult cartoon)
+? rumble.com                        # Rumble; light moderation
+? snap.com                          # Snapchat corporate/alt domain [Blocked services toggle: Snapchat]
+? snapchat.com                      # Snapchat; disappearing messages, adult Discover content, stranger adds [Blocked services toggle: Snapchat]
+? somethingawful.com                # Something Awful forums; adult subforums
+? southpark.fandom.com              # South Park wiki (adult cartoon)
+? sta.sh                            # DeviantArt Sta.sh file host
+? streamable.com                    # anonymous clip host used to share NSFW clips on Reddit/Discord
+? t.co                              # X/Twitter link shortener used in every tweet link [Blocked services toggle: Twitter (X)]
+? t.me                              # Telegram invite/channel links; porn and leak channels; DNS only stops links and web client, not the app [Blocked services toggle: Telegram]
+? tapas.io                          # Tapas webcomics/novels with mature toggle
+? telegram.dog                      # Telegram alternate link domain [Blocked services toggle: Telegram]
+? telegram.me                       # Telegram legacy link domain [Blocked services toggle: Telegram]
+? telegram.org                      # Telegram main site and web.telegram.org client [Blocked services toggle: Telegram]
+? telesco.pe                        # Telegram media/CDN domain [Blocked services toggle: Telegram]
+? threads.com                       # Meta Threads primary domain since 2025; 13+ with sexualised content in feeds [Blocked services toggle: Threads]
+? threads.net                       # Meta Threads legacy domain [Blocked services toggle: Threads]
+? tiktok.com                        # TikTok; 13+, sexualised content and condo/'scented con' promo in comments [Blocked services toggle: TikTok]
+? tiktokcdn.com                     # TikTok video CDN [Blocked services toggle: TikTok]
+? tiktokv.com                       # TikTok API/CDN [Blocked services toggle: TikTok]
+? tmblr.co                          # Tumblr short-link domain [Blocked services toggle: Tumblr]
+? toyhou.se                         # Toyhouse character hosting, furry-heavy with mature art
+? ttvnw.net                         # Twitch video CDN [Blocked services toggle: Twitch]
+? tumblr.com                        # fandom/art hub; adult art, kink and furry communities despite 2018 policy [Blocked services toggle: Tumblr]
+? twimg.com                         # X/Twitter image and video CDN; blocking also breaks embedded X media on other sites [Blocked services toggle: Twitter (X)]
+? twitch.tv                         # live streams incl. sexualised 'hot tub'/ASMR categories; chat unmoderated for kids [Blocked services toggle: Twitch]
+? twitter.com                       # legacy X/Twitter domain, still resolves and redirects [Blocked services toggle: Twitter (X)]
+? ungrounded.net                    # Newgrounds upload CDN
+? userapi.com                       # VK image/media CDN [Blocked services toggle: VK]
+? vimeo.com                         # Vimeo; artistic nudity allowed [Blocked services toggle: Vimeo]
+? vimeocdn.com                      # Vimeo CDN [Blocked services toggle: Vimeo]
+? vk.com                            # VK; lax adult-content moderation, porn/pirate video groups [Blocked services toggle: VK]
+? vk.me                             # VK messenger / short links [Blocked services toggle: VK]
+? vk.ru                             # VK alternate domain [Blocked services toggle: VK]
+? vkuservideo.net                   # VK video CDN [Blocked services toggle: VK]
+? web.telegram.org                  # Telegram web client (subdomain, listed for per-host filters) [Blocked services toggle: Telegram]
+? webtoons.com                      # Webtoon; Canvas section has mature romance
+? weheartit.com                     # image-sharing site with unmoderated adult/'aesthetic' NSFW boards
+? x.com                             # X/Twitter: explicit porn accounts and media allowed, surface in search and trends; cannot be page-filtered [Blocked services toggle: Twitter (X)]

@@ -1,0 +1,66 @@
+# Furry, therian, otherkin, quadrobics, animal transformation and bestiality
+#
+# Format:   term [flags]: variant, variant   # note
+#   [word]     = match as a whole word only (needed when the term appears inside innocent words)
+#   [optional] = disabled by default because it also blocks innocent searches; enable by deleting the flag
+# Terms match anywhere in the search query, case-insensitively; spaces/hyphens are wildcards.
+
+furry: furries, furrys, fvrry, furr1es   # also blocks 'furry friends' and 'furry cat'
+fursona: fursonas, fur sona
+fursuit: fur suit, fursuits, fursuiter, fursuiting
+furcon: furry con, furry convention, anthrocon, furry weekend, furry meet, furmeet
+anthro [word]: anthros   # whole word: does not block anthropology
+anthropomorphic [optional]   # also an English-class vocabulary word
+yiff: yiffy, yiffing, y1ff, yif
+e621: e926
+furaffinity: fur affinity
+inkbunny
+sofurry
+weasyl
+f-list: flist
+u18chan
+furbooru
+murrsuit
+protogen: protogens
+primagen
+sergal: sergals
+dutch angel dragon
+wickerbeast
+avali
+scalie: scalies
+kemonomimi: kemono mimi
+nekomimi
+catgirl: cat girl, catgirls, neko girl, nekogirl
+wolf girl: wolfgirl
+fox girl: foxgirl
+bunny girl: bunnygirl
+feral [optional]: feral art   # also 'feral cat', 'feral hog'
+therian: therians, theriantropy, therianthropy, therianthrope, theriangear, therien   # substring: also covers 'therian mask', 'therian quiz', 'am i a therian'
+mental shift: mental shifts
+phantom shift: phantom shifts
+phantom limb [optional]   # also a medical term
+quadrobics: quadrobic, quadrobist, quadrobing, quadrobix, quadrobics mask
+otherkin: otherkin quiz
+alterhuman: alter human
+fictionkin
+kinnie: kinnies
+kin list: kinlist
+kintype
+kin assign: kin assignment, kinassign
+kinning
+wolfkin: catkin, foxkin, dragonkin, dogkin, deerkin, birdkin, dragon kin, wolf kin
+lycanthropy [optional]
+animal transformation: human to animal transformation, turn into a wolf, turn into a dog, turn into a cat, how to become a wolf, become an animal, become a wolf, become a dog
+tf art: tf sequence, tf story, tf stories, tf comic, tf fetish, tf tg
+transformation fetish: transformation story, transformation sequence, transformation art
+vore [word]: vores, vorarephilia, soft vore, hard vore   # whole word: does not block carnivore, herbivore
+inflation fetish: body inflation, belly inflation, inflation art
+giantess: giantess fetish, macro furry, micro furry
+pet play: petplay, puppy play, pup play, pup hood, human pup, kitten play, pony play
+hucow
+abdl: adult baby, adult diaper, diaper fetish, diaper lover, diaper lovers
+ageplay: age play
+ddlg: dd/lg, cgl, caregiver little, mommy dom, mdlb
+little space: littlespace
+bestiality: beastiality, beastality, bestality, bestialiti, zoophilia, zoophile, zoophil, zoosexual, zoo porn, animal porn, dog porn, horse porn
+knot fetish: knotting fetish

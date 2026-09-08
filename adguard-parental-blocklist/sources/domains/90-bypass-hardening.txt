@@ -1,0 +1,469 @@
+# Bypass hardening: encrypted DNS, VPNs, proxies, Tor, alternative search engines
+#
+# One domain per line.  '?' at the start = optional (commented out in the default output).
+# Text after '#' is a note.  Subdomains are blocked automatically (||domain^).
+
+12ft.io                                 # 12ft paywall/proxy viewer
+1clickvpn.net                           # 1clickVPN extension
+1dot1dot1dot1.cloudflare-dns.com        # Cloudflare DoT hostname used in Android Private DNS [Blocked services toggle: Cloudflare]
+1ft.io                                  # Paywall bypass proxy
+4everproxy.com                          # 4everproxy
+4get.ca                                 # 4get metasearch
+adblock.doh.mullvad.net                 # Mullvad ad-blocking DoH
+adguard-vpn.com                         # AdGuard VPN (would bypass AdGuard DNS)
+ahadns.net                              # AhaDNS regional DoH/DoT hostnames (doh.la/nl/in/...)
+airvpn.org                              # AirVPN
+anchorfree.com                          # Hotspot Shield parent/backend
+andisearch.com                          # Andi
+anonymouse.org                          # Anonymouse
+api.cloudflareclient.com                # WARP client API endpoint [Blocked services toggle: Cloudflare]
+api.sec-tunnel.com                      # Opera VPN control API
+api2.sec-tunnel.com                     # Opera VPN control API alt
+appsverse.com                           # Photon browser developer
+archive.fo                              # archive.today mirror; serves full snapshots of any page
+archive.is                              # archive.today mirror; serves full snapshots of any page
+archive.li                              # archive.today mirror; serves full snapshots of any page
+archive.md                              # archive.today mirror; serves full snapshots of any page
+archive.ph                              # archive.today mirror; serves full snapshots of any page
+archive.today                           # archive.today mirror; serves full snapshots of any page
+archive.vn                              # archive.today mirror; serves full snapshots of any page
+astrill.com                             # Astrill
+atlasvpn.com                            # Atlas VPN (free tier, merged into Nord)
+azirevpn.com                            # AzireVPN
+base.dns.mullvad.net                    # Mullvad filtered DoH
+basic.rethinkdns.com                    # RethinkDNS DoH
+betternet.co                            # Betternet (free)
+bitmask.net                             # Bitmask VPN client
+black.riseup.net                        # Riseup VPN API
+blitz.ahadns.com                        # AhaDNS Blitz DoH
+blockaway.net                           # BlockAway
+blokada.org                             # Blokada (bundles VPN/DoH)
+boomproxy.com                           # BoomProxy
+brightvpn.com                           # Bright VPN (free, sells bandwidth)
+browsec.com                             # Browsec VPN extension
+browser.lol                             # Free cloud browser popular with students
+browserling.com                         # Browserling online browser
+cachedview.com                          # CachedView
+cachedview.nl                           # CachedView mirror
+cactusvpn.com                           # CactusVPN
+cc.bingj.com                            # Bing cached-page viewer
+chrome.cloudflare-dns.com               # Chrome's Cloudflare secure-DNS endpoint [Blocked services toggle: Cloudflare]
+cloudflare-dns.com                      # Cloudflare 1.1.1.1 DoH root (covers all subdomains) [Blocked services toggle: Cloudflare]
+cloudflare-gateway.com                  # Cloudflare Zero Trust DoH locations (*.cloudflare-gateway.com)
+cloudflareclient.com                    # 1.1.1.1+WARP / Zero Trust client API root [Blocked services toggle: Cloudflare]
+cloudmosa.com                           # Puffin developer/backend
+controld.com                            # ControlD website/app config
+croxy.net                               # CroxyProxy mirror
+croxy.network                           # CroxyProxy mirror
+croxy.org                               # CroxyProxy mirror
+croxyproxy.com                          # CroxyProxy (most popular school bypass)
+croxyproxy.net                          # CroxyProxy mirror
+croxyproxy.rocks                        # CroxyProxy mirror
+cyberghostvpn.com                       # CyberGhost
+dit-inc.us                              # Freegate developer
+dns-unfiltered.adguard.com              # AdGuard public unfiltered DNS
+dns.aa.net.uk                           # Andrews & Arnold DoH/DoT
+dns.aaflalo.me                          # aaflalo DoH
+dns.adguard-dns.com                     # AdGuard public DNS default DoH/DoT
+dns.adguard.com                         # AdGuard public DoH/DoT (default, not the parent's private endpoint)
+dns.alidns.com                          # Alibaba AliDNS DoH/DoT
+dns.arapurayil.com                      # arapurayil DoH
+dns.artikel10.org                       # Artikel10 DoH/DoT
+dns.bebasid.com                         # BebasID DoH/DoT
+dns.brahma.world                        # Brahma DoH
+dns.cfiec.net                           # CFIEC IPv6 DoH
+dns.cmrg.net                            # cmrg DoH/DoT
+dns.comss.one                           # Comss.one DoH/DoT (ad-block/unblock resolver)
+dns.controld.com                        # ControlD DoH/DoT hostname
+dns.decloudus.com                       # DeCloudUs DoH/DoT
+dns.digitalcourage.de                   # Digitalcourage DoT
+dns.digitale-gesellschaft.ch            # Digitale Gesellschaft DoH/DoT
+dns.dnshome.de                          # dnsHome DoH/DoT
+dns.dnsoverhttps.net                    # dnsoverhttps.net DoH (defunct)
+dns.dnswarden.com                       # DNSWarden hostname (as listed)
+dns.east.comss.one                      # Comss.one east DoH
+dns.flatuslifir.is                      # DoH resolver
+dns.google                              # Google Public DNS DoH/DoT hostname (most common Android Private DNS entry)
+dns.google.com                          # legacy Google Public DNS DoH hostname, still live
+dns.hostux.net                          # Hostux DoH
+dns.larsdebruin.net                     # DoT resolver
+dns.mullvad.net                         # Mullvad public DoH/DoT
+dns.neutopia.org                        # Neutopia DoT
+dns.nextdns.io                          # NextDNS DoH/DoT hostname (profile IDs are subdomains)
+dns.njal.la                             # Njalla DoH/DoT
+dns.notjakob.com                        # iOS encrypted-DNS profile generator (extremely common iPhone bypass)
+dns.oszx.co                             # OSZX DoH
+dns.pub                                 # DNSPod DoH alias
+dns.pumplex.com                         # Pumplex DoH
+dns.quad9.net                           # Quad9 DoH/DoT hostname
+dns.rabbitdns.org                       # RabbitDNS DoH
+dns.rubyfish.cn                         # rubyfish DoH (China, defunct)
+dns.sb                                  # DNS.SB public resolver DoH/DoT
+dns.seby.io                             # seby DoH/DoT
+dns.switch.ch                           # SWITCH DoH/DoT
+dns.twnic.tw                            # TWNIC Quad101 DoH/DoT
+dns.umbrella.com                        # Cisco Umbrella DoH/DoT hostname
+dns10.quad9.net                         # Quad9 no-blocklist DoT hostname
+dns11.quad9.net                         # Quad9 ECS DoT hostname
+dns12.quad9.net                         # Quad9 secured+ECS DoT hostname
+dns3.digitalcourage.de                  # Digitalcourage DoT/DoH
+dns64.cloudflare-dns.com                # Cloudflare DNS64 DoH hostname [Blocked services toggle: Cloudflare]
+dns64.dns.google                        # Google DNS64 DoH hostname
+dns9.quad9.net                          # Quad9 unsecured DoT hostname
+dnsforge.de                             # dnsforge DoH/DoT
+dnsovertls.sinodun.com                  # Sinodun DoT test resolver
+dogpile.com                             # Dogpile metasearch
+doh.360.cn                              # Qihoo 360 DoH
+doh.applied-privacy.net                 # Applied Privacy DoH
+doh.appliedprivacy.net                  # Applied Privacy DoH (old spelling)
+doh.captnemo.in                         # captnemo DoH
+doh.crypto.sx                           # crypto.sx DoH
+doh.dns.apple.com                       # Apple sample DoH server referenced in Apple developer docs
+doh.dns.sb                              # DNS.SB DoH endpoint
+doh.dns.snopyta.org                     # Snopyta DoH (defunct)
+doh.dnslify.com                         # DNSlify DoH
+doh.dnswarden.com                       # DNSWarden DoH
+doh.ffmuc.net                           # Freifunk Munich DoH
+doh.li                                  # doh.li DoH
+doh.libredns.gr                         # LibreDNS DoH
+doh.mullvad.net                         # Mullvad DoH (legacy hostname)
+doh.opendns.com                         # Cisco OpenDNS DoH endpoint
+doh.powerdns.org                        # PowerDNS demo DoH
+doh.pub                                 # Tencent DNSPod DoH
+doh.sandbox.opendns.com                 # OpenDNS sandbox DoH endpoint
+doh.seby.io                             # seby DoH
+doh.securedns.eu                        # SecureDNS DoH (defunct)
+doh.tiar.app                            # Tiarap DoH
+doh.xfinity.com                         # Comcast Xfinity DoH
+dongtaiwang.com                         # Freegate
+dontfilter.us                           # DontFilter
+dot.360.cn                              # Qihoo 360 DoT
+dot.dns.yandex.net                      # Yandex DNS DoT hostnames (common/safe/family)
+dot.dnswarden.com                       # DNSWarden DoT
+dot.ffmuc.net                           # Freifunk Munich DoT
+dot.libredns.gr                         # LibreDNS DoT
+dot.pub                                 # Tencent DNSPod DoT
+dot.securedns.eu                        # SecureDNS DoT (defunct)
+dot.tiar.app                            # Tiarap DoT
+dot1.applied-privacy.net                # Applied Privacy DoT
+dotvpn.com                              # DotVPN extension
+downloads.cloudflareclient.com          # WARP desktop client downloads [Blocked services toggle: Cloudflare]
+engage.cloudflareclient.com             # WARP client registration/config endpoint [Blocked services toggle: Cloudflare]
+etsi.me                                 # SearXNG instance
+excite.com                              # Excite
+expressvpn.com                          # ExpressVPN
+expressvpn.net                          # ExpressVPN mirror
+extended.dns.mullvad.net                # Mullvad filtered DoH
+fastestvpn.com                          # FastestVPN
+fastssh.com                             # Free SSH/VPN accounts
+fdns1.dismail.de                        # Dismail DoH/DoT
+fdns2.dismail.de                        # Dismail DoH/DoT
+features.opera-api.com                  # Opera feature/VPN config API
+fi.doh.dns.snopyta.org                  # Snopyta DoH (defunct)
+filterbypass.me                         # FilterBypass
+free-proxy-list.net                     # Free proxy list
+free-proxy.cz                           # Proxy list
+freedns.controld.com                    # ControlD free public DoH (p0/p1/p2/p3 are subdomains)
+freeopenvpn.org                         # Free OpenVPN configs
+freevpnplanet.com                       # Planet VPN (free)
+frostnerd.com                           # DNS Changer / Nebulo developer (Android)
+genmirror.com                           # GenMirror
+getintra.org                            # Intra DoH app (Jigsaw)
+getlantern.org                          # Lantern
+getoutline.org                          # Outline VPN (Jigsaw)
+ghostarchive.org                        # Ghostarchive page snapshots
+gibiru.com                              # Gibiru uncensored search
+gointerstellar.app                      # Interstellar proxy/games hub
+goldenfrog.com                          # VyprVPN parent
+googlezip.net                           # Chrome Data Saver proxy (defunct)
+guardianapp.com                         # Guardian, backend of Brave Firewall+VPN
+guardster.com                           # Guardster proxy
+hide.me                                 # hide.me VPN and its free web proxy
+hideman.net                             # Hideman VPN
+hidemy.name                             # HideMy.name proxy list/VPN
+hidemyass-freeproxy.com                 # HMA free web proxy
+hidemyass.com                           # HMA VPN
+hidemyna.me                             # HideMy.name mirror
+hidester.com                            # Hidester proxy
+hola.org                                # Hola VPN (free P2P)
+holacdn.com                             # Hola CDN/backend
+holyubofficial.net                      # Holy Unblocker
+hotspotshield.com                       # Hotspot Shield (free tier)
+hoxx.com                                # Hoxx VPN (extension)
+hsselite.com                            # Hotspot Shield backend
+hyperbeam.com                           # Hyperbeam shared virtual browser
+ibvpn.com                               # ibVPN
+info.com                                # Info.com metasearch
+ipvanish.com                            # IPVanish
+itopvpn.com                             # iTop VPN
+ivpn.net                                # IVPN
+jp.tiar.app                             # Tiarap Japan DoH
+jp.tiarap.org                           # Tiarap Japan DoH alt
+kasmweb.com                             # Kasm Workspaces browser isolation
+keepsolid.com                           # KeepSolid parent
+kproxy.com                              # KProxy
+lantern.io                              # Lantern alt
+lycos.com                               # Lycos
+mask-api.icloud.com                     # Private Relay config/API hostname [Blocked services toggle: iCloud Private Relay]
+mask-canary.icloud.com                  # Private Relay canary hostname [Blocked services toggle: iCloud Private Relay]
+mask-h2.icloud.com                      # Private Relay HTTP/2 ingress (Apple-documented block target) [Blocked services toggle: iCloud Private Relay]
+mask.icloud.com                         # Private Relay ingress (Apple documents blocking this to signal unsupported network) [Blocked services toggle: iCloud Private Relay]
+max.rethinkdns.com                      # RethinkDNS DoH
+megalodon.jp                            # Japanese page-snapshot archive
+metacrawler.com                         # MetaCrawler
+metager.de                              # MetaGer
+metager.org                             # MetaGer
+mightyapp.com                           # Mighty cloud Chrome (defunct)
+mojeek.com                              # Mojeek
+mozilla.cloudflare-dns.com              # Firefox built-in DoH provider endpoint [Blocked services toggle: Cloudflare]
+mullvad.net                             # Mullvad VPN (also its DoH)
+nebulaproxy.io                          # Nebula proxy
+nebulo.app                              # Nebulo DoH/DoT app
+newipnow.com                            # NewIPNow proxy
+nextdns.io                              # NextDNS site/apps; blocking root breaks NextDNS bootstrap
+ninjacloak.com                          # NinjaCloak (defunct)
+noads.libredns.gr                       # LibreDNS ad-blocking DoH
+nordaccount.com                         # Nord account login
+nordcdn.com                             # NordVPN CDN used by apps for server lists
+nordvpn.com                             # NordVPN site/app API
+northboot.xyz                           # SearXNG instance
+northghost.com                          # Hotspot Shield/Pango backend
+now.gg                                  # now.gg cloud Android (has cloud browser, full bypass)
+odvr.nic.cz                             # CZ.NIC ODVR DoH/DoT
+one.one.one.one                         # Cloudflare 1.1.1.1 DoT/DoH hostname used in Android Private DNS [Blocked services toggle: Cloudflare]
+onion.cab                               # Tor2web gateway: opens .onion sites in a normal browser
+onion.city                              # Tor2web gateway: opens .onion sites in a normal browser
+onion.direct                            # Tor2web gateway: opens .onion sites in a normal browser
+onion.dog                               # Tor2web gateway: opens .onion sites in a normal browser
+onion.glass                             # Tor2web gateway: opens .onion sites in a normal browser
+onion.link                              # Tor2web gateway: opens .onion sites in a normal browser
+onion.ly                                # Tor2web gateway: opens .onion sites in a normal browser
+onion.moe                               # Tor2web gateway: opens .onion sites in a normal browser
+onion.nu                                # Tor2web gateway: opens .onion sites in a normal browser
+onion.pet                               # Tor2web gateway: opens .onion sites in a normal browser
+onion.sh                                # Tor2web gateway: opens .onion sites in a normal browser
+onion.to                                # Tor2web gateway: opens .onion sites in a normal browser
+onion.top                               # Tor2web gateway: opens .onion sites in a normal browser
+onion.ws                                # Tor2web gateway: opens .onion sites in a normal browser
+onionbrowser.com                        # Onion Browser (iOS Tor)
+openproxy.space                         # Proxy list
+opera-mini.net                          # Opera Mini server-side rendering proxies (renders pages on Opera servers)
+opera-proxy.net                         # Opera proxy/turbo infrastructure
+operavpn.com                            # Opera VPN Pro site
+opnxng.com                              # SearXNG instance
+ordns.he.net                            # Hurricane Electric DoH/DoT
+oscobo.com                              # Oscobo (defunct)
+ovpn.com                                # OVPN
+pango.co                                # Pango (Hotspot Shield, Betternet) parent
+paulgo.io                               # SearXNG instance
+perfect-privacy.com                     # Perfect Privacy
+plainproxies.com                        # Plain Proxies
+polargrizzly.com                        # TunnelBear API mirror domain
+presearch.com                           # Presearch
+presearch.io                            # Presearch
+priv.au                                 # SearXNG instance
+privadovpn.com                          # PrivadoVPN (free tier)
+privateinternetaccess.com               # Private Internet Access
+protonvpn.ch                            # Proton VPN legacy API domain [Blocked services toggle: Proton]
+protonvpn.com                           # Proton VPN (free tier is a top kid choice) [Blocked services toggle: Proton]
+proxfree.com                            # ProxFree
+proxy-list.download                     # Proxy list
+proxy.org                               # Proxy.org web proxy directory
+proxydb.net                             # Proxy list
+proxyium.com                            # Proxyium
+proxynova.com                           # Proxy list
+proxyscrape.com                         # Proxy list
+proxysite.com                           # ProxySite
+psiphon.ca                              # Psiphon
+psiphon3.com                            # Psiphon downloads
+public.dns.iij.jp                       # IIJ public DoH
+puffin.com                              # Puffin cloud browser
+puffinbrowser.com                       # Puffin cloud browser
+purevpn.com                             # PureVPN
+rammerhead.org                          # Rammerhead browser proxy
+removepaywall.com                       # Paywall bypass proxy
+resolver-eu.lelux.fi                    # Lelux DoH
+rethinkdns.com                          # RethinkDNS app site and DoH root
+search.bus-hit.me                       # SearXNG instance
+search.disroot.org                      # SearXNG instance
+search.garudalinux.org                  # SearXNG/Whoogle instance
+search.hbubli.cc                        # SearXNG instance
+search.im-in.space                      # SearXNG instance
+search.inetol.net                       # SearXNG instance
+search.mdosch.de                        # SearXNG instance
+search.ononoki.org                      # SearXNG instance
+search.privacyguides.net                # SearXNG instance
+search.projectsegfau.lt                 # SearXNG instance
+search.rhscz.eu                         # SearXNG instance
+search.sapti.me                         # SearXNG instance
+searchencrypt.com                       # Search Encrypt
+searx.baczek.me                         # SearXNG instance
+searx.be                                # SearXNG instance
+searx.dresden.network                   # SearXNG instance
+searx.fmac.xyz                          # SearXNG instance
+searx.me                                # searx (defunct)
+searx.mxchange.org                      # SearXNG instance
+searx.oloke.xyz                         # SearXNG instance
+searx.org                               # searx project site
+searx.ox2.fr                            # SearXNG instance
+searx.perennialte.ch                    # SearXNG instance
+searx.prvcy.eu                          # SearXNG instance
+searx.sev.monster                       # SearXNG instance
+searx.space                             # Directory of public SearXNG instances
+searx.tiekoetter.com                    # SearXNG instance
+searx.work                              # SearXNG instance
+searxng.site                            # SearXNG instance
+sec-tunnel.com                          # Opera/Opera GX built-in VPN proxy servers (*.sec-tunnel.com)
+security-filter-dns.cleanbrowsing.org   # CleanBrowsing security-only DoT hostname (unfiltered for adult content)
+setupvpn.com                            # SetupVPN extension
+shadowsocks.org                         # Shadowsocks
+simplednscrypt.org                      # Simple DNSCrypt
+sitenable.ch                            # Sitenable mirror
+sitenable.co                            # Sitenable mirror
+sitenable.com                           # Sitenable
+sitenable.info                          # Sitenable mirror
+sky.rethinkdns.com                      # RethinkDNS DoH
+smry.ai                                 # Paywall bypass/reader proxy
+snowflake-broker.bamsoftware.com        # Snowflake broker legacy
+snowflake-broker.torproject.net         # Snowflake broker
+snowflake.bamsoftware.com               # Snowflake broker/legacy host
+snowflake.torproject.net                # Snowflake service host
+softether.org                           # SoftEther VPN (VPN Gate client)
+speedify.com                            # Speedify
+spotflux.com                            # Spotflux (defunct)
+spys.one                                # Proxy list
+sshocean.com                            # Free SSH/VPN accounts
+sslproxies.org                          # Proxy list
+sslsecureproxy.com                      # SSL Secure Proxy
+startpage.com                           # Startpage; Anonymous View is a full web proxy
+staticnetcontent.com                    # Windscribe API mirror domain
+strongvpn.com                           # StrongVPN
+surfeasy.com                            # SurfEasy, Opera's VPN backend (also used by Norton Secure VPN)
+surfshark.com                           # Surfshark
+sx.catgirl.cloud                        # SearXNG instance
+thundervpn.co                           # Thunder VPN
+titaniumnetwork.org                     # Titanium Network (Ultraviolet/Rammerhead makers, proxy hub)
+tor.eff.org                             # EFF Tor download mirror
+tor2web.io                              # Tor2web gateway: opens .onion sites in a normal browser
+tor2web.org                             # Tor2web gateway: opens .onion sites in a normal browser
+tor2web.xyz                             # Tor2web gateway: opens .onion sites in a normal browser
+torguard.net                            # TorGuard
+torproject.net                          # Tor Project infra domain
+torproject.org                          # Tor Project site, downloads, bridges
+totallyacdn.com                         # Windscribe API mirror domain
+touchvpn.net                            # Touch VPN (free)
+translate.goog                          # Google Translate proxied-page domain (text translation on translate.google.com keeps working)
+translate.googleusercontent.com         # older Google Translate page-proxy host
+translatetheweb.com                     # Microsoft/Bing Translator web-page proxy
+translatoruser.net                      # Bing translator widget proxy host
+trust.zone                              # Trust.Zone VPN
+tunnelbear.com                          # TunnelBear (free tier)
+turbovpn.co                             # Turbo VPN alt
+turbovpn.com                            # Turbo VPN
+ultrareach.com                          # UltraSurf developer
+ultrasurf.us                            # UltraSurf
+ultravpn.com                            # UltraVPN
+unblock-websites.com                    # Unblock Websites proxy
+unblocksite.net                         # Unblock Site proxy
+unblocksite.org                         # Unblock Site proxy
+unblockvideos.com                       # UnblockVideos
+unblockweb.co                           # UnblockWeb proxy
+unfiltered.adguard-dns.com              # AdGuard public unfiltered DoH/DoT
+urban-vpn.com                           # Urban VPN (free extension, very common in schools)
+us-proxy.org                            # Proxy list
+use-application-dns.net                 # Firefox canary domain; NXDOMAIN/0.0.0.0 answer disables Firefox auto-DoH (AdGuard DNS Advanced settings has a toggle)
+v2fly.org                               # V2Ray/V2Fly
+v2ray.com                               # V2Ray legacy site
+veepn.com                               # VeePN (extension/app)
+vpn-api.proton.me                       # Proton VPN app API endpoint [Blocked services toggle: Proton]
+vpn.ac                                  # VPN.ac
+vpn.mozilla.org                         # Mozilla VPN (Mullvad backend)
+vpnbook.com                             # VPNBook free VPN + web proxy
+vpngate.net                             # VPN Gate volunteer VPN relay list (very popular free bypass)
+vpnhub.com                              # VPNhub (Pornhub-owned free VPN)
+vpnify.com                              # vpnify
+vpnjantit.com                           # Free VPN/SSH accounts
+vpnoneclick.com                         # VPN One Click
+vpnproxymaster.com                      # VPN Proxy Master
+vpnsuper.com                            # VPN Super Unlimited
+vpnunlimited.com                        # KeepSolid VPN Unlimited
+vtunnel.com                             # Vtunnel (defunct)
+vyprvpn.com                             # VyprVPN
+warp.plus                               # WARP+ referral/marketing domain [Blocked services toggle: Cloudflare]
+webcache.googleusercontent.com          # Google cached pages (discontinued but harmless)
+webcrawler.com                          # WebCrawler
+webgap.io                               # WEBGAP remote browser
+weboproxy.com                           # Weboproxy
+whiskergalaxy.com                       # Windscribe API mirror domain
+whoer.net                               # Whoer web proxy/VPN
+windscribe.com                          # Windscribe (free tier)
+windscribe.net                          # Windscribe alt domain
+x-vpn.com                               # X-VPN alt
+xvpn.io                                 # X-VPN
+yep.com                                 # Yep
+yippy.com                               # Yippy (defunct)
+yogadns.com                             # YogaDNS Windows DoH client
+youtubeunblocked.live                   # YouTube unblocker proxy
+z5h64q92x9.net                          # Yandex Translate page-proxy domain
+zend2.com                               # Zend2
+zenmate.com                             # ZenMate
+zero-trust-client.cloudflareclient.com  # Zero Trust WARP client endpoint [Blocked services toggle: Cloudflare]
+zpn.im                                  # ZPN free VPN
+? adult-filter-dns.cleanbrowsing.org      # CleanBrowsing adult-filter DoT hostname
+? all.dns.mullvad.net                     # Mullvad all-filters DoH
+? alohabrowser.com                        # Aloha browser with built-in VPN
+? anydesk.com                             # AnyDesk remote desktop to an unfiltered PC
+? archive.org                             # Internet Archive root
+? ask.com                                 # Ask.com
+? baidu.com                               # Baidu (no enforceable SafeSearch)
+? browserless.io                          # Browserless hosted browsers
+? browserstack.com                        # BrowserStack live browsers
+? dns-doh.dnsforfamily.com                # DNS for Family DoH (filtered, still bypasses parent's list)
+? dns-dot.dnsforfamily.com                # DNS for Family DoT
+? dns-family.adguard.com                  # AdGuard public family DNS (filtered, still bypasses parent's list)
+? dnscrypt.info                           # DNSCrypt project
+? doh.cleanbrowsing.org                   # CleanBrowsing DoH endpoint
+? doh.familyshield.opendns.com            # OpenDNS FamilyShield DoH (filtered, still bypasses parent's list)
+? doh.safesurfer.io                       # SafeSurfer DoH (filtered)
+? ecosia.org                              # Ecosia (Bing-backed, not DNS-enforceable)
+? epicbrowser.com                         # Epic browser with built-in encrypted proxy
+? exchange.opera.com                      # Opera VPN-related endpoint listed by filtering vendors
+? family-filter-dns.cleanbrowsing.org     # CleanBrowsing family DoT hostname
+? family.adguard-dns.com                  # AdGuard public family DoH/DoT (filtered, still bypasses parent's list)
+? family.cloudflare-dns.com               # Cloudflare 1.1.1.3 family DoH (filtered, but bypasses parent's list) [Blocked services toggle: Cloudflare]
+? family.dns.mullvad.net                  # Mullvad family DoH
+? geti2p.net                              # I2P anonymity network
+? glitch.com                              # Glitch (hosts student-run proxies)
+? guardianproject.info                    # Guardian Project (Orbot)
+? kagi.com                                # Kagi
+? lambdatest.com                          # LambdaTest live browsers
+? microsofttranslator.com                 # Bing translator page proxy (bv.aspx); root also serves Translator apps
+? openvpn.net                             # OpenVPN software
+? perplexity.ai                           # Perplexity [Blocked services toggle: Perplexity]
+? printfriendly.com                       # Renders any URL server-side
+? proton.me                               # Proton root; also Proton Mail/Drive [Blocked services toggle: Proton]
+? qwant.com                               # Qwant (SafeSearch not DNS-enforceable)
+? replit.com                              # Replit (hosts many student-run Ultraviolet proxies)
+? riseup.net                              # Riseup (also email); VPN lives on subdomains
+? rustdesk.com                            # RustDesk remote desktop
+? saucelabs.com                           # Sauce Labs live browsers
+? search.aol.com                          # AOL Search
+? search.brave.com                        # Brave Search (SafeSearch not DNS-enforceable)
+? search.marginalia.nu                    # Marginalia
+? search.yahoo.com                        # Yahoo Search incl. image search (Bing-backed but not covered by AdGuard SafeSearch)
+? security.cloudflare-dns.com             # Cloudflare 1.1.1.2 malware-filtering DoH (still bypasses parent's list) [Blocked services toggle: Cloudflare]
+? shadow.tech                             # Shadow cloud PC
+? sitecheck2.opera.com                    # Opera VPN/fraud-check endpoint contacted when VPN starts
+? smartdnsproxy.com                       # Smart DNS Proxy (custom DNS geo-unblocker)
+? surfseasy.com                           # typo-guard; see surfeasy.com
+? swisscows.com                           # Swisscows (family-safe by design)
+? tailscale.com                           # Tailscale (exit nodes tunnel all traffic)
+? teamviewer.com                          # TeamViewer remote desktop
+? translate.yandex.com                    # Yandex Translate incl. page translation
+? ucweb.com                               # UC Browser cloud-boost proxies
+? unblockit.app                           # Unblockit mirror directory (rotates TLDs)
+? unlocator.com                           # Unlocator smart DNS
+? web.archive.org                         # Wayback Machine (serves snapshots of blocked sites)
+? wireguard.com                           # WireGuard software
+? you.com                                 # You.com
+? zerotier.com                            # ZeroTier overlay network

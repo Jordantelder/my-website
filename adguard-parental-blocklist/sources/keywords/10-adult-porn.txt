@@ -1,0 +1,144 @@
+# Pornography and explicit sexual content
+#
+# Format:   term [flags]: variant, variant   # note
+#   [word]     = match as a whole word only (needed when the term appears inside innocent words)
+#   [optional] = disabled by default because it also blocks innocent searches; enable by deleting the flag
+# Terms match anywhere in the search query, case-insensitively; spaces/hyphens are wildcards.
+
+porn: pron, p0rn, pr0n, porm, pornografia, pornographie, pornograf%c3%ada   # substring: also covers porno, pornhub, pornography, pornstar
+xxx   # also blocks XXXTentacion and XXXL sizes
+nsfw: nsfvv
+nsfl
+sex [word]: sexo, sexe, seks, sesso   # whole word: does not block essex, sussex, unisex
+sexy [word]: sexxy, s3xy
+sexual: sexuall, sexuel, sexuelle, sessuale   # 'sexual reproduction' / 'asexual reproduction' are exempted in sources/allow.txt
+sexting: sextape, sex tape, sexts
+sext [word]   # whole word: does not block sexton, sextant, sextet
+s3x: sexx, sexxx, secks, sekz
+nude: nudes, nudez, n00ds, nudies, nudity, desnuda, desnudo, desnudas, desnudos, pelada, peladas
+naked: nekkid, nakid, naket, nackt   # 'naked eye' and 'naked mole rat' are exempted in sources/allow.txt
+boobs: boobies, boobas, bewbs, b00bs, big boobs
+boob [word]   # whole word: does not block booby trap
+tits: titties, titty, tetas, titten
+seins [word]
+breasts [optional, word]   # also blocks chicken breasts recipes and breast cancer
+vagina: vulva
+penis: peen, dick pic, dickpic, dickpics
+dick [word]: dicks, cock, cocks, d1ck, c0ck   # whole word: does not block dickens, cockatoo, peacock, cockpit
+pussy [word]: p%2assy   # whole word: does not block pussycat
+ass [word]: asses, culo   # whole word: does not block class, grass, assassin
+big booty: booty pics, booty shorts, booty shake, booty shaking
+thicc: thique
+thirst trap: thirst traps, thirsttrap
+thong: thongs
+lingerie
+panties: pantys
+blowjob: blow job, blowjobs
+handjob: hand job, handjobs
+anal [word]   # whole word: does not block analysis, canal
+masturbat: masterbat, mastur bat, masturbate, masterbate
+jerk off: jerkoff, jerking off, jacking off, jack off
+wank [word]: wanking, wanker, wankers   # whole word: does not block swanky
+fap [word]: fapping, faps
+deepthroat: deep throat
+creampie: cream pie
+cumshot: cum shot
+cum [word]: cumming, cums   # whole word: does not block document, cucumber
+jizz: jizzed
+semen [word]
+orgasm: orgasms, orgasim
+squirt [optional, word]: squirting   # also blocks squirt gun
+gangbang: gang bang
+threesome: threesomes
+orgy [word]: orgies
+bukkake
+cunnilingus
+fellatio
+rimjob: rim job
+pegging
+fingering [optional]   # also a guitar and piano term
+bdsm
+bondage
+fetish: fetishes, fetiche
+kink [word]: kinky, kinks
+femdom
+dominatrix
+footjob: foot job
+feet pics: feet pic, foot pics
+spanking [optional]
+hentai: hentia, hentay, henti, nhentai, hanime
+ahegao
+futa [word]: futanari   # whole word: does not block Futaba
+ecchi
+oppai
+lewd: lewds, lewdness
+doujin: doujinshi
+r18 [word]: r-18
+milf [word]: milfs   # whole word: does not block Milford
+dilf
+gilf
+stepsis: step sis, stepsister porn   # also blocks 'stepsister'
+stepbro: step bro
+stepmom [optional]: step mom
+incest
+taboo [optional]
+onlyfans: only fans, 0nlyfans, onlyfan, onlyfanz
+fansly
+camgirl: cam girl, cam girls, webcam girl, webcam girls, camgirls
+strippers: strip club, striptease, stripclub, strip clubs
+stripper [optional, word]   # also paint stripper, wire stripper
+escorts [word]: escort service, escort services
+hooker [word]: hookers
+prostitut: prostitute, prostitution, prostitutes
+brothel: brothels
+sugar daddy: sugardaddy, sugar baby, sugarbaby
+dildo: dildos
+vibrator: vibrators
+fleshlight
+buttplug: butt plug
+strapon: strap-on, strap on
+xvideos: xvideo
+xnxx
+xhamster
+redtube
+spankbang
+chaturbate
+stripchat
+bongacams
+livejasmin
+cam4
+myfreecams
+redgifs
+erome [word]   # whole word: does not block Jerome
+motherless
+thisvid
+brazzers
+bangbros
+naughtyamerica: naughty america
+fapello
+coomer: coomer party, coomer su
+kemono party: kemono su   # not plain 'kemono' (Kemono Friends is a children's anime)
+simpcity
+bunkr
+cyberdrop
+4chan: 4channel
+hot girls: hot girl, hot babes, hot babe
+hot moms: hot mom
+thick thighs
+girls gone wild
+adult videos: adult video, adult movies, adult movie, adult film, adult films, adult content, adult site, adult sites, adult games, adult game
+x rated: x-rated, xrated
+18+: 18 plus, eighteen plus
+mature content: mature videos
+uncensored: uncensored version
+nudist: nudism, naturist, naturism
+upskirt
+downblouse
+voyeur
+peeping tom
+boner: boners
+horny
+slut: sluts, slutty
+whore: whores
+thot [word]: thots   # whole word: does not block Thoth
+twerk [optional]: twerking

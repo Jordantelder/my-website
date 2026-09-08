@@ -1,0 +1,239 @@
+# LGBTQ+ community, media and sexuality information sites (parent-requested)
+#
+# One domain per line.  '?' at the start = optional (commented out in the default output).
+# Text after '#' is a note.  Subdomains are blocked automatically (||domain^).
+
+aarinfantasy.com                         # aarinfantasy yaoi forum
+adam4adam.com                            # Adam4Adam, adult
+daddyhunt.com                            # Daddyhunt, adult
+diyhrt.wiki                              # DIY HRT sourcing wiki (unprescribed hormones)
+dodsonandross.com                        # Dodson and Ross explicit sex-ed
+dreamspinnerpress.com                    # Dreamspinner explicit M/M romance
+gay.com                                  # Gay.com legacy portal/dating (dormant)
+gaydar.net                               # Gaydar
+grindr.com                               # Grindr
+growlrapp.com                            # Growlr
+hornet.com                               # Hornet app and stories
+hrt.cafe                                 # DIY HRT vendor directory
+jackd.com                                # Jack'd
+jackd.mobi                               # Jack'd legacy domain
+kinkly.com                               # Kinkly adult sex advice
+lex.lgbt                                 # Lex queer social app
+manhunt.net                              # Manhunt, adult
+ohjoysextoy.com                          # Oh Joy Sex Toy explicit comics
+omg.blog                                 # OMG Blog gay gossip, celebrity nudity
+omgyes.com                               # OMGYes explicit videos
+planetromeo.com                          # PlanetRomeo
+qxmagazine.com                           # QX London scene magazine; escort ads/NSFW
+recon.com                                # Recon fetish dating, adult
+riptidepublishing.com                    # Riptide explicit LGBTQ romance (defunct)
+romeo.com                                # ROMEO alternate domain
+savage.love                              # Savage Love adult sex-advice column/podcast
+scruff.com                               # Scruff
+silverdaddies.com                        # SilverDaddies, adult
+sniffies.com                             # Sniffies cruising map, adult
+squirt.org                               # Squirt cruising site, adult
+taimi.com                                # Taimi
+tlavideo.com                             # TLA Video store; sells gay adult titles
+weareher.com                             # HER app
+? a4te.org                                 # Advocates for Trans Equality new domain
+? acesandaros.org                          # Aces & Aros community hub
+? advocate.com                             # The Advocate, US LGBTQ news magazine
+? advocatesforyouth.org                    # Advocates for Youth
+? afterellen.com                           # AfterEllen lesbian pop-culture site
+? aliceoseman.com                          # Heartstopper author site
+? amaze.org                                # AMAZE sex-ed videos for 10-14
+? answer.rutgers.edu                       # Answer, parent org of Sex Etc. (single subdomain only)
+? arocalypse.com                           # Arocalypse aromantic forum
+? aromanticism.org                         # AUREA aromantic advocacy
+? asexuality.org                           # AVEN forums and AVENwiki (wiki.asexuality.org)
+? attitude.co.uk                           # Attitude magazine UK
+? autostraddle.com                         # Autostraddle, queer women's culture site
+? baywindows.com                           # Bay Windows (Boston)
+? bearworldmag.com                         # Bear World magazine; some NSFW
+? bedsider.org                             # Bedsider birth control info
+? bellabooks.com                           # Bella Books lesbian fiction
+? beyond-mogai-pride-flags.tumblr.com      # MOGAI pride flag archive blog [Blocked services toggle: Tumblr]
+? binetusa.org                             # BiNet USA
+? biresource.org                           # Bisexual Resource Center
+? bisexual.org                             # Bisexual.org (amBi)
+? bishuk.com                               # BISH UK sex ed for 14+
+? boldstrokesbooks.com                     # Bold Strokes Books LGBTQ fiction
+? boyculture.com                           # Boy Culture gay gossip blog, some NSFW
+? boyz.co.uk                               # Boyz London scene magazine; adult ads
+? capitalpride.org                         # Capital Pride (DC)
+? crossdresserheaven.com                   # Crossdresser Heaven community
+? curvemag.com                             # Curve lesbian magazine
+? dailyxtra.com                            # Xtra legacy domain (Canada)
+? dallasvoice.com                          # Dallas Voice
+? dekkoo.com                               # Dekkoo gay film streaming; mature content
+? diva-magazine.com                        # DIVA magazine UK
+? dnamagazine.com.au                       # DNA gay men's magazine; underwear/shirtless imagery
+? dragqueenstoryhour.org                   # Drag Queen Story Hour legacy domain
+? dragstoryhour.org                        # Drag Story Hour
+? ebar.com                                 # Bay Area Reporter
+? emptyclosets.com                         # Empty Closets coming-out forum; peer support boards/chat, not a crisis line
+? epgn.com                                 # Philadelphia Gay News
+? eqca.org                                 # Equality California
+? equalityfederation.org                   # Equality Federation
+? equallywed.com                           # Equally Wed LGBTQ weddings
+? equalpride.com                           # equalpride, parent of Advocate/Out/Pride
+? euphoria.fandom.com                      # Euphoria wiki; mature
+? everyoneisgay.com                        # Everyone Is Gay youth advice site
+? flamingorampant.com                      # Flamingo Rampant LGBTQ children's book publisher
+? frameline.org                            # Frameline SF LGBTQ film festival
+? gagaoolala.com                           # GagaOOLala Asian LGBTQ streaming; mature content
+? gay.it                                   # Gay.it (Italy)
+? gaycities.com                            # GayCities travel/nightlife guide
+? gaycitynews.com                          # Gay City News (NYC)
+? gaydio.co.uk                             # Gaydio LGBTQ radio
+? gayexpress.co.nz                         # express magazine (NZ)
+? gayletter.com                            # Gayletter culture magazine
+? gaystarnews.com                          # Gay Star News (defunct)
+? gayswithkids.com                         # Gays With Kids parenting site
+? gaytimes.co.uk                           # GAY TIMES UK
+? gaytimes.com                             # GAY TIMES alternate domain
+? gc2b.co                                  # gc2b chest binders
+? gcn.ie                                   # Gay Community News Ireland
+? gender.fandom.com                        # Gender Wiki (Fandom)
+? genderbread.org                          # Genderbread Person
+? gendercensus.com                         # Gender Census survey
+? gendercreativekids.com                   # Gender Creative Kids Canada
+? genderdysphoria.fyi                      # The Gender Dysphoria Bible
+? genderedintelligence.co.uk               # Gendered Intelligence UK; runs youth groups
+? genderodyssey.org                        # Gender Odyssey conference
+? glaad.org                                # GLAAD
+? glad.org                                 # GLBTQ Legal Advocates & Defenders
+? glbthistory.org                          # GLBT Historical Society
+? glreview.org                             # The Gay & Lesbian Review
+? glsen.org                                # GLSEN schools advocacy
+? gomag.com                                # GO Magazine (queer women)
+? goqnotes.com                             # QNotes (Carolinas)
+? heartstopper.fandom.com                  # Heartstopper wiki
+? heartstoppercomic.tumblr.com             # Heartstopper webcomic blog [Blocked services toggle: Tumblr]
+? heretv.com                               # Here TV
+? hrc.org                                  # Human Rights Campaign; shop.hrc.org covered
+? ilga-europe.org                          # ILGA-Europe
+? ilga.org                                 # ILGA World
+? instinctmagazine.com                     # Instinct magazine
+? interactadvocates.org                    # interACT intersex youth advocacy
+? interpride.org                           # InterPride
+? intersex.wiki                            # Intersex Wiki
+? intomore.com                             # INTO (Grindr-owned magazine)
+? isna.org                                 # Intersex Society of North America archive
+? itspronouncedmetrosexual.com             # Sam Killermann gender/sexuality education blog
+? itsyoursexlife.com                       # It's Your Sex Life (MTV)
+? iwannaknow.org                           # ASHA teen STI info
+? kinseyinstitute.org                      # Kinsey Institute research
+? lambdalegal.org                          # Lambda Legal
+? lambdaliterary.org                       # Lambda Literary (LGBTQ books)
+? lavendermagazine.com                     # Lavender (Minneapolis)
+? lezhin.com                               # Lezhin Comics; 18+ BL titles
+? lezhinus.com                             # Lezhin Comics US; 18+ BL titles
+? lezwatchtv.com                           # LezWatch.TV queer women on TV database
+? lgbta.fandom.com                         # LGBTA Wiki (Fandom)
+? lgbthistorymonth.com                     # LGBT History Month (Equality Forum)
+? lgbtqia.fandom.com                       # LGBTQIA+ Wiki (Fandom)
+? lgbtqia.wiki                             # LGBTQIA+ Wiki independent site (Miraheze-hosted)
+? lgbtqnation.com                          # LGBTQ Nation news
+? logotv.com                               # Logo TV
+? losangelesblade.com                      # Los Angeles Blade
+? lovevictor.fandom.com                    # Love, Victor wiki
+? mardigras.org.au                         # Sydney Gay and Lesbian Mardi Gras
+? metroweekly.com                          # Metro Weekly (DC)
+? misterbandb.com                          # misterb&b gay travel lodging
+? mogai-wiki.tumblr.com                    # MOGAI Wiki Tumblr blog [Blocked services toggle: Tumblr]
+? mogai.miraheze.org                       # MOGAI Wiki (successor to EZGender Wiki)
+? mogailabel.fandom.com                    # MOGAI label wiki (Fandom)
+? mogaiwiki.miraheze.org                   # MOGAI Wiki alternate Miraheze address
+? mypronouns.org                           # MyPronouns.org
+? nclrights.org                            # National Center for Lesbian Rights
+? newfest.org                              # NewFest NYC
+? newnownext.com                           # NewNowNext (Logo TV blog, defunct)
+? nonbinary.wiki                           # Nonbinary Wiki
+? nycpride.org                             # NYC Pride
+? onearchives.org                          # ONE Archives
+? otherwild.com                            # Otherwild queer-owned shop
+? out.com                                  # Out magazine
+? outfest.org                              # Outfest LA
+? outfrontmagazine.com                     # OUT FRONT (Denver)
+? outhistory.org                           # OutHistory
+? outrightinternational.org                # Outright International
+? outsmartmagazine.com                     # OutSmart (Houston)
+? outsports.com                            # Outsports LGBTQ sports news
+? outtraveler.com                          # Out Traveler
+? outtv.ca                                 # OUTtv Canada
+? outtv.com                                # OUTtv
+? pinknews.co.uk                           # PinkNews legacy domain (redirects)
+? planetout.com                            # PlanetOut (legacy portal)
+? plannedparenthood.org                    # Planned Parenthood; also a healthcare provider
+? pointofpride.org                         # Point of Pride free binder/gear program
+? pride-flags.fandom.com                   # Pride Flags Wiki (Fandom)
+? pride.com                                # Pride.com (equalpride)
+? pride.fandom.com                         # Pride Wiki (Fandom)
+? prideflag.fandom.com                     # Pride Flag Wiki (Fandom)
+? prideinlondon.org                        # Pride in London
+? pridepalace.com                          # Pride Palace merchandise
+? prideshack.com                           # Pride Shack merchandise
+? pridesource.com                          # Pride Source / Between The Lines (Michigan)
+? pridetoronto.com                         # Pride Toronto
+? pronouns.page                            # Pronouns.page profiles and identity dictionary (localized subdomains covered)
+? pronouny.xyz                             # Pronouny pronoun dressing room
+? qnews.com.au                             # QNews (Australia)
+? qsaltlake.com                            # QSaltLake
+? queer.de                                 # German LGBTQ news
+? queerkidstuff.com                        # Queer Kid Stuff web series for young children
+? queerscreen.org.au                       # Queer Screen Sydney
+? queersexed.org                           # Queer Sex Ed curriculum
+? queerty.com                              # Queerty gay news/gossip
+? rainbowdepot.com                         # Rainbow Depot merchandise
+? rainbowpedia.fandom.com                  # LGBT Encyclopedia Wikia (Fandom)
+? revry.tv                                 # Revry LGBTQ streaming
+? rupaulsdragrace.fandom.com               # RuPaul's Drag Race wiki
+? scarleteen.com                           # Scarleteen teen sex ed; has message boards and text line, not a crisis service
+? sex-education.fandom.com                 # Netflix Sex Education wiki; mature
+? sexandu.ca                               # Sex & U (Canada)
+? sexetc.org                               # Sex, Etc. (Rutgers Answer) teen sex ed
+? sexinfoonline.com                        # UCSB SexInfo Online
+? sexpositivefamilies.com                  # Sex Positive Families
+? sfpride.org                              # San Francisco Pride
+? shangay.com                              # Shangay (Spain)
+? siecus.org                               # SIECUS sex-ed policy
+? southfloridagaynews.com                  # South Florida Gay News
+? starobserver.com.au                      # Star Observer (Australia)
+? stonewall.org.uk                         # Stonewall UK
+? susans.org                               # Susan's Place transgender resources; forum and chat, not a crisis line
+? taggmagazine.com                         # Tagg Magazine (queer women)
+? teensource.org                           # TeenSource (California)
+? tellofilms.com                           # Tello Films lesbian web series
+? tetu.com                                 # Tetu (France)
+? tgforum.com                              # TGForum crossdresser/trans community; some adult content
+? thegavoice.com                           # Georgia Voice
+? thegayuk.com                             # TheGayUK magazine
+? them.us                                  # Them, Conde Nast LGBTQ culture site
+? thepinknews.com                          # PinkNews current domain
+? thetaskforce.org                         # National LGBTQ Task Force
+? tomboyx.com                              # TomboyX gender-neutral underwear
+? towleroad.com                            # Towleroad gay news blog
+? transadvocate.com                        # TransAdvocate blog
+? transathlete.com                         # TransAthlete policy site
+? transequality.org                        # Advocates for Trans Equality (formerly NCTE)
+? transfemscience.org                      # Transfeminine Science HRT articles
+? transgenderlawcenter.org                 # Transgender Law Center
+? transgendermap.com                       # Transgender Map transition guide
+? transgenderteensurvivalguide.tumblr.com  # Trans teen advice blog [Blocked services toggle: Tumblr]
+? transstudent.org                         # Trans Student Educational Resources (Gender Unicorn)
+? travelgay.com                            # Travel Gay guide; lists bars, saunas, cruising venues
+? tsroadmap.com                            # Transgender Roadmap transition guide
+? unclockable.com                          # Unclockable tucking products
+? underworks.com                           # Underworks binders/compression
+? victoryfund.org                          # LGBTQ+ Victory Fund
+? washingtonblade.com                      # Washington Blade LGBTQ newspaper
+? watermarkonline.com                      # Watermark (Florida LGBTQ news)
+? wildfang.com                             # Wildfang tomboy apparel
+? windycitytimes.com                       # Windy City Times (Chicago)
+? wolfevideo.com                           # Wolfe Video LGBTQ films
+? worldofwonder.net                        # World of Wonder (Drag Race producer)
+? wowpresentsplus.com                      # WOW Presents Plus drag streaming
+? xtramagazine.com                         # Xtra Magazine current domain
+? youngroyals.fandom.com                   # Young Royals wiki

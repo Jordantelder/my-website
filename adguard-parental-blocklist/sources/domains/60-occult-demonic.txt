@@ -1,0 +1,182 @@
+# Demons, satanism, occult, spellcasting and demon-themed adult media
+#
+# One domain per line.  '?' at the start = optional (commented out in the default output).
+# Text after '#' is a note.  Subdomains are blocked automatically (||domain^).
+
+666blacksun.com                         # Joy of Satan affiliated site
+666blacksun.org                         # Joy of Satan affiliated site, alternate TLD
+7witches.net                            # 7witches coven paid spell casting
+afterschoolsatan.com                    # After School Satan Club (TST program aimed at schoolchildren)
+ancient-forums.co                       # Joy of Satan forum alternate domain
+ancient-forums.com                      # Joy of Satan official forum
+ascendingflame.com                      # Temple of Ascending Flame (Asenath Mason) draconian/demonic magic
+asenathmason.com                        # Asenath Mason author site, demonic grimoires
+ashra.net                               # Ashra paid spell casting
+assemblyoflightbearers.org              # Assembly of Light Bearers Luciferian org
+becomealivinggod.com                    # E.A. Koetting demon-evocation courses and forum
+black-magic-spells.com                  # black magic spells site
+blackwitchcoven.com                     # black magic spells and ritual shop
+californiaastrology.com                 # Calastrology paid spells and curses
+chaosmatrix.org                         # chaos magic resource site
+churchofazazel.org                      # Church of Azazel theistic Satanist group
+churchofsatan.com                       # Church of Satan (LaVeyan) official site
+churchofsatan.org                       # alternate/redirect domain for Church of Satan
+darkbooks.org                           # occult/grimoire ebook library
+davidmyatt.wordpress.com                # blog of the Order of Nine Angles founder
+death-of-communism.com                  # Joy of Satan affiliated site
+deliriumsrealm.com                      # demonology and mythology reference
+demonicpedia.com                        # demon encyclopedia
+demonolatry.org                         # OFS Demonolatry (S. Connolly) demon-worship community
+demonology.fandom.com                   # demonology fandom wiki
+dpjs.co.uk                              # Description, Philosophies and Justification of Satanism
+dragonrouge.net                         # Dragon Rouge left-hand path order
+esotericarchives.com                    # Twilit Grotto grimoire texts incl. Lesser Key of Solomon
+esoterium.com                           # online ouija board and esoteric tools
+evocationmagic.com                      # spirit evocation forum
+exposingchristianity.com                # Joy of Satan affiliated site
+firstchurchofsatan.com                  # First Church of Satan (John Allee)
+firstsatanicchurch.com                  # First Satanic Church (Karla LaVey)
+free-witchcraft-spells.com              # free witchcraft spells site
+globalorderofsatan.com                  # Global Order of Satan (UK/EU TST splinter)
+goetia.fandom.com                       # Goetia demons fandom wiki
+greaterchurchoflucifer.org              # Greater Church of Lucifer
+grimoar.cz                              # Grimoar occult text library
+hazbinhotel.com                         # Hazbin Hotel official site
+hellaverse.fandom.com                   # Hazbin/Helluva shared universe wiki
+helluvaboss.com                         # Helluva Boss official site
+hermetic.com                            # Hermetic Library, Crowley and grimoire texts
+hermetics.org                           # Hermetics Resource Site occult downloads
+josministries.prophpbb.com              # older Joy of Satan forum host
+joyofsatan.com                          # Joy of Satan alternate domain
+joyofsatan.org                          # Joy of Satan Ministries main site
+kabbalahexposed.com                     # Joy of Satan affiliated site
+luciferianapotheca.com                  # Luciferian Apotheca shop/publisher (Michael W. Ford)
+magickaschool.com                       # online witchcraft school
+mandragoramagika.com                    # witchcraft groups and courses
+martinetpress.com                       # ONA-affiliated publisher
+michaelwford.com                        # Michael W. Ford Luciferian author site
+museumoftalkingboards.com               # Ouija history site with Web Ouija board
+neoluciferianchurch.org                 # Neo-Luciferian Church
+o9a.org                                 # Order of Nine Angles site
+occult-world.com                        # occult encyclopedia incl. demons and grimoires
+occult.live                             # occult wiki
+occultforum.org                         # occult discussion forum
+occultopedia.com                        # occult encyclopedia
+omega9alpha.wordpress.com               # Order of Nine Angles blog
+ordoluciferi.org                        # Ordo Luciferi Luciferian order
+ouijaboard.us                           # online virtual ouija board
+ouijia-board.netlify.app                # interactive spirit board web app
+sacred-magick.com                       # occult library and forum
+satanandsons.com                        # demonolatry ritual shop
+satanandsuns.com                        # demonolatry ritual shop, alternate spelling
+satanicinternational.net                # Satanic International Network social site
+satanicreds.org                         # Satanic Reds organization
+satanictemple.com                       # alternate domain associated with The Satanic Temple
+satanisgod.org                          # Joy of Satan mirror site
+satanslibrary.org                       # Joy of Satan document library
+spellcastermaxim.com                    # paid black magic/curse spellcaster
+spells4free.com                         # free spells site
+spells8.com                             # Spells8 online coven and spell lessons
+spellshelp.com                          # Spellcaster Maxim second site
+spellsofmagic.com                       # large spell database and coven forum
+spindlehorse.com                        # SpindleHorse Toons studio site
+studioarcanis.com                       # occult/magick forum
+succubusproductions.com                 # Ford's Succubus Productions publishing
+templeofset.org                         # Temple of Set official site
+templeoftheblacklight.net               # Temple of the Black Light / MLO
+templeofzeus.org                        # Temple of Zeus, Joy of Satan rebrand/affiliate
+the-demonic-paradise.fandom.com         # Demonic Paradise wiki cataloguing demons
+the600club.com                          # Satanic discussion forum
+theisticsatanism.com                    # theistic Satanism resource site
+thesatanictemple.com                    # The Satanic Temple official site
+thesatanictemple.tv                     # TST TV streaming/video platform
+thesectofthehornedgod.com               # Sect of the Horned God, left-hand path org
+vivziepop.com                           # Vivziepop creator site
+vkjehannum.wordpress.com                # demonolatry blog with demon rituals
+wiccanspells.info                       # Wiccan spells site
+wishbonix.com                           # free spells site
+witchcraft.org                          # Children of Artemis witchcraft org
+witchcraftandwitches.com                # witchcraft information site
+witchipedia.com                         # witchcraft encyclopedia
+witchschool.com                         # Witch School (Correllian)
+xeper.org                               # Temple of Set affiliated site
+? 13moons.com                             # witchcraft supply shop
+? analoghorror.fandom.com                 # analog horror wiki
+? aonoexorcist.fandom.com                 # Blue Exorcist wiki (son of Satan premise)
+? astro.com                               # Astrodienst astrology charts
+? astrology.com                           # astrology horoscopes
+? azuregreen.net                          # occult and ritual supply shop
+? backrooms-wiki.wikidot.com              # Backrooms wikidot wiki
+? backrooms.fandom.com                    # Backrooms fandom wiki
+? backrooms.wiki                          # Backrooms wiki alternate domain
+? bibliotecapleyades.net                  # occult/conspiracy text archive
+? biddytarot.com                          # tarot learning site
+? cafeastrology.com                       # astrology reference
+? chillingadventuresofsabrina.fandom.com  # Chilling Adventures of Sabrina wiki (Satanic witch coven)
+? circlesanctuary.org                     # Circle Sanctuary pagan org
+? costarastrology.com                     # Co-Star astrology app
+? creepycatalog.com                       # horror listicle/story site
+? creepypasta.com                         # creepypasta horror story archive
+? creepypasta.fandom.com                  # Creepypasta wiki
+? creepypasta.org                         # creepypasta mirror/archive
+? cult-of-the-lamb.fandom.com             # Cult of the Lamb game wiki
+? devilmaycry.fandom.com                  # Devil May Cry wiki
+? ecauldron.com                           # The Cauldron pagan forum
+? ecauldron.net                           # The Cauldron pagan forum alternate domain
+? ghostvillage.com                        # ghost/paranormal community
+? golden-dawn.com                         # Golden Dawn ceremonial magic order
+? goodomens.fandom.com                    # Good Omens wiki
+? greyfaction.org                         # Grey Faction, a TST campaign site
+? hermeticgoldendawn.org                  # Hermetic Order of the Golden Dawn
+? kasamba.com                             # paid psychic and medium readings
+? keen.com                                # paid psychic and medium readings
+? kimetsu-no-yaiba.fandom.com             # Demon Slayer wiki
+? kuroshitsuji.fandom.com                 # Black Butler wiki (demon contract)
+? labyrinthos.co                          # tarot app and reference
+? lashtal.com                             # Aleister Crowley society and forum
+? learnreligions.com                      # mainstream religion site with large paganism/witchcraft section
+? llewellyn.com                           # witchcraft/occult book publisher
+? luckymojo.com                           # Lucky Mojo hoodoo shop and spell workers
+? missingwitches.com                      # Missing Witches online coven
+? moodymoons.com                          # witchcraft and spell blog
+? oranum.com                              # live psychic cam site
+? otherworldlyoracle.com                  # witchcraft blog with spells and spirit work
+? oto-usa.org                             # OTO US Grand Lodge
+? oto.org                                 # Ordo Templi Orientis (Thelema)
+? paganclub.com                           # pagan and witchcraft forum
+? paganfederation.org                     # Pagan Federation UK
+? paganforum.com                          # pagan discussion forum
+? paganspace.net                          # pagan social network
+? paranormalsoup.com                      # paranormal forum
+? psychicscience.org                      # online spirit board game plus psychic tests
+? psychicsource.com                       # paid psychic readings
+? sacred-texts.com                        # Internet Sacred Text Archive, hosts grimoires among world scriptures
+? scaryforkids.com                        # horror stories site aimed at kids/teens
+? scp-wiki.net                            # SCP Foundation wiki alternate domain
+? scp-wiki.wikidot.com                    # SCP Foundation wiki
+? scpwiki.com                             # SCP Foundation wiki alternate domain
+? sharkrobot.com                          # merch store carrying Hazbin/Helluva goods
+? slenderman.fandom.com                   # Slender Man wiki alternate subdomain
+? supernatural.fandom.com                 # Supernatural TV wiki (demons, possession)
+? tarot.com                               # tarot and astrology readings
+? thehoodwitch.com                        # The Hoodwitch witchcraft lifestyle site
+? thelemapedia.org                        # Thelema/occult wiki
+? themagickalcat.com                      # pagan/occult supply shop
+? themystica.com                          # The Mystica occult encyclopedia
+? theowlhouse.fandom.com                  # The Owl House wiki (Disney, demons/witches)
+? theslenderman.fandom.com                # Slender Man wiki
+? thetravelingwitch.com                   # witchcraft blog
+? thewildhunt.org                         # pagan news site
+? trollpasta.com                          # Trollpasta wiki
+? unexplained-mysteries.com               # paranormal/unexplained forum
+? vexen.co.uk                             # Vexen Crabtree personal site with Satanism sections
+? wicca-spirituality.com                  # Wicca spirituality guides
+? wicca.com                               # Wicca: The Celtic Connection
+? wicca.org                               # Church and School of Wicca
+? wiccaliving.com                         # Wicca lessons and spells
+? wiccanow.com                            # Wicca and witchcraft guides
+? wiccantogether.com                      # Wiccan social network
+? witchesandpagans.com                    # Witches & Pagans magazine community
+? witchesofthecraft.com                   # Witches of the Craft blog and spells
+? witchology.com                          # witchcraft history and practice site
+? witchvox.com                            # The Witches' Voice (defunct 2019)

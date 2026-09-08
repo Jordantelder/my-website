@@ -38,7 +38,35 @@ What the DNS layer *can* do, and what this folder provides for it:
 | `research-caveats.json` | you | Per-category notes from the research pass: what DNS cannot cover and why. |
 | `tests/` | you | Scripts that run the generated files through AdGuard's own filtering engine. |
 
-{{STATS}}
+<!-- stats:start -->
+## What is in the lists
+
+| Domain category | Enabled | Optional |
+|---|---:|---:|
+| Adult video, image, cam, leak and imageboard sites | 295 | 16 |
+| Hentai, boorus, rule34 and adult games | 144 | 20 |
+| Erotica, adult fanfiction, NSFW AI chatbots, AI image generators and nudify tools | 147 | 30 |
+| Stranger chat, dating, hookup, sexting and escort sites | 256 | 22 |
+| Furry, yiff, therian, otherkin, quadrobics and animal-fetish sites | 84 | 49 |
+| Demons, satanism, occult, spellcasting and demon-themed adult media | 97 | 80 |
+| LGBTQ+ community, media and sexuality information sites (parent-requested) | 33 | 201 |
+| Social and user-content platforms where this content concentrates | 151 | 110 |
+| Bypass hardening: encrypted DNS, VPNs, proxies, Tor, alternative search engines | 406 | 58 |
+| **Total** | 1613 | 586 |
+
+| Search-term category | Patterns | Rules (full) | Rules (compact) |
+|---|---:|---:|---:|
+| Pornography and explicit sexual content | 269 | 7058 | 12 |
+| Sexuality, sexual orientation and gender identity (parent-requested) | 849 | 12087 | 12 |
+| Furry, therian, otherkin, quadrobics, animal transformation and bestiality | 135 | 3343 | 10 |
+| Demons, satanism, summoning, ouija, witchcraft and demon-themed media | 195 | 3486 | 12 |
+| Roblox, Minecraft, Discord, TikTok, fanfiction, rule 34 and AI-specific terms | 202 | 1700 | 12 |
+| Evasion spellings, algospeak, bypass searches and foreign-language equivalents | 222 | 2450 | 10 |
+| **Total** | 1872 | 30124 | 68 |
+
+A *pattern* is one term or spelling after removing anything another pattern already covers
+(for example `lesbians` is dropped because `lesbian` matches it).
+<!-- stats:end -->
 
 ## Setup, layer by layer
 

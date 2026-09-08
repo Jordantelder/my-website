@@ -1,0 +1,283 @@
+# Stranger chat, dating, hookup, sexting and escort sites
+#
+# One domain per line.  '?' at the start = optional (commented out in the default output).
+# Text after '#' is a note.  Subdomains are blocked automatically (||domain^).
+
+2backpage.com           # Backpage clone
+321chat.com             # chat rooms incl. teen room
+3fun.com                # 3Fun threesome/couples app
+addmes.io               # Snapchat username finder
+adultfriendfinder.com   # AdultFriendFinder
+adultlook.com           # escort directory
+adultsearch.com         # adult services directory
+adultwork.com           # UK escort/cam directory
+allotalk.com            # teen/anon chat rooms
+alt.com                 # BDSM hookup (FriendFinder)
+anastasiadate.com       # international/mail-order dating
+arousr.com              # paid sexting
+ashleymadison.com       # affair site
+asiandate.com           # international dating
+azarlive.com            # Azar random video chat app
+backpage.com            # Backpage (seized)
+badoo.com               # Badoo dating
+bazoocam.org            # French random cam chat
+bbrts.com               # BarebackRT
+bdsm.com                # BDSM dating
+bearwww.com             # Bearwww
+bedpage.com             # Backpage clone
+benaughty.com           # hookup site
+bicupid.com             # bisexual hookup
+blackpeoplemeet.com     # BlackPeopleMeet
+blued.com               # Blued
+boo.world               # Boo personality dating
+camfrog.com             # public video chat rooms, adult rooms
+camgo.com               # random cam chat
+camround.com            # random cam chat
+camsurf.com             # random cam chat
+casualx.com             # hookup app
+chamet.com              # Chamet random video chat app
+chappyapp.com           # Chappy (defunct)
+chat-avenue.com         # Chat Avenue, teen and adult rooms
+chatalternative.com     # random cam chat
+chatavenue.com          # Chat Avenue alias
+chatblink.com           # random stranger chat
+chathour.com            # chat rooms
+chathub.gg              # ChatHub random cam chat
+chatib.us               # anonymous chat rooms
+chatingly.com           # random chat rooms
+chatiw.com              # anonymous chat rooms
+chatiw.us               # chatiw mirror
+chatki.com              # random cam chat
+chatous.com             # random stranger chat app
+chatrandom.com          # random cam chat, adult
+chatroulette.com        # Chatroulette
+chatruletka.com         # Russian Chatroulette clone
+chatspin.com            # random cam chat
+chatstep.com            # private chat rooms (defunct, mirrors exist)
+chatville.com           # random cam chat / chat rooms
+chatzozo.com            # adult chat rooms
+chatzy.com              # private/public chat rooms, used for RP and adult chat
+christianmingle.com     # Christian Mingle
+cityxguide.com          # escort classifieds (seized)
+clover.co               # Clover dating
+coffeemeetsbagel.com    # Coffee Meets Bagel
+coomeet.com             # paid random video chat with women
+cruisinggays.com        # cruising spot directory
+datemyage.com           # international dating
+dirtyroulette.com       # adult random cam chat
+dizkover.com            # Kik/Snap username finder
+doublelist.com          # Craigslist-personals replacement
+downapp.com             # Down hookup app
+dudesnude.com           # adult gay hookup
+e-chat.co               # anonymous chat rooms
+eccie.net               # escort forum
+elitesingles.com        # EliteSingles
+emeraldchat.com         # Emerald Chat, Omegle successor
+emilydates.com          # sugar dating
+eros.com                # escort directory
+eroticmonkey.ch         # escort review site
+eroticmonkey.com        # Erotic Monkey legacy domain
+escortalligator.com     # ListCrawler sister site
+escortbabylon.net       # escort aggregator
+escortdirectory.com     # escort directory
+escortfish.ch           # escort classifieds
+escortindex.com         # escort aggregator
+establishedmen.com      # sugar dating
+eurogirlsescort.com     # EU escort directory
+fancentro.com           # FanCentro premium Snapchat
+fanmetrics.com          # premium creator finder
+fansmetrics.co          # OnlyFans/premium finder
+fansmetrics.com         # FansMetrics alternate
+fanvue.com              # Fanvue
+farmersonly.com         # FarmersOnly
+feeld.co                # Feeld, kink/poly dating
+fling.com               # hookup site
+flingster.com           # adult random cam chat
+flirt.com               # hookup site
+freechatnow.com         # adult chat rooms
+friendfinder-x.com      # FriendFinder network
+friendfinder.com        # FriendFinder network hub
+fruitz.io               # Fruitz dating app
+fruzo.com               # video-chat dating
+fuckbook.com            # hookup site
+gayromeo.com            # Romeo legacy domain
+getiton.com             # FriendFinder network
+getthursday.com         # Thursday dating app
+gleeden.com             # affair site
+grindr.mobi             # Grindr API host
+growlr.com              # Growlr
+happn.com               # happn
+harlothub.com           # escort classifieds
+hashtagopen.com         # #open non-monogamy dating
+heatedaffairs.com       # affair site
+hily.com                # Hily dating
+holla.world             # Holla random video chat app
+hoop.photo              # Hoop, Snapchat friend-finder
+hornetapp.com           # Hornet alternate
+humaniplex.com          # adult classifieds
+iamnaughty.com          # hookup site
+ibackpage.com           # Backpage clone
+illicitencounters.com   # affair site (UK)
+imeetzu.com             # Omegle-style random chat
+instabang.com           # hookup site
+internationalcupid.com  # Cupid Media network
+jaumo.com               # Jaumo dating
+jdate.com               # JDate
+joingy.com              # random text/video chat
+jswipe.co               # JSwipe
+jswipeapp.com           # JSwipe alternate
+justfor.fans            # JustForFans
+kasidie.com             # swinger site
+kidschat.net            # unmoderated 'kids' chat rooms
+kikfriender.com         # Kik username finder, sexting ads
+kikusernames.com        # Kik username finder
+kinkdapp.com            # Kinkd BDSM dating
+kittyads.com            # escort classifieds
+knuddels.de             # German chat community
+leolist.cc              # Canadian adult classifieds
+lesbianpersonals.com    # FriendFinder network
+listcrawler.com         # escort aggregator
+listcrawler.eu          # ListCrawler mirror
+livelinks.com           # phone chatline
+lmk.chat                # LMK stranger chat app
+lovoo.com               # Lovoo dating
+loyalfans.com           # LoyalFans
+luckycrush.live         # random opposite-sex video chat
+massagerepublic.com     # escort/massage directory
+masseurfinder.com       # male masseur directory
+meetic.com              # Meetic (EU Match)
+meetinchat.com          # adult chat rooms
+meetme.com              # MeetMe social discovery/live
+megapersonals.com       # MegaPersonals mirror
+megapersonals.eu        # escort classifieds
+mingle2.com             # Mingle2 free dating
+misstravel.com          # travel-companion sugar site
+mocospace.com           # mobile chat/flirt community
+monkey.app              # Monkey app, teen random video chat
+monkey.cool             # Monkey web version
+muzmatch.com            # Muzz legacy domain
+muzz.com                # Muzz (Muslim dating)
+mylol.com               # teen dating site
+mym.fans                # MYM
+nastykinkpigs.com       # adult gay fetish hookup
+naughtydate.com         # hookup site
+niteflirt.com           # phone sex marketplace
+nostringsattached.com   # affair/hookup site
+obackpage.com           # Backpage clone
+ome.tv                  # OmeTV, most popular Omegle successor
+omegle.cc               # Omegle-branded clone
+omegle.chat             # Omegle-branded clone
+omegle.com              # original Omegle (shut down 2023, still referenced/redirected)
+omeglealternative.com   # Omegle clone
+onenightfriend.com      # hookup site
+onluxy.com              # Luxy
+onlyfinder.com          # OnlyFans search engine
+onlysnaps.com           # premium Snapchat marketplace
+ourtime.com             # OurTime
+outpersonals.com        # FriendFinder network
+paltalk.com             # public video chat rooms
+parship.com             # Parship (EU)
+passion.com             # FriendFinder network
+pinkcupid.com           # PinkCupid lesbian dating
+preferred411.com        # escort screening site
+premium.chat            # paid chat/sexting platform
+privatedelights.ch      # escort directory
+pure.app                # Pure hookup app
+quickflirt.com          # hookup site
+raya.app                # Raya alternate
+rayatheapp.com          # Raya
+rentboy.com             # male escort site (seized)
+rentmasseur.com         # male masseur/escort directory
+rentmen.com             # RentMen legacy domain
+rentmen.eu              # male escort directory
+richmeetbeautiful.com   # sugar dating
+rubmaps.ch              # erotic massage review site
+rubmaps.com             # RubMaps legacy domain
+sdc.com                 # swinger site
+secretbenefits.com      # sugar dating
+seeking.com             # Seeking (SeekingArrangement)
+seekingarrangement.com  # legacy Seeking domain
+sextfriend.com          # sexting site
+sextingforum.net        # sexting partner forum
+sextpanther.com         # paid sexting/calls
+shagle.com              # random cam chat, adult
+silversingles.com       # SilverSingles
+sipsap.com              # escort classifieds
+skipthegames.com        # escort classifieds
+skout.com               # Skout social discovery
+slixa.com               # escort directory
+slutroulette.com        # adult random cam chat
+snapsext.com            # sexting hookup site
+sovip.io                # Snapchat search engine
+spdate.com              # spam hookup site
+spotafriend.com         # Spotafriend teen swiping app
+strangermeetup.com      # random stranger chat
+sudyapp.com             # Sudy sugar app
+sugarbook.com           # sugar dating
+sugardaddie.com         # sugar dating
+sugardaddyforme.com     # sugar dating
+sugardaddymeet.com      # sugar dating
+surgeapp.co             # Surge gay dating
+swapfinder.com          # swinger site
+swinglifestyle.com      # swinger site
+swingtowns.com          # swinger site
+tagged.com              # Tagged social discovery
+talktome.com            # phone sex marketplace
+talkwithstranger.com    # random stranger chat
+tantanapp.com           # Tantan
+teen-chat.org           # teen chat rooms
+teenchat.com            # teen chat rooms
+thaifriendly.com        # Thai dating
+theeroticreview.com     # escort review site
+theinnercircle.co       # Inner Circle
+theleague.com           # The League
+thundr.com              # random cam chat
+tinychat.com            # public video chat rooms
+tnaboard.com            # escort review board
+together2night.com      # hookup site
+tryst.link              # escort directory
+ts4rent.eu              # trans escort directory
+tsescorts.com           # trans escort directory
+twoo.com                # Twoo social discovery
+uberhorny.com           # hookup site
+uhmegle.com             # Omegle successor clone
+usasexguide.com         # USASexGuide mirror
+usasexguide.nl          # sex-services forum
+victoriamilan.com       # affair site
+videochatru.com         # Russian random cam chat
+wakie.com               # Wakie voice chat with strangers
+wellhello.com           # hookup site
+whatsyourprice.com      # bid-for-dates site
+wink.app                # Wink by 9count
+wireclub.com            # chat rooms
+wizzapp.com             # Wizz teen friend-finder
+xmatch.com              # hookup site
+y99.in                  # anonymous chat rooms
+yellw.co                # Yubo legacy (Yellow) domain
+yesbackpage.com         # Backpage clone
+yesichat.com            # random chat rooms
+yikyak.com              # Yik Yak anonymous local posts
+zoeapp.co               # Zoe lesbian dating
+zoosk.com               # Zoosk
+? ask.fm                  # ASKfm anonymous Q&A
+? bumble.com              # Bumble
+? clubhouse.com           # drop-in audio rooms with strangers
+? curiouscat.live         # CuriousCat anonymous Q&A
+? eharmony.com            # eharmony
+? gotinder.com            # Tinder API/link domain [Blocked services toggle: Tinder]
+? hi5.com                 # hi5 social discovery (MeetMe family)
+? hinge.co                # Hinge
+? hingeaws.net            # Hinge API host
+? imvu.com                # 3D avatar chat with adult access pass
+? liveme.com              # LiveMe streaming
+? locanto.com             # classifieds with heavy personals section
+? match.com               # Match
+? ngl.link                # NGL anonymous Q&A
+? okcupid.com             # OkCupid
+? plentyoffish.com        # Plenty of Fish alias
+? pof.com                 # Plenty of Fish
+? sarahah.com             # Sarahah anonymous messages
+? tellonym.me             # Tellonym anonymous messages
+? tinder.com              # Tinder [Blocked services toggle: Tinder]
+? vivastreet.co.uk        # classifieds with adult section
+? vivastreet.com          # classifieds with adult section

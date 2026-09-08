@@ -1,0 +1,2233 @@
+! AdGuard DNS - parental control user rules
+! Generated 2026-09-08 by generate.py from ./sources/domains/*.txt
+! Paste into AdGuard DNS > (your server) > User rules.  Lines starting with '!' are comments.
+! Entries marked 'optional' are commented out here: remove the leading '! optional: ' to enable one,
+! or use adguard-dns-user-rules-strict.txt which has all of them enabled.
+! What each domain is: see DOMAINS.md next to this file.
+! To allow a site again, add an exception:   @@||example.com^
+
+! ==== Adult video, image, cam, leak and imageboard sites (295 rules, 16 optional) ====
+
+||2ch.hk^
+||2ch.su^
+||2chan.net^
+||420chan.org^
+||4based.com^
+||4cdn.org^
+||4chan.com^
+||4chan.org^
+||4channel.org^
+||4plebs.org^
+||4tube.com^
+||7chan.org^
+||8ch.net^
+||8chan.moe^
+||8chan.se^
+||8kun.net^
+||8kun.top^
+||91porn.com^
+||acidimg.cc^
+||admireme.vip^
+||adultdeepfakes.com^
+||adulttime.com^
+||amateur.tv^
+||analvids.com^
+||ancensored.com^
+||anon-v.com^
+||archived.moe^
+||archiveofsins.com^
+||ashemaletube.com^
+||avgle.com^
+||aznude.com^
+||b4k.co^
+||babepedia.com^
+||bangbros.com^
+||beeg.com^
+||bellesa.co^
+||bitchesgirls.com^
+||blacked.com^
+||bongacams.com^
+||boobpedia.com^
+||boodigo.com^
+||boyfriendtv.com^
+||brazzers.com^
+||bunkr-albums.io^
+||bunkr.ac^
+||bunkr.ax^
+||bunkr.black^
+||bunkr.ci^
+||bunkr.cr^
+||bunkr.fi^
+||bunkr.is^
+||bunkr.la^
+||bunkr.media^
+||bunkr.ph^
+||bunkr.pk^
+||bunkr.ps^
+||bunkr.red^
+||bunkr.ru^
+||bunkr.si^
+||bunkr.site^
+||bunkr.sk^
+||bunkr.su^
+||bunkr.ws^
+||bunkrr.ru^
+||bunkrr.su^
+||cam4.com^
+||cameraprive.com^
+||camhub.cc^
+||cams.com^
+||camsoda.com^
+||camster.com^
+||camvideos.tv^
+||camwhores.tv^
+||camwhoresbay.com^
+||celebjihad.com^
+||celebmasta.com^
+||centerfold.com^
+||cfake.com^
+||chaturbate.com^
+||cherry.tv^
+||clips4sale.com^
+||crazyshit.com^
+||cyberdrop.cc^
+||cyberdrop.me^
+||cyberdrop.to^
+||cyberfile.me^
+||daftsex.com^
+||desuarchive.org^
+||dirtyship.com^
+||dropmms.com^
+||drtuber.com^
+||drunkenstepfather.com^
+||efukt.com^
+||elitebabes.com^
+||empflix.com^
+||empornium.is^
+||empornium.sx^
+||endchan.gg^
+||endchan.net^
+||endchan.org^
+||eporner.com^
+||erome.com^
+||eroprofile.com^
+||erothots.co^
+||evilangel.com^
+||extremetube.com^
+||famousinternetgirls.com^
+||fap-nation.com^
+||fapello.com^
+||fapello.su^
+||fapeza.com^
+||faphouse.com^
+||fapodrop.com^
+||faponic.com^
+||fapopedia.net^
+||fappeningbook.com^
+||femdomcult.org^
+||femjoy.com^
+||fikfap.com^
+||fireden.net^
+||flirt4free.com^
+||forumophilia.com^
+||freeones.com^
+||fuq.com^
+||fux.com^
+||gaymaletube.com^
+||gifdeliverynetwork.com^
+||goodporn.to^
+||happyfappy.org^
+||hclips.com^
+||hdzog.com^
+||heavy-r.com^
+||hegre.com^
+||homemoviestube.com^
+||hotleaks.tv^
+||hotmovs.com^
+||hotscope.tv^
+||hqporner.com^
+||hustler.com^
+||imagefap.com^
+||imgsrc.ru^
+||imlive.com^
+||imx.to^
+||influencersgonewild.com^
+||ismygirl.com^
+||iwantclips.com^
+||jable.tv^
+||jasmin.com^
+||jav.guru^
+||javhd.com^
+||jerkmate.com^
+||jpg.church^
+||jpg5.su^
+||kbjfree.com^
+||keezmovies.com^
+||kink.com^
+||kitty-kats.net^
+||kohlchan.net^
+||lainchan.org^
+||leakedmodels.com^
+||leakedzone.com^
+||legalporno.com^
+||lewdstars.com^
+||livejasmin.com^
+||loverfans.com^
+||manyvids.com^
+||metart.com^
+||missav.ai^
+||missav.com^
+||missav.ws^
+||modelhub.com^
+||mofos.com^
+||motherless.com^
+||mrskin.com^
+||myfreecams.com^
+||naughtyamerica.com^
+||newbienudes.com^
+||noodlemagazine.com^
+||notfans.com^
+||nsfw247.to^
+||nubiles.net^
+||nudes7.com^
+||nudevista.com^
+||nudostar.com^
+||nudostar.tv^
+||ok.xxx^
+||okfans.com^
+||paradisehill.cc^
+||penthouse.com^
+||perfectgirls.net^
+||phun.org^
+||picazor.com^
+||pimpandhost.com^
+||planetsuzy.org^
+||pocketstars.com^
+||porn.com^
+||pornbay.org^
+||porndroids.com^
+||porndude.com^
+||porngen.art^
+||pornhat.com^
+||pornhd.com^
+||pornhub.com^
+||pornhubpremium.com^
+||pornmd.com^
+||pornolab.net^
+||pornone.com^
+||pornpen.art^
+||pornpics.com^
+||pornpics.de^
+||pornsos.com^
+||porntrex.com^
+||porntube.com^
+||pussytorrents.org^
+||rbt.asia^
+||realitykings.com^
+||recurbate.com^
+||recurbate.me^
+||redtube.com^
+||royalcams.com^
+||saint2.cr^
+||saint2.su^
+||sex.com^
+||sexlikereal.com^
+||sexy-egirls.com^
+||sexy-youtubers.com^
+||shesfreaky.com^
+||simpcity.cr^
+||simpcity.su^
+||skyprivate.com^
+||sorrymother.video^
+||soundgasm.net^
+||soyjak.party^
+||spankbang.com^
+||spankbang.party^
+||spankwire.com^
+||streamate.com^
+||streamray.com^
+||stripchat.com^
+||supjav.com^
+||sxyprn.com^
+||teamskeet.com^
+||thebarchive.com^
+||thefappening.pro^
+||thefappeningblog.com^
+||thenude.com^
+||theporndude.com^
+||thisvid.com^
+||thothub.lol^
+||thothub.to^
+||thothub.vip^
+||thotsbay.com^
+||thotslife.com^
+||tnaflix.com^
+||tokyomotion.net^
+||tube8.com^
+||tubegalore.com^
+||tubesafari.com^
+||tushy.com^
+||txxx.com^
+||undress.love^
+||unfiltrd.com^
+||unlockt.me^
+||upornia.com^
+||vipergirls.to^
+||vipr.im^
+||vixen.com^
+||vjav.com^
+||voyeurweb.com^
+||vporn.com^
+||vrbangers.com^
+||vrporn.com^
+||warosu.org^
+||wifelovers.com^
+||wizchan.org^
+||x-art.com^
+||xfree.com^
+||xhamster.com^
+||xhamster.desi^
+||xhamster2.com^
+||xhamster3.com^
+||xhamsterlive.com^
+||xlovecam.com^
+||xnxx.com^
+||xnxx.es^
+||xnxx.tv^
+||xpics.me^
+||xvideos.com^
+||xvideos.red^
+||xvideos2.com^
+||xxbrits.com^
+||xxxtik.com^
+||youjizz.com^
+||youporn.com^
+||zoig.com^
+! optional: ||doodstream.com^
+! optional: ||fboom.me^
+! optional: ||filejoker.net^
+! optional: ||iafd.com^
+! optional: ||imagebam.com^
+! optional: ||imagetwist.com^
+! optional: ||imagevenue.com^
+! optional: ||imgbox.com^
+! optional: ||k2s.cc^
+! optional: ||keep2share.cc^
+! optional: ||mixdrop.co^
+! optional: ||pixhost.to^
+! optional: ||playboy.com^
+! optional: ||streamtape.com^
+! optional: ||tezfiles.com^
+! optional: ||turboimagehost.com^
+
+! ==== Hentai, boorus, rule34 and adult games (144 rules, 20 optional) ====
+
+||3hentai.net^
+||8muses.com^
+||aibooru.online^
+||allporncomic.com^
+||allthefallen.moe^
+||anime-sharing.com^
+||animeidhentai.com^
+||asmhentai.com^
+||atfbooru.ninja^
+||booru.org^
+||chan.sankakucomplex.com^
+||cherrykissgames.com^
+||danbooru.donmai.us^
+||denpasoft.com^
+||derpibooru.org^
+||dlsite.com^
+||dlsite.jp^
+||dmm.co.jp^
+||donmai.us^
+||doujin-moe.us^
+||doujins.com^
+||e-hentai.org^
+||e926.net^
+||ehgt.org^
+||erogames.com^
+||erolabsshare.net^
+||exhentai.org^
+||fakku.net^
+||fenoxo.com^
+||furbooru.org^
+||gamcore.com^
+||gamesofdesire.com^
+||gelbooru.com^
+||getchu.com^
+||hanime.tv^
+||haremheroes.com^
+||hath.network^
+||hbrowse.com^
+||hentai-img.com^
+||hentai.cafe^
+||hentai.tv^
+||hentai.xxx^
+||hentai2read.com^
+||hentaicity.com^
+||hentaidude.com^
+||hentaiera.com^
+||hentaiforce.net^
+||hentaifox.com^
+||hentaifromhell.org^
+||hentaigasm.com^
+||hentaihaven.co^
+||hentaihaven.org^
+||hentaihaven.xxx^
+||hentaihere.com^
+||hentaiheroes.com^
+||hentaimama.io^
+||hentainexus.com^
+||hentaiplay.net^
+||hentaipros.com^
+||hentaipulse.com^
+||hentairead.com^
+||hentairox.com^
+||hentaisea.com^
+||hentaistream.com^
+||hentaiverse.org^
+||hentaiworld.tv^
+||hitomi.la^
+||hongfire.com^
+||hstream.moe^
+||hypnohub.net^
+||idol.sankakucomplex.com^
+||imhentai.xxx^
+||iwara.tv^
+||jastusa.com^
+||johren.games^
+||johren.net^
+||kaguragames.com^
+||kemono.cr^
+||kimochi.info^
+||kinkoid.com^
+||konachan.com^
+||lewd.ninja^
+||lewdgames.com^
+||lewdgames.to^
+||lewdzone.com^
+||lolibooru.moe^
+||luscious.net^
+||manga18fx.com^
+||mangagamer.com^
+||manhwa18.com^
+||manhwa18.net^
+||manhwahentai.me^
+||manytoon.com^
+||muchohentai.com^
+||multporn.net^
+||myhentaigallery.com^
+||nekohouse.su^
+||nekopoi.care^
+||nhentai.net^
+||nhentai.to^
+||nhentai.xxx^
+||nijie.info^
+||nijie.net^
+||nutaku.com^
+||nutaku.net^
+||ohentai.org^
+||oppai.stream^
+||otomi-games.com^
+||paheal.net^
+||poipiku.com^
+||porncomixonline.net^
+||pururin.io^
+||pururin.to^
+||realbooru.com^
+||rule34.booru.org^
+||rule34.paheal.net^
+||rule34.us^
+||rule34.world^
+||rule34.xxx^
+||rule34.xyz^
+||rule34hentai.net^
+||rule34video.com^
+||ryuugames.com^
+||sankaku.app^
+||sankakucomplex.com^
+||sfmcompile.club^
+||shadbase.com^
+||shagbase.com^
+||shiravune.com^
+||simply-hentai.com^
+||sukebei.nyaa.si^
+||svscomics.com^
+||tbib.org^
+||toonily.com^
+||toonily.net^
+||tsumino.com^
+||ulmf.org^
+||underhentai.net^
+||vercomicsporno.com^
+||watchhentai.net^
+||webtoon.xyz^
+||xanimu.com^
+||xbooru.com^
+||yande.re^
+! optional: ||anime-pictures.net^
+! optional: ||comick.app^
+! optional: ||comick.io^
+! optional: ||dmm.com^
+! optional: ||fantia.jp^
+! optional: ||konachan.net^
+! optional: ||mangapark.net^
+! optional: ||melonbooks.co.jp^
+! optional: ||nyaa.land^
+! optional: ||nyaa.si^
+! optional: ||picarto.tv^
+! optional: ||pillowfort.social^
+! optional: ||safebooru.org^
+! optional: ||sekaiproject.com^
+! optional: ||skeb.jp^
+! optional: ||toomics.com^
+! optional: ||toranoana.jp^
+! optional: ||vndb.org^
+! optional: ||wallhaven.cc^
+! optional: ||zerochan.net^
+
+! ==== Erotica, adult fanfiction, NSFW AI chatbots, AI image generators and nudify tools (147 rules, 30 optional) ====
+
+||adult-fanfiction.org^
+||adultfanfiction.org^
+||agnai.chat^
+||aicharactercards.com^
+||aisekai.ai^
+||ao3.org^
+||archiveofourown.org^
+||asstr.org^
+||bdsmcafe.com^
+||bdsmlibrary.com^
+||bigclosetr.us^
+||booru.plus^
+||botify.ai^
+||botprompts.net^
+||c.ai^
+||candy.ai^
+||caveduck.io^
+||chai-research.com^
+||chai.ml^
+||character-tavern.com^
+||character.ai^
+||characterhub.org^
+||charstar.ai^
+||chatfai.com^
+||chub.ai^
+||chyoa.com^
+||civitai.com^
+||clothoff.io^
+||clothoff.net^
+||crack.wrtn.ai^
+||createporn.com^
+||crushon.ai^
+||cyoc.net^
+||deep-nude.ai^
+||deepfakesweb.com^
+||deepnude.cc^
+||deepnude.to^
+||deepnudenow.com^
+||deepsukebe.io^
+||deepswap.ai^
+||digi.ai^
+||dopple.ai^
+||dreamgf.ai^
+||dreamtavern.ai^
+||eroticstories.com^
+||evaapp.ai^
+||faceswapper.ai^
+||fantasy.ai^
+||fantasygf.ai^
+||ficbook.net^
+||fictionmania.tv^
+||figgs.ai^
+||gayauthors.org^
+||gaydemon.com^
+||girlfriendgpt.com^
+||gptgirlfriend.online^
+||hammerai.com^
+||harpy.chat^
+||hentai-foundry.com^
+||herahaven.ai^
+||hiwaifu.com^
+||icegirls.ai^
+||indiansexstories2.net^
+||janitorai.com^
+||jannyai.com^
+||joyland.ai^
+||juicysexstories.com^
+||kajiwoto.ai^
+||kindroid.ai^
+||kristenarchives.com^
+||kupid.ai^
+||linky-ai.com^
+||linky-ai.eu^
+||literotica.com^
+||lovescape.com^
+||lushstories.com^
+||luvr.ai^
+||mage.space^
+||mcstories.com^
+||moemate.io^
+||moescape.ai^
+||mrdeepfakes.com^
+||muah.ai^
+||myanima.ai^
+||mydreamcompanion.com^
+||nastia.ai^
+||nectar.ai^
+||nifty.org^
+||nomi.ai^
+||novelai.net^
+||noveltrove.com^
+||nudify.me^
+||nudify.online^
+||ourdream.ai^
+||paradot.ai^
+||pephop.ai^
+||pixai.art^
+||polyai.ai^
+||polybuzz.ai^
+||polybuzz.buzz^
+||polybuzz.com^
+||pornderful.ai^
+||pornify.cc^
+||pornjourney.ai^
+||pornjoy.ai^
+||pornpen.ai^
+||pornworks.ai^
+||pornx.ai^
+||promptchan.ai^
+||promptchan.com^
+||pygmalion.chat^
+||replika.ai^
+||replika.com^
+||risuai.net^
+||risuai.xyz^
+||romanticai.com^
+||sakura.fm^
+||seaart.ai^
+||secretdesires.ai^
+||seduced.ai^
+||sexstories.com^
+||sexstoriespost.com^
+||sexy.ai^
+||smexy.ai^
+||sofurry.com^
+||soulgen.ai^
+||soulgen.net^
+||soulkyn.com^
+||spicychat.ai^
+||squidgeworld.org^
+||storiesonline.net^
+||sugarlab.ai^
+||swapface.org^
+||talkie-ai.com^
+||tensor.art^
+||tfgames.site^
+||tgcomics.com^
+||tgstorytime.com^
+||unclothy.com^
+||undress.app^
+||undressbaby.com^
+||unstability.ai^
+||writeholo.com^
+||wyvern.chat^
+||xoul.ai^
+||yodayo.com^
+||zeta-ai.io^
+! optional: ||aidungeon.com^
+! optional: ||aidungeon.io^
+! optional: ||aihorde.net^
+! optional: ||asianfanfics.com^
+! optional: ||backyard.ai^
+! optional: ||civitai.green^
+! optional: ||dezgo.com^
+! optional: ||dreamily.ai^
+! optional: ||fanfiction.net^
+! optional: ||fanfiktion.de^
+! optional: ||faraday.dev^
+! optional: ||fictionpress.com^
+! optional: ||ficwad.com^
+! optional: ||fimfiction.net^
+! optional: ||flowgpt.com^
+! optional: ||inkitt.com^
+! optional: ||koboldai.net^
+! optional: ||mediaminer.org^
+! optional: ||myshell.ai^
+! optional: ||perchance.org^
+! optional: ||quotev.com^
+! optional: ||reface.ai^
+! optional: ||scribblehub.com^
+! optional: ||sillytavern.app^
+! optional: ||sinkin.ai^
+! optional: ||smashwords.com^
+! optional: ||spiritfanfiction.com^
+! optional: ||stablediffusionweb.com^
+! optional: ||wattpad.com^
+! optional: ||writing.com^
+
+! ==== Stranger chat, dating, hookup, sexting and escort sites (256 rules, 22 optional) ====
+
+||2backpage.com^
+||321chat.com^
+||3fun.com^
+||addmes.io^
+||adultfriendfinder.com^
+||adultlook.com^
+||adultsearch.com^
+||adultwork.com^
+||allotalk.com^
+||alt.com^
+||anastasiadate.com^
+||arousr.com^
+||ashleymadison.com^
+||asiandate.com^
+||azarlive.com^
+||backpage.com^
+||badoo.com^
+||bazoocam.org^
+||bbrts.com^
+||bdsm.com^
+||bearwww.com^
+||bedpage.com^
+||benaughty.com^
+||bicupid.com^
+||blackpeoplemeet.com^
+||blued.com^
+||boo.world^
+||camfrog.com^
+||camgo.com^
+||camround.com^
+||camsurf.com^
+||casualx.com^
+||chamet.com^
+||chappyapp.com^
+||chat-avenue.com^
+||chatalternative.com^
+||chatavenue.com^
+||chatblink.com^
+||chathour.com^
+||chathub.gg^
+||chatib.us^
+||chatingly.com^
+||chatiw.com^
+||chatiw.us^
+||chatki.com^
+||chatous.com^
+||chatrandom.com^
+||chatroulette.com^
+||chatruletka.com^
+||chatspin.com^
+||chatstep.com^
+||chatville.com^
+||chatzozo.com^
+||chatzy.com^
+||christianmingle.com^
+||cityxguide.com^
+||clover.co^
+||coffeemeetsbagel.com^
+||coomeet.com^
+||cruisinggays.com^
+||datemyage.com^
+||dirtyroulette.com^
+||dizkover.com^
+||doublelist.com^
+||downapp.com^
+||dudesnude.com^
+||e-chat.co^
+||eccie.net^
+||elitesingles.com^
+||emeraldchat.com^
+||emilydates.com^
+||eros.com^
+||eroticmonkey.ch^
+||eroticmonkey.com^
+||escortalligator.com^
+||escortbabylon.net^
+||escortdirectory.com^
+||escortfish.ch^
+||escortindex.com^
+||establishedmen.com^
+||eurogirlsescort.com^
+||fancentro.com^
+||fanmetrics.com^
+||fansmetrics.co^
+||fansmetrics.com^
+||fanvue.com^
+||farmersonly.com^
+||feeld.co^
+||fling.com^
+||flingster.com^
+||flirt.com^
+||freechatnow.com^
+||friendfinder-x.com^
+||friendfinder.com^
+||fruitz.io^
+||fruzo.com^
+||fuckbook.com^
+||gayromeo.com^
+||getiton.com^
+||getthursday.com^
+||gleeden.com^
+||grindr.mobi^
+||growlr.com^
+||happn.com^
+||harlothub.com^
+||hashtagopen.com^
+||heatedaffairs.com^
+||hily.com^
+||holla.world^
+||hoop.photo^
+||hornetapp.com^
+||humaniplex.com^
+||iamnaughty.com^
+||ibackpage.com^
+||illicitencounters.com^
+||imeetzu.com^
+||instabang.com^
+||internationalcupid.com^
+||jaumo.com^
+||jdate.com^
+||joingy.com^
+||jswipe.co^
+||jswipeapp.com^
+||justfor.fans^
+||kasidie.com^
+||kidschat.net^
+||kikfriender.com^
+||kikusernames.com^
+||kinkdapp.com^
+||kittyads.com^
+||knuddels.de^
+||leolist.cc^
+||lesbianpersonals.com^
+||listcrawler.com^
+||listcrawler.eu^
+||livelinks.com^
+||lmk.chat^
+||lovoo.com^
+||loyalfans.com^
+||luckycrush.live^
+||massagerepublic.com^
+||masseurfinder.com^
+||meetic.com^
+||meetinchat.com^
+||meetme.com^
+||megapersonals.com^
+||megapersonals.eu^
+||mingle2.com^
+||misstravel.com^
+||mocospace.com^
+||monkey.app^
+||monkey.cool^
+||muzmatch.com^
+||muzz.com^
+||mylol.com^
+||mym.fans^
+||nastykinkpigs.com^
+||naughtydate.com^
+||niteflirt.com^
+||nostringsattached.com^
+||obackpage.com^
+||ome.tv^
+||omegle.cc^
+||omegle.chat^
+||omegle.com^
+||omeglealternative.com^
+||onenightfriend.com^
+||onluxy.com^
+||onlyfinder.com^
+||onlysnaps.com^
+||ourtime.com^
+||outpersonals.com^
+||paltalk.com^
+||parship.com^
+||passion.com^
+||pinkcupid.com^
+||preferred411.com^
+||premium.chat^
+||privatedelights.ch^
+||pure.app^
+||quickflirt.com^
+||raya.app^
+||rayatheapp.com^
+||rentboy.com^
+||rentmasseur.com^
+||rentmen.com^
+||rentmen.eu^
+||richmeetbeautiful.com^
+||rubmaps.ch^
+||rubmaps.com^
+||sdc.com^
+||secretbenefits.com^
+||seeking.com^
+||seekingarrangement.com^
+||sextfriend.com^
+||sextingforum.net^
+||sextpanther.com^
+||shagle.com^
+||silversingles.com^
+||sipsap.com^
+||skipthegames.com^
+||skout.com^
+||slixa.com^
+||slutroulette.com^
+||snapsext.com^
+||sovip.io^
+||spdate.com^
+||spotafriend.com^
+||strangermeetup.com^
+||sudyapp.com^
+||sugarbook.com^
+||sugardaddie.com^
+||sugardaddyforme.com^
+||sugardaddymeet.com^
+||surgeapp.co^
+||swapfinder.com^
+||swinglifestyle.com^
+||swingtowns.com^
+||tagged.com^
+||talktome.com^
+||talkwithstranger.com^
+||tantanapp.com^
+||teen-chat.org^
+||teenchat.com^
+||thaifriendly.com^
+||theeroticreview.com^
+||theinnercircle.co^
+||theleague.com^
+||thundr.com^
+||tinychat.com^
+||tnaboard.com^
+||together2night.com^
+||tryst.link^
+||ts4rent.eu^
+||tsescorts.com^
+||twoo.com^
+||uberhorny.com^
+||uhmegle.com^
+||usasexguide.com^
+||usasexguide.nl^
+||victoriamilan.com^
+||videochatru.com^
+||wakie.com^
+||wellhello.com^
+||whatsyourprice.com^
+||wink.app^
+||wireclub.com^
+||wizzapp.com^
+||xmatch.com^
+||y99.in^
+||yellw.co^
+||yesbackpage.com^
+||yesichat.com^
+||yikyak.com^
+||zoeapp.co^
+||zoosk.com^
+! optional: ||ask.fm^
+! optional: ||bumble.com^
+! optional: ||clubhouse.com^
+! optional: ||curiouscat.live^
+! optional: ||eharmony.com^
+! optional: ||gotinder.com^
+! optional: ||hi5.com^
+! optional: ||hinge.co^
+! optional: ||hingeaws.net^
+! optional: ||imvu.com^
+! optional: ||liveme.com^
+! optional: ||locanto.com^
+! optional: ||match.com^
+! optional: ||ngl.link^
+! optional: ||okcupid.com^
+! optional: ||plentyoffish.com^
+! optional: ||pof.com^
+! optional: ||sarahah.com^
+! optional: ||tellonym.me^
+! optional: ||tinder.com^
+! optional: ||vivastreet.co.uk^
+! optional: ||vivastreet.com^
+
+! ==== Furry, yiff, therian, otherkin, quadrobics and animal-fetish sites (84 rules, 49 optional) ====
+
+||abdlmatch.com^
+||abdlstoryforum.info^
+||abdreams.com^
+||adisc.org^
+||alt-h.net^
+||amorousgame.com^
+||anotherwiki.org^
+||artofzoo.com^
+||aryion.com^
+||bad-dragon.com^
+||baddogbooks.com^
+||baddragon.com^
+||barq.app^
+||barq.social^
+||beastforum.com^
+||beyondhumanity.net^
+||bodyinflation.org^
+||collarspace.com^
+||coomer.st^
+||dailydiapers.com^
+||ddlgforum.com^
+||diapermates.com^
+||dreamhart.org^
+||expansionfan.com^
+||f-list.net^
+||facdn.net^
+||fchan.us^
+||ferzu.com^
+||fetlife.com^
+||fromfiction.net^
+||furfling.com^
+||furry.booru.org^
+||furrymate.com^
+||furrymuck.com^
+||furrynetwork.com^
+||giantessworld.net^
+||houseofchimeras.weebly.com^
+||howlr.app^
+||inflatechan.net^
+||kinmunity.com^
+||littlespaceonline.com^
+||macrophile.com^
+||metamorphose.org^
+||metapix.net^
+||otherkin.fandom.com^
+||otherkin.net^
+||otherkin.wiki^
+||otherkindex.carrd.co^
+||otherkinphenomena.org^
+||pahswithoutborders.com^
+||petlust.com^
+||pounced.org^
+||pupplay.info^
+||puppyplaycommunity.org^
+||puppyplayexpert.com^
+||pupspace.net^
+||sexyfur.com^
+||shifti.org^
+||sofurryfiles.com^
+||sonverrid.org^
+||tapestries.fur.com^
+||tf-fan.freeforums.net^
+||theri.app^
+||therian-guide.com^
+||therian-wilderness.proboards.com^
+||therian.fandom.com^
+||therian.net^
+||theriangear.com^
+||therianhaven.boards.net^
+||therianshop.com^
+||transform.to^
+||transformationforum.org^
+||transfur.com^
+||u18chan.com^
+||vore-station.net^
+||werelist.net^
+||yiff.party^
+||yiffalicious.com^
+||yiffer.xyz^
+||zeta-verein.de^
+||zoosection.com^
+||zooskool.com^
+||zootube365.com^
+||zooville.org^
+! optional: ||abuniverse.com^
+! optional: ||anthrochat.net^
+! optional: ||anthrocon.org^
+! optional: ||anthronw.com^
+! optional: ||awoo.space^
+! optional: ||bambinodiapers.com^
+! optional: ||biggestlittlefurcon.org^
+! optional: ||confuzzled.org.uk^
+! optional: ||ddlgplayground.com^
+! optional: ||dogpatch.press^
+! optional: ||dragon.style^
+! optional: ||en.wikifur.com^
+! optional: ||eurofurence.org^
+! optional: ||flayrah.com^
+! optional: ||fur.com^
+! optional: ||furality.org^
+! optional: ||furcadia.com^
+! optional: ||furfest.org^
+! optional: ||furlandia.org^
+! optional: ||furnet.org^
+! optional: ||furplanet.com^
+! optional: ||furry.fandom.com^
+! optional: ||furrycons.com^
+! optional: ||furryfiesta.org^
+! optional: ||furrylife.online^
+! optional: ||furrymap.net^
+! optional: ||furrymigration.org^
+! optional: ||furryweekend.com^
+! optional: ||furrywritersguild.com^
+! optional: ||furscience.com^
+! optional: ||fursonafy.com^
+! optional: ||fursuitreview.com^
+! optional: ||furthemore.org^
+! optional: ||furtrack.com^
+! optional: ||furvilla.com^
+! optional: ||itaku.ee^
+! optional: ||littleforbig.com^
+! optional: ||megaplexcon.org^
+! optional: ||nordicfuzzcon.org^
+! optional: ||onesiesdownunder.com^
+! optional: ||pawb.fun^
+! optional: ||rearz.ca^
+! optional: ||secondlife.com^
+! optional: ||snouts.online^
+! optional: ||sofawolf.com^
+! optional: ||spindizzy.org^
+! optional: ||thisfursonadoesnotexist.com^
+! optional: ||tykables.com^
+! optional: ||vulpine.club^
+
+! ==== Demons, satanism, occult, spellcasting and demon-themed adult media (97 rules, 80 optional) ====
+
+||666blacksun.com^
+||666blacksun.org^
+||7witches.net^
+||afterschoolsatan.com^
+||ancient-forums.co^
+||ancient-forums.com^
+||ascendingflame.com^
+||asenathmason.com^
+||ashra.net^
+||assemblyoflightbearers.org^
+||becomealivinggod.com^
+||black-magic-spells.com^
+||blackwitchcoven.com^
+||californiaastrology.com^
+||chaosmatrix.org^
+||churchofazazel.org^
+||churchofsatan.com^
+||churchofsatan.org^
+||darkbooks.org^
+||davidmyatt.wordpress.com^
+||death-of-communism.com^
+||deliriumsrealm.com^
+||demonicpedia.com^
+||demonolatry.org^
+||demonology.fandom.com^
+||dpjs.co.uk^
+||dragonrouge.net^
+||esotericarchives.com^
+||esoterium.com^
+||evocationmagic.com^
+||exposingchristianity.com^
+||firstchurchofsatan.com^
+||firstsatanicchurch.com^
+||free-witchcraft-spells.com^
+||globalorderofsatan.com^
+||goetia.fandom.com^
+||greaterchurchoflucifer.org^
+||grimoar.cz^
+||hazbinhotel.com^
+||hellaverse.fandom.com^
+||helluvaboss.com^
+||hermetic.com^
+||hermetics.org^
+||josministries.prophpbb.com^
+||joyofsatan.com^
+||joyofsatan.org^
+||kabbalahexposed.com^
+||luciferianapotheca.com^
+||magickaschool.com^
+||mandragoramagika.com^
+||martinetpress.com^
+||michaelwford.com^
+||museumoftalkingboards.com^
+||neoluciferianchurch.org^
+||o9a.org^
+||occult-world.com^
+||occult.live^
+||occultforum.org^
+||occultopedia.com^
+||omega9alpha.wordpress.com^
+||ordoluciferi.org^
+||ouijaboard.us^
+||ouijia-board.netlify.app^
+||sacred-magick.com^
+||satanandsons.com^
+||satanandsuns.com^
+||satanicinternational.net^
+||satanicreds.org^
+||satanictemple.com^
+||satanisgod.org^
+||satanslibrary.org^
+||spellcastermaxim.com^
+||spells4free.com^
+||spells8.com^
+||spellshelp.com^
+||spellsofmagic.com^
+||spindlehorse.com^
+||studioarcanis.com^
+||succubusproductions.com^
+||templeofset.org^
+||templeoftheblacklight.net^
+||templeofzeus.org^
+||the-demonic-paradise.fandom.com^
+||the600club.com^
+||theisticsatanism.com^
+||thesatanictemple.com^
+||thesatanictemple.tv^
+||thesectofthehornedgod.com^
+||vivziepop.com^
+||vkjehannum.wordpress.com^
+||wiccanspells.info^
+||wishbonix.com^
+||witchcraft.org^
+||witchcraftandwitches.com^
+||witchipedia.com^
+||witchschool.com^
+||xeper.org^
+! optional: ||13moons.com^
+! optional: ||analoghorror.fandom.com^
+! optional: ||aonoexorcist.fandom.com^
+! optional: ||astro.com^
+! optional: ||astrology.com^
+! optional: ||azuregreen.net^
+! optional: ||backrooms-wiki.wikidot.com^
+! optional: ||backrooms.fandom.com^
+! optional: ||backrooms.wiki^
+! optional: ||bibliotecapleyades.net^
+! optional: ||biddytarot.com^
+! optional: ||cafeastrology.com^
+! optional: ||chillingadventuresofsabrina.fandom.com^
+! optional: ||circlesanctuary.org^
+! optional: ||costarastrology.com^
+! optional: ||creepycatalog.com^
+! optional: ||creepypasta.com^
+! optional: ||creepypasta.fandom.com^
+! optional: ||creepypasta.org^
+! optional: ||cult-of-the-lamb.fandom.com^
+! optional: ||devilmaycry.fandom.com^
+! optional: ||ecauldron.com^
+! optional: ||ecauldron.net^
+! optional: ||ghostvillage.com^
+! optional: ||golden-dawn.com^
+! optional: ||goodomens.fandom.com^
+! optional: ||greyfaction.org^
+! optional: ||hermeticgoldendawn.org^
+! optional: ||kasamba.com^
+! optional: ||keen.com^
+! optional: ||kimetsu-no-yaiba.fandom.com^
+! optional: ||kuroshitsuji.fandom.com^
+! optional: ||labyrinthos.co^
+! optional: ||lashtal.com^
+! optional: ||learnreligions.com^
+! optional: ||llewellyn.com^
+! optional: ||luckymojo.com^
+! optional: ||missingwitches.com^
+! optional: ||moodymoons.com^
+! optional: ||oranum.com^
+! optional: ||otherworldlyoracle.com^
+! optional: ||oto-usa.org^
+! optional: ||oto.org^
+! optional: ||paganclub.com^
+! optional: ||paganfederation.org^
+! optional: ||paganforum.com^
+! optional: ||paganspace.net^
+! optional: ||paranormalsoup.com^
+! optional: ||psychicscience.org^
+! optional: ||psychicsource.com^
+! optional: ||sacred-texts.com^
+! optional: ||scaryforkids.com^
+! optional: ||scp-wiki.net^
+! optional: ||scp-wiki.wikidot.com^
+! optional: ||scpwiki.com^
+! optional: ||sharkrobot.com^
+! optional: ||slenderman.fandom.com^
+! optional: ||supernatural.fandom.com^
+! optional: ||tarot.com^
+! optional: ||thehoodwitch.com^
+! optional: ||thelemapedia.org^
+! optional: ||themagickalcat.com^
+! optional: ||themystica.com^
+! optional: ||theowlhouse.fandom.com^
+! optional: ||theslenderman.fandom.com^
+! optional: ||thetravelingwitch.com^
+! optional: ||thewildhunt.org^
+! optional: ||trollpasta.com^
+! optional: ||unexplained-mysteries.com^
+! optional: ||vexen.co.uk^
+! optional: ||wicca-spirituality.com^
+! optional: ||wicca.com^
+! optional: ||wicca.org^
+! optional: ||wiccaliving.com^
+! optional: ||wiccanow.com^
+! optional: ||wiccantogether.com^
+! optional: ||witchesandpagans.com^
+! optional: ||witchesofthecraft.com^
+! optional: ||witchology.com^
+! optional: ||witchvox.com^
+
+! ==== LGBTQ+ community, media and sexuality information sites (parent-requested) (33 rules, 201 optional) ====
+
+||aarinfantasy.com^
+||adam4adam.com^
+||daddyhunt.com^
+||diyhrt.wiki^
+||dodsonandross.com^
+||dreamspinnerpress.com^
+||gay.com^
+||gaydar.net^
+||grindr.com^
+||growlrapp.com^
+||hornet.com^
+||hrt.cafe^
+||jackd.com^
+||jackd.mobi^
+||kinkly.com^
+||lex.lgbt^
+||manhunt.net^
+||ohjoysextoy.com^
+||omg.blog^
+||omgyes.com^
+||planetromeo.com^
+||qxmagazine.com^
+||recon.com^
+||riptidepublishing.com^
+||romeo.com^
+||savage.love^
+||scruff.com^
+||silverdaddies.com^
+||sniffies.com^
+||squirt.org^
+||taimi.com^
+||tlavideo.com^
+||weareher.com^
+! optional: ||a4te.org^
+! optional: ||acesandaros.org^
+! optional: ||advocate.com^
+! optional: ||advocatesforyouth.org^
+! optional: ||afterellen.com^
+! optional: ||aliceoseman.com^
+! optional: ||amaze.org^
+! optional: ||answer.rutgers.edu^
+! optional: ||arocalypse.com^
+! optional: ||aromanticism.org^
+! optional: ||asexuality.org^
+! optional: ||attitude.co.uk^
+! optional: ||autostraddle.com^
+! optional: ||baywindows.com^
+! optional: ||bearworldmag.com^
+! optional: ||bedsider.org^
+! optional: ||bellabooks.com^
+! optional: ||beyond-mogai-pride-flags.tumblr.com^
+! optional: ||binetusa.org^
+! optional: ||biresource.org^
+! optional: ||bisexual.org^
+! optional: ||bishuk.com^
+! optional: ||boldstrokesbooks.com^
+! optional: ||boyculture.com^
+! optional: ||boyz.co.uk^
+! optional: ||capitalpride.org^
+! optional: ||crossdresserheaven.com^
+! optional: ||curvemag.com^
+! optional: ||dailyxtra.com^
+! optional: ||dallasvoice.com^
+! optional: ||dekkoo.com^
+! optional: ||diva-magazine.com^
+! optional: ||dnamagazine.com.au^
+! optional: ||dragqueenstoryhour.org^
+! optional: ||dragstoryhour.org^
+! optional: ||ebar.com^
+! optional: ||emptyclosets.com^
+! optional: ||epgn.com^
+! optional: ||eqca.org^
+! optional: ||equalityfederation.org^
+! optional: ||equallywed.com^
+! optional: ||equalpride.com^
+! optional: ||euphoria.fandom.com^
+! optional: ||everyoneisgay.com^
+! optional: ||flamingorampant.com^
+! optional: ||frameline.org^
+! optional: ||gagaoolala.com^
+! optional: ||gay.it^
+! optional: ||gaycities.com^
+! optional: ||gaycitynews.com^
+! optional: ||gaydio.co.uk^
+! optional: ||gayexpress.co.nz^
+! optional: ||gayletter.com^
+! optional: ||gaystarnews.com^
+! optional: ||gayswithkids.com^
+! optional: ||gaytimes.co.uk^
+! optional: ||gaytimes.com^
+! optional: ||gc2b.co^
+! optional: ||gcn.ie^
+! optional: ||gender.fandom.com^
+! optional: ||genderbread.org^
+! optional: ||gendercensus.com^
+! optional: ||gendercreativekids.com^
+! optional: ||genderdysphoria.fyi^
+! optional: ||genderedintelligence.co.uk^
+! optional: ||genderodyssey.org^
+! optional: ||glaad.org^
+! optional: ||glad.org^
+! optional: ||glbthistory.org^
+! optional: ||glreview.org^
+! optional: ||glsen.org^
+! optional: ||gomag.com^
+! optional: ||goqnotes.com^
+! optional: ||heartstopper.fandom.com^
+! optional: ||heartstoppercomic.tumblr.com^
+! optional: ||heretv.com^
+! optional: ||hrc.org^
+! optional: ||ilga-europe.org^
+! optional: ||ilga.org^
+! optional: ||instinctmagazine.com^
+! optional: ||interactadvocates.org^
+! optional: ||interpride.org^
+! optional: ||intersex.wiki^
+! optional: ||intomore.com^
+! optional: ||isna.org^
+! optional: ||itspronouncedmetrosexual.com^
+! optional: ||itsyoursexlife.com^
+! optional: ||iwannaknow.org^
+! optional: ||kinseyinstitute.org^
+! optional: ||lambdalegal.org^
+! optional: ||lambdaliterary.org^
+! optional: ||lavendermagazine.com^
+! optional: ||lezhin.com^
+! optional: ||lezhinus.com^
+! optional: ||lezwatchtv.com^
+! optional: ||lgbta.fandom.com^
+! optional: ||lgbthistorymonth.com^
+! optional: ||lgbtqia.fandom.com^
+! optional: ||lgbtqia.wiki^
+! optional: ||lgbtqnation.com^
+! optional: ||logotv.com^
+! optional: ||losangelesblade.com^
+! optional: ||lovevictor.fandom.com^
+! optional: ||mardigras.org.au^
+! optional: ||metroweekly.com^
+! optional: ||misterbandb.com^
+! optional: ||mogai-wiki.tumblr.com^
+! optional: ||mogai.miraheze.org^
+! optional: ||mogailabel.fandom.com^
+! optional: ||mogaiwiki.miraheze.org^
+! optional: ||mypronouns.org^
+! optional: ||nclrights.org^
+! optional: ||newfest.org^
+! optional: ||newnownext.com^
+! optional: ||nonbinary.wiki^
+! optional: ||nycpride.org^
+! optional: ||onearchives.org^
+! optional: ||otherwild.com^
+! optional: ||out.com^
+! optional: ||outfest.org^
+! optional: ||outfrontmagazine.com^
+! optional: ||outhistory.org^
+! optional: ||outrightinternational.org^
+! optional: ||outsmartmagazine.com^
+! optional: ||outsports.com^
+! optional: ||outtraveler.com^
+! optional: ||outtv.ca^
+! optional: ||outtv.com^
+! optional: ||pinknews.co.uk^
+! optional: ||planetout.com^
+! optional: ||plannedparenthood.org^
+! optional: ||pointofpride.org^
+! optional: ||pride-flags.fandom.com^
+! optional: ||pride.com^
+! optional: ||pride.fandom.com^
+! optional: ||prideflag.fandom.com^
+! optional: ||prideinlondon.org^
+! optional: ||pridepalace.com^
+! optional: ||prideshack.com^
+! optional: ||pridesource.com^
+! optional: ||pridetoronto.com^
+! optional: ||pronouns.page^
+! optional: ||pronouny.xyz^
+! optional: ||qnews.com.au^
+! optional: ||qsaltlake.com^
+! optional: ||queer.de^
+! optional: ||queerkidstuff.com^
+! optional: ||queerscreen.org.au^
+! optional: ||queersexed.org^
+! optional: ||queerty.com^
+! optional: ||rainbowdepot.com^
+! optional: ||rainbowpedia.fandom.com^
+! optional: ||revry.tv^
+! optional: ||rupaulsdragrace.fandom.com^
+! optional: ||scarleteen.com^
+! optional: ||sex-education.fandom.com^
+! optional: ||sexandu.ca^
+! optional: ||sexetc.org^
+! optional: ||sexinfoonline.com^
+! optional: ||sexpositivefamilies.com^
+! optional: ||sfpride.org^
+! optional: ||shangay.com^
+! optional: ||siecus.org^
+! optional: ||southfloridagaynews.com^
+! optional: ||starobserver.com.au^
+! optional: ||stonewall.org.uk^
+! optional: ||susans.org^
+! optional: ||taggmagazine.com^
+! optional: ||teensource.org^
+! optional: ||tellofilms.com^
+! optional: ||tetu.com^
+! optional: ||tgforum.com^
+! optional: ||thegavoice.com^
+! optional: ||thegayuk.com^
+! optional: ||them.us^
+! optional: ||thepinknews.com^
+! optional: ||thetaskforce.org^
+! optional: ||tomboyx.com^
+! optional: ||towleroad.com^
+! optional: ||transadvocate.com^
+! optional: ||transathlete.com^
+! optional: ||transequality.org^
+! optional: ||transfemscience.org^
+! optional: ||transgenderlawcenter.org^
+! optional: ||transgendermap.com^
+! optional: ||transgenderteensurvivalguide.tumblr.com^
+! optional: ||transstudent.org^
+! optional: ||travelgay.com^
+! optional: ||tsroadmap.com^
+! optional: ||unclockable.com^
+! optional: ||underworks.com^
+! optional: ||victoryfund.org^
+! optional: ||washingtonblade.com^
+! optional: ||watermarkonline.com^
+! optional: ||wildfang.com^
+! optional: ||windycitytimes.com^
+! optional: ||wolfevideo.com^
+! optional: ||worldofwonder.net^
+! optional: ||wowpresentsplus.com^
+! optional: ||xtramagazine.com^
+! optional: ||youngroyals.fandom.com^
+
+! ==== Social and user-content platforms where this content concentrates (151 rules, 110 optional) ====
+
+||adf.ly^
+||allmylinks.com^
+||aminoapps.com^
+||anonfiles.com^
+||anotepad.com^
+||archiveofourown.com^
+||baraag.net^
+||beastars.fandom.com^
+||bigo.tv^
+||bitchute.com^
+||bloxecutor.com^
+||bypass.tools^
+||codex.lol^
+||controlc.com^
+||coomer.party^
+||coomer.su^
+||deltaexploits.gg^
+||devilman.fandom.com^
+||direct-link.net^
+||disboard.org^
+||discadia.com^
+||discodus.com^
+||discord.me^
+||discord.st^
+||discordbee.com^
+||discordhome.com^
+||discordhub.com^
+||discordlist.gg^
+||discords.com^
+||discordservers.com^
+||discordservers.me^
+||disforge.com^
+||e621.net^
+||edramatica.com^
+||encyclopediadramatica.online^
+||encyclopediadramatica.rs^
+||encyclopediadramatica.wiki^
+||f95zone.com^
+||f95zone.to^
+||fanbox.cc^
+||fansly.com^
+||fluxteam.net^
+||furaffinity.net^
+||furry.engineer^
+||getsolara.dev^
+||getwave.gg^
+||ghostbin.co^
+||ghostbin.com^
+||graph.org^
+||guilds.me^
+||hazbinhotel.fandom.com^
+||helluvaboss.fandom.com^
+||highschooldxd.fandom.com^
+||hydrogen.lat^
+||inkbunny.net^
+||interspeciesreviewers.fandom.com^
+||jannymod.com^
+||jennymod-official.com^
+||jennymod.co^
+||jennymod.net^
+||jennymod.pro^
+||jennymodmc.com^
+||jennymodsminecraft.com^
+||jennysmod.com^
+||jennysmods.com^
+||jpst.it^
+||justpaste.it^
+||kemono.party^
+||kemono.su^
+||killingstalking.fandom.com^
+||kiwifarms.net^
+||kiwifarms.ru^
+||kiwifarms.st^
+||kiwifarms.top^
+||krnl.ca^
+||krnl.place^
+||lbry.tv^
+||legra.ph^
+||lemmynsfw.com^
+||link-center.net^
+||link-hub.net^
+||link-target.net^
+||link-to.net^
+||linkvertise.com^
+||lolcow.farm^
+||loot-link.com^
+||lootlabs.gg^
+||mangago.me^
+||meow.social^
+||myreadingmanga.info^
+||narvii.com^
+||nezur.io^
+||nitter.net^
+||nitter.poast.org^
+||nitter.privacydev.net^
+||notes.io^
+||odysee.com^
+||onionfarms.com^
+||onlyfans.com^
+||ouo.io^
+||paste.ee^
+||pastelink.net^
+||pawoo.net^
+||plus1scripts.net^
+||prisonschool.fandom.com^
+||privatebin.net^
+||redditp.com^
+||redgifs.com^
+||redoofhealer.fandom.com^
+||rekonise.com^
+||rentry.co^
+||rentry.org^
+||roblox-exploits.com^
+||robloxexecutorstatus.com^
+||robloxscripts.com^
+||rscripts.net^
+||scriptblox.com^
+||scriptpastebin.com^
+||scrolller.com^
+||shorte.st^
+||sirhurt.net^
+||sotwe.com^
+||spdmteam.com^
+||subscribestar.adult^
+||subscribestar.com^
+||synapse.to^
+||tango.me^
+||teddit.net^
+||telegra.ph^
+||textbin.net^
+||theexecutor.dev^
+||throwbin.io^
+||top.gg^
+||tumbex.com^
+||tumbral.com^
+||tumgir.com^
+||twstalker.com^
+||urbandictionary.com^
+||urbanup.com^
+||v3rm.net^
+||v3rmillion.net^
+||vegax.gg^
+||wearedevs.net^
+||weasyl.com^
+||whisper.sh^
+||wikifur.com^
+||work.ink^
+||xcancel.com^
+||yiff.life^
+||younow.com^
+||yubo.live^
+! optional: ||9cache.com^
+! optional: ||9gag.com^
+! optional: ||9minecraft.net^
+! optional: ||bato.to^
+! optional: ||beacons.ai^
+! optional: ||bilibili.com^
+! optional: ||boosty.to^
+! optional: ||booth.pm^
+! optional: ||bsky.app^
+! optional: ||bsky.network^
+! optional: ||bsky.social^
+! optional: ||carrd.co^
+! optional: ||catbox.moe^
+! optional: ||cdninstagram.com^
+! optional: ||chainsaw-man.fandom.com^
+! optional: ||dailymotion.com^
+! optional: ||deviantart.com^
+! optional: ||deviantart.net^
+! optional: ||discord.com^
+! optional: ||discord.gg^
+! optional: ||discord.media^
+! optional: ||discordapp.com^
+! optional: ||discordapp.net^
+! optional: ||discordbotlist.com^
+! optional: ||dlive.tv^
+! optional: ||dmcdn.net^
+! optional: ||dpaste.com^
+! optional: ||funnyjunk.com^
+! optional: ||gamejolt.com^
+! optional: ||gofile.io^
+! optional: ||guilded.gg^
+! optional: ||hastebin.com^
+! optional: ||ifunny.co^
+! optional: ||imgur.com^
+! optional: ||imgur.io^
+! optional: ||instagram.com^
+! optional: ||itch.io^
+! optional: ||jtvnw.net^
+! optional: ||kick.com^
+! optional: ||kik.com^
+! optional: ||knowyourmeme.com^
+! optional: ||kym-cdn.com^
+! optional: ||lemmy.world^
+! optional: ||likee.com^
+! optional: ||likee.video^
+! optional: ||lucifer.fandom.com^
+! optional: ||mangadex.network^
+! optional: ||mangadex.org^
+! optional: ||mastodon.art^
+! optional: ||mastodon.online^
+! optional: ||mastodon.social^
+! optional: ||memedroid.com^
+! optional: ||misskey.io^
+! optional: ||mstdn.jp^
+! optional: ||musical.ly^
+! optional: ||newgrounds.com^
+! optional: ||ngfiles.com^
+! optional: ||pastebin.com^
+! optional: ||patreon.com^
+! optional: ||pin.it^
+! optional: ||pinimg.com^
+! optional: ||pinterest.com^
+! optional: ||pixeldrain.com^
+! optional: ||pixiv.net^
+! optional: ||pximg.net^
+! optional: ||quora.com^
+! optional: ||quoracdn.net^
+! optional: ||redd.it^
+! optional: ||reddit.com^
+! optional: ||redditmedia.com^
+! optional: ||redditstatic.com^
+! optional: ||rickandmorty.fandom.com^
+! optional: ||rumble.com^
+! optional: ||snap.com^
+! optional: ||snapchat.com^
+! optional: ||somethingawful.com^
+! optional: ||southpark.fandom.com^
+! optional: ||sta.sh^
+! optional: ||streamable.com^
+! optional: ||t.co^
+! optional: ||t.me^
+! optional: ||tapas.io^
+! optional: ||telegram.dog^
+! optional: ||telegram.me^
+! optional: ||telegram.org^
+! optional: ||telesco.pe^
+! optional: ||threads.com^
+! optional: ||threads.net^
+! optional: ||tiktok.com^
+! optional: ||tiktokcdn.com^
+! optional: ||tiktokv.com^
+! optional: ||tmblr.co^
+! optional: ||toyhou.se^
+! optional: ||ttvnw.net^
+! optional: ||tumblr.com^
+! optional: ||twimg.com^
+! optional: ||twitch.tv^
+! optional: ||twitter.com^
+! optional: ||ungrounded.net^
+! optional: ||userapi.com^
+! optional: ||vimeo.com^
+! optional: ||vimeocdn.com^
+! optional: ||vk.com^
+! optional: ||vk.me^
+! optional: ||vk.ru^
+! optional: ||vkuservideo.net^
+! optional: ||web.telegram.org^
+! optional: ||webtoons.com^
+! optional: ||weheartit.com^
+! optional: ||x.com^
+
+! ==== Bypass hardening: encrypted DNS, VPNs, proxies, Tor, alternative search engines (406 rules, 58 optional) ====
+
+||12ft.io^
+||1clickvpn.net^
+||1dot1dot1dot1.cloudflare-dns.com^
+||1ft.io^
+||4everproxy.com^
+||4get.ca^
+||adblock.doh.mullvad.net^
+||adguard-vpn.com^
+||ahadns.net^
+||airvpn.org^
+||anchorfree.com^
+||andisearch.com^
+||anonymouse.org^
+||api.cloudflareclient.com^
+||api.sec-tunnel.com^
+||api2.sec-tunnel.com^
+||appsverse.com^
+||archive.fo^
+||archive.is^
+||archive.li^
+||archive.md^
+||archive.ph^
+||archive.today^
+||archive.vn^
+||astrill.com^
+||atlasvpn.com^
+||azirevpn.com^
+||base.dns.mullvad.net^
+||basic.rethinkdns.com^
+||betternet.co^
+||bitmask.net^
+||black.riseup.net^
+||blitz.ahadns.com^
+||blockaway.net^
+||blokada.org^
+||boomproxy.com^
+||brightvpn.com^
+||browsec.com^
+||browser.lol^
+||browserling.com^
+||cachedview.com^
+||cachedview.nl^
+||cactusvpn.com^
+||cc.bingj.com^
+||chrome.cloudflare-dns.com^
+||cloudflare-dns.com^
+||cloudflare-gateway.com^
+||cloudflareclient.com^
+||cloudmosa.com^
+||controld.com^
+||croxy.net^
+||croxy.network^
+||croxy.org^
+||croxyproxy.com^
+||croxyproxy.net^
+||croxyproxy.rocks^
+||cyberghostvpn.com^
+||dit-inc.us^
+||dns-unfiltered.adguard.com^
+||dns.aa.net.uk^
+||dns.aaflalo.me^
+||dns.adguard-dns.com^
+||dns.adguard.com^
+||dns.alidns.com^
+||dns.arapurayil.com^
+||dns.artikel10.org^
+||dns.bebasid.com^
+||dns.brahma.world^
+||dns.cfiec.net^
+||dns.cmrg.net^
+||dns.comss.one^
+||dns.controld.com^
+||dns.decloudus.com^
+||dns.digitalcourage.de^
+||dns.digitale-gesellschaft.ch^
+||dns.dnshome.de^
+||dns.dnsoverhttps.net^
+||dns.dnswarden.com^
+||dns.east.comss.one^
+||dns.flatuslifir.is^
+||dns.google^
+||dns.google.com^
+||dns.hostux.net^
+||dns.larsdebruin.net^
+||dns.mullvad.net^
+||dns.neutopia.org^
+||dns.nextdns.io^
+||dns.njal.la^
+||dns.notjakob.com^
+||dns.oszx.co^
+||dns.pub^
+||dns.pumplex.com^
+||dns.quad9.net^
+||dns.rabbitdns.org^
+||dns.rubyfish.cn^
+||dns.sb^
+||dns.seby.io^
+||dns.switch.ch^
+||dns.twnic.tw^
+||dns.umbrella.com^
+||dns10.quad9.net^
+||dns11.quad9.net^
+||dns12.quad9.net^
+||dns3.digitalcourage.de^
+||dns64.cloudflare-dns.com^
+||dns64.dns.google^
+||dns9.quad9.net^
+||dnsforge.de^
+||dnsovertls.sinodun.com^
+||dogpile.com^
+||doh.360.cn^
+||doh.applied-privacy.net^
+||doh.appliedprivacy.net^
+||doh.captnemo.in^
+||doh.crypto.sx^
+||doh.dns.apple.com^
+||doh.dns.sb^
+||doh.dns.snopyta.org^
+||doh.dnslify.com^
+||doh.dnswarden.com^
+||doh.ffmuc.net^
+||doh.li^
+||doh.libredns.gr^
+||doh.mullvad.net^
+||doh.opendns.com^
+||doh.powerdns.org^
+||doh.pub^
+||doh.sandbox.opendns.com^
+||doh.seby.io^
+||doh.securedns.eu^
+||doh.tiar.app^
+||doh.xfinity.com^
+||dongtaiwang.com^
+||dontfilter.us^
+||dot.360.cn^
+||dot.dns.yandex.net^
+||dot.dnswarden.com^
+||dot.ffmuc.net^
+||dot.libredns.gr^
+||dot.pub^
+||dot.securedns.eu^
+||dot.tiar.app^
+||dot1.applied-privacy.net^
+||dotvpn.com^
+||downloads.cloudflareclient.com^
+||engage.cloudflareclient.com^
+||etsi.me^
+||excite.com^
+||expressvpn.com^
+||expressvpn.net^
+||extended.dns.mullvad.net^
+||fastestvpn.com^
+||fastssh.com^
+||fdns1.dismail.de^
+||fdns2.dismail.de^
+||features.opera-api.com^
+||fi.doh.dns.snopyta.org^
+||filterbypass.me^
+||free-proxy-list.net^
+||free-proxy.cz^
+||freedns.controld.com^
+||freeopenvpn.org^
+||freevpnplanet.com^
+||frostnerd.com^
+||genmirror.com^
+||getintra.org^
+||getlantern.org^
+||getoutline.org^
+||ghostarchive.org^
+||gibiru.com^
+||gointerstellar.app^
+||goldenfrog.com^
+||googlezip.net^
+||guardianapp.com^
+||guardster.com^
+||hide.me^
+||hideman.net^
+||hidemy.name^
+||hidemyass-freeproxy.com^
+||hidemyass.com^
+||hidemyna.me^
+||hidester.com^
+||hola.org^
+||holacdn.com^
+||holyubofficial.net^
+||hotspotshield.com^
+||hoxx.com^
+||hsselite.com^
+||hyperbeam.com^
+||ibvpn.com^
+||info.com^
+||ipvanish.com^
+||itopvpn.com^
+||ivpn.net^
+||jp.tiar.app^
+||jp.tiarap.org^
+||kasmweb.com^
+||keepsolid.com^
+||kproxy.com^
+||lantern.io^
+||lycos.com^
+||mask-api.icloud.com^
+||mask-canary.icloud.com^
+||mask-h2.icloud.com^
+||mask.icloud.com^
+||max.rethinkdns.com^
+||megalodon.jp^
+||metacrawler.com^
+||metager.de^
+||metager.org^
+||mightyapp.com^
+||mojeek.com^
+||mozilla.cloudflare-dns.com^
+||mullvad.net^
+||nebulaproxy.io^
+||nebulo.app^
+||newipnow.com^
+||nextdns.io^
+||ninjacloak.com^
+||noads.libredns.gr^
+||nordaccount.com^
+||nordcdn.com^
+||nordvpn.com^
+||northboot.xyz^
+||northghost.com^
+||now.gg^
+||odvr.nic.cz^
+||one.one.one.one^
+||onion.cab^
+||onion.city^
+||onion.direct^
+||onion.dog^
+||onion.glass^
+||onion.link^
+||onion.ly^
+||onion.moe^
+||onion.nu^
+||onion.pet^
+||onion.sh^
+||onion.to^
+||onion.top^
+||onion.ws^
+||onionbrowser.com^
+||openproxy.space^
+||opera-mini.net^
+||opera-proxy.net^
+||operavpn.com^
+||opnxng.com^
+||ordns.he.net^
+||oscobo.com^
+||ovpn.com^
+||pango.co^
+||paulgo.io^
+||perfect-privacy.com^
+||plainproxies.com^
+||polargrizzly.com^
+||presearch.com^
+||presearch.io^
+||priv.au^
+||privadovpn.com^
+||privateinternetaccess.com^
+||protonvpn.ch^
+||protonvpn.com^
+||proxfree.com^
+||proxy-list.download^
+||proxy.org^
+||proxydb.net^
+||proxyium.com^
+||proxynova.com^
+||proxyscrape.com^
+||proxysite.com^
+||psiphon.ca^
+||psiphon3.com^
+||public.dns.iij.jp^
+||puffin.com^
+||puffinbrowser.com^
+||purevpn.com^
+||rammerhead.org^
+||removepaywall.com^
+||resolver-eu.lelux.fi^
+||rethinkdns.com^
+||search.bus-hit.me^
+||search.disroot.org^
+||search.garudalinux.org^
+||search.hbubli.cc^
+||search.im-in.space^
+||search.inetol.net^
+||search.mdosch.de^
+||search.ononoki.org^
+||search.privacyguides.net^
+||search.projectsegfau.lt^
+||search.rhscz.eu^
+||search.sapti.me^
+||searchencrypt.com^
+||searx.baczek.me^
+||searx.be^
+||searx.dresden.network^
+||searx.fmac.xyz^
+||searx.me^
+||searx.mxchange.org^
+||searx.oloke.xyz^
+||searx.org^
+||searx.ox2.fr^
+||searx.perennialte.ch^
+||searx.prvcy.eu^
+||searx.sev.monster^
+||searx.space^
+||searx.tiekoetter.com^
+||searx.work^
+||searxng.site^
+||sec-tunnel.com^
+||security-filter-dns.cleanbrowsing.org^
+||setupvpn.com^
+||shadowsocks.org^
+||simplednscrypt.org^
+||sitenable.ch^
+||sitenable.co^
+||sitenable.com^
+||sitenable.info^
+||sky.rethinkdns.com^
+||smry.ai^
+||snowflake-broker.bamsoftware.com^
+||snowflake-broker.torproject.net^
+||snowflake.bamsoftware.com^
+||snowflake.torproject.net^
+||softether.org^
+||speedify.com^
+||spotflux.com^
+||spys.one^
+||sshocean.com^
+||sslproxies.org^
+||sslsecureproxy.com^
+||startpage.com^
+||staticnetcontent.com^
+||strongvpn.com^
+||surfeasy.com^
+||surfshark.com^
+||sx.catgirl.cloud^
+||thundervpn.co^
+||titaniumnetwork.org^
+||tor.eff.org^
+||tor2web.io^
+||tor2web.org^
+||tor2web.xyz^
+||torguard.net^
+||torproject.net^
+||torproject.org^
+||totallyacdn.com^
+||touchvpn.net^
+||translate.goog^
+||translate.googleusercontent.com^
+||translatetheweb.com^
+||translatoruser.net^
+||trust.zone^
+||tunnelbear.com^
+||turbovpn.co^
+||turbovpn.com^
+||ultrareach.com^
+||ultrasurf.us^
+||ultravpn.com^
+||unblock-websites.com^
+||unblocksite.net^
+||unblocksite.org^
+||unblockvideos.com^
+||unblockweb.co^
+||unfiltered.adguard-dns.com^
+||urban-vpn.com^
+||us-proxy.org^
+||use-application-dns.net^
+||v2fly.org^
+||v2ray.com^
+||veepn.com^
+||vpn-api.proton.me^
+||vpn.ac^
+||vpn.mozilla.org^
+||vpnbook.com^
+||vpngate.net^
+||vpnhub.com^
+||vpnify.com^
+||vpnjantit.com^
+||vpnoneclick.com^
+||vpnproxymaster.com^
+||vpnsuper.com^
+||vpnunlimited.com^
+||vtunnel.com^
+||vyprvpn.com^
+||warp.plus^
+||webcache.googleusercontent.com^
+||webcrawler.com^
+||webgap.io^
+||weboproxy.com^
+||whiskergalaxy.com^
+||whoer.net^
+||windscribe.com^
+||windscribe.net^
+||x-vpn.com^
+||xvpn.io^
+||yep.com^
+||yippy.com^
+||yogadns.com^
+||youtubeunblocked.live^
+||z5h64q92x9.net^
+||zend2.com^
+||zenmate.com^
+||zero-trust-client.cloudflareclient.com^
+||zpn.im^
+! optional: ||adult-filter-dns.cleanbrowsing.org^
+! optional: ||all.dns.mullvad.net^
+! optional: ||alohabrowser.com^
+! optional: ||anydesk.com^
+! optional: ||archive.org^
+! optional: ||ask.com^
+! optional: ||baidu.com^
+! optional: ||browserless.io^
+! optional: ||browserstack.com^
+! optional: ||dns-doh.dnsforfamily.com^
+! optional: ||dns-dot.dnsforfamily.com^
+! optional: ||dns-family.adguard.com^
+! optional: ||dnscrypt.info^
+! optional: ||doh.cleanbrowsing.org^
+! optional: ||doh.familyshield.opendns.com^
+! optional: ||doh.safesurfer.io^
+! optional: ||ecosia.org^
+! optional: ||epicbrowser.com^
+! optional: ||exchange.opera.com^
+! optional: ||family-filter-dns.cleanbrowsing.org^
+! optional: ||family.adguard-dns.com^
+! optional: ||family.cloudflare-dns.com^
+! optional: ||family.dns.mullvad.net^
+! optional: ||geti2p.net^
+! optional: ||glitch.com^
+! optional: ||guardianproject.info^
+! optional: ||kagi.com^
+! optional: ||lambdatest.com^
+! optional: ||microsofttranslator.com^
+! optional: ||openvpn.net^
+! optional: ||perplexity.ai^
+! optional: ||printfriendly.com^
+! optional: ||proton.me^
+! optional: ||qwant.com^
+! optional: ||replit.com^
+! optional: ||riseup.net^
+! optional: ||rustdesk.com^
+! optional: ||saucelabs.com^
+! optional: ||search.aol.com^
+! optional: ||search.brave.com^
+! optional: ||search.marginalia.nu^
+! optional: ||search.yahoo.com^
+! optional: ||security.cloudflare-dns.com^
+! optional: ||shadow.tech^
+! optional: ||sitecheck2.opera.com^
+! optional: ||smartdnsproxy.com^
+! optional: ||surfseasy.com^
+! optional: ||swisscows.com^
+! optional: ||tailscale.com^
+! optional: ||teamviewer.com^
+! optional: ||translate.yandex.com^
+! optional: ||ucweb.com^
+! optional: ||unblockit.app^
+! optional: ||unlocator.com^
+! optional: ||web.archive.org^
+! optional: ||wireguard.com^
+! optional: ||you.com^
+! optional: ||zerotier.com^

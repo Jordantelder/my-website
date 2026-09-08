@@ -1,0 +1,316 @@
+# Adult video, image, cam, leak and imageboard sites
+#
+# One domain per line.  '?' at the start = optional (commented out in the default output).
+# Text after '#' is a note.  Subdomains are blocked automatically (||domain^).
+
+2ch.hk                   # Russian imageboard with porn boards
+2ch.su                   # 2ch.hk mirror
+2chan.net                # Futaba Channel, Japanese imageboard with NSFW boards
+420chan.org              # drug/NSFW imageboard
+4based.com               # adult creator platform
+4cdn.org                 # 4chan image/CDN domain [Blocked services toggle: 4chan]
+4chan.com                # 4chan redirect domain [Blocked services toggle: 4chan]
+4chan.org                # anonymous imageboard with explicit NSFW boards [Blocked services toggle: 4chan]
+4channel.org             # 4chan worksafe-board domain (same site) [Blocked services toggle: 4chan]
+4plebs.org               # 4chan archive
+4tube.com                # tube network
+7chan.org                # imageboard with porn boards
+8ch.net                  # original 8chan domain
+8chan.moe                # 8chan fork, heavy NSFW
+8chan.se                 # 8chan.moe mirror
+8kun.net                 # 8kun mirror
+8kun.top                 # 8chan successor, unmoderated NSFW
+91porn.com               # Chinese amateur tube
+acidimg.cc               # image host used for porn forums
+admireme.vip             # adult creator platform
+adultdeepfakes.com       # deepfake porn
+adulttime.com            # porn streaming network
+amateur.tv               # live cam site
+analvids.com             # LegalPorno successor
+ancensored.com           # celebrity nude scene clips
+anon-v.com               # amateur/leak tube
+archived.moe             # 4chan archive incl. NSFW boards
+archiveofsins.com        # 4chan NSFW-board archive
+ashemaletube.com         # trans porn tube
+avgle.com                # JAV tube
+aznude.com               # celebrity nude scene clips
+b4k.co                   # 4chan archive
+babepedia.com            # nude model directory
+bangbros.com             # major porn studio
+beeg.com                 # major tube
+bellesa.co               # women-focused porn tube
+bitchesgirls.com         # creator leaks
+blacked.com              # Vixen network studio
+bongacams.com            # major live cam site
+boobpedia.com            # nude model wiki
+boodigo.com              # porn search engine
+boyfriendtv.com          # gay porn tube
+brazzers.com             # major porn studio
+bunkr-albums.io          # Bunkr album search/index
+bunkr.ac                 # Bunkr mirror
+bunkr.ax                 # Bunkr mirror
+bunkr.black              # Bunkr mirror
+bunkr.ci                 # Bunkr mirror
+bunkr.cr                 # Bunkr mirror
+bunkr.fi                 # Bunkr mirror
+bunkr.is                 # Bunkr mirror
+bunkr.la                 # Bunkr mirror
+bunkr.media              # Bunkr mirror
+bunkr.ph                 # Bunkr mirror
+bunkr.pk                 # Bunkr mirror
+bunkr.ps                 # Bunkr mirror
+bunkr.red                # Bunkr mirror
+bunkr.ru                 # Bunkr mirror
+bunkr.si                 # Bunkr album host, primary porn-dump host
+bunkr.site               # Bunkr mirror
+bunkr.sk                 # Bunkr mirror
+bunkr.su                 # Bunkr mirror
+bunkr.ws                 # Bunkr mirror
+bunkrr.ru                # Bunkr mirror (double-r)
+bunkrr.su                # Bunkr mirror (double-r)
+cam4.com                 # live cam site
+cameraprive.com          # Brazilian live cam site
+camhub.cc                # recorded cam shows
+cams.com                 # live cam site
+camsoda.com              # live cam site
+camster.com              # live cam site
+camvideos.tv             # recorded cam shows
+camwhores.tv             # recorded cam shows, often missed
+camwhoresbay.com         # recorded cam shows
+celebjihad.com           # celebrity nudes and fakes
+celebmasta.com           # celebrity nudes
+centerfold.com           # Playboy creator platform
+cfake.com                # celebrity fake nudes
+chaturbate.com           # largest live cam site
+cherry.tv                # live cam site
+clips4sale.com           # fetish clip store
+crazyshit.com            # shock porn/gore mix
+cyberdrop.cc             # Cyberdrop mirror
+cyberdrop.me             # album host used almost only for porn dumps
+cyberdrop.to             # Cyberdrop mirror
+cyberfile.me             # Cyberdrop sister file host
+daftsex.com              # tube (many mirrors)
+desuarchive.org          # 4chan archive incl. NSFW boards
+dirtyship.com            # streamer/influencer leaks
+dropmms.com              # Indian leaked video site
+drtuber.com              # tube
+drunkenstepfather.com    # celebrity nude blog
+efukt.com                # shock/humiliation porn
+elitebabes.com           # nude photo galleries
+empflix.com              # TNAFlix sister tube
+empornium.is             # private porn tracker
+empornium.sx             # Empornium mirror
+endchan.gg               # Endchan mirror
+endchan.net              # Endchan mirror
+endchan.org              # imageboard, unmoderated
+eporner.com              # major HD tube
+erome.com                # amateur/leak album host, often missed
+eroprofile.com           # amateur porn social network
+erothots.co              # creator leak videos
+evilangel.com            # porn studio
+extremetube.com          # Aylo tube
+famousinternetgirls.com  # influencer leaks
+fap-nation.com           # adult game download site
+fapello.com              # creator leak gallery site
+fapello.su               # Fapello mirror
+fapeza.com               # creator leaks
+faphouse.com             # xHamster premium video store
+fapodrop.com             # creator leaks
+faponic.com              # creator leaks
+fapopedia.net            # creator leaks
+fappeningbook.com        # celebrity leaks
+femdomcult.org           # fetish porn tracker
+femjoy.com               # nude photo paysite
+fikfap.com               # TikTok-style short porn feed
+fireden.net              # 4chan archive
+flirt4free.com           # live cam site
+forumophilia.com         # porn video forum
+freeones.com             # porn star directory/links
+fuq.com                  # 4tube network aggregator
+fux.com                  # 4tube network tube
+gaymaletube.com          # gay porn tube
+gifdeliverynetwork.com   # legacy Gfycat NSFW mirror
+goodporn.to              # paysite-rip tube
+happyfappy.org           # porn tracker
+hclips.com               # TXXX network tube
+hdzog.com                # TXXX network tube
+heavy-r.com              # extreme/shock porn
+hegre.com                # nude photo/video paysite
+homemoviestube.com       # amateur porn tube
+hotleaks.tv              # creator leaks
+hotmovs.com              # TXXX network tube
+hotscope.tv              # leaked livestream (Periscope/TikTok Live) clips
+hqporner.com             # HD tube
+hustler.com              # porn brand
+imagefap.com             # porn photo gallery host
+imgsrc.ru                # Russian image host with heavy adult use
+imlive.com               # live cam site
+imx.to                   # image host used almost only for porn forums
+influencersgonewild.com  # influencer leaks
+ismygirl.com             # adult creator platform
+iwantclips.com           # fetish clip store
+jable.tv                 # JAV tube
+jasmin.com               # LiveJasmin alternate domain
+jav.guru                 # JAV tube
+javhd.com                # JAV paysite
+jerkmate.com             # heavily advertised cam site
+jpg.church               # earlier domain of the same SimpCity image host
+jpg5.su                  # image host used by SimpCity leak threads
+kbjfree.com              # Korean BJ cam recordings
+keezmovies.com           # Aylo tube
+kink.com                 # BDSM porn studio
+kitty-kats.net           # porn image/video forum
+kohlchan.net             # German imageboard, unmoderated NSFW
+lainchan.org             # imageboard, anonymous chan culture
+leakedmodels.com         # creator leak forum
+leakedzone.com           # creator leak site
+legalporno.com           # porn studio
+lewdstars.com            # creator leaks
+livejasmin.com           # major live cam site
+loverfans.com            # adult creator platform
+manyvids.com             # adult clip store
+metart.com               # nude photo paysite
+missav.ai                # MissAV mirror
+missav.com               # JAV tube, very high traffic, often missed
+missav.ws                # MissAV mirror
+modelhub.com             # Pornhub creator clip store
+mofos.com                # porn studio
+motherless.com           # unmoderated amateur porn host
+mrskin.com               # celebrity nude scene database
+myfreecams.com           # live cam site
+naughtyamerica.com       # major porn studio
+newbienudes.com          # amateur nude photo site
+noodlemagazine.com       # tube, often missed
+notfans.com              # OnlyFans leaks
+nsfw247.to               # creator leak videos
+nubiles.net              # porn studio network
+nudes7.com               # influencer leaks
+nudevista.com            # porn search engine
+nudostar.com             # creator leak galleries
+nudostar.tv              # Nudostar video mirror
+ok.xxx                   # tube aggregator
+okfans.com               # adult creator platform
+paradisehill.cc          # full-movie tube
+penthouse.com            # nude magazine brand
+perfectgirls.net         # tube
+phun.org                 # celebrity/leak forum
+picazor.com              # creator leak galleries
+pimpandhost.com          # image host used for porn galleries
+planetsuzy.org           # porn video forum
+pocketstars.com          # adult creator platform
+porn.com                 # porn search/tube
+pornbay.org              # porn tracker
+porndroids.com           # porn search/aggregator
+porndude.com             # ThePornDude alternate domain
+porngen.art              # AI image porn generator
+pornhat.com              # tube
+pornhd.com               # tube
+pornhub.com              # largest mainstream porn tube
+pornhubpremium.com       # Pornhub paid tier
+pornmd.com               # Aylo porn search engine
+pornolab.net             # Russian porn tracker
+pornone.com              # tube
+pornpen.art              # AI image porn generator
+pornpics.com             # porn photo galleries
+pornpics.de              # PornPics mirror
+pornsos.com              # porn search/aggregator
+porntrex.com             # HD tube
+porntube.com             # tube
+pussytorrents.org        # porn tracker
+rbt.asia                 # 4chan archive
+realitykings.com         # major porn studio
+recurbate.com            # Chaturbate recordings, often missed
+recurbate.me             # Recurbate mirror
+redtube.com              # Aylo tube
+royalcams.com            # live cam site
+saint2.cr                # Saint video host mirror
+saint2.su                # video host used by SimpCity leak threads
+sex.com                  # Pinterest-style porn pin site
+sexlikereal.com          # VR porn platform
+sexy-egirls.com          # e-girl/cosplayer leaks
+sexy-youtubers.com       # YouTuber/TikToker leaks
+shesfreaky.com           # amateur porn tube
+simpcity.cr              # SimpCity newer domain
+simpcity.su              # largest creator-leak forum
+skyprivate.com           # pay-per-minute Skype cam platform
+sorrymother.video        # creator leak videos
+soundgasm.net            # erotic audio host used by Reddit GWA; almost always missed
+soyjak.party             # 4chan spin-off imageboard, unmoderated
+spankbang.com            # major tube, often missed by older filters
+spankbang.party          # SpankBang mirror
+spankwire.com            # Aylo tube
+streamate.com            # live cam site
+streamray.com            # live cam site
+stripchat.com            # major live cam site
+supjav.com               # JAV tube
+sxyprn.com               # amateur/leak tube, often missed
+teamskeet.com            # porn studio
+thebarchive.com          # 4chan /b/ archive
+thefappening.pro         # celebrity leaks
+thefappeningblog.com     # celebrity/influencer leaks
+thenude.com              # nude model index
+theporndude.com          # largest porn-site directory; a gateway to everything else
+thisvid.com              # amateur/fetish video host, often missed
+thothub.lol              # Thothub mirror
+thothub.to               # creator leak videos
+thothub.vip              # Thothub mirror
+thotsbay.com             # creator leaks
+thotslife.com            # creator leaks
+tnaflix.com              # tube
+tokyomotion.net          # Japanese amateur tube
+tube8.com                # Aylo tube
+tubegalore.com           # tube aggregator
+tubesafari.com           # porn search engine
+tushy.com                # Vixen network studio
+txxx.com                 # major tube network
+undress.love             # AI 'undress' app
+unfiltrd.com             # adult creator platform
+unlockt.me               # adult creator platform
+upornia.com              # TXXX network tube
+vipergirls.to            # porn image-set/video forum
+vipr.im                  # image host used for porn forums
+vixen.com                # porn studio (Vixen network)
+vjav.com                 # TXXX network JAV tube
+voyeurweb.com            # amateur nude photo site
+vporn.com                # tube
+vrbangers.com            # VR porn studio
+vrporn.com               # VR porn tube
+warosu.org               # 4chan archive
+wifelovers.com           # amateur nude photo site
+wizchan.org              # imageboard, adult content
+x-art.com                # erotica paysite
+xfree.com                # amateur/leak porn tube
+xhamster.com             # major porn tube
+xhamster.desi            # xHamster mirror
+xhamster2.com            # xHamster mirror
+xhamster3.com            # xHamster mirror
+xhamsterlive.com         # xHamster-branded Stripchat
+xlovecam.com             # live cam site
+xnxx.com                 # top-3 porn tube (XVideos sister)
+xnxx.es                  # XNXX mirror
+xnxx.tv                  # XNXX mirror
+xpics.me                 # porn photo galleries
+xvideos.com              # top-3 porn tube
+xvideos.red              # XVideos premium mirror
+xvideos2.com             # XVideos mirror
+xxbrits.com              # UK creator leaks
+xxxtik.com               # TikTok-style short porn feed
+youjizz.com              # tube
+youporn.com              # Aylo tube
+zoig.com                 # amateur porn community
+? doodstream.com           # video host embedded by porn/piracy sites
+? fboom.me                 # FileBoom (Keep2Share family), porn-dump host
+? filejoker.net            # file host used mainly for porn forums
+? iafd.com                 # adult film database (text only)
+? imagebam.com             # image host, heavy porn forum use
+? imagetwist.com           # image host, mostly porn forum use
+? imagevenue.com           # image host, heavy porn forum use
+? imgbox.com               # general image host with heavy porn forum use
+? k2s.cc                   # Keep2Share short domain, porn-dump host
+? keep2share.cc            # Keep2Share, porn-dump host
+? mixdrop.co               # video host embedded by porn/piracy sites
+? pixhost.to               # image host, heavy porn forum use
+? playboy.com              # nude magazine brand; mainstream site
+? streamtape.com           # video host embedded by porn/piracy sites
+? tezfiles.com             # Keep2Share family, porn-dump host
+? turboimagehost.com       # image host, heavy porn forum use

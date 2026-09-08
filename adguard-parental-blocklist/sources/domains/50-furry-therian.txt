@@ -1,0 +1,138 @@
+# Furry, yiff, therian, otherkin, quadrobics and animal-fetish sites
+#
+# One domain per line.  '?' at the start = optional (commented out in the default output).
+# Text after '#' is a note.  Subdomains are blocked automatically (||domain^).
+
+abdlmatch.com                     # ABDL dating
+abdlstoryforum.info               # ABDL story forum
+abdreams.com                      # Adult ABDL video site
+adisc.org                         # ABDL support community forum
+alt-h.net                         # Alt+H alterhuman organization
+amorousgame.com                   # Furry dating-sim game with adult content
+anotherwiki.org                   # AnOtherWiki otherkin encyclopedia
+artofzoo.com                      # Bestiality video site
+aryion.com                        # Eka's Portal vore community
+bad-dragon.com                    # Fantasy/furry adult toy retailer
+baddogbooks.com                   # Adult furry fiction publisher
+baddragon.com                     # Bad Dragon alternate domain
+barq.app                          # Barq alternate domain
+barq.social                       # Barq furry social/dating app
+beastforum.com                    # Defunct bestiality forum
+beyondhumanity.net                # Beyond Humanity otherkin resource directory
+bodyinflation.org                 # Body inflation community forum
+collarspace.com                   # BDSM personals incl. petplay
+coomer.st                         # coomer mirror domain
+dailydiapers.com                  # ABDL community and stories
+ddlgforum.com                     # DDLG forum
+diapermates.com                   # ABDL dating
+dreamhart.org                     # Dreamhart otherkin resource site
+expansionfan.com                  # Expansion fetish comics
+f-list.net                        # Adult furry/kink roleplay and chat (F-Chat)
+facdn.net                         # Fur Affinity image CDN
+fchan.us                          # Furry adult imageboard (FurChan)
+ferzu.com                         # Furry social network and dating
+fetlife.com                       # Kink social network incl. petplay/ABDL/furry groups
+fromfiction.net                   # Fictionkin community
+furfling.com                      # Furry dating site
+furry.booru.org                   # Furry booru on booru.org network
+furrymate.com                     # Furry dating site
+furrymuck.com                     # FurryMUCK text roleplay, adult-heavy
+furrynetwork.com                  # Furry art/social network
+giantessworld.net                 # Giantess fiction archive
+houseofchimeras.weebly.com        # House of Chimeras otherkin/therian resources
+howlr.app                         # Furry hookup app (shut down 2022, replaced by Barq)
+inflatechan.net                   # Inflation imageboard (intermittent)
+kinmunity.com                     # Otherkin/therian community
+littlespaceonline.com             # Littlespace/CGL community
+macrophile.com                    # Macrophilia community site
+metamorphose.org                  # Metamorphose TF fiction archive
+metapix.net                       # Inkbunny image CDN (ib.metapix.net)
+otherkin.fandom.com               # Otherkin wiki on Fandom
+otherkin.net                      # Otherkin resource site
+otherkin.wiki                     # Otherkin Wiki
+otherkindex.carrd.co              # Otherkin and therian directory
+otherkinphenomena.org             # Otherkin Phenomena forum
+pahswithoutborders.com            # Pups and Handlers groups directory
+petlust.com                       # Bestiality video site
+pounced.org                       # Furry personals (defunct)
+pupplay.info                      # Pup play info site
+puppyplaycommunity.org            # Puppy play community hub
+puppyplayexpert.com               # Puppy play guides
+pupspace.net                      # Pup play social network/dating
+sexyfur.com                       # Adult furry art site
+shifti.org                        # Transformation fiction wiki (TSA successor)
+sofurryfiles.com                  # SoFurry media CDN
+sonverrid.org                     # The Sanctuary therian links/resources
+tapestries.fur.com                # Adult furry MUCK
+tf-fan.freeforums.net             # Transformation Fan Community forum
+theri.app                         # Therian community app with gear catalog
+therian-guide.com                 # Largest therian forum/guide
+therian-wilderness.proboards.com  # Therian Wilderness forum
+therian.fandom.com                # Therianthropy wiki on Fandom
+therian.net                       # Therian site (unverified)
+theriangear.com                   # Therian gear shop (unverified)
+therianhaven.boards.net           # The Therian Haven forum
+therianshop.com                   # Dedicated therian mask/tail/quadrobics gear store
+transform.to                      # Transformation Story Archive / TSAT host
+transformationforum.org           # Transformation Forum
+transfur.com                      # Transformation (TF) art archive, furry-adjacent
+u18chan.com                       # Furry adult imageboard
+vore-station.net                  # VoreStation SS13 server
+werelist.net                      # The Werelist therian forum
+yiff.party                        # Defunct furry Patreon leak site
+yiffalicious.com                  # 3D furry adult game
+yiffer.xyz                        # Adult furry comic archive
+zeta-verein.de                    # German zoophile advocacy organization
+zoosection.com                    # Bestiality video site
+zooskool.com                      # Bestiality video site
+zootube365.com                    # Bestiality tube site
+zooville.org                      # Zoophilia forum (BeastForum successor)
+? abuniverse.com                    # AB Universe diaper retailer
+? anthrochat.net                    # AnthroChat IRC network
+? anthrocon.org                     # Anthrocon
+? anthronw.com                      # Anthro Northwest
+? awoo.space                        # Furry-adjacent Mastodon instance
+? bambinodiapers.com                # ABDL diaper retailer
+? biggestlittlefurcon.org           # BLFC
+? confuzzled.org.uk                 # ConFuzzled UK
+? ddlgplayground.com                # DDLG merchandise shop
+? dogpatch.press                    # Furry news blog
+? dragon.style                      # Dragon/furry-themed Mastodon instance
+? en.wikifur.com                    # English WikiFur
+? eurofurence.org                   # Eurofurence
+? flayrah.com                       # Furry news site
+? fur.com                           # Furry hosting domain (Tapestries etc.)
+? furality.org                      # Furality VR convention
+? furcadia.com                      # Furry MMO/roleplay world
+? furfest.org                       # Midwest FurFest
+? furlandia.org                     # Furlandia
+? furnet.org                        # FurNet IRC network
+? furplanet.com                     # Furry book/merch publisher
+? furry.fandom.com                  # Furry wiki on Fandom
+? furrycons.com                     # Convention directory
+? furryfiesta.org                   # Texas Furry Fiesta
+? furrylife.online                  # Furry Life Online social site
+? furrymap.net                      # Map of furries near you
+? furrymigration.org                # Furry Migration
+? furryweekend.com                  # Furry Weekend Atlanta
+? furrywritersguild.com             # Furry writers association
+? furscience.com                    # Furry fandom research group
+? fursonafy.com                     # Furry lifestyle/dating blog
+? fursuitreview.com                 # Fursuit maker reviews
+? furthemore.org                    # Fur the More
+? furtrack.com                      # Fursuit photo database
+? furvilla.com                      # Furry browser pet/village game
+? itaku.ee                          # General art site with large furry/NSFW user base, mature toggle
+? littleforbig.com                  # ABDL diaper/onesie retailer
+? megaplexcon.org                   # Megaplex
+? nordicfuzzcon.org                 # NordicFuzzCon
+? onesiesdownunder.com              # ABDL onesie retailer
+? pawb.fun                          # Furry Mastodon instance
+? rearz.ca                          # Diaper retailer with ABDL line
+? secondlife.com                    # Second Life; major furry/adult roleplay venue
+? snouts.online                     # Furry Mastodon instance (defunct)
+? sofawolf.com                      # Furry book publisher
+? spindizzy.org                     # General furry MUCK
+? thisfursonadoesnotexist.com       # AI fursona generator
+? tykables.com                      # ABDL diaper retailer
+? vulpine.club                      # Furry Mastodon instance

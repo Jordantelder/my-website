@@ -1,0 +1,169 @@
+# Hentai, boorus, rule34 and adult games
+#
+# One domain per line.  '?' at the start = optional (commented out in the default output).
+# Text after '#' is a note.  Subdomains are blocked automatically (||domain^).
+
+3hentai.net              # hentai manga gallery
+8muses.com               # adult comic archive
+aibooru.online           # AI-generated anime booru, explicit content
+allporncomic.com         # adult comic archive
+allthefallen.moe         # All The Fallen lolicon community and booru
+anime-sharing.com        # forum for adult game/hentai downloads
+animeidhentai.com        # hentai anime streaming
+asmhentai.com            # hentai manga gallery
+atfbooru.ninja           # ATF booru mirror
+booru.org                # hosts hundreds of user-created boorus, mostly adult
+chan.sankakucomplex.com  # Sankaku Channel anime booru
+cherrykissgames.com      # adult VN publisher
+danbooru.donmai.us       # Danbooru anime imageboard
+denpasoft.com            # Sekai Project 18+ label
+derpibooru.org           # My Little Pony booru with explicit filter option
+dlsite.com               # JP doujin game/manga store, primarily R-18; ci-en subdomain covered
+dlsite.jp                # DLsite alternate domain
+dmm.co.jp                # DMM/FANZA adult division incl. R-18 games
+donmai.us                # Danbooru root; covers safebooru.donmai.us and image CDNs
+doujin-moe.us            # doujinshi reader
+doujins.com              # doujinshi reader
+e-hentai.org             # E-Hentai galleries; g.e-hentai.org and forums are subdomains
+e926.net                 # SFW-filtered e621, same community
+ehgt.org                 # E-Hentai thumbnail/image CDN
+erogames.com             # adult browser game portal
+erolabsshare.net         # EroLabs adult gacha publisher (game.erolabsshare.net)
+exhentai.org             # ExHentai (sad panda), unrestricted E-Hentai
+fakku.net                # hentai manga publisher/reader and games
+fenoxo.com               # Fenoxo text adult games (TiTS, CoC)
+furbooru.org             # furry booru
+gamcore.com              # browser adult games portal
+gamesofdesire.com        # browser adult games portal
+gelbooru.com             # anime imageboard with explicit content by default
+getchu.com               # JP eroge retailer
+hanime.tv                # hentai anime streaming
+haremheroes.com          # Hentai Heroes alternate branding
+hath.network             # E-Hentai H@H image distribution network
+hbrowse.com              # hentai manga reader
+hentai-img.com           # hentai image gallery
+hentai.cafe              # hentai manga reader (defunct/revived mirrors)
+hentai.tv                # hentai anime streaming
+hentai.xxx               # hentai video site
+hentai2read.com          # hentai manga reader
+hentaicity.com           # hentai video/gallery site
+hentaidude.com           # hentai anime streaming
+hentaiera.com            # hentai manga reader
+hentaiforce.net          # hentai manga gallery
+hentaifox.com            # hentai manga reader
+hentaifromhell.org       # hentai manga reader
+hentaigasm.com           # hentai anime streaming
+hentaihaven.co           # Hentai Haven mirror domain
+hentaihaven.org          # older Hentai Haven domain
+hentaihaven.xxx          # hentai anime streaming
+hentaihere.com           # hentai manga reader
+hentaiheroes.com         # Kinkoid hentai browser game
+hentaimama.io            # hentai anime streaming
+hentainexus.com          # hentai magazine reader (defunct)
+hentaiplay.net           # hentai anime streaming
+hentaipros.com           # premium hentai studio site
+hentaipulse.com          # hentai anime streaming
+hentairead.com           # hentai manga reader
+hentairox.com            # hentai manga gallery
+hentaisea.com            # hentai anime streaming
+hentaistream.com         # hentai streaming (defunct)
+hentaiverse.org          # E-Hentai browser game
+hentaiworld.tv           # hentai anime streaming
+hitomi.la                # doujinshi/CG/anime gallery; images on numbered subdomains
+hongfire.com             # legacy anime/adult game forum
+hstream.moe              # hentai anime streaming
+hypnohub.net             # hypnosis-fetish booru
+idol.sankakucomplex.com  # Sankaku Idol real-photo booru
+imhentai.xxx             # hentai manga gallery
+iwara.tv                 # MMD/3D anime animation site, majority adult
+jastusa.com              # JAST USA adult visual novel publisher
+johren.games             # DMM western adult game portal
+johren.net               # Johren alternate domain
+kaguragames.com          # adult RPG/VN publisher
+kemono.cr                # current Kemono domain; scrapes FANBOX/Fantia/Patreon, mostly NSFW
+kimochi.info             # Kimochi adult game store/launcher
+kinkoid.com              # Kinkoid adult game studio portal
+konachan.com             # anime wallpaper booru with explicit content
+lewd.ninja               # adult game aggregator
+lewdgames.com            # adult game download site
+lewdgames.to             # LewdGames alternate domain
+lewdzone.com             # adult game download site
+lolibooru.moe            # lolicon booru
+luscious.net             # hentai/porn comic and image gallery
+manga18fx.com            # adult manhwa reader
+mangagamer.com           # adult visual novel publisher
+manhwa18.com             # adult manhwa reader
+manhwa18.net             # adult manhwa reader
+manhwahentai.me          # adult manhwa reader
+manytoon.com             # adult manhwa reader
+muchohentai.com          # hentai anime streaming
+multporn.net             # adult comic/hentai archive
+myhentaigallery.com      # hentai/porn comic gallery
+nekohouse.su             # Kemono sister site for JP creator platforms
+nekopoi.care             # Indonesian hentai streaming
+nhentai.net              # largest doujinshi/hentai manga gallery
+nhentai.to               # nhentai mirror/clone
+nhentai.xxx              # nhentai mirror/clone
+nijie.info               # Japanese adult-focused art site
+nijie.net                # Nijie alternate domain
+nutaku.com               # Nutaku alternate domain
+nutaku.net               # adult game/gacha portal
+ohentai.org              # hentai anime streaming
+oppai.stream             # hentai anime streaming
+otomi-games.com          # adult game piracy site
+paheal.net               # Paheal root domain
+poipiku.com              # JP art hosting used for R-18 posts
+porncomixonline.net      # adult comic archive
+pururin.io               # older Pururin domain
+pururin.to               # hentai manga reader
+realbooru.com            # real-photo adult booru
+rule34.booru.org         # Rule34 booru on booru.org
+rule34.paheal.net        # Paheal Rule34 imageboard
+rule34.us                # Rule34.us imageboard
+rule34.world             # Rule34World imageboard
+rule34.xxx               # main Rule34 imageboard; api-cdn subdomains covered
+rule34.xyz               # Rule34 clone
+rule34hentai.net         # Rule34Hentai imageboard
+rule34video.com          # rule34/hentai video site
+ryuugames.com            # adult game piracy site
+sankaku.app              # Sankaku app/beta frontend
+sankakucomplex.com       # Sankaku news site and root of chan/idol boorus
+sfmcompile.club          # SFM/Blender adult animation compilations
+shadbase.com             # Shadman adult webcomic
+shagbase.com             # Shadbase explicit section
+shiravune.com            # adult VN publisher
+simply-hentai.com        # hentai manga/doujin gallery
+sukebei.nyaa.si          # adult section of Nyaa torrent index
+svscomics.com            # adult comic archive
+tbib.org                 # The Big ImageBoard, aggregates other boorus
+toonily.com              # adult manhwa reader
+toonily.net              # Toonily alternate domain
+tsumino.com              # hentai manga reader
+ulmf.org                 # adult game modding/translation forum
+underhentai.net          # hentai anime streaming
+vercomicsporno.com       # Spanish adult comic archive
+watchhentai.net          # hentai anime streaming
+webtoon.xyz              # adult manhwa reader
+xanimu.com               # hentai/rule34 video site
+xbooru.com               # adult cartoon booru
+yande.re                 # anime imageboard with explicit content
+? anime-pictures.net       # anime art gallery with erotic toggle
+? comick.app               # Comick alternate domain
+? comick.io                # mainstream manga reader with adult tags
+? dmm.com                  # DMM general portal, mainstream games/video too
+? fantia.jp                # JP creator subscriptions, heavy R-18
+? konachan.net             # SFW-filtered Konachan variant
+? mangapark.net            # manga reader with adult section
+? melonbooks.co.jp         # JP doujin shop with R-18 section
+? nyaa.land                # Nyaa mirror
+? nyaa.si                  # anime torrent index; root also covers sukebei subdomain
+? picarto.tv               # art livestreaming with NSFW streams
+? pillowfort.social        # Tumblr-like social with NSFW allowed
+? safebooru.org            # SFW-rated anime booru but still suggestive; mirrors Gelbooru tags
+? sekaiproject.com         # VN publisher, mostly all-ages, links to 18+ label
+? skeb.jp                  # JP commission site with NSFW works
+? toomics.com              # official webtoon platform, mature-heavy
+? toranoana.jp             # JP doujin shop with R-18 section
+? vndb.org                 # VN database with explicit screenshots behind toggle
+? wallhaven.cc             # wallpaper site with sketchy/NSFW toggle
+? zerochan.net             # mostly SFW anime art; suggestive content
