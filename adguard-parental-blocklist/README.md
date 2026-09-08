@@ -110,21 +110,29 @@ Every keyword in `sources/keywords/*.txt` becomes rules like:
 ||tiktok.com/tag/*lesbian*$document
 ```
 
-- Matching is **case-insensitive** and works on any part of the query, so `lesbian` also catches
-  `lesbians`, `lesbianism`, `lesbian+flag`. Spaces and hyphens become wildcards, so `bi sexual`,
-  `bi-sexual` and `bisexual` are one pattern.
+- Matching is **case-insensitive**. A single-word term matches anywhere in the query, so `lesbian`
+  also catches `lesbians`, `lesbianism` and `lesbian+flag`.
+- **Multi-word phrases** are matched as regular expressions: the words must appear in that order
+  with only spaces, hyphens or nothing between them, starting at a word boundary. `step sis`
+  matches `stepsis`, `step-sis` and `step+sis` but not `footstep sister`; `r-34` matches `r34` but
+  not `december 2034`.
 - Google auto-corrects misspellings but keeps the misspelled text in the URL, which is why the lists
-  carry misspellings, transpositions, leetspeak (`l3sbian`, `p0rn`), spaced-out spellings and algospeak
-  (`seggs`, `le dollar bean`, `leg booty`).
-- Short words that live inside innocent words are marked `[word]` and generated as whole-word
-  regular expressions: `gay` blocks *is he gay* but not *Gaylord*; `demon` blocks *demon summoning* but not
-  *demonstration*; `anal` does not block *analysis*; `vore` does not block *carnivore*.
-- Terms with heavy collateral are marked `[optional]` and shipped disabled, for example `asexual`
-  (blocks *asexual reproduction*), `witchcraft` (blocks *Hogwarts School of Witchcraft and Wizardry*),
-  `devil` (*Tasmanian devil*, *devil fruit*), `corn` (algospeak for porn, but also a vegetable).
-- Some intended blocks have side effects you should know about: `demon` blocks *Demon Slayer*, `furry`
-  blocks *furry friends*, `trans` as a whole word blocks *trans fat*. `paimon` is deliberately absent
-  because it is the Genshin Impact mascot. Add exceptions in `sources/allow.txt` (see below).
+  carry misspellings, transpositions, leetspeak (`l3sbian`, `p0rn`), letter jumbles of the acronym
+  (`lgbqt`, `lbgt`, `lbqtq`) and algospeak (`seggs`, `le dollar bean`, `leg booty`).
+- Short words that live inside innocent words are marked `[word]` and matched as whole words:
+  `gay` blocks *is he gay* but not *Gaylord*; `demon` blocks *demon summoning* but not
+  *demonstration*; `anal` does not block *analysis*; `vore` does not block *carnivore*; `sex` does
+  not block *Essex* or *unisex*; `trans` does not block *Transformers* or *translate*.
+- Terms with heavy collateral are marked `[optional]` and shipped disabled, for example `corn`
+  (algospeak for porn, but also a vegetable), `witchcraft`-adjacent `cast a spell`, `devil`
+  (*Tasmanian devil*, *devil fruit*), `homo` (*homo sapiens*), `pronouns`, `spicy`, `unblocked`.
+- Some intended blocks have side effects you should know about: `demon` blocks *Demon Slayer*,
+  `exorcist` blocks the anime *Blue Exorcist*, `furry` blocks *furry friends*, `trans` as a whole
+  word blocks *trans fat*, `witchcraft` blocks *Hogwarts School of Witchcraft and Wizardry*.
+  `paimon` is deliberately absent because it is the Genshin Impact mascot.
+- `sources/allow.txt` ships with exceptions for school biology (*sexual reproduction*, *asexual
+  reproduction*) and astronomy (*naked eye*), which the substring rules for `sexual` and `naked`
+  would otherwise catch.
 
 ### Allowing a search that got caught
 

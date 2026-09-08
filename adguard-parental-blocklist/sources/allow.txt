@@ -1,7 +1,16 @@
 # Searches to ALLOW even though a keyword rule would block them (one per line).
-# Each line becomes an exception rule for every search site, e.g.
-#   @@||google.*/search?*q=*demon*slayer*$document
-# Re-run  python3 generate.py  after editing.  Examples (remove the leading '#' to enable):
+# Each line becomes an exception rule for every search site, for example
+#   @@||google.*/search?*q=*sexual*reproduction*$document
+# Re-run  python3 generate.py  after editing.  Lines starting with '#' are ignored.
+
+# School biology: 'sexual' is blocked as a substring, so these would otherwise be caught.
+sexual reproduction
+asexual reproduction
+# Astronomy and animals: 'naked' is blocked as a substring.
+naked eye
+naked mole rat
+
+# Examples you may want (remove the leading '#' to enable):
 #demon slayer
-#asexual reproduction
 #tasmanian devil
+#devil fruit

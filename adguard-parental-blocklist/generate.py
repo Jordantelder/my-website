@@ -180,40 +180,20 @@ def category_title(path: Path) -> tuple[str, str]:
 
 # --------------------------------------------------------------------------------------
 # Term -> pattern conversion
+#
+# Three kinds of pattern are generated:
+#   sub    single-word substring: AdGuard wildcard rules  ||site/search?*q=*TERM*   (fast, readable)
+#   phrase multi-word term: regex, words may only be separated by spaces/hyphens/etc. and the phrase
+#          must start at a word boundary ("step sis" matches stepsis / step-sis / step+sis, not "footstep sister")
+#   word   [word]-flagged term: regex with a word boundary on both sides ("gay" but not "Gaylord")
 # --------------------------------------------------------------------------------------
-def glob_form(term: str) -> str:
-    """Wildcard form for AdGuard basic rules: anything that is not a letter/digit becomes '*'
-    so 'bi-sexual' and 'bi sexual' collapse into one pattern 'bi*sexual' (which also matches 'bisexual').
-    A literal '+' is what browsers send as %2b (a space is sent as '+')."""
-    t = term.replace("+", "%2b")
-    # keep percent-encodings of non-ASCII as-is (e.g. 's%c3%a9ance'); everything else non-alnum -> *
-    t = re.sub(r"[^a-z0-9%]+", "*", t)
-    t = re.sub(r"\*+", "*", t).strip("*")
-    return t
+SEP = r"(?:%20|[^a-z0-9])*"      # what may appear between the words of a phrase in a URL
+LB = r"(?:\b|_)"                 # word boundary that also treats '_' as a boundary (URL slugs)
 
 
-def glob_generality(g: str) -> tuple:
-    """Sort key: patterns with fewer literal characters and more wildcards are more general."""
-    return (len(g.replace("*", "")), -g.count("*"), g)
-
-
-def regex_inner(term: str) -> str:
-    """Regex for one term (no boundaries), safe for AdGuard's rule parser (no ',' and no '$')."""
-    term = term.replace("+", "%2b")
-    words = [w for w in re.split(r"[^a-z0-9%]+", term) if w]
-    esc = [re.escape(w).replace("\\%", "%") for w in words]
-    return r"(?:%20|[^a-z0-9])*".join(esc)
-
-
-def regex_group(terms: list[str], word_boundary: bool) -> str:
-    """One alternation covering all terms.
-
-    The never-matching first alternative [^\s\S] is deliberate: AdGuard's engines pre-filter regex
-    rules by the longest literal they can extract from the *first* alternative, and a literal such as
-    "bi" would make the rule fire only on URLs containing "bi". Starting with a character class
-    leaves no literal to extract, so the rule is evaluated by the regex alone."""
-    alt = "(?:[^\\s\\S]|" + "|".join(regex_inner(t) for t in terms) + ")"
-    return r"(?:\b|_)" + alt + r"(?:\b|_)" if word_boundary else alt
+def tokens(term: str) -> list[str]:
+    """'bi-sexual' -> ['bi', 'sexual'];  '18+' -> ['18%2b'] (a literal plus is sent as %2b)."""
+    return [w for w in re.split(r"[^a-z0-9%]+", term.replace("+", "%2b")) if w]
 
 
 def url_form(term: str) -> str:
@@ -223,11 +203,69 @@ def url_form(term: str) -> str:
     return term
 
 
-def covers(kept_glob: str, candidate_glob: str) -> bool:
-    """True if a substring rule for kept_glob would already block anything candidate_glob blocks."""
-    parts = kept_glob.split("*")
-    pattern = ".*".join(re.escape(p) for p in parts)
-    return re.search(pattern, candidate_glob) is not None
+def regex_inner(toks: list[str]) -> str:
+    return SEP.join(re.escape(w).replace("\\%", "%") for w in toks)
+
+
+def regex_group(items: list[dict], lead: bool, trail: bool) -> str:
+    """One alternation covering all items.
+
+    The never-matching first alternative [^\s\S] is deliberate: AdGuard's engines pre-filter regex
+    rules by the longest literal they can extract from the *first* alternative, and a literal such as
+    "bi" would make the rule fire only on URLs containing "bi". Starting with a character class
+    leaves no literal to extract, so the rule is evaluated by the regex alone."""
+    alt = "(?:[^\\s\\S]|" + "|".join(regex_inner(c["toks"]) for c in items) + ")"
+    return (LB if lead else "") + alt + (LB if trail else "")
+
+
+def kind_of(toks: list[str], word: bool) -> str:
+    if word:
+        return "word"
+    return "phrase" if len(toks) > 1 else "sub"
+
+
+def is_covered(c: dict, pool: list[dict]) -> bool:
+    """True if some already-kept pattern in pool blocks everything c would block."""
+    for k in pool:
+        if k is c:
+            continue
+        if k["kind"] == "sub":
+            if k["glob"] in c["glob"]:                      # substring of a substring / of a phrase
+                return True
+        elif k["kind"] == "word":
+            if len(k["toks"]) == 1 and k["toks"][0] in c["toks"] and (c["kind"] != "sub" or c["toks"] == k["toks"]):
+                return True                                 # whole word 'gay' already blocks 'gay porn'
+            if c["kind"] == "word" and c["toks"] == k["toks"]:
+                return True
+        elif k["kind"] == "phrase":
+            if c["kind"] in ("phrase", "word") and c["toks"][: len(k["toks"])] == k["toks"] and c["toks"] != k["toks"]:
+                return True                                 # phrase prefix: 'furry art' covers 'furry art style'
+            if c["kind"] == "phrase" and c["toks"] == k["toks"]:
+                return True
+    return False
+
+
+def prune_terms(categories: list[tuple[str, list[dict]]]) -> list[dict]:
+    """Flatten all categories into unique patterns, dropping anything another kept pattern already
+    covers. Default (enabled) patterns are pruned only by other default patterns; optional ones by both."""
+    cands = []
+    for title, entries in categories:
+        for e in entries:
+            for form in dict.fromkeys(url_form(t) for t in [e["term"], *e["variants"]]):
+                toks = tokens(form)
+                if not toks:
+                    continue
+                cands.append(dict(category=title, form=form, toks=toks, glob="*".join(toks),
+                                  kind=kind_of(toks, e["word"]), optional=e["optional"]))
+    kind_rank = {"sub": 0, "word": 1, "phrase": 2}
+    def sort_key(c):
+        return (c["optional"], kind_rank[c["kind"]], len(c["toks"]), len(c["glob"]), c["glob"])
+    kept: list[dict] = []
+    for c in sorted(cands, key=sort_key):
+        if not is_covered(c, kept):
+            kept.append(c)
+    order = {title: i for i, (title, _) in enumerate(categories)}
+    return sorted(kept, key=lambda c: (order[c["category"]], c["optional"], kind_rank[c["kind"]], c["form"]))
 
 
 # --------------------------------------------------------------------------------------
@@ -281,44 +319,6 @@ def build_dns(domain_files: list[Path]) -> tuple[str, str, str, dict]:
             "\n".join(md).rstrip() + "\n", stats)
 
 
-def prune_terms(categories: list[tuple[str, list[dict]]]) -> list[dict]:
-    """Flatten all categories into a list of unique patterns, dropping anything another pattern
-    already covers. Returns dicts: {category, form, glob, word, optional}. Order = category order."""
-    cands = []
-    for title, entries in categories:
-        for e in entries:
-            for form in dict.fromkeys(url_form(t) for t in [e["term"], *e["variants"]]):
-                g = glob_form(form)
-                if g:
-                    cands.append(dict(category=title, form=form, glob=g, word=e["word"], optional=e["optional"]))
-    # substring patterns: most general first, keep only those not covered by an already-kept one
-    subs = sorted([c for c in cands if not c["word"]], key=lambda c: glob_generality(c["glob"]))
-    kept_subs = []
-    for c in subs:
-        if any(covers(k["glob"], c["glob"]) for k in kept_subs):
-            continue
-        kept_subs.append(c)
-    # whole-word patterns: drop if a kept substring pattern covers them, or if a shorter kept
-    # word pattern is one of their words (e.g. "gay" already covers "gay porn")
-    words = sorted([c for c in cands if c["word"]], key=lambda c: (len(c["glob"].split("*")), c["glob"]))
-    kept_words, single_words = [], set()
-    for c in words:
-        if any(covers(k["glob"], c["glob"]) for k in kept_subs):
-            continue
-        parts = c["glob"].split("*")
-        if any(p in single_words for p in parts):
-            continue
-        if c["glob"] in single_words:
-            continue
-        kept_words.append(c)
-        if len(parts) == 1:
-            single_words.add(parts[0])
-    # substring phrases that contain a kept single whole-word term are redundant too
-    kept_subs = [c for c in kept_subs if not any(p in single_words for p in c["glob"].split("*"))]
-    order = {title: i for i, (title, _) in enumerate(categories)}
-    return sorted(kept_subs + kept_words, key=lambda c: (order[c["category"]], c["word"], c["optional"], c["form"]))
-
-
 def build_app_rules(keyword_files: list[Path], allow_terms: list[str]) -> tuple[str, str, str, dict]:
     categories = []
     for path in keyword_files:
@@ -336,18 +336,18 @@ def build_app_rules(keyword_files: list[Path], allow_terms: list[str]) -> tuple[
         "! Import into: AdGuard for Windows / Mac / Android > Filters > User rules, or add the file as a custom filter.",
         "! The AdGuard apps need HTTPS filtering enabled for these to see search URLs (browser extension: not needed).",
         "! Each rule blocks the results page ($document) when the search query contains the term.",
-        "! Rules starting with '/' are regular expressions: used for short words that need whole-word matching.",
+        "! Rules starting with '/' are regular expressions: multi-word phrases and whole-word terms are grouped per category.",
         "! Lines starting with '! optional:' are disabled; remove the '! optional: ' prefix to enable one.",
-        "! To allow a specific search again, add an exception, for example:",
+        "! To allow a specific search again, add it to sources/allow.txt or paste an exception, for example:",
         "!   @@||google.*/search?*q=*demon*slayer*$document",
         "!   @@||youtube.com/results?*search_query=*demon*slayer*$document",
         "",
     ]
-    full = ["! AdGuard app - search-term blocking rules (FULL: one readable rule per site and term)"] + header_common
-    compact = ["! AdGuard app - search-term blocking rules (COMPACT: one regex per category; same coverage, far fewer rules)",
+    full = ["! AdGuard app - search-term blocking rules (FULL: one readable rule per site for each single-word term)"] + header_common
+    compact = ["! AdGuard app - search-term blocking rules (COMPACT: a few regex rules per category; same coverage, far fewer rules)",
                "! Use this version for the AdGuard Browser Extension on Chrome (Manifest V3 rule limits) or if the full file is too big."] + header_common
-    plain = ["# Parental-control search keywords, one per line. '*' = anything (spaces/hyphens).",
-             f"# Generated {TODAY}. Lines marked [word] should be matched as whole words if your tool supports it.", ""]
+    plain = ["# Parental-control search keywords, one per line.",
+             f"# Generated {TODAY}.  [word] = match as a whole word;  [phrase] = words in this order, only spaces/hyphens between them.", ""]
 
     stats, total_full, total_compact = {}, 0, 0
     for title, _ in categories:
@@ -357,13 +357,14 @@ def build_app_rules(keyword_files: list[Path], allow_terms: list[str]) -> tuple[
         full += [f"! ==== {title} ====", ""]
         compact += [f"! ==== {title} ====", ""]
         plain += [f"# ==== {title} ====", ""]
-        n_full = 0
         for c in items:
-            plain.append(("# optional: " if c["optional"] else "") + c["glob"] + ("  [word]" if c["word"] else ""))
+            tag = {"word": "  [word]", "phrase": "  [phrase]", "sub": ""}[c["kind"]]
+            plain.append(("# optional: " if c["optional"] else "") + c["form"] + tag)
         plain.append("")
-        # full: wildcard rules for substring terms
+        n_full = n_compact = 0
+        # FULL: wildcard rules for single-word substrings
         for c in items:
-            if c["word"]:
+            if c["kind"] != "sub":
                 continue
             prefix = "! optional: " if c["optional"] else ""
             full.append(f"! -- {c['form']}")
@@ -371,30 +372,31 @@ def build_app_rules(keyword_files: list[Path], allow_terms: list[str]) -> tuple[
                 for tpl in eng["wild"]:
                     full.append(prefix + tpl.replace("{T}", c["glob"]) + "$document")
                     n_full += 1
-        # full + compact: grouped regexes
+        # regex groups (FULL: word + phrase; COMPACT: word + phrase + sub)
         groups = [
-            ("whole-word terms", [c["form"] for c in items if c["word"] and not c["optional"]], True, ""),
-            ("whole-word terms (optional)", [c["form"] for c in items if c["word"] and c["optional"]], True, "! optional: "),
+            ("whole-word terms", "word", False, True, True),
+            ("whole-word terms (optional)", "word", True, True, True),
+            ("phrases", "phrase", False, True, False),
+            ("phrases (optional)", "phrase", True, True, False),
         ]
         compact_groups = groups + [
-            ("substring terms", [c["form"] for c in items if not c["word"] and not c["optional"]], False, ""),
-            ("substring terms (optional)", [c["form"] for c in items if not c["word"] and c["optional"]], False, "! optional: "),
+            ("single-word terms", "sub", False, False, False),
+            ("single-word terms (optional)", "sub", True, False, False),
         ]
-        for label, terms, wb, prefix in groups:
-            if terms:
-                rx = regex_group(terms, wb)
-                full += [f"! -- {label}: {', '.join(terms)}",
-                         f"{prefix}/{param_re_prefix}{rx}/$document",
-                         f"{prefix}/{path_re_prefix}{rx}/$document"]
-                n_full += 2
-        n_compact = 0
-        for label, terms, wb, prefix in compact_groups:
-            if terms:
-                rx = regex_group(terms, wb)
-                compact += [f"! -- {label}: {', '.join(terms)}",
-                            f"{prefix}/{param_re_prefix}{rx}/$document",
-                            f"{prefix}/{path_re_prefix}{rx}/$document"]
-                n_compact += 2
+        for target, group_list in ((full, groups), (compact, compact_groups)):
+            for label, kind, optional, lead, trail in group_list:
+                sel = [c for c in items if c["kind"] == kind and c["optional"] == optional]
+                if not sel:
+                    continue
+                prefix = "! optional: " if optional else ""
+                rx = regex_group(sel, lead, trail)
+                target += [f"! -- {label}: {', '.join(c['form'] for c in sel)}",
+                           f"{prefix}/{param_re_prefix}{rx}/$document",
+                           f"{prefix}/{path_re_prefix}{rx}/$document"]
+                if target is full:
+                    n_full += 2
+                else:
+                    n_compact += 2
         full.append("")
         compact.append("")
         stats[title] = (len(items), n_full, n_compact)
@@ -404,7 +406,7 @@ def build_app_rules(keyword_files: list[Path], allow_terms: list[str]) -> tuple[
     if allow_terms:
         block = ["! ==== Allowed searches (exceptions from sources/allow.txt) ====", ""]
         for t in allow_terms:
-            g = glob_form(url_form(t))
+            g = "*".join(tokens(url_form(t)))
             block.append(f"! -- allow: {t}")
             for eng in ENGINES:
                 for tpl in eng["wild"]:
