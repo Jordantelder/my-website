@@ -162,10 +162,10 @@ E = [
  ("Change Control","Software Changes","4.1.6, 7.5.6, 7.6","—","820.70(i)","N","N"),
  ("Change Control","Product and Process Changes","4.1.4, 7.2.2, 7.3.9, 7.3.10, 7.5.6, 7.5.7","—","820.30(i), 820.70(b), 820.75(c)","Y","N"),
  ("Change Control","Purchasing Changes","7.4.2, 7.4.3","—","820.50(b)","N","N"),
- ("OAFR","Medical Device Reporting","8.2.3","21 CFR 803; 820.10(b)(3)","820.198(a)(3)","Y (all models)","N"),
- ("OAFR","Reports of Corrections and Removals","8.3.3","21 CFR 806; 820.10(b)(4)","820.100","Y (all models)","N"),
- ("OAFR","Medical Device Tracking Requirements","7.5.9.1","21 CFR 821; 820.10(b)(2)","820.65","Y (all models, where a tracking order applies)","N"),
- ("OAFR","Unique Device Identification","7.5.8","21 CFR 830; 820.45; 820.10(b)(1)","820.60, 820.120","Y (all models)","Y"),
+ ("OAFR","Medical Device Reporting","8.2.3","21 CFR 803; 820.10(b)(3)","820.198(a)(3)","Y (both models, except PMA preapproval)","N"),
+ ("OAFR","Reports of Corrections and Removals","8.3.3","21 CFR 806; 820.10(b)(4)","820.100","Y (both models, except PMA preapproval)","N"),
+ ("OAFR","Medical Device Tracking Requirements","7.5.9.1","21 CFR 821; 820.10(b)(2)","820.65","Y (both models, where a tracking order was issued; except PMA preapproval)","N"),
+ ("OAFR","Unique Device Identification","7.5.8","21 CFR 830; 820.45; 820.10(b)(1)","820.60, 820.120","Y (both models, except PMA preapproval)","Y"),
 ]
 assert len(E) == 58, len(E)
 
@@ -305,8 +305,8 @@ ws.freeze_panes = "A4"
 ws = wb.create_sheet("Model 2 minimum")
 widths(ws, {"A": 34, "B": 44, "C": 60})
 ws.cell(row=1, column=1, value="Compliance Program 7382.850, Figure 2: Inspection Model 2 minimum elements").font = Font(name=FONT, bold=True, size=13, color=NAVY)
-ws.cell(row=2, column=1, value="Model 2 applies to baseline surveillance inspections (no FDA inspection or MDSAP audit history, or risk factors indicating a need) and to PMA preapproval inspections. 22 elements, or 23 where the product is sterile. Model 1, used for every other inspection type, requires at least one element from each of the six QMS Areas plus all four OAFRs. Both models are minimums; FDA has said investigators routinely evaluate more.").font = Font(name=FONT, size=9, italic=True, color=GREY)
-ws.row_dimensions[2].height = 64
+ws.cell(row=2, column=1, value="Model 2 applies to baseline surveillance inspections (no FDA inspection or MDSAP audit history, or risk factors indicating a need) and to PMA preapproval inspections. 22 QMS Area elements, or 23 where the product is sterile. Model 1, used for every other inspection type, requires at least one element from each of the six QMS Areas plus the four OAFRs as applicable. Neither list is a ceiling: both figures instruct the investigator to consider additional elements where the inspection reveals objectionable conditions or the minimum coverage is not enough to assess something, and Figure 3 assigns most inspection types their model 'unless otherwise specified by the assignment'.").font = Font(name=FONT, size=9, italic=True, color=GREY)
+ws.row_dimensions[2].height = 82
 ws.cell(row=2, column=1).alignment = Alignment(wrap_text=True, vertical="top")
 ws.merge_cells("A2:C2")
 for i, h in enumerate(["QMS Area", "Element", "Note"], start=1):
@@ -319,7 +319,7 @@ m2_oafr = [(a, e, "Evaluated in every risk-based inspection except PMA preapprov
            for (a, e, iso, q, qsr, m2f, tc) in E if a == "OAFR"]
 row = 5
 for block_title, block in (("QMS Area elements prescribed for Model 2", m2_areas),
-                           ("Other Applicable FDA Requirements (evaluated under both models)", m2_oafr)):
+                           ("Other Applicable FDA Requirements (both models on baseline surveillance; excluded on PMA preapproval)", m2_oafr)):
     c = ws.cell(row=row, column=1, value=block_title)
     c.font = Font(name=FONT, bold=True, size=10, color=GOLD)
     for i in range(1, 4):
@@ -341,10 +341,11 @@ for block_title, block in (("QMS Area elements prescribed for Model 2", m2_areas
     ws.cell(row=row, column=2).border = BOX
     row += 2
 ws.cell(row=row, column=1, value="Reading the counts").font = Font(name=FONT, bold=True, size=10, color=NAVY)
-ws.cell(row=row, column=2, value="23 QMS Area elements are listed, of which the sterile-product element applies only to sterile product: 23 for sterile product, 22 for non-sterile. The four OAFRs and the general items (registration and listing, marketing authorizations, previous 483 and compliance issues, and any areas defined in the assignment) are additional under both models.")
+ws.cell(row=row, column=2, value="23 QMS Area elements are listed, of which the sterile-product element applies only to sterile product: 23 for sterile product, 22 for non-sterile. The general items (registration and listing, marketing authorizations, previous 483 and compliance issues, and any areas defined in the assignment) are additional under both models. The four OAFRs are not: they are evaluated on a baseline surveillance inspection but excluded on a PMA preapproval inspection, which is Model 2's other use, and Medical Device Tracking is evaluated only where a tracking order was issued.")
+ws.merge_cells(start_row=row, start_column=2, end_row=row, end_column=3)
 ws.cell(row=row, column=2).font = Font(name=FONT, size=9, italic=True, color=GREY)
 ws.cell(row=row, column=2).alignment = Alignment(wrap_text=True, vertical="top")
-ws.row_dimensions[row].height = 42
+ws.row_dimensions[row].height = 62
 ws.freeze_panes = "A5"
 
 # =====================================================================

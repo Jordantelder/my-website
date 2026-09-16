@@ -463,7 +463,8 @@ Source: CP 7382.850, Attachment A.`);
 {
   const s = content('Section 3  |  The inspection', 'Seven inspection types, two models',
 `[0:36 | 2 min]
-Figure 3 of the compliance program. Most firms in this room will be inspected under Model 1: at least one element from each of the six areas, all four OAFRs, plus general items (registration and listing, marketing authorizations, prior 483s). New sites and PMA preapproval inspections get Model 2: a prescribed minimum list of 22 elements (23 for sterile product), which includes management review, internal audits, complaint handling, CAPA, design and development inputs through transfer, process validation, and outsourcing.
+Figure 3 of the compliance program. Most firms in this room will be inspected under Model 1: at least one element from each of the six areas, the four OAFRs as applicable, plus general items (registration and listing, marketing authorizations, prior 483s). New sites and PMA preapproval inspections get Model 2: a prescribed minimum list of 22 elements (23 for sterile product), which includes management review, internal audits, complaint handling, CAPA, design and development inputs through transfer, process validation, and outsourcing.
+Watch the OAFR split on Model 2, because the crosswalks you will read online get this wrong. Model 2 has only two uses. On baseline surveillance the four OAFRs come with it. On PMA preapproval they do not: Part III.D.1 to 4 each say evaluate during all risk-based inspections except PMA preapproval, and Part III.C tells the investigator to exclude the OAFR elements where the subject device is not yet on the US market. So Model 2 is 22 or 23 elements plus four OAFRs, or 22 or 23 plus none, depending on which of its two uses you drew.
 FDA's own words at the April town hall: both models are "minimum" and "flexible"; investigators routinely cover more. A prior MDSAP audit classified NAI or VAI counts like a prior FDA inspection for choosing the type; sites actively enrolled in MDSAP are not scheduled for surveillance inspections at all.`);
   table(s, ['Inspection type', 'When it is used', 'Model'], [
     ['Non-baseline surveillance', 'Prior FDA inspection or MDSAP audit classified NAI or VAI; not enrolled in MDSAP', '1'],
@@ -475,8 +476,8 @@ FDA's own words at the April town hall: both models are "minimum" and "flexible"
     ['PMA postmarket', 'Eight to twelve months after approval', '1'],
   ], { colW: [1.75, 3.55, 0.6], fontSize: 8.5, rowH: 0.3 });
   card(s, { x: 6.65, y: 1.3, w: 2.85, h: 3.5, title: 'Model 1 vs Model 2', fill: C.goldTint, body: [
-    { text: 'Model 1', bold: true }, 'At least one element per QMS Area, chosen by product risk; all four OAFRs; general items',
-    { text: 'Model 2', bold: true }, 'Prescribed minimum: 22 elements (23 for sterile) plus OAFRs, including management review, internal audits, complaint handling, corrective and preventive action, design inputs through transfer, process validation, outsourcing',
+    { text: 'Model 1', bold: true }, 'At least one element per QMS Area, chosen by product risk; the four OAFRs as applicable; general items',
+    { text: 'Model 2', bold: true }, 'Prescribed minimum: 22 elements (23 for sterile), including management review, internal audits, complaint handling, corrective and preventive action, design inputs through transfer, process validation, outsourcing; plus general items. OAFRs on baseline surveillance, but excluded on PMA preapproval',
     { text: 'Both are "minimum" and "flexible"', bold: true }
   ], bodySize: 9, gap: 3 });
 }
