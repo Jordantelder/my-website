@@ -6,6 +6,7 @@ Speaker decks and companion materials for medical device quality and regulatory 
 |---|---|---|
 | [ISO 13485 & Audit Readiness](iso-13485-audit-readiness/) | 90 minutes | Deck (40 slides), participant handout, case study workshop pack, facilitator guide |
 | [QMSR Transition](qmsr-transition/) | 90 minutes | Deck (41 slides), participant handout, workshop exercise pack, facilitator guide, gap assessment workbook |
+| [Risk Management Workshop (ISO 14971)](iso-14971-risk-management/) | 90 minutes | Deck (39 slides), participant handout, hands-on exercise pack, facilitator guide, risk file toolkit |
 
 Every deck carries speaker notes with running-clock cues, and every facilitator guide contains an accuracy checklist to work through before each delivery: regulatory dates, citations and enforcement data age quickly.
 
