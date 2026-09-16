@@ -68,8 +68,27 @@ corrected earlier drafts of this material:
   text; an infusion pump's central requirements are 21.1 and 21.2, not the point 4 that
   most files cite alone.
 
+A later primary-source pass added, rather than corrected, the following:
+
+- **FDA recognition number 5-125** for ISO 14971 Third edition 2019-12, extent of recognition
+  the complete standard, from Recognition List Number 053 (85 FR 17584, 30 March 2020),
+  confirmed unchanged in Recognition List Number 066 (24 August 2026).
+- **Team-NB V4**, adopted 21 April 2026, supersedes the V3 of 9 April 2025 first cited here.
+  V4 added a pitfall that is exactly this workshop's Exercise B finding: an instructions-for-use
+  warning offered as a risk control with no usability evidence of its effectiveness. The
+  handout now carries all five of Team-NB's named risk-management pitfalls.
+- **The string "14971" appears nowhere** in the 78 pages of Compliance Program 7382.850.
+- FDA confirmed at its 14 January 2026 town hall that there is **no requirement for a
+  quantitative description of risk**, so the toolkit's scoring scheme is a justified choice
+  rather than an inherited obligation.
+
+One coverage gap, stated plainly: the research facet that was to verify the hazard-chain
+mechanics, the P1/P2 decomposition, the order of priority and the Clause 10 loop failed on an
+output-token limit. That material rests on the verified clause structure and definitions plus
+a direct reading of the consolidated MDR text, not on a dedicated verification pass.
+
 The Facilitator Guide carries a five-item pre-delivery checklist, because harmonised-standard
-citations, MDCG guidance, Team-NB position papers and FDA recognition entries all age.
+citations, MDCG guidance, Team-NB guidance versions and FDA recognition entries all age.
 
 Not legal or regulatory advice.
 

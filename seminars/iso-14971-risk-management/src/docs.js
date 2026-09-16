@@ -199,10 +199,10 @@ const SOURCES = [
   'MDCG 2021-5 rev.1, Guidance on standardisation for medical devices, July 2024, section 2.3 on what an Annex Z is and does.',
   'MDCG 2025-10, Guidance on post-market surveillance of medical devices and IVDs, December 2025, Table 3 on the PMS-to-risk-management interface.',
   'MDCG 2019-16 rev.1, Guidance on cybersecurity for medical devices, July 2020, section 3.2 on security risk management.',
-  'Team-NB, Position Paper on Technical Documentation under the MDR, V3, 9 April 2025.',
+  'Team-NB, best practice guidance on MDR Annex II/III technical documentation, V4, adopted 21 April 2026, 92 pages, superseding V3 of 9 April 2025. Section 5 is Benefit-Risk Analysis and Risk Management; section 5.5 is the named list of common pitfalls in risk management.',
   '21 CFR Part 820 as in force from 2 February 2026; 820.7 incorporates ISO 13485:2016 by reference. QMSR final rule, 89 FR 7496 (2 February 2024).',
   'FDA Compliance Program 7382.850, Inspection of Medical Device Manufacturers, date of issuance and implementation 2 February 2026, Attachment A.',
-  'FDA recognized consensus standards database, for the currently recognized edition of ISO 14971 and any transition notice.',
+  'FDA Recognized Consensus Standards database, ISO 14971 at recognition number 5-125 (complete standard); Federal Register Recognition List Number 053, 85 FR 17584, 30 March 2020; confirmed unchanged in Recognition List Number 066, 91 FR 54715, 24 August 2026.',
 ];
 
 // =====================================================================
@@ -266,7 +266,9 @@ function handout() {
   c.push(p('ISO 14971 is **not** incorporated by reference into 21 CFR Part 820. Section 820.7 incorporates ISO 13485:2016. In the QMSR rulemaking FDA was asked to incorporate ISO 14971 as well and declined, on the basis that the risk management requirements it needs are already captured through ISO 13485.'));
   c.push(p('Declining to incorporate the standard did not reduce the obligation; it relocated it. Risk management is enforced through the ISO 13485 clauses that Part 820 does incorporate, and an observation is written against those clauses rather than against ISO 14971.'));
   c.push(table(['Where FDA reaches risk management', 'What it asks for'], FDA_HOOKS, [3100, 6980]));
-  c.push(callout(['**The answer to "is ISO 14971 mandatory for FDA?"** The standard is not; the activity is. ISO 14971:2019 is an FDA-recognized consensus standard, so conformance can be declared in a submission - but recognition is not incorporation. Check the current recognition entry and any transition notice before citing an edition.'], TINT));
+  c.push(callout(['**The answer to "is ISO 14971 mandatory for FDA?"** The standard is not; the activity is. ISO 14971:2019 is an FDA-recognized consensus standard - recognition number 5-125, ISO 14971 Third edition 2019-12, extent of recognition the complete standard, entered 23 December 2019 and published in Recognition List Number 053 at 85 FR 17584 on 30 March 2020, replacing recognition 5-40 for the 2007 edition. It was unchanged in Recognition List Number 066 of 24 August 2026. Conformance can therefore be declared in a submission - but recognition is not incorporation.'], TINT));
+  c.push(small('Two details worth having. The QMSR incorporates ISO 13485:2016 and Clause 3 of ISO 9000:2015 by reference, and nothing else: FDA said in response to Comment 9 (89 FR 7503) that the other standards ISO 13485 references may be helpful in understanding its application but are not incorporated. And the word "14971" appears nowhere in the 78 pages of Compliance Program 7382.850 - the inspection program is written entirely against ISO 13485 clauses and 21 CFR Part 820.'));
+  c.push(small('FDA\u2019s response to Comment 19 (89 FR 7504 to 7505) names ISO 13485 Clauses 4.1, 7.1, 7.3, 7.4, 7.5, 7.6 and 8.2 as carrying risk management. The clause list FDA presented at the 14 January 2026 town hall is broader still, adding 6.2 human resources, 8.3 control of nonconforming product and 8.5 improvement. At the same town hall FDA also confirmed that there is no QMSR or ISO 13485 requirement for a quantitative description of risk, which means a semi-quantitative scoring scheme is your choice and not an obligation.'));
 
   c.push(h2('4.2  EU: harmonised, but narrowly'));
   c.push(p('EN ISO 14971:2019 as amended by EN ISO 14971:2019/A11:2021 is a harmonised standard for the MDR, cited by Commission Implementing Decision (EU) 2022/757 of 11 May 2022, OJ L 138, 17.5.2022, p. 27. The equivalent IVDR citation is Decision (EU) 2022/729, OJ L 135, 12.5.2022. Both were still live, with no end of legal effect, on the Commission summary lists generated 17 June 2026.'));
@@ -373,7 +375,22 @@ function handout() {
     'Disclosure of significant residual risks in the accompanying information.',
     'The conclusion, stated against the criteria the plan declared, signed by someone with the authority to sign it.',
   ]));
-  c.push(small('Team-NB’s Position Paper on Technical Documentation under the MDR, V3, 9 April 2025, states that the MDR does not permit risk acceptance based on a risk priority number alone or on a "green" zone: the acceptability of each risk must be decided individually against predefined criteria. It also expects a statement that the clinical benefits outweigh all the residual risks, and three distinct risk assessments - design, production and process, and clinical or application.'));
+  c.push(small('Team-NB’s best practice guidance on MDR technical documentation, now at V4 adopted 21 April 2026 (superseding V3 of 9 April 2025), states that the MDR does not permit risk acceptance based on a risk priority number alone or on a "green" zone: the acceptability of each risk must be decided individually against predefined criteria. It also expects a statement that the clinical benefits outweigh all the residual risks, and three distinct risk assessments - design, production and process, and clinical or application.'));
+  c.push(h3('The five pitfalls a notified-body association has written down'));
+  c.push(p('Section 5.5 of the Team-NB guidance is a named list of common pitfalls in risk management observed by notified bodies. It is the closest thing to a published, collective deficiency list for risk files, and it is worth reading against your own file line by line.'));
+  c.push(table(['#', 'The pitfall', 'What it means for your file'], [
+    ['1', 'A vague risk control description. The example given is the word "IFU" written in the risk control column with no statement of what information was actually added', 'A control has to be described well enough that someone else could verify its effectiveness'],
+    ['2', 'Something offered as a risk control that is not one under the Annex I point 4 hierarchy. The example given is sterilisation validation presented as the control for contamination arising from reuse', 'The permitted options are safe design and manufacture, protection measures, information for safety, and training. A validation is evidence, not a control'],
+    ['3', 'Failure to distinguish verification of implementation from verification of effectiveness', 'Both must also be named separately in the risk management plan, not only in the records'],
+    ['4', 'A probability scale that cannot be justified. The worked example is an "occasional" band defined as 1 in 10 to 1 in 100, when a risk occurring in every tenth patient is frequent, not occasional', 'Band labels have to survive being read back in clinical terms. Test yours by saying the band out loud as a patient frequency'],
+    ['5', 'Risk acceptability decided by risk priority number, a "green" zone or similar, rather than each risk individually against predefined criteria', 'This wording is identical in V3 and V4, so it is a settled position and not a new one'],
+  ], [500, 5280, 4300]));
+  c.push(callout(['**What V4 added in April 2026.** A new pitfall that did not appear in V3: a warning or caution in the instructions for use used as a risk control without usability-engineering evidence of its effectiveness. That is the same defect as the one in Exercise B, and it is now on a notified-body association’s published list.'], GOLDTINT));
+  c.push(h3('Two Team-NB requirements that are routinely absent'));
+  c.push(...bullets([
+    '**A clinical expert assigned to the risk management team.** Section 5.1 closes its list of risk management plan contents with a requirement for qualified persons, including the assignment of a clinical expert. Most plans name engineering and quality roles and stop there.',
+    '**Cybersecurity hazards, and use-environment and user-competence hazards, inside the risk analysis.** Section 5.3 lists hazards related to cybersecurity, to ergonomic features, to the use environment, and to the technical knowledge, experience, education and training of the intended users.',
+  ]));
 
   c.push(pageBreak());
   c.push(h1('7  Closing the loop'));
@@ -595,10 +612,10 @@ function facilitator() {
   c.push(p('The content was verified in September 2026. Five things in it have a short shelf life. Re-check each one and update the deck and handout before delivery.'));
   c.push(...checks([
     '**The MDR harmonised-standard citation.** Confirm EN ISO 14971:2019 with A11:2021 is still cited with no end of legal effect, on the current Commission summary list of harmonised standards for Regulation (EU) 2017/745. Slide 12 and handout section 4.2 state the June 2026 position.',
-    '**The FDA recognition entry** for ISO 14971. Check the recognized consensus standards database for the currently recognized edition and any transition notice. Slide 11 deliberately does not quote a recognition number, for this reason.',
+    '**The FDA recognition entry** for ISO 14971. Slide 11 now quotes recognition number 5-125, complete standard, from Recognition List Number 053 (85 FR 17584, 30 March 2020), confirmed unchanged in Recognition List Number 066 of 24 August 2026. Confirm 5-125 is still current in the recognized consensus standards database, and check for any transition notice.',
     '**MDCG guidance.** Slide 34 and handout section 7.3 state that there is no MDCG guidance dedicated to risk management and none in the published pipeline. Re-check the MDCG index; if one has appeared, it changes the section.',
     '**Any new edition or amendment of ISO 14971 or ISO/TR 24971.** ISO 14971:2019 was confirmed in March 2025 with no changes, so nothing was pending as of September 2026. ISO/TS 24971-2:2026 on machine learning was published in June 2026.',
-    '**Team-NB position papers.** V3 of the technical documentation paper is dated 9 April 2025. Check for a later version before quoting it on slides 25 and 30.',
+    '**Team-NB guidance.** The deck now cites V4, adopted 21 April 2026, 92 pages, which superseded V3 of 9 April 2025 and added the pitfall about an IFU warning used as a risk control with no usability evidence. Check Team-NB for a version later than V4 before quoting it on slides 14, 25 and 30.',
   ]));
   c.push(callout(['**A claim to be careful with.** The statement that Annex ZA addresses only MDR Annex I Chapter I points 3, 4, 5, 8 and 9 is central to slide 12 and to handout section 4.2. It comes from the Annex ZA correspondence table. If you have access to the standard, read Table ZA.1 yourself before presenting it, and say "as I read the table" rather than asserting it flatly if you have not.'], GOLDTINT));
 
