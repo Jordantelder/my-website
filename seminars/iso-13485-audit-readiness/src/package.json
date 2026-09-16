@@ -1,0 +1,12 @@
+{
+  "name": "iso-13485-audit-readiness-seminar",
+  "private": true,
+  "description": "Generators for the ISO 13485 & Audit Readiness seminar deck and companion documents",
+  "scripts": {
+    "build": "mkdir -p out && node deck.js && python3 fix_notes.py out/ISO-13485-Audit-Readiness-Seminar.pptx && node docs.js"
+  },
+  "dependencies": {
+    "docx": "^9.0.0",
+    "pptxgenjs": "^4.0.0"
+  }
+}
