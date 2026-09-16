@@ -1,0 +1,447 @@
+SLIDE 1
+
+Good morning and thank you for joining us. I know regulatory requirements are not considered exciting, so I appreciate you taking time out of your busy day. My name is Jordan Elder, and today we are going to discuss software validation and cybersecurity, and the challenges of connected devices and Software as a Medical Device, or otherwise known as SaMD.
+
+The part of a device that could injure a patient was once one you could see and touch; today it is the software, which can change on any afternoon without anybody signing a drawing and is the likeliest source of a Warning Letter.
+
+I would make two promises. This is not a lecture on paperwork, because every requirement traces back to a patient harm mechanism, and you will leave with a workbook, two worksheets and a quick reference card; interruptions are welcome throughout. So with that said, let's dive in.
+
+SLIDE 2
+
+The next ninety minutes fall into four parts, and I want to show you their shape rather than read the agenda to you. We begin with the new operating environment, meaning what changed in regulation and in the threat picture, and why the old playbook no longer fits. Our two largest blocks are software validation and cybersecurity, and we close with making it work on Monday, where we integrate the two lifecycles into a thirty, sixty and ninety day plan.
+
+I have separated validation and security deliberately so that the distinctions land, and Part Four puts them back together, because in truth they are one lifecycle and I do not want you leaving with two silos reinforced. Our two working sessions fall at the end of Parts Two and Three, in tables of four to six. I would ask you to sit with people you do not work with daily.
+
+SLIDE 3
+
+The objectives are things you should be able to do rather than be aware of, because the failure mode in this field is the person who can recite the standard numbers but cannot say what safety class their own device carries. I will take three of the six; the rest are in your workbook:
+
+Determining classification: you should be able to decide whether a software function is SaMD, software within a device, or outside the device definition, and defend the safety class and documentation level you assign.
+
+Treating security as engineering: you should be able to describe the Secure Product Development Framework, run a threat model, and keep security risk distinct from safety risk.
+
+Identifying your own gaps: you should leave with a prioritised list of what your programme is missing, and I would ask you to keep a running gap list on your workbook's action page.
+
+SLIDE 4
+
+I want to know who is in the room before we start on the material, because that tells me where to spend the time and I will adjust the depth as we go. I am going to ask four questions and would like to see hands on each one.
+
+The first is whether your device connects to something, meaning Wi-Fi, Bluetooth, cellular, USB, a hospital network, a phone or a cloud service, so anything that is not fully air gapped. The second is whether you ship SaMD, meaning software that is itself the medical device, an app, an algorithm or a web platform, rather than software embedded in hardware you also make. The third is whether you have shipped a security patch to the field, meaning not a feature release that happened to include fixes, but a patch you issued because of a vulnerability. The fourth is whether you have received an unsolicited vulnerability report, from an outside researcher, a customer's security team, a regulator, or the Cybersecurity and Infrastructure Security Agency, otherwise known as CISA.
+
+However the hands fell, that gives me a fair picture of where the depth belongs. On the third question in particular, if your device is connected and you have never shipped a security patch, that is not evidence that you have no vulnerabilities; it is evidence that you are not looking, and Section 524B now makes not looking a compliance problem rather than an engineering one. Where a report of that kind has reached your company, the thing I want to know is how long it took before somebody technical read it, and we return to that in Part Three. With that said, let us begin with the environment we are all now operating in.
+
+SLIDE 5
+
+Part One is concerned with the environment itself, and we are going to spend the next thirteen minutes on why the ground moved, because most of the requirements we cover later only make sense once you can see what they are responding to. Three forces converged on the same products at roughly the same time, and while that was happening the regulatory floor moved underneath them, so let us start with the convergence.
+
+SLIDE 6
+
+The environment we work in is not the product of one change, but of three forces that arrived together:
+
+The arrival of connectivity: Connectivity is now the default rather than a premium feature, and remote monitoring, over the air updates and cloud analytics each add clinical value and an attack surface that persists for the device's service life. A mechanical failure mode is bounded by physics, whereas a network failure mode is bounded by whoever is on the network, and connectivity designed in 2019 must be supported until 2034, against a threat environment nobody could then assess.
+
+Software as the device itself: When the product is an algorithm there is no mechanical failsafe underneath it, as an infusion pump has in its occlusion sensor, so a bad build is a bad device. That is why documentation level and safety class matter more for pure software rather than less, and why release velocity the software industry treats as normal collides with a regulatory system built around documented design changes.
+
+The economics of the adversary: Healthcare is targeted because downtime is intolerable and the data is valuable, although attackers are generally not hunting your device, and most of the impact is collateral, in that the hospital gets hit and devices running an unsupported operating system on a flat network go down with it. WannaCry in 2017 was never aimed at medical devices, and it took them out anyway.
+
+None of these is new on its own; what is new is that all three are true at once, for the same product, across fifteen years of fielded service life set against a threat model that turns over every eighteen months, which is the structural problem no guidance document solves and why these obligations are now lifecycle rather than submission obligations.
+
+SLIDE 7
+
+Section 524B is the first of five entries on this timeline, and rather than read all five I will land three points. The first is that Section 524B is a statute and not a guidance document, which is the single most important distinction here. The Consolidated Appropriations Act of 2023 added Ensuring Cybersecurity of Devices to the Federal Food, Drug and Cosmetic Act, and from March 2023 cybersecurity became a statutory premarket requirement. Guidance describes FDA's current thinking and you may argue an alternative approach, whereas a statutory requirement is not negotiable, and since October 2023 FDA has used its refuse to accept authority to return deficient submissions unreviewed. If anyone in your organisation still treats cybersecurity documentation as a nice to have, this is the slide that ends that conversation.
+
+The second point is that the vocabulary changed underneath people. Level of Concern went away when the premarket software guidance was finalised in June 2023, and Minor, Moderate and Major gave way to Basic and Enhanced Documentation Level, so a checklist that still says Moderate Level of Concern is citing a retired framework, which is a visible signal to a reviewer about how current your quality system is. So by a show of hands, how many of you have updated your software procedure templates since 2023? I ask without judgement, because in most rooms some have been revised and some have not, and the ones that have not are usually those nobody has opened since 2022.
+
+The third point is that the Quality Management System Regulation, or QMSR, has been in force since February 2026. 21 CFR 820 now incorporates ISO 13485:2016 by reference, and FDA has retired its Quality System Inspection Technique in favour of an updated inspection compliance program. The substance of your obligations carries over, but the clause numbers do not, so a design control procedure referencing 820.30(g) now needs to reference ISO 13485 clause 7.3.7, which is unglamorous work that teams defer because nothing visibly breaks while it is outstanding, until an inspection, the most expensive moment for it to surface.
+
+Two further changes sit between those: the premarket cybersecurity guidance was reissued in June 2025, addressing Section 524B directly, and it carries the secure product development framework, the software bill of materials, or SBOM, and the testing expectations. In December 2024 the guidance on the Predetermined Change Control Plan, or PCCP, was finalised for artificial intelligence enabled functions. That is five significant changes in under three years, so procedures not revised inside that window are, as a matter of arithmetic, out of date, which I say without accusation, because few teams have had the bandwidth to keep pace with all five.
+
+SLIDE 8
+
+Classification is where almost every downstream argument about scope begins, and there are three categories:
+
+SaMD: this is software intended for a medical purpose that performs that purpose without being part of a hardware medical device, such as an arrhythmia detection algorithm.
+
+Software in a Medical Device, or SiMD: this is software embedded in, or driving, a hardware medical device, such as infusion pump firmware or a ventilator's control software.
+
+Not a device at all: these are the software functions excluded by the 21st Century Cures Act under section 520(o), covering administrative support, general wellness and certain clinical decision support.
+
+The distinction people get wrong is not SaMD against SiMD, but the assumption that a product carries one classification. In a remote cardiac monitoring system the wearable patch firmware is SiMD, the arrhythmia detection algorithm in the cloud is SaMD, and the scheduling and billing module is probably not a device, which gives you three classifications inside one product and one submission, each with different evidence expectations. Classification is therefore performed at the level of the software function rather than the product, and the reasoning should be written down when you make it, not reconstructed later.
+
+On the Cures Act exclusions I would ask you to be careful, because the clinical decision support carve out is narrow and it is where companies talk themselves into indefensible positions. The condition that matters is that the software must enable the clinician to independently review the basis for the recommendation, which is why it is difficult to hold both that your model is proprietary and that you are not a device. FDA's September 2022 guidance on clinical decision support is the document to read, and on general wellness the boundary is claims, since a specific disease claim puts you outside that exemption.
+
+SLIDE 9
+
+This matrix comes from the International Medical Device Regulators Forum, or IMDRF, document N12, and it sets the significance of the information the software provides against the state of the healthcare situation.
+
+Reading across, there are three levels of significance: the first is to inform clinical management, where the output is one input among several; the second is to drive clinical management, where the output guides the next action; and the third is to treat or diagnose, where the output is the diagnosis or directly drives therapy. Reading down, the state of the healthcare situation is how time critical and how severe it is, and critical means the patient deteriorates without timely intervention.
+
+I would ask you to resist treating this as a classification algorithm, because IMDRF categories do not map one to one onto FDA device class, IEC 62304 safety class or FDA documentation level. Where the matrix earns its place is as a diagnostic tool inside your own organisation, because if you ask a product team where their device sits you will often get three different answers, from the clinical lead, the regulatory lead and the engineer, and that disagreement is the useful finding, since it tells you the intended use statement is underspecified and everything downstream inherits that ambiguity.
+
+Which brings me to a question I would ask you to sit with rather than answer aloud: does your marketing material claim a column further right than your submission does? In my experience that gap is both real and common, because promotional claims are assessed against your cleared indications for use and not against the brochure, and better reconciled on your own timetable. For those working to European rules, classification runs through Rule 11 of the Medical Device Regulation, or MDR, with MDCG 2019-11 as the reference.
+
+SLIDE 10
+
+Very few of you face only one jurisdiction, so rather than read this table I would encourage you to photograph it while I make three points.
+
+The first is that these instruments are converging in substance while diverging in vocabulary, because everyone now wants a defined software lifecycle, risk management covering security as well as safety, and evidence that you maintain the thing after you ship it. One strong lifecycle can be mapped onto each jurisdiction in turn, whereas building to one jurisdiction's checklist means rebuilding for the next. Recognition status for the harmonised standards differs by jurisdiction and edition, so check the version and not merely the number.
+
+The second is that the cyber device definition under Section 524B catches more than people expect, since the statutory test is essentially software validated, installed or authorised by the sponsor, an ability to connect to the internet, and technological characteristics vulnerable to cyber threats. I would draw your attention to the words ability to connect, because the statute does not say is connected and it does not say is intended to connect, so a Bluetooth service port that a technician uses meets that test, and a team that concluded it was not connected on the basis of intended use should read the statute again.
+
+For those of you facing Europe, Regulation (EU) 2024/2847, the Cyber Resilience Act, broadly carves out products already covered by the MDR and the in vitro diagnostic regulation, to avoid double regulation; however, companion applications, portals and analytics tools not regulated as devices may fall inside it. The answer is therefore usually that it does not apply to the device and may well apply to the rest of your portfolio, which makes mapping your estate more useful than answering at company level.
+
+SLIDE 11
+
+Three kinds of risk are in play, and each asks a different question:
+
+Safety risk, governed by ISO 14971, asks whether this device could harm a patient and how likely that harm is, because the hazard does not adapt to your controls.
+
+Security risk, addressed by AAMI SW96 and IEC 81001-5-1, asks whether someone could make this device harm a patient or deny its use, and you assess feasibility rather than frequency.
+
+Quality and process risk, governed by ISO 13485 and the QMSR, asks whether our own process could let a defect through undetected, which is what validation addresses.
+
+Some of you may be asking why security risk cannot live inside the ISO 14971 file. ISO 14971 asks for the probability of occurrence of harm, which works for a component that fails at a known rate but not for an adversary, because you have no base rate, and because adding a control makes a random failure mode less likely whereas an attacker tries another route.
+
+Teams go wrong in both directions: merging them, by putting vulnerability scores into the hazard analysis, understates risk, while divorcing them, so that threat models never reach the risk management file, is the more common failure and the one an auditor will find. The rule that connects them is that when a security analysis identifies an exploit that could lead to patient harm, that harm enters the ISO 14971 file as a hazardous situation: an attacker altering the infusion rate is the security finding, and unintended delivery of an incorrect dose is the hazardous situation it feeds. The two processes run separately and meet at that point, and I would ask you to hold that distinction, because Part Two is mostly quality and process risk, Part Three security risk, and Part Four the bridge between them.
+
+SLIDE 12
+
+Part Two is software validation, and for the next twenty-one minutes we sit largely in the third of the three columns we have just drawn, which is the question of whether your own process could let a defect through undetected. In essence, everything in this part exists to demonstrate two things at once, namely that the software does what you intended it to do, and that it does nothing you did not intend.
+
+SLIDE 13
+
+Three words are used interchangeably in this field, and conflating them produces the wrong evidence:
+
+Verification: this asks whether we built the thing right, through objective evidence that a specified output meets its specified input requirement, comparing your product against your specification.
+
+Validation: this asks whether we built the right thing, comparing the device against user needs and intended uses under actual or simulated use conditions, where usability and human factors sit.
+
+Assurance: the risk-based question underneath both is how much evidence is enough, and FDA's Computer Software Assurance guidance, which governs production and quality system software, not the device software you ship, directs effort to where failure would hurt someone and the lightest credible method elsewhere.
+
+It follows that a test suite with one hundred percent pass and one hundred percent coverage verifies a great deal and validates nothing, if the requirements it traces to were wrong.
+
+SLIDE 14
+
+Validation is not one job but three, each with different rules, different evidence and different owners, and teams routinely apply one playbook to all three:
+
+Device software: this is the software you ship, including SaMD, embedded firmware, companion applications and the cloud services the device depends upon to perform its medical function, governed by design controls, the IEC 62304 lifecycle and security risk management. If your diagnostic algorithm runs in a container on a managed cloud service, that service belongs in your design history file, your risk management file and your security architecture, and the excuse that this is the information technology department's environment does not survive contact with a reviewer. Consider a practical question: if your cloud provider deprecates a runtime version with ninety days of notice, whose change control process handles it, and if nobody can answer, you have found a gap.
+
+Production and quality system software: this covers manufacturing execution systems, test rigs, electronic quality management systems, laboratory information management systems and the spreadsheets used for release decisions, all validated for intended use. The two failure modes are symmetrical and both expensive, in that some companies validate nothing outside the device while others apply full design control rigour to a label printer, and the test is what happens if this tool is wrong and nobody notices.
+
+Infrastructure and tooling: this is compilers, build pipelines, source control, the continuous integration system and the hosting platform underneath, where the obligation is configuration management and toolchain control proportionate to what the tool can silently break. I would ask whether you can rebuild, bit for bit, the firmware image running on a unit you shipped three years ago, because a surprising number of teams cannot, and that bears directly on investigating a field failure or patching a legacy build.
+
+SLIDE 15
+
+IEC 62304 is the lifecycle backbone, a set of processes and outputs that any methodology must produce, and since most of you have seen this diagram, our time is better spent on the two things not on it.
+
+The first is maintenance, which 62304 treats as a first-class process held to the rigour of development, and that matters for security, because every patch you ship is a maintenance activity travelling through this lifecycle. Teams with a disciplined development process and an ad hoc patch process have a real gap, which bites hardest at disclosure, when everyone wants the fix out by Friday.
+
+The second is agile development, and 62304 requires outputs, traceability and control rather than waterfall, which agile satisfies; what is not compatible is writing the documentation retrospectively before an audit, since that produces requirements written to match the code, and AAMI TIR45 is the reference for doing it properly.
+
+SLIDE 16
+
+How much of that lifecycle you must perform turns on safety class: Class A is where no injury is possible, Class B where non-serious injury is possible, which adds architectural design, integration testing and unit verification, and Class C where death or serious injury is possible, which adds unit-level detailed design and the fullest documentation. Two points matter more than the table:
+
+Classifying before risk controls: you assign the class on what the software could contribute to absent external risk control measures, and classifying on the residual risk after crediting your own mitigations is circular. Teams reason that a hardware watchdog means a software failure cannot kill anyone, which reverses the order the assessment is meant to follow; if a hardware control is to reduce the software safety class, it must be external to the software item, independently verified and documented as the basis of the classification, and auditors probe this closely.
+
+By a show of hands, how many of you would describe your software as Class B today? Then, answering silently this time, what would have to be true for you to be Class C? Whatever the hands looked like, the second question does the work, because how readily you answer it measures how much of your rationale is written down.
+
+Segregating software items: you may classify items separately and apply lower-class processes to the lower-class ones, provided the architecture genuinely prevents a failure in one affecting the other. Real segregation means separate processors or memory protection units, whereas different modules sharing memory in a single binary is not, and where the claim fails everything you scoped down is under-documented. The cost difference between the two classes is substantial, which is why the reasoning belongs in the architecture document at the time rather than reconstructed afterwards.
+
+SLIDE 17
+
+So now that we have settled the safety class, we turn to a separate decision, FDA's premarket documentation level of Basic or Enhanced. This replaced Level of Concern in 2023, so templates worded minor, moderate and major predate that change; is anyone still working from one? Whatever the hands show, those wordings are worth finding.
+
+You are at Enhanced if the device is a combination product constituent, tests blood donations or determines donor compatibility, is blood establishment computer software, is Class III, or if a failure could present a probable risk of death or serious injury to a patient, a user or anyone else, assessed before risk controls are applied.
+
+Basic is everything else and the default rather than a concession, since Enhanced increases depth within the same categories rather than adding new ones. The final criterion mirrors Class C, however the frameworks are independent and each needs its own rationale.
+
+SLIDE 18
+
+Three elements of the package in your workbook are worth picking out:
+
+Unresolved anomalies: a submission claiming zero open defects invites scepticism, because real software has open items, and reviewers want evidence that you know your defects and have assessed each for clinical impact. A characterised list of forty anomalies with impact rationales signals more maturity than a blank page, since the failure mode is not having defects but not knowing them.
+
+Requirements: security requirements belong in the software requirements specification, verified like any other requirement; if they live only in a security document that never reaches the test plan, they are aspirations.
+
+Development environment: FDA is asking, at premarket, how you will maintain the software after release, and the pattern to notice is a system that has shifted from proving software is good at release to proving you can keep it good, which rests on requirements, where we turn next.
+
+SLIDE 19
+
+Requirements are where most programmes come unstuck, because every downstream artefact inherits the quality of this one, and traceability to a bad requirement is worth nothing.
+
+The first of them reads, the system shall alert the clinician promptly when an arrhythmia is detected. So now you may be asking what is wrong with that, and the obvious answer is promptly, which is untestable, though alert is no better, naming no channel and no behaviour when it is unavailable, and each gap is a real field failure traceable to this one line. The stronger version requires a visual and audible alert at the workstation within ten seconds, escalating to the paging interface if unacknowledged within sixty.
+
+The second row matters most: patient data shall be transmitted securely is the industry's most common security requirement and is not a requirement but an intention, and since nothing in it can be verified it will be tested by somebody ticking a box. The rewrite names TLS 1.2 or higher with mutual certificate authentication and requires the device to reject and log connections failing certificate validation, and that negative case matters, because a security requirement must specify what the system does when the control is exercised against it.
+
+The words reliable, robust, user friendly and performant fail in the same way, since each is unfalsifiable and will trace neatly to a test that passes while proving nothing about the device in clinical use, so where you find them the remedy is either to decompose them into the behaviours you meant, or to remove them altogether.
+
+The test worth taking away exposes ambiguity rather than incompleteness: could two competent engineers, working independently from this requirement, build things that both pass and behave differently in a clinical setting? If the answer is yes, it is not a requirement yet.
+
+SLIDE 20
+
+Traceability runs from user need, through system and software requirements, to design, test and result, and it has to close in both directions. Forwards traceability asks whether we built everything we promised, backwards whether we built anything we did not, and backwards is the direction teams neglect, because functionality that traces to no requirement was never risk assessed and never validated, and in a connected device it is often the debug interface or the maintenance backdoor.
+
+Risk control measures attach to that same chain, and ISO 14971 requires you to verify both that a control was implemented and that it is effective, which are two different tests teams routinely reduce to one. Everyone here knows whether their matrix is maintained or reconstructed; one assembled the month before submission documents your archaeology rather than your process, while a live one tells you what a change will break before you make it.
+
+SLIDE 21
+
+Testing is conventionally described in four levels, from unit testing against the detailed design, through integration testing of the interfaces between software items and between software and hardware, to system testing of the complete device in its target environment including degraded conditions, and validation against user needs and intended use with representative users.
+
+What reviewers and auditors look for sits in the right hand column:
+
+Coverage of requirements rather than coverage of code: code coverage is a useful engineering metric and a poor compliance argument, since a team reporting ninety five percent coverage against the wrong requirements has answered a question nobody asked.
+
+Negative and boundary cases: by this I mean what the device does when an update is interrupted at sixty percent, when the system clock jumps backwards, or when the network returns after a four hour outage, none of which appears in a suite exercising only the intended sequence. Security testing is, structurally, negative testing at scale, so a team with a mature negative testing culture is already doing much of it.
+
+A defined and reproducible environment: the hardware revision, the operating system build and the dependency versions have to be recorded, because a test that passed on one laptop in the lab, with none of that written down, is an anecdote rather than evidence.
+
+A regression strategy tied to change impact: the answer that we re-ran everything is expensive and unfocused, and that we re-ran nothing because the change was small is indefensible, so a reviewer looks for the impact analysis that chose the scope between them.
+
+Results, and not merely protocols: executed evidence carrying dates, versions, the operator and the disposition of every failure, because failures during testing are entirely normal, while a failure left in the record with no explanation is what an inspection finds.
+
+SLIDE 22
+
+Software of Unknown Provenance, or otherwise known as SOUP, is software you did not develop and cannot fully characterise; in a modern build it is most of what ships, and you remain responsible for it. The obligation has six steps: identify all of it, including transitive dependencies, since one package can pull in hundreds; specify what you rely on it to do; assess its known anomalies and vulnerabilities; verify it in your own context, because its test suite is not your verification; plan for its lifecycle, since your device serves ten to fifteen years while its maintainer may lose interest in eighteen months; and control the version, because a build resolving the word latest is not reproducible.
+
+Could you produce a complete, versioned inventory of your third party components today? Whatever the answer, it is work done once and used twice, seeding the software bill of materials in Part Three.
+
+SLIDE 23
+
+Two questions follow every change, and both are documented: what do we re-validate, and does this need a new submission? The starting point is impact analysis, never the size of the difference, which tells you how long a change took to write and nothing about its reach; one line in a dose calculator reaches further than three thousand in a report generator. Security patches run through it too, where urgency argues for a prepared fast path, never a bypass.
+
+FDA's 2017 software modification guidance frames the second question, and you document the decision either way, because a memo concluding no new 510(k) is required is what an investigator asks to see. Accumulation matters too, since ten minor changes can collectively cross a threshold none crosses alone, so the assessment runs against the last cleared version and not last month's build. The alternative is to pre-authorise the change, which is the next slide.
+
+SLIDE 24
+
+A PCCP lets you agree the envelope of future change with FDA up front, then change within it without a new submission. It has three parts: a description of modifications, specific and bounded, naming your thresholds, input types, supported populations and retraining triggers; a modification protocol setting out how each change is developed, validated and implemented, with acceptance criteria and rollback; and an impact assessment, including how you confirm performance did not degrade for any subgroup.
+
+It is important to note, however, that a PCCP is not a shortcut, since the effort moves earlier rather than disappearing. The discipline it imposes is the real benefit, most visibly in the rollback threshold, so what performance drop in your algorithm would make you pull an update? Most teams have never set that number, and whatever your answer, setting it is valuable whether or not you file a plan.
+
+SLIDE 25
+
+For conventional software the requirements specify the behaviour and the code implements it, whereas for a learned model the data specifies the behaviour, which makes your training, tuning and test data a design input that belongs under configuration management with the same rigour as your source code. Leakage between those sets inflates measured performance invisibly, so the separation has to be made at the patient and site level rather than the sample level, and aggregate accuracy will conceal a subgroup performing materially worse.
+
+Because the population and clinical practice move while the model does not, your monitoring, thresholds and response have to be defined before launch rather than during an incident, and this is a postmarket surveillance obligation rather than an analytics project. FDA's lifecycle guidance for artificial intelligence enabled device software functions was issued in draft in January 2025 and remains in draft, which means it is non-binding.
+
+SLIDE 26
+
+Agile development, continuous delivery and cloud hosting are where all of this meets the way software is built, and the tension is not between speed and compliance but between automation and paperwork. There are four things I would ask you to put in place:
+
+Automating the evidence: if the pipeline runs the tests it can produce the records, and evidence generated by the build is more trustworthy and cheaper than evidence typed afterwards.
+
+Defining the release gate: not every commit is a release, and the line has to be drawn explicitly, stating what must be true before a build reaches a patient. When a team tells me they deploy twice a day, I ask what their release gate is, because the answer tells me whether they have engineered this or are hoping.
+
+Owning your cloud dependencies: a managed database version deprecation with a ninety day window is a supplier-initiated change to your device, and for most teams that notice lands in a DevOps engineer's inbox rather than a controlled process.
+
+Knowing what the user is running: web delivery removes the legacy version problem and replaces it with a simultaneity problem, since a bad deploy reaches every patient at once, so staged rollout, health checks and a rehearsed rollback are risk controls that belong in your risk management file.
+
+The reframe I would offer your engineers is that design controls are a specification for your pipeline, which already produces immutable build artefacts, automated test results, review gates with approver identity, dependency manifests and a full audit trail of every change, which is a large fraction of a 62304 evidence package. The problem is rarely that engineering lacks the evidence; it is that nobody treats the build system as a controlled record, while a separate team retypes a subset into documents.
+
+SLIDE 27
+
+Computer software assurance addresses the software you use to build and control your product rather than the software you ship, and FDA finalised its guidance for production and quality management system software in September 2025. The logic runs in four steps: identify the intended use, determine the risk to product quality or patient safety, choose an assurance activity proportionate to that risk, and record a result appropriate to that activity. In practice high risk stays rigorous, low risk gets proportionate treatment, and you may lean on your vendor's work by assessing the supplier and validating your own configuration rather than re-testing their product. The boundary is one that teams cross without noticing, and none of this licenses a lighter approach to your device software, which remains governed by design controls and by IEC 62304; teams that blur the line between the two get into real trouble.
+
+SLIDE 28
+
+The findings on this slide recur in software-related observations, and since none of them are exotic I would rather you read the list than have me read it; what I would ask you to notice is that almost every one is a failure to maintain rather than create. Companies are good at building a validation package for launch and poor at keeping it alive through five years of change, staff turnover and commercial pressure, so the traceability matrix was accurate at submission and the risk file thorough when written. These are the places where good programmes decay rather than where bad companies cheat, and that is the structural point of this seminar, because the system has moved from proving you were right at release to proving you keep it right. So pick the one you would least like an investigator to ask about tomorrow, and write it on your workbook action page.
+
+SLIDE 29
+
+Alright, let us put the first half of the morning to work. I would like you to form tables of four to six people and turn to page five of your workbook, and before you begin, please nominate one person at your table to report back, because otherwise the report back tends to stall.
+
+On the screen you have a remote cardiac monitoring system intended for ambulatory patients after a cardiac event: an adhesive wearable patch recording a single-lead electrocardiogram, or ECG, for up to fourteen days, a patient smartphone application that forwards the data to the manufacturer's cloud, a cloud service running a machine learning algorithm that detects and classifies arrhythmias, a clinician portal presenting flagged events alongside a scheduling and billing module, and patch firmware that can be updated over the air. The five questions take you from the software functions and the safety class of each item through the documentation level and the cyber device test to the software of unknown provenance you would expect to find. You have seven minutes at your table and three minutes reporting back, and there is no single right answer this morning, because what I want is your reasoning.
+
+[WORKING TIME: 7 minutes at tables. Circulate and listen. Give a two-minute warning. Then resume below.]
+
+Thank you. Rather than take all five questions from every table, I will take one question from each table in turn.
+
+[REPORT BACK: take one answer from each table. Then continue below.]
+
+Whatever your table concluded, here are the headlines I would be prepared to defend. On the first question, the point of the exercise is that a single product contains all three categories at once: the patch firmware is software in a device, the cloud arrhythmia algorithm is software as a medical device, and the scheduling and billing module is very likely not a device at all. The interesting one is the smartphone application, because if it only transports and displays data it may be a lower-risk data transfer function, but the moment it buffers, filters, triages or alerts it is doing something medical, and that is precisely where teams under-classify.
+
+On the second question I expect argument and I welcome it, because the algorithm is the crux: a missed arrhythmia in a patient recovering from a cardiac event can contribute to death or serious injury, which points to Class C. Watch for the circularity we discussed earlier this morning, which sounds like this: a clinician confirms every event, so we are Class B. The question to put to that is whether the clinician's review is an external risk control you have designed, verified and documented, or an assumption about user behaviour, because if the clinician only ever sees what the algorithm has flagged, clinician review does not mitigate a false negative at all.
+
+On the third question, Enhanced documentation is defensible through the probable risk of death or serious injury criterion, assessed before risk controls are applied, although I will accept Basic where it is argued coherently, because I would rather reward the reasoning than the answer. On the fourth question the answer is yes, and it should have been quick, since the product uses Bluetooth Low Energy, a smartphone and a cloud service, the software is validated and installed by the sponsor, and the device plainly has the ability to connect to the internet, so all three limbs of the statutory test are met.
+
+On the fifth question I would expect to see a Bluetooth stack, a real-time operating system on the patch, a cryptographic library, mobile operating system and machine learning frameworks, cloud base images and a web framework, and for each of those you need the name, the version, the manufacturer, the requirements you are relying on it to meet, its known anomalies and vulnerabilities, and its support status. That exercise is the first half of this seminar compressed into a single product, and it is a good place to pause before we turn to security.
+
+SLIDE 30
+
+Part Three is cybersecurity, and it occupies the same lifecycle we have been working through all morning while asking a different question of it. We are no longer asking whether our process let a defect through; we are asking whether someone can make this device do something it should not. Security is a safety property of a connected device, and since 2023 it has been a statutory one as well, which is where I want to begin.
+
+SLIDE 31
+
+There is no well documented public case of a patient being killed by a targeted attack on a medical device, but the demonstrated harm is disruption at scale, because ransomware which encrypts a hospital network takes down every device depending on it without anyone intending to attack a device. Three consequences follow, and the first is that your device lives on a network you neither control nor administer, so the only safe assumption is that it is already hostile. Availability is itself a clinical risk, since a device that will not turn on during a procedure is the immediate patient harm, and most vulnerabilities arrive through researchers acting in good faith, so what matters is whether you have somewhere for them to send it. The useful question is not whether anyone would attack your device, but what happens when the hospital around it is attacked.
+
+SLIDE 32
+
+Three cases shaped the expectations everyone now brings to this subject, and I will keep to what was publicly reported, because precision matters here.
+
+The pacemaker firmware update of 2017: FDA issued a safety communication about vulnerabilities in certain implantable cardiac devices, remedied by a firmware update applied at a clinical visit, across hundreds of thousands of implanted devices. The lesson is the remediation logistics rather than the vulnerability, because a plan of that kind means hundreds of thousands of clinical appointments, and every design choice about update mechanisms is a choice about what your worst day looks like.
+
+URGENT slash 11, in 2019: eleven vulnerabilities were disclosed in a widely used networking stack embedded in a real time operating system, reaching many products, medical devices among them, through deeply nested third party dependencies. In most of the companies affected the scramble was not over how to fix the problem, but over whether they were affected at all. Weeks of engineering time went into a question a software inventory answers in minutes, and for anyone who still regards a software bill of materials, or otherwise known as an SBOM, as a compliance tax, this is the clearest argument against it.
+
+The insulin pump recall of 2019: certain models were recalled over a wireless vulnerability that could allow an unauthorised party to alter pump settings, and the affected devices could not be updated to remediate it. When a device cannot be patched the only remaining remedy is replacement, which makes updateability a design requirement with commercial consequences, and it is the problem our second exercise turns on.
+
+The common thread is that in all three the expensive decision was taken years before anyone found the bug: whether the device could be updated, and whether anyone knew what was inside it.
+
+SLIDE 33
+
+Section 524B was added to the Food, Drug and Cosmetic Act in 2023, and unlike everything else today, it is statute rather than guidance. It is a condition of a valid submission for a cyber device, and FDA may refuse to accept one that does not meet it, so the submission is not reviewed, it is returned, and your launch date moves. The statute imposes four obligations:
+
+Managing postmarket vulnerabilities: you must have a plan to monitor, identify and address vulnerabilities and exploits, including coordinated disclosure, and you must both submit and operate it. If no names sit against who receives a report and who authorises a patch, you have a document, not a process.
+
+Maintaining secure processes: these must give reasonable assurance that the device and related systems are cybersecure, with patches on a reasonably justified regular cycle and out of cycle for critical ones. That capability is engineering and logistics rather than policy, and if you have never exercised it you do not know it works.
+
+Providing a software bill of materials: the statute requires one covering commercial, open source and off the shelf components.
+
+Complying with such other requirements as FDA may establish by regulation: the fourth obligation is deliberately open ended, and a programme built around the principle will outlast one built around today's checklist.
+
+A cyber device is, broadly, one that includes software validated, installed or authorised by the sponsor, has the ability to connect to the internet, and contains characteristics that could be vulnerable. The trap is the ability to connect rather than the intention to, because a maintenance Ethernet port or a radio disabled in software remains a capability. May I see hands from anyone who has formally documented that determination? However many hands are up, it is short work and belongs in your technical file.
+
+SLIDE 34
+
+The Secure Product Development Framework, or SPDF, is FDA's organising concept, in which security is produced by the development lifecycle rather than inspected in at the end. FDA is not asking whether your device is secure, which is unanswerable, but whether your development process systematically produces a secure device and whether you can show it, as design controls did for safety. It has three elements: security risk management, distinct from safety risk management but interfaced with it; security architecture, documenting where trust boundaries sit and how the device is updated; and cybersecurity testing, the evidence that the controls work. Some of you may be asking why FDA does not simply publish the controls it wants. A mandated list would soon be obsolete and would produce compliance without security, because a defibrillator, a diagnostic app and an imaging workstation need the same reasoning applied to different contexts, not the same controls.
+
+SLIDE 35
+
+Security risk management is a separate process from safety risk management: ISO 14971 asks whether the device could harm a patient through failure or use error, while security risk asks whether an actor could cause it to harm a patient, or deny its use. You cannot put a probability on an attack, because there is no base rate and an invented estimate would be meaningless, so security risk uses exploitability instead, asking what access the attacker needs, what skill, what equipment and what window of opportunity, which engineers can assess from the design.
+
+The adversary is the second difference, since a component does not adapt to your mitigation whereas an intelligent attacker does. Add a lockout after five failed password attempts and a random failure analysis will tell you brute force is now negligible, while the attacker stops brute forcing and turns to your firmware update channel instead. Controls redirect attackers rather than reducing a rate, and defence in depth is the correct response to an adversary who reroutes.
+
+Acceptability differs as well, since in safety you may weigh a residual risk against clinical benefit, whereas security speaks of controlled against uncontrolled risk, which is expected to be remediated rather than accepted. The picture also changes constantly, because a device secure at launch will not be secure at year seven, and nothing about the device itself will have changed; what changes around it is that cryptography weakens and exploits are published.
+
+Where security analysis finds an exploit path to patient harm, that harm becomes a hazardous situation in your ISO 14971 file. The security team owns how the attack works and the safety process owns the harm, so threat models that never reach your risk file leave two disconnected activities and an auditable gap.
+
+SLIDE 36
+
+Threat modelling is a structured conversation around a whiteboard rather than a specialist tool you have to purchase. The four questions are all you need to begin: what are we building, what can go wrong, what are we doing about it, and did we do a good enough job. The first does most of the work, because it asks you to draw the system and then the trust boundaries explicitly, and every place data crosses a boundary is where you reason hardest; for the cardiac monitoring product we saw earlier, those boundaries are patch to phone, phone to cloud, cloud to portal, and back down the update path.
+
+The second question is where the STRIDE model earns its keep, STRIDE being a checklist of six threat categories: spoofing, tampering, repudiation, information disclosure, denial of service and elevation of privilege. Denial of service is a middling concern in most industries, whereas for a device in active clinical use it is frequently the highest patient risk, so do not import a severity scale that ranks availability third. Elevation of privilege is where the undocumented functionality we discussed earlier comes back, so put this question to yourselves rather than to me: does your device have a service mode, and what authenticates access to it? Service menus, debug interfaces and hardcoded maintenance accounts are found constantly in device security assessments.
+
+The timing matters, because a threat model produced after design freeze is an inventory of things you can no longer afford to fix, whereas at architecture time moving a trust boundary costs nothing. Your first one should be an afternoon, a whiteboard and one product, with an engineer, a clinical person and somebody who knows the deployment environment; the teams that wait for a tool and a template never run one at all.
+
+SLIDE 37
+
+FDA asks for the system documented from four angles, each answering a question the others cannot. The global system view is the whole picture, and completeness is the point, because the most common omission is the manufacturer's own infrastructure, namely the update server, the telemetry endpoint and the service laptop; if something is not on that diagram, it has not been assessed. The multi-patient harm view is the one most often missing, and it distinguishes a device problem from a public health problem, because it asks how many patients one attack could affect. Anything shared across the fleet, whether a signing key, a default credential or a common server, is a multi-patient harm pathway. The updateability view is your remediation capability documented in advance, and the use case views catch what static diagrams miss because controls fail in sequence; if you have nothing today, start with the global system and updateability views.
+
+SLIDE 38
+
+Rather than read all eight categories on the screen, I will take three. Authentication: the requirement is no shared or default credentials and no hardcoded secrets, which sounds obvious and is violated constantly, usually for good operational reasons such as a service account shared across a fleet. The uncomfortable question is what would happen if one of those credentials leaked, meaning how many devices would be affected and whether you could change it, because that is a multi-patient harm pathway and usually an unpatchable one.
+
+Resiliency and recovery: this is the category generic security frameworks under-weight and clinical settings need most, because the design question is not only whether you can stop the attack, but what the device does while under attack and whether the clinician can still deliver care. A device that degrades safely to a usable local mode when the network is hostile may protect patients better than one that locks down completely, which is a judgement clinical and security thinking must reach together.
+
+Secure updates: this is the highest leverage control here, and it is not a close call, because everything else defends against the threats you know about today, whereas updateability defends against everything you have not yet thought of. If a team can afford to do only one thing well, it is this one.
+
+The discipline underneath all eight is that controls flow from threats, since a team that implements every category without a threat model cannot tell you what it bought, and equally, a threat in your model with no corresponding control is precisely what a reviewer will circle. On cryptography, a device shipping today may still be in service in 2040, so ask whether your keys are rotatable and your algorithm choices replaceable.
+
+SLIDE 39
+
+The software bill of materials is an inventory that answers one question fast. A serious vulnerability is announced in a widely used component on a Friday afternoon, and within hours your customers' security teams are asking whether they are affected; without it, answering takes weeks of engineering archaeology, whereas with a machine-readable inventory it is a query. Three points are routinely missed, the first being that it must be SPDX or CycloneDX and generated from the build, because a PDF satisfies the letter, destroys the purpose and never catches transitive dependencies. The second is that each component's support status must be recorded, because a supplier ending support in eighteen months against nine years of service life left is only actionable if written down. The third is to plan how you will share it, with FDA, with hospital security teams at procurement, and with whoever must act at three in the morning.
+
+SLIDE 40
+
+Vulnerability management runs as a continuous process with named owners: monitor, triage, assess, decide, act and communicate. Triage is where the work is, because a large product matches dozens of vulnerabilities a month and most are not exploitable; however, non-exploitability is a conclusion you reach and record, so every match gets a documented disposition. The Common Vulnerability Scoring System, or CVSS, is an input and not an answer, because a base score knows nothing about your architecture, and a nine point eight requiring physical access to an implant may rank below a six point five reachable from the hospital network, so score to prioritise triage and assess patient impact separately. A Vulnerability Exploitability eXchange statement, or VEX, lets you state, machine readably, that a component is present but not exploitable. I would also ask who does the monitoring on a Saturday, because if the answer is nobody, that is the finding.
+
+SLIDE 41
+
+Four kinds of security testing answer four different questions, and teams commonly do one, usually a penetration test, and treat it as coverage, which it is not. Security requirements testing is the same discipline as any other requirement, so if a requirement says data is transmitted securely there is nothing to test, whereas if it specifies TLS 1.2 or above, mutual certificate authentication, rejection of invalid certificates and logging of that rejection, a test engineer knows exactly what to do. Security controls must be tested for what they refuse, not only for what they permit, and that is the part teams skip.
+
+Threat mitigation testing is the distinctive one, and the one most often absent, because the question is not whether a control is present but whether it defeats the specific attack you modelled in the assembled system. If your threat model says an attacker on the same network could alter infusion settings and you implemented mutual authentication, demonstrate that the attack now fails, because without that the threat model is an unverified assertion.
+
+Vulnerability testing is largely automatable and should run in your pipeline, covering static and dynamic analysis, scanning against the inventory, and fuzzing of every parser that touches untrusted input. Vulnerability chaining is worth naming, because three low-severity findings can combine into a full compromise, which a scanner will not tell you.
+
+Penetration testing is useful and necessary, and it remains a point-in-time sample by a skilled human, so scope matters, and a test that excludes the cloud back end and the update mechanism has tested the least interesting part. A penetration test report with no remediation record is worse than no test, because you have documented that you knew; accepting a finding with a written justification is legitimate, whereas filing the report unread is not.
+
+SLIDE 42
+
+Hospital information technology, biomedical engineering, procurement and hospital security are now part of your user population and make decisions that determine whether your device is safe in practice, so you must label for them. That labelling is engineering content rather than marketing: which ports and services can be disabled, hardening and network placement guidance, how updates are delivered and authenticated, and how data is removed at decommissioning, because a hospital cannot protect what it cannot characterise.
+
+The Manufacturer Disclosure Statement for Medical Device Security, or MDS2, is the established vehicle for much of this, and it should not be completed in sales without engineering review. End-of-support dates deserve particular honesty, because a customer planning a fifteen-year capital asset needs to know before buying if you will stop patching in year seven, since years eight through fifteen then become their risk, and vagueness here transfers that risk to the people treating patients.
+
+SLIDE 43
+
+Postmarket obligations never close, and these four run for as long as the device remains in clinical use:
+
+Coordinated vulnerability disclosure: you may be asking what happens when a researcher finds something in your product on a Sunday afternoon. They go to your website, and if there is no security contact, no security.txt file and no policy, some of them try ordinary support and receive a ticket about a login problem, some give up, and some go straight to publication. You do not get to choose whether people look at your product, only whether there is a door, and publishing a security.txt file, monitoring it and stating your disclosure timeline is days of work; ISO/IEC 29147 and 30111 are the references.
+
+Controlled versus uncontrolled risk: this is FDA's postmarket vocabulary, and it drives the whole decision tree that follows. Controlled means the residual risk to health is acceptable, whereas uncontrolled means it is not, and remediation is expected rather than optional. It should be noted that a risk which is controlled today can become uncontrolled the moment an exploit is published, with no change whatsoever to your device.
+
+Reporting thresholds: routine updates and patches that reduce risk to an acceptable level are generally treated differently from corrections that must be reported under 21 CFR 806. FDA's 2016 postmarket guidance sets out the conditions, and I would far rather you read it and involve regulatory early than recite a bright line from memory.
+
+Participating in the ecosystem: information sharing through an Information Sharing and Analysis Organization, or ISAO, engagement with CISA advisories and relationships with the researcher community are explicitly contemplated in that guidance, and it is also how you hear things early.
+
+SLIDE 44
+
+Most devices in clinical use were designed before these expectations existed, and nobody expects you to retrofit a secure development lifecycle onto a product from 2014. What is expected is proportionate: know what you have deployed and what is inside it, assess which vulnerabilities are reachable rather than merely present, and give customers compensating controls and clear end-of-support dates. Hospitals run risky legacy equipment safely every day, and what defeats them is opacity, because a hospital that cannot be told what is inside a device cannot make a defensible risk decision.
+
+IMDRF and FDA have both addressed legacy devices specifically, and the expectation is not that you rebuild them but that you understand them, communicate honestly and plan their end of life deliberately. Decisions taken this quarter about updateability, crypto-agility and component support horizons decide how expensive your legacy problem is in 2035, and that bill is being written today.
+
+SLIDE 45
+
+Working session two is a tabletop at the same tables, and I will read the scenario aloud rather than have you read it. It is Monday morning, seven forty. An independent security researcher emails your general support address. A third-party Bluetooth library used in your infusion pump, firmware version three point two, approximately fourteen thousand units in clinical use, contains an unauthenticated remote code execution flaw with a CVSS base score of nine point eight. They have attached a working proof of concept demonstrated at ten metres, have not published, and ask for a response within ninety days. Two complications: patching requires the pump to be out of service for approximately twenty minutes, and roughly four thousand two hundred units are on an earlier hardware revision that cannot accept the over-the-air update at all.
+
+The questions are on page seven of your workbook, and we will work three rounds of three minutes: the first four hours, then day three, then day thirty. I will call each round, so decide and move rather than wait for certainty, because you will not have complete information, and neither would you in reality.
+
+[WORKING TIME: 9 minutes at tables, three rounds of 3 minutes. Call each round aloud. Circulate and listen. Then resume below.]
+
+Alright, thank you, and I will take the rounds in order. In the first four hours, the cheapest and most commonly missed action is acknowledging the researcher today, because a holding reply naming a human who has it and giving a date starts a ninety-day collaboration, while silence starts a countdown. The room needs engineering, regulatory, clinical, quality, legal, communications and somebody who can spend money, and if legal was the only name offered I would push back. The three things to establish are whether it is real and reproducible, what an attacker can make the pump do, and what your exposure is in units, configurations and network posture, while the instinct to ask for a non-disclosure agreement first is a common reflex that reliably damages the relationship.
+
+By day three, unauthenticated remote code execution at ten metres on a device delivering medication, with a working proof of concept attached, is very hard to argue is controlled. On reporting, the professional answer is not a bright line recited from memory, including by me, but that regulatory affairs is engaged on day one and works the postmarket guidance deliberately. On customer communication I would press on who, because the purchasing contact is not the person who can segment a network at two in the morning, and most organisations cannot reach biomedical engineering and hospital security in their own customer base.
+
+By day thirty, the four thousand two hundred units are the hard part, and the options are field service visits if another update route exists, hardware replacement, compensating controls with an accelerated replacement plan, or withdrawal, all of them expensive, because that cost was set by a hardware decision taken years ago. The controls a hospital can apply now are physical access restriction, monitoring and segmentation, and possibly disabling the radio, although that may remove clinical functionality the hospital paid for.
+
+The final question on the sheet I would like from two or three tables before I say anything: what would have made this a two-week problem instead?
+
+[REPORT BACK: take one answer from each table. Then continue below.]
+
+Whatever your tables concluded, the list I would defend contains a software bill of materials, so you know within minutes which units use that library, a published disclosure process so the report reaches the right person, a pre-validated emergency patch path, universal updateability, and a rehearsed route to hospital security teams. Everything on it was decidable before Monday morning, which is the whole seminar and where we go next.
+
+SLIDE 46
+
+Part Four is about making this happen by default rather than by heroics. Every item on the list we built a moment ago was a decision that was available to you long before any researcher's email arrived in anybody's inbox. So in the next few minutes we will look at one lifecycle rather than two, at a sequence you can start without waiting for a budget cycle, and at where the first effort is best spent.
+
+SLIDE 47
+
+The most common organisational failure here is not technical at all. Most companies have a quality function that owns validation and a security function, often newer, smaller and sometimes borrowed from the information technology group, that owns cybersecurity; they produce parallel documentation, hold separate reviews, and meet properly for the first time during a submission or an incident. That is expensive, it produces contradictions that a reviewer will find, and it leaves the interfaces between them unowned. The right-hand column of this table is where the two must meet:
+
+Requirements: there should be one requirements specification, because security requirements living in a separate document that never reaches the test plan are aspirations rather than requirements. Putting them into the software requirements specification means they are traced, tested and maintained like everything else, and it is the easiest of these to act on next week.
+
+Architecture: the SOUP list and the SBOM are the same inventory serving two purposes, and I have seen teams maintain them separately, in different formats and already quietly diverging. Build it once, from the build system, and you satisfy 62304 and section 524B at once.
+
+Post-release intake: there should be one queue for everything that comes back from the field. A hospital reports that the pump is behaving oddly, and the person making that call cannot be expected to know whether it is a complaint or a security incident, so if those reports arrive in separate queues with different response times, the misrouted ones are the serious ones.
+
+Risk is the one row where you deliberately do not merge, because integration does not mean collapsing everything into one matrix. You keep the two methods separate, you maintain one defined interface point between them, and every exploit path that leads to patient harm enters the 14971 file.
+
+SLIDE 48
+
+With the integrated lifecycle in front of us, the question is where you begin on Monday. The plan is a worksheet in your workbook, with space for owners and dates, so rather than read it I will say what comes first. The cyber device determination takes an afternoon and settles whether section 524B applies to you; a published security contact is the highest value per hour item here, since a monitored mailbox is days of work and changes what happens when a researcher finds you; and naming an owner for vulnerability monitoring matters more than it sounds, because everyone being responsible means nobody checks on Saturday. I would also ask you to rehearse the emergency patch path before you need it, because an untested process is an assumption rather than a capability, and the last thirty days are about systematisation, which is why the security architecture views belong in your design template.
+
+SLIDE 49
+
+I would ask you to take twenty seconds to read these five levels and then to place your own organisation on the scale twice, quietly, to yourself: once for validation and once for security. The useful number is not either level but the gap between them: organisations building devices for decades are frequently level three or four on validation and level one or two on security, because the validation system is mature and the security function is five years old, whereas newer digital health companies are often the reverse. That asymmetry matters because the remedy differs: if you are strong on validation and weak on security you do not need a new system but an extension of the one you have, and the integration table on slide 47 is your map. Levels one to three are decisions rather than capital, so nobody needs to wait for a budget cycle before moving.
+
+SLIDE 50
+
+Five things are worth remembering, because these are the ones you will repeat to colleagues:
+
+The first is that security is a safety property rather than an information technology concern: if an attacker can make your device harm a patient, that is a hazardous situation and it belongs in your risk management file, though the two processes remain distinct and it is the findings that must connect.
+
+The second is that these are now lifecycle obligations, since section 524B, predetermined change control plans and the maintenance expectations in the software guidance all move the question from whether the device was right at release to whether you can keep it right. Every development we have discussed today pushes in that direction, so this is one shift rather than five separate burdens, and an organisation that understands it can meet all of them with one investment.
+
+The third is that you cannot manage what you have not inventoried: the SOUP list, the SBOM, the deployed fleet and the support horizons of the components inside it, since almost every hard problem in this seminar begins with not knowing what you have.
+
+The fourth is that updateability is the highest-leverage design decision you will make, because every other control defends against threats you have thought of, whereas the ability to ship a fix defends against the ones you have not, which is the difference between a patch and a recall. Both the insulin pump case and this morning's exercise turned on it.
+
+The fifth is that you integrate the two programmes or you pay for them twice: one requirements specification, one traceability matrix, one intake queue and one change process, because parallel programmes cost more to run and leave the interfaces between them unowned.
+
+Resources are on the next slide and in your workbook, and then I would like your questions.
+
+SLIDE 51
+
+This is a reference slide rather than a list I intend to read, and it is reproduced in your workbook with a short note on what each document is for, which is a good deal more useful than the list itself. If you read three of them, make them the 2023 premarket software guidance, the cybersecurity guidance in its current version, and IEC 81001-5-1, because that last document shows you how to operationalise security inside a 62304 lifecycle rather than alongside it. I would also point you towards the threat modelling playbook produced by MITRE and the Medical Device Innovation Consortium, or MDIC, which is free, practical, and a good first document for a team that has never run a threat model. Please confirm current versions before relying on any of these, because guidance gets reissued and standards get amended.
+
+SLIDE 52
+
+Before we open the floor, I would ask that you turn to the action page in your workbook and write down one thing you will do this week, because a commitment written down in the room is the one that survives the journey back to the office. This concludes the presentation portion of this discussion. I want to thank each of you who attended, and I welcome any questions you may have at this time.

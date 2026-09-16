@@ -12,6 +12,7 @@ Designed as a **90-minute seminar** with two facilitated working sessions.
 | `Participant_Workbook.docx` | 18 pages. Note pages keyed to each section, both exercise worksheets, a 12-item readiness self-assessment, reference checklists, a 30-term glossary, an annotated standards list, and an action-plan page. Print double-sided, one per attendee. |
 | `Facilitator_Guide.docx` | 7 pages. Run of show with clock times, ranked cut list, answer keys for both working sessions, expected questions with suggested handling, and a materials checklist. |
 | `Quick_Reference_Card.docx` | 2 pages. Print double-sided on card: side 1 validation (classification, safety class, documentation level, requirements test, traceability), side 2 cybersecurity (524B, threat modelling, controls, architecture views, SBOM, vulnerability loop, testing). |
+| `Speaker_Transcript.docx` | 29 pages, also supplied as `.txt`. The full word-for-word script, marked by slide number, written to be read from the lectern. Lines in square brackets are the only thing on the page you do not read aloud: they mark where you stop and the room works. |
 
 ## Structure
 

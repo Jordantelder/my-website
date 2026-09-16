@@ -1,0 +1,461 @@
+SLIDE 1
+
+Good morning and thank you for joining us. My name is Jordan Elder, and today we are going to discuss global market entry into the United States, the European Union, the United Kingdom and Japan, under the Medical Device Regulation, or MDR, and the UKCA marking.
+
+Everything this morning starts from a phrase that means something in only one of those four markets, because Class II is a United States regulatory class and not a European, British or Japanese one, and the most expensive assumption in global market entry is that it travels. In ninety minutes I cannot make anyone an expert in four jurisdictions, but I can show you where these systems differ, which differences cost money, and which decisions are expensive to reverse. Interruptions are welcome, and your workbook has note pages for each section so that you can stop transcribing. So with that said, let's dive in.
+
+SLIDE 2
+
+The morning runs in five parts: why four markets are not four copies; EU MDR, covering classification, conformity assessment routes, the technical file, clinical evidence and what is in force today; UKCA and the United Kingdom framework; the United States and Japan together, with the quality system layer underneath all four; and making it work as one programme. MDR and UKCA take more than half the session because that is where the work sits for most of you, and because the two have diverged in ways that are easy to miss; the United States and Japan are here as comparison, enough to plan around and not enough to submit.
+
+Our two working sessions fall after parts two and four, at tables of four to six, and sit with someone from another company or function if you can. Part five is deliberately short, because by then the synthesis should be yours.
+
+SLIDE 3
+
+These are things you should be able to do afterwards, not be aware of, so hold me to them at the end. The first is the spine of the session: take one device, determine its class in all four markets, and explain why the answers differ rather than assuming one is wrong, because the failure mode I see is a team with an FDA clearance treating the European submission as a translation exercise.
+
+The fourth deserves emphasis: state what is in force today, what is adopted but not yet applicable, and what is only proposed. The European Commission's proposal to simplify MDR and the half built United Kingdom framework generate noise, and anyone who can say that a proposal is not law, and say what they plan instead, is worth a great deal. The sixth is to argue a market entry order with reasons; the rest are in your workbook.
+
+SLIDE 4
+
+Before we start, four questions that tell me where to spend the time. Raise your hand if you hold a CE certificate issued against Regulation 2017/745 itself, and raise it instead if you are still on a legacy Medical Devices Directive, or MDD, certificate under the extended transition in Regulation 2023/607, which we will spend real time on.
+
+Hands if you sell in Great Britain under any marking, and keep them up only if you can name that marking and until when it is accepted; if your hand came down, that gap is the whole of part three. Finally, hands if you have a product in Japan, or are trying to, through a Marketing Authorization Holder, a Designated MAH, or a distributor arrangement you are not certain about. Whatever the count, I now know which systems to slow down on, and I will adjust the depth as we go.
+
+SLIDE 5
+
+That gives me a useful picture of the room, and it tells me where to linger this morning and where to move more briskly. Part One takes eleven minutes on why this is structurally hard, because almost every expensive mistake in this field comes from assuming that the four systems are variations on a single theme, when in fact the same device is a different regulatory object in each jurisdiction, and that is the whole problem.
+
+SLIDE 6
+
+Class II is a United States term, and it does not travel. Four regulators operate four classification systems and give four different answers for the same physical product, so these rows are worth walking slowly, because the differences are structural rather than cosmetic:
+
+The United States: three classes, Class I, Class II and Class III, assigned to device types by regulation and listed across parts 862 to 892 of 21 CFR. If your product matches a classification regulation, its class is already decided and you can look it up, and it is usually a 510(k).
+
+The European Union: four classes, Class I, IIa, IIb and III, and you do not look yours up, you derive it, by applying the twenty-two rules in Annex VIII of the Medical Device Regulation, or MDR, to your stated intended purpose. Most United States Class II devices land in IIa or IIb, however it is the rules that decide and not the American class.
+
+Some of you may be asking, if our device is Class II at home, what is it in Europe? The United States assigns a class to a device type, whereas Europe derives a class from what you say your device is for, which is why saying we are Class II is not an answer to a European question.
+
+Great Britain: four classes again, and this is the row people miss. It classifies under the older directive rules, Annex IX of the Medical Device Directive, carried into United Kingdom law through Schedule 2A of the UK MDR 2002, and although the European Union moved to Annex VIII of the MDR in 2021, Great Britain did not follow, so the two rule sets have diverged and the same device can legitimately sit in different classes on either side of the Channel, as we prove in the first working session.
+
+Japan: four classes, numbered one to four, tied to a JMDN code, with a separate regulatory category of general, controlled and specially controlled. Your class follows the code, and you do not argue your way to a code the way you can argue an intended purpose; you map to an existing generic name, which removes flexibility and adds a research step at the start.
+
+The practical instruction for the rest of the day is that classification is not a lookup, it is four separate determinations from one shared input, and that input, your intended purpose, is the one thing you control, which makes it the highest leverage document in the programme and where we close Part One.
+
+If you have a specific product in mind, come and find me at the break, because doing it properly takes more time than we have this morning.
+
+SLIDE 7
+
+These are four different regulatory models, not one model with four sets of paperwork. In the United States, premarket review sits with the regulator, and although a recognised third party may conduct the primary review for eligible device types, the clearance decision itself remains the agency's. In the European Union, a notified body, a private organisation designated by a member state, assesses you against the General Safety and Performance Requirements, or GSPRs, and the regulator does not review your file at all. In Great Britain, a UK Approved Body assesses you against the UK MDR 2002, which carries the old directives into United Kingdom law, so the model is structurally European and substantively older. In Japan the system splits: a Registered Certification Body certifies where an official certification standard exists, and where one does not, PMDA reviews and MHLW approves, with your JMDN code deciding the branch.
+
+These are different questions rather than different paperwork. The 510(k) asks a comparative question, is this substantially equivalent to a predicate, which is a question about another device, whereas the MDR asks an absolute question, does this meet the GSPRs, which is a question about yours. A 510(k) can often be carried by bench testing showing that your device performs comparably to the predicate, and that same data does not, by itself, demonstrate conformity with Annex I, because you will have requirements covering biocompatibility, usability, software, electrical safety and clinical benefit that no predicate comparison answers. That is why teams arriving with an FDA clearance are so often surprised by the size of the European gap, having built strong evidence for the wrong question.
+
+CE marking is still accepted in Great Britain, so for most manufacturers UKCA is currently a strategic choice rather than a requirement, and that fact shapes the whole of Part Three.
+
+SLIDE 8
+
+What transfers between jurisdictions is where the programme planning starts, because most teams overestimate the left column and underestimate the right. The good news on the left is real, because the engineering evidence is reusable, and that is most of your testing budget. Bench and performance testing, biocompatibility under ISO 10993 where the test article represents the final sterilised product, a single ISO 14971 risk management file, IEC 62304 software lifecycle outputs and one ISO 13485 quality system all serve four markets, with jurisdiction specific additions, and a well run programme tests once and files four times.
+
+The caveat on that first item bites, because each regulator maintains its own list of recognised or harmonised standards, those lists are not synchronised, and different editions are recognised at different times. Testing to the current edition of a standard therefore does not guarantee that it is the edition a given regulator recognises, and the list is worth checking before you book the test. Most rooms I put this to contain someone who has had a test report rejected over the edition of a standard, so it is not hypothetical.
+
+What does not travel is the classification determination, which is four separate analyses from one intended purpose; the dossier itself, because Annex II technical documentation, an eSTAR 510(k), a Ninsho application and a UKCA file are different documents even where the underlying evidence overlaps; labelling and language, including symbols, warnings, UDI carriers and the official languages of every member state you supply; and the local representative. The item that derails programmes is clinical evidence sufficiency, because a 510(k) may need none, the MDR requires a clinical evaluation for every device, and Japan may want bridging data for a Japanese population, so teams that budgeted regulatory as a single line item discover a clinical programme they never planned.
+
+SLIDE 9
+
+The local representative appointments are commercially the most consequential decisions in Part One, because they are contracts people sign early and regret later, and read left to right they form a liability gradient. A US Agent is required once the manufacturer sits outside the United States, is named at establishment registration, and is close to a mailbox, receiving FDA correspondence and assisting with inspection scheduling without reviewing your file. An EU Authorised Representative is something else entirely: the mandate defined under Article 11 of the MDR obliges them to verify that your declaration and technical documentation exist, keep them available, cooperate with authorities and act on vigilance. Article 11(5) then makes that Representative jointly and severally liable with you for defective devices, which is why competent ones charge what they charge and why the cheapest is rarely the right answer. When I ask a room who has read their own mandate, it is usually a quiet moment, and I would encourage everyone to read theirs this week.
+
+The UK Responsible Person is a separate appointment needing a United Kingdom address: they register the device with the MHRA, hold the technical documentation for inspection, handle MHRA requests and pass complaints back to you, and although many providers offer both, your European representative does not cover Great Britain.
+
+The one that costs money is Japan, where the marketing authorisation must be held by an entity established there, so if you appoint your distributor as your Designated Marketing Authorisation Holder the approval sits in their name, and changing distributor means transferring or re-obtaining it, with your former partner having every incentive to make that slow. The fix is cheap and belongs at the start: negotiate transfer terms into the original agreement before there is a dispute, because teams that skip it find their market access contractually hostage.
+
+SLIDE 10
+
+You will notice that there is deliberately not a single number on this slide, and the reason is that published review clocks are real but they measure the regulator's time and not yours, so quoting one figure for how long Europe takes would be dishonest.
+
+The pattern worth naming is that in every one of these jurisdictions the long pole is something other than the review itself. In the United States the clock stops during an Additional Information hold, so a team that submits a weak file and takes eight weeks to respond has added eight weeks that nobody counted. In Europe it is the notified body queue and contracting, and capacity is allocated to those who asked early. In Great Britain, if you rely on CE marking, the incremental work really is small. In Japan, a PMDA review combined with a bridging data requirement can dwarf everything else.
+
+SLIDE 11
+
+The intended purpose sits upstream of all four systems. Take a wearable sensor: one displays physiological parameters for a healthcare professional, the other detects clinical deterioration and alerts the care team. The electronics are identical, yet under Annex VIII they are not the same device, because the second claims to drive clinical management, classifying higher with a heavier evidence burden.
+
+That is not a loophole but a design decision with regulatory consequences, usually written late, by marketing, without regulatory input, and it must match your marketing, because regulators read websites and a mismatch is an enforcement exposure in all four markets. The test is whether two competent regulatory professionals, reading only that sentence, would classify the device the same way in Europe; if not, it is unfinished. It is the input, and for the next twenty-two minutes we follow it through the system that treats it most rigorously, the EU MDR.
+
+SLIDE 12
+
+Part Two is the MDR itself, Regulation (EU) 2017/745, and of the four regimes we are covering today it is the most demanding and the one that sets the pace for the rest. What follows is classification under Annex VIII, the rule that reclassified software, the difference between the middle classes, the conformity assessment routes and the notified body relationship. The MDR is where that intended purpose sentence gets tested hardest, so let us follow it through.
+
+SLIDE 13
+
+Most of the pain in European market entry today traces back to one of five shifts away from the directives:
+
+Classification: new and revised rules in Annex VIII pushed many devices into higher classes, and software was by far the largest single reclassification. Under the Medical Device Directive, or MDD, there was no dedicated software classification rule; software was generally classified by reference to the device it drove, and a great deal of standalone software sat in Class I, self-certified with no notified body at all. Rule 11 changed that comprehensively, and for many software manufacturers the transition was not more paperwork but the first time they had ever needed a notified body, which is a different kind of problem and is why notified body capacity became this industry's bottleneck.
+
+Clinical evidence: a clinical evaluation is required for every device, and the conditions for relying on someone else's device as equivalent were tightened to the point that many MDD strategies no longer work. We will come back to this properly, so for now I only want to plant the idea that the equivalence route, which carried an enormous number of legacy devices, has largely closed.
+
+Post-market surveillance: you need a documented post-market surveillance system, a post-market clinical follow-up plan, periodic safety update reports and trend reporting, so that the file is now something you operate rather than something you file, and the system has moved from proving a device was right at release to proving that you keep it right.
+
+Named accountability: Article 15 requires a person responsible for regulatory compliance, and Article 11 gives the authorised representative defined duties and joint liability.
+
+Traceability and transparency: Unique Device Identification is required on devices and packaging, the Basic UDI-DI is the model identifier, and EUDAMED is the central database.
+
+SLIDE 14
+
+Annex VIII classification starts from the intended purpose, not from the hardware and not from the United States class. You then apply the implementing rules in Chapter II before anything else, which is the step people most often skip, because those rules change the answer: accessories are classified in their own right, so an accessory to a Class III device is not automatically Class III, and where more than one rule applies the strictest applies, which is why teams that stop at the first rule that seems to fit routinely under-classify. From there you work the twenty-two rules in Chapter III, one to four non-invasive, five to eight invasive, nine to thirteen active, and fourteen to twenty-two special cases. Finally you record the reasoning and not just the answer, because your notified body will ask how you arrived at IIa rather than IIb, and a class with no written rationale is a finding waiting to happen.
+
+Five determinants decide where the class lands:
+
+Duration of contact: transient is under sixty minutes, short term is sixty minutes to thirty days, and long term is over thirty days. Those thresholds are worth saying precisely, because a device intended for twenty-nine days and one intended for thirty-one days sit in different regulatory positions.
+
+Invasiveness: body orifice versus surgically invasive, and whether the device reaches the central circulatory or central nervous system.
+
+Whether the device is active: whether it depends on a source of energy, and whether it administers or exchanges energy, or supports or sustains life.
+
+Whether it makes a clinical claim: diagnosis, monitoring and driving management, which is where Rule 11 lives.
+
+The special-rule triggers: substances absorbed by the body, nanomaterials, devices incorporating medicinal products, and reusable surgical instruments. The determinant that reclassified most of this industry is the fourth one.
+
+SLIDE 15
+
+Rule 11, that fourth determinant, decides the European future of any device that is or contains software, and it works as a ladder. Software that provides information used to take decisions for diagnostic or therapeutic purposes is Class IIa. If those decisions may cause death or an irreversible deterioration of health the device is Class III, and if they may cause a serious deterioration of health or a surgical intervention it is Class IIb, which is where most triage, detection and alerting software lands once you are honest about a false negative. Software intended to monitor physiological processes is Class IIa, unless it monitors vital physiological parameters where variation could result in immediate danger, in which case it is IIb.
+
+Rule 11 turns on the consequence of the decision the software informs and not on how the software works, which means it turns on what happens to a patient if that decision turns out to be wrong. A simple rules engine and a deep learning model making the same clinical claim classify identically, and a team arguing that its algorithm is simple is arguing the wrong axis entirely.
+
+All other software is Class I, which sounds like a generous catch-all; however, once software has a medical purpose one of the limbs above it usually bites, so a memo concluding Class I should expect to be challenged. Two things are worth flagging forward: Great Britain does not have Rule 11 and classifies under the old MDD rules, so the same software can carry a different class, which is the heart of our first exercise; and the Commission's December 2025 simplification proposal would adapt some classification rules to lower classes for certain software, though it is proposed and not law and nobody should plan around it.
+
+SLIDE 16
+
+So now that we have a class, we can ask what it costs, because people often assume Class IIa and Class IIb are a bit more of the same. Both need a notified body, and the difference is how deeply that body looks, and at how many of your devices.
+
+The row that costs money is the technical documentation assessment. Both classes are assessed on a representative basis rather than device by device, but the unit of representativeness differs: for Class IIa it is at least one representative device per category, while for Class IIb it is at least one per generic device group, which is a narrower grouping. A narrower grouping means more representative devices, which means more files assessed, more notified body days, more cost and more queue, and for a company with a portfolio rather than a single product that difference compounds. For anyone who needs the authority, that is Article 52(6) for Class IIa and Article 52(4) for Class IIb, with MDCG 2019-13 as the sampling guidance that elaborates what a generic device group means in practice.
+
+Class IIb implantable devices are assessed device by device, with a listed set of exceptions, namely sutures, staples, dental fillings, dental braces, tooth crowns, screws, wedges, plates, wires, pins, clips and connectors, and that list appears again later, where it governs which transition deadline applies to you. Clinical evaluation is required at both classes, as it is for every device, but at IIb it is scrutinised harder, with more pressure on whether your data supports the claim. The periodic safety update report is a smaller but real operational difference, updated at least every two years for IIa and at least annually for IIb, and although the December 2025 proposal would reduce that frequency, it is not law.
+
+SLIDE 17
+
+Article 52 gives Class IIa and IIb manufacturers a strategic choice that most never evaluate. Annex IX means the notified body audits your quality management system and assesses technical documentation on a representative basis, which is one relationship covering the whole portfolio, scales best across several products, and is where most of the room will end up and should. Annex X together with Annex XI is device-centric, examining a representative sample as a type and verifying production conformity separately, which is heavier per product and occasionally the better fit for a single, stable, high-volume device. Article 52 and the annexes it references set out the exact availability of each route, and they govern. Whichever route you take, the certificate is not open-ended permission to change the device, and significant changes to the design or the intended purpose have to go back to the notified body, which we come to shortly.
+
+SLIDE 18
+
+Five things are worth checking before you sign with a notified body:
+
+Scope: a notified body is designated for specific device codes, and if your code is not in their designation, nothing else about them is relevant. Check the NANDO database rather than their sales deck, because people discover this late surprisingly often.
+
+Capacity: ask not what their turnaround time is but their current actual time from signed contract to certificate for a device like yours, which gets you a number you can plan with rather than a target.
+
+Experience: a body that has certified devices like yours asks better questions and fewer irrelevant ones, and is worth paying for.
+
+The reviewers: establish whether clinical, software and your specialty are assessed in house or subcontracted, and where they sit.
+
+The exit: changing notified body mid-cycle is slow and expensive, so understand the transfer process before you need it.
+
+As for how the relationship goes wrong, the expensive mistake is submitting an incomplete file to hold a queue slot, which consumes the slot, generates a long deficiency list, and leaves the clock running while you do the work you should have done first. The second is treating deficiencies as a negotiation, when a response that argues rather than evidences generates another round, and rounds are months. The third is letting the clinical evaluation trail the file, which is the most common source of major findings and the slowest to fix, and it should therefore lead the file. The fourth is silence between submissions, since the manufacturers who do best keep a running technical dialogue. And the fifth is having no internal owner, so ask yourself whether you have an individual, by name, who owns the notified body relationship, because where the answer is a committee it is nobody, and deficiency responses slip.
+
+SLIDE 19
+
+Annex I is what the rest of the file hangs from: twenty-three general safety and performance requirements in three chapters, covering the general requirements on safety, performance and the risk-benefit judgement, where ISO 14971 does its work; design and manufacture, from biological properties through electrical safety and software to protection against use error; and the information supplied to the user. That third chapter is regularly a source of findings, because every warning, contraindication and residual risk you accepted has to surface on the label or in the instructions, in the user's language.
+
+The GSPR checklist is required in any case, so the only variable is when you build it. Built early, it is a gap analysis recording for each requirement whether it applies, how conformity is demonstrated and where the evidence sits, and the empty cells are your remaining work programme; built the month before submission, those same cells are findings.
+
+SLIDE 20
+
+Annex II is the technical documentation itself, and because this table is reproduced in your workbook I will draw out two rows rather than read it; Annex II is the authority. The first of those is the last row, where post-market surveillance documentation sits in Annex III, a separate annex carrying a separate obligation. Teams building a technical file sometimes treat surveillance as something that begins after certification, when in fact the plan is part of the documentation the notified body assesses before you have sold a single unit.
+
+The second is information supplied by the manufacturer, where the labels and the instructions for use must be in the languages accepted by every member state in which the device is made available. That is a translation and validation programme of its own, frequently discovered late and costed badly, and it constrains the sequence in which you can launch.
+
+SLIDE 21
+
+Clinical evaluation under Article 61 should be budgeted as a programme, not as a document. The MDR requires one for every device, not only the high-risk ones, planned under Article 61 and Annex XIV; it requires a demonstration of clinical benefit, not merely safety and performance; it requires an acceptable benefit-risk profile against the state of the art, which moves, so the evaluation is never finished; and it requires the plan before the data, because writing it once you hold the results is the wrong way round, and visible.
+
+Under the MDD, a manufacturer could write an evaluation saying that our device is equivalent to the market-leading device, here is its published literature, therefore our safety and performance are established. That was legitimate and extremely common, and it is how many Class IIa and IIb devices reached the market with no clinical data.
+
+The Article 61(5) contract, the one giving you full ongoing access to another manufacturer's technical documentation, is widely misstated as a universal requirement, when it is a condition of the Article 61(4) exemption from mandatory clinical investigation, and Article 61(4) is about implantable and Class III devices. MDCG 2023-7 says it in terms: demonstrating sufficient levels of access does not require a contract in all circumstances. So for a Class IIa or IIb device that is not implantable, no contract is mandated, and what applies instead is Annex XIV Section 3, which asks for sufficient access to the data establishing the clinical, technical and biological characteristics, justified in your clinical evaluation report and accepted by your notified body.
+
+The MDR did not ban equivalence, it narrowed it, so you may be asking what closed the route for these classes, because something did. Three changes did it, cumulatively: the biological criterion in Annex XIV asks for the same materials in contact with the same tissues, not similar ones, which alone kills a large share of MDD-era claims; Article 2(48) narrowed what counts as clinical data; and MDCG 2020-6 ranks equivalence data low and is clear that post-certification follow-up cannot close a pre-market gap, the remedy there being a narrower intended purpose, a commercial decision.
+
+What replaces it is your own clinical data: post-market clinical follow-up under a legacy certificate, a registry, or a clinical investigation, all of which cost time and money. Most 510(k)s are cleared without clinical data, while every MDR device needs a clinical evaluation, so an FDA clearance with no clinical data behind it is not most of the way to a CE certificate; it may be the start of a clinical programme. A December 2025 proposal would widen this again, however it is a proposal, and nobody should plan a clinical strategy on it.
+
+SLIDE 22
+
+The post-market file is assessed before you sell anything, and then it is never finished. The surveillance plan must be documented, proactive and systematic, stating what data you collect, from where, how often, and what thresholds trigger action. Post-market clinical follow-up is the default expectation, so if you are not doing it you must justify why not, and that justification is read carefully. The periodic safety update report is required at least every two years for Class IIa and at least annually for Class IIb and III, which drives a real calendar. The connection people miss is that follow-up data updates the clinical evaluation, which supports conformity with Annex I, and conformity is what your certificate attests; a thin follow-up programme is therefore not merely an audit risk but an erosion of the foundation your certificate stands on, and you find that out at renewal, when there is no time.
+
+SLIDE 23
+
+A certificate attests conformity of the device as assessed, so change it enough and the certificate no longer covers what you are selling. A device riding the extended transition under Regulation 2023/607 must not undergo significant changes in design or intended purpose, so the improvement your customers want, or the component change your supplier forces on you, may forfeit the transition and leave you unable to sell, and teams discover this after engineering has done the work. The fix is cheap: route every proposed change through a regulatory impact check before engineering commits.
+
+There is no useful blanket policy for software, since a security patch and a new algorithm carrying a new clinical claim are different regulatory events, and what works is a documented impact assessment per release. On what counts as a significant change, I would point you to the criteria MDCG has published rather than improvise definitions here.
+
+SLIDE 24
+
+Article 15 is widely misunderstood: micro and small enterprises are not exempt, they need not employ the person responsible for regulatory compliance, but must have one permanently and continuously at their disposal. Article 11(5) makes your authorised representative jointly and severally liable for defective devices.
+
+The Basic UDI-DI is not a barcode and never goes on the label; it is an administrative key grouping devices of the same intended purpose, class and design, and a grouping drawn wrongly propagates into your declaration of conformity and every registration. The first four EUDAMED modules became mandatory on 28 May 2026; vigilance and clinical investigations follow later, so confirm the position before planning around it. A device on the market before that date and still supplied has twelve months from the November 2025 notice under the MDCG roll-out guidance to enter the device module, so late November 2026, which fewer have done than should have.
+
+SLIDE 25
+
+Labelling is the most under-planned work package in a European launch. The information supplied with the device must be in the languages accepted by each member state where it is made available, so your European launch is sequenced by which language packs are validated, and teams who plan one European launch discover they can supply four countries rather than twenty-seven. Translation is cheap, validating safety-critical instructions is not, and every revision to the instructions is a revision in every language.
+
+The label and the instructions are also where every residual risk, warning and contraindication you accepted becomes visible to the user. The cheapest audit-proofing is a consistency check across the label, the instructions, the declaration of conformity, the EUDAMED entry and your marketing material before you submit; it takes a day and removes a class of finding that is embarrassing rather than difficult, and with that we can turn to the transition.
+
+SLIDE 26
+
+The original MDR transition ended on 26 May 2024, and because notified body capacity could not absorb the industry, Regulation (EU) 2023/607 extended it conditionally. Class III and Class IIb implantables run to 31 December 2027, though the listed exceptions take the later date, while all other Class IIb, all Class IIa, and sterile, measuring and reusable surgical Class I devices run to 31 December 2028. Every condition must hold: a legacy device carrying a directive certificate or declaration of conformity from before 26 May 2021, still compliant with it, presenting no unacceptable risk, and unchanged in design and intended purpose. Two of them are gates that closed in 2024: a quality management system and a notified body application by 26 May, and a written agreement by 26 September, so the question is not when my deadline falls but whether I passed those gates and can evidence it.
+
+SLIDE 27
+
+On 16 December 2025 the Commission proposed amendments to simplify the MDR and the in vitro diagnostic regulation, or IVDR, under the ordinary legislative procedure. Nothing in it is in force, though it generates a great deal of noise that reaches boards. Notified body involvement is where the commercial significance sits, because capacity has been the binding constraint. For Class IIa and IIb, technical documentation assessment would cover one representative device per generic device group, per category, or for the whole portfolio, with remote audits permitted and surveillance audits every two years where there are no safety issues. Clinical evidence would loosen too, with equivalence made more flexible. Waiting for a proposal is a strategy with no downside protection, since it must pass the Parliament and the Council and can change substantially or fail; assume current law until it is published in the Official Journal.
+
+SLIDE 28
+
+This is the first working session, and for the next ten minutes you do the work rather than listen to me. Please gather in tables of four to six, turn to page six of your workbook, and nominate one person at each table to report back. Your device is a wearable continuous vital-signs monitor for hospital ward patients: an adhesive chest patch measuring heart rate, respiratory rate and skin temperature, transmitting to a bedside gateway and then to a server, where software runs an early-warning algorithm and alerts the nursing station on signs of deterioration. It is worn for up to five days, is single-patient use, and is cleared in the United States as a Class II device. There are five questions, taking you from splitting the product into its regulated parts, through classification under MDR Annex VIII, through the same classification for Great Britain, to the European conformity assessment route and what you would need in Japan. Question three is the one I care about most and the one I will push on. A panel lists three things you have not been told, so ask me. Seven minutes at your table, then three minutes reporting back.
+
+[WORKING TIME: 7 minutes at tables. Circulate and listen. Give a two-minute warning. Then resume below.]
+
+Alright, let us bring it back together. I would like one answer from each table: how many regulated things you found, where you landed on each, and whether Great Britain gave you the same answer.
+
+[REPORT BACK: take one answer from each table. Then continue below.]
+
+Whatever your table concluded, here are the headlines I would be prepared to defend. There are at least two regulated things, the patch, an active device measuring physiological parameters, and the early-warning software, because the implementing rules in Annex VIII Chapter II say software is classified in its own right; one class for the whole system misses the central mechanic, and the gateway may well be an accessory, which should be said explicitly.
+
+The patch works through the active device rules, and the software is where the argument lives, because under Rule 11 it provides information used to take decisions for diagnostic or therapeutic purposes, which puts you at Class IIa as a minimum. Then ask what happens if it fails to raise an alert on a deteriorating patient, because if the consequence is serious deterioration, that reads to IIb, and a defensible answer needs that reasoning written down.
+
+Question three is the point of the exercise, because Great Britain classifies under the MDD Annex IX rules, brought across by Schedule 2A of the UK MDR 2002, and the MDD has no Rule 11. The software is therefore not classified by a dedicated software rule at all, falling instead to the active device rules, and it can land lower than it does under the MDR, so you have the same product, with the same intended purpose, carrying a different class on either side of the Channel.
+
+Annex IX is the expected European route, with the notified body auditing the quality management system and assessing technical documentation on a representative basis. On Japan you cannot answer yet, because the class follows the JMDN code and only then does the Ninsho versus Shonin question resolve, so needing more information is the right answer, not a failure to answer. The three items you were not told are what a competent regulatory lead asks before classifying anything: the wording of the intended purpose drives every rule, whether the algorithm is placed on the market separately decides whether this is one device or two, and sterility changes both the Annex VIII rules that bite and the route.
+
+SLIDE 29
+
+Part Three takes us to the United Kingdom, a market where the rules are older than the European ones, the transition keeps moving, and CE marking still works. What you found at your tables, that the same software classifies differently in Great Britain, is the structure of that regime rather than an anomaly, and it sets up the surprise of this section, which is that for most manufacturers the right strategy today is not to pursue UKCA.
+
+SLIDE 30
+
+The United Kingdom is not one regulatory market, and that geography has to be straight before anything else, because it determines which rules apply to which shipment. Brexit did not produce a single British regime; it produced three positions you need to hold separately:
+
+Great Britain: England, Scotland and Wales are governed by the UK Medical Devices Regulations 2002 as amended, which is where UKCA marking applies and where CE marking is also currently accepted, on a timetable.
+
+Northern Ireland: Under the Windsor Framework, European Union rules continue to apply, so a device placed on that market has to meet EU MDR and carry CE marking, and UKCA marking alone is not valid there; a company selling into Belfast and into Birmingham is therefore dealing with two legal frameworks.
+
+The whole United Kingdom: Registration with the MHRA, the United Kingdom's medical device regulator, applies across the country regardless of which marking the device carries, and a manufacturer established outside the country needs a UK Responsible Person.
+
+A CE marked device meeting EU MDR is acceptable in Northern Ireland, because European rules apply there, and it is also currently accepted in Great Britain, so one CE marked product, one label and one supply chain covers the whole United Kingdom, whereas a UKCA marked device covers Great Britain only and leaves you needing CE marking for Northern Ireland. I would ask you to sit with that, because pursuing UKCA today, for a manufacturer who already holds or is pursuing a CE certificate, is additional work to reach a smaller market than that certificate already reaches. Some of you will know that where a United Kingdom body carries out the conformity assessment for Northern Ireland, the device carries CE marking accompanied by the UKNI indication, which does not change the substance of the point.
+
+SLIDE 31
+
+UKCA is not a new British regulation; it is the old European directives, carried into United Kingdom law at the point of departure. People hear the term and imagine a novel set of requirements to learn, and there is no such set; there is the MDD, which anyone in this industry more than five years already knows.
+
+The legal basis is the UK Medical Devices Regulations 2002, as amended, which implemented the MDD, the Active Implantable Directive and the IVD Directive, and which remain the law for Great Britain. Schedule 2A was inserted to explain how the directive annexes referenced by those regulations are read in a United Kingdom context, so when you classify for Great Britain you are working Annex IX of Directive 93/42/EEC as modified by Schedule 2A, and not MDR Annex VIII. Conformity assessment is carried out by a UK Approved Body.
+
+So now you may be asking what that means in practice. It means the UKCA requirements are in substance the MDD requirements, so a manufacturer holding an MDR technical file already exceeds what UKCA asks for, and the obstacle is not the file but the assessment. It also means the two regimes have diverged, and the gap widens every time the European Union amends MDR and the United Kingdom does not follow, software being the clearest illustration because MDR has Rule 11 and Great Britain has none. And it means United Kingdom requirements are today less demanding, which is precisely why the MHRA is building a replacement framework, in progress rather than in force. Because Great Britain classification follows the older rules, your United Kingdom classification rationale is a separate document citing separate rules, and not your MDR rationale with the headings changed, and an assessor will notice if it is.
+
+SLIDE 32
+
+The acceptance of CE marking, and the dates attached to it, is what governs commercial planning in Great Britain. These were verified against MHRA guidance when this material was prepared, and they have moved more than once, so re-check them before you act. There are four positions:
+
+CE marking under the EU MDR: This is accepted in Great Britain until the thirtieth of June 2030, so you can supply on your European certificate with no United Kingdom conformity assessment at all, and the incremental work is MHRA registration and a UK Responsible Person, which is weeks of administrative effort rather than a certification programme.
+
+CE marking under the old MDD or the Active Implantable Directive: This runs to the sooner of certificate expiry or the thirtieth of June 2028, and it is the row that catches people, because your Great Britain access is tied to a legacy certificate that is itself expiring, so there are two clocks and the earlier one governs. A manufacturer whose legacy certificate expires in 2026 loses Great Britain access in 2026, not 2028. Very few people can give me their certificate expiry date off the top of their head, and on this row that date decides your market access.
+
+CE marking under the IVD Directive: This runs to the sooner of certificate expiry or the thirtieth of June 2030, and is included for completeness, since in vitro diagnostics run on their own timetable.
+
+UKCA marking: There is no end date and it is not mandatory, so UKCA is currently a strategic choice rather than a requirement.
+
+The MHRA has already consulted on recognising CE marked devices indefinitely, that consultation closed in April 2026, and no government response has been published, so nothing has changed in law and these dates stand, with the thirtieth of June 2030 the planning horizon for anyone relying on an MDR certificate. The honest advice for a manufacturer with an MDR route is therefore not to spend on UKCA now, but to register, appoint a Responsible Person and watch. That advice is not absolute, and there are manufacturers for whom UKCA remains the right answer: a United Kingdom only business with no European ambition, a manufacturer who cannot get a notified body slot but can get an Approved Body slot, and anyone who wants insurance against the recognition policy changing. These dates are set by the UK Medical Devices Regulations 2002 and not by the European Union, so when the European Union extended its own legacy transition under Regulation 2023/607, Great Britain did not follow and the backstop stayed at the thirtieth of June 2028 for directive devices, which leaves you two regimes and two clocks to satisfy.
+
+SLIDE 33
+
+The same device with the same intended purpose produces two different regulatory answers in the two regimes, which is not an error but two rule sets. You proved the software row at your tables: under MDR the early warning algorithm is classified by Rule 11 and lands at IIa or IIb, whereas Great Britain has no equivalent rule, so it falls to the older active device provisions and can land lower. The other rows follow the same logic:
+
+Classification and clinical evidence: MDR Annex VIII carries twenty-two rules, revised and stricter, where Great Britain works MDD Annex IX through Schedule 2A, and on evidence Europe has Article 61 and Annex XIV, with tightened equivalence and mandatory post-market clinical follow-up, against the materially lighter directive era expectations Great Britain retains.
+
+Surveillance, roles and databases: MDR Annex III requires a surveillance plan, clinical follow-up, periodic safety update reporting and trend reporting, while the United Kingdom strengthened this separately through its 2024 post-market surveillance regulations, in force since June 2025. Europe has the Article 15 Person Responsible for Regulatory Compliance, where the United Kingdom has no direct equivalent and its Responsible Person is a different role, and EUDAMED sits against MHRA device registration, separate systems with no read-across, both of which need maintaining.
+
+The practitioner consequence is that your United Kingdom file needs its own classification rationale citing the United Kingdom rules, and a lower class there is not an invitation to do less engineering, because if you are also going to Europe you will build to the higher standard anyway; the divergence changes the assessment route and the paperwork, not the product. Materially lighter is true only today, and is precisely what the future United Kingdom framework is expected to change, so nobody should build a strategy on it staying lighter forever.
+
+SLIDE 34
+
+UK Approved Bodies are designated by the MHRA to assess against the UK Medical Devices Regulations 2002, playing the same role a notified body plays in Europe, though there are far fewer of them: at the time this was prepared, nine against fifty-two designated under MDR. That is partly structural: those bodies must maintain capability against a rule set the rest of Europe has left behind, for a market that also accepts CE marking. Manufacturers usually look at UKCA out of frustration with notified body capacity, assuming a smaller and lighter market must be quicker, and sometimes it is, though a small pool with limited scope coverage can be just as constrained, so the check is specific: can an Approved Body designated for my device code take me, on my timescale? For most manufacturers with a European route it does not arise, since CE marking already reaches Great Britain.
+
+SLIDE 35
+
+Registration and the UK Responsible Person are the work that applies to nearly everyone here, whatever marking the device carries, and this is the point most commonly misstated: a manufacturer relying on CE marking in Great Britain is not exempt from United Kingdom obligations, but from conformity assessment. Registration and the Responsible Person still apply, in four pieces of work:
+
+Appointing a UK Responsible Person: required if you are established outside the United Kingdom, they must have a UK address, and the appointment is a written agreement. It is a separate legal role from your EU Authorised Representative, even where one provider performs both, so check your contract covers both.
+
+Registration with the MHRA: for Great Britain this applies whether the device carries UKCA or CE marking, and where you sit outside the country it is made by your UK Responsible Person. Northern Ireland now runs on EUDAMED registration for non-custom-made devices, so confirm the current position.
+
+Availability of the documentation: your UK Responsible Person holds the technical documentation for MHRA inspection, and this is where these relationships fail, because agreements are signed on the basis that documentation will be provided on request, and then the MHRA asks and the clock runs. Give them standing access to a current file.
+
+Routing of complaints and vigilance: they receive complaints, pass them to you and cooperate with the MHRA on safety matters, and those complaints must then enter your own complaint-handling system on the same timelines as any other complaint, or your vigilance is being managed by someone who does not work for you.
+
+Two questions to take back: can you name your UK Responsible Person, and when did you last confirm that they hold your current technical documentation, the second being the one that matters.
+
+SLIDE 36
+
+The Medical Devices Post-market Surveillance Requirements Regulations 2024 came into force on the sixteenth of June 2025, the first substantial piece of the new United Kingdom framework to become law. They attach to placing a device on the market rather than to your conformity route, so a CE marked device sold in Great Britain is in scope.
+
+Everything else about relying on CE marking here is administrative and can be handed to a service provider, whereas post-market surveillance is a system you operate, with data flowing in, analysis happening and thresholds triggering action, so relying on CE marking no longer means no United Kingdom regulatory work. The MHRA legislated post-market before pre-market, which is advance notice that the rest is coming, so map any existing MDR-compliant system against the United Kingdom requirements and document the delta rather than building a second one; the overlap is substantial without being complete.
+
+SLIDE 37
+
+The United Kingdom regime is half-built, and what matters is the distinction between what is in force and what is only announced:
+
+Post-market surveillance: the 2024 regulations are in force and apply to you now.
+
+The pre-market framework: the MHRA has signalled a strengthened regime to replace the 2002 regulations, however timing has moved before and any date is provisional.
+
+Recognition of CE marking: the MHRA has consulted on indefinite recognition and the outcome is pending; if it lands, the case for UKCA narrows sharply for anyone with a European route.
+
+International reliance: the MHRA has been building routes that lean on trusted regulators rather than duplicating assessment, which is the likely shape of the future.
+
+So comply fully with what is in force, build nothing speculative, and name an owner for watching it, because unowned watching does not happen; that is two markets covered, with two still to come.
+
+SLIDE 38
+
+Part Four takes us to the United States and Japan. In the two markets we have just left, what you are working towards is a certificate; in these two, it is a decision taken by somebody else, and these two regulators reach that decision very differently. So what follows is a comparative view of a regulator that reviews you directly and a regulator that routes you by code, and it is orientation rather than a submission course.
+
+SLIDE 39
+
+The 510(k) pathway is a comparative claim and not an absolute one, and that is the structural difference from everything in Part Two. You are not proving in the abstract that your device is safe and effective; you are proving that it is substantially equivalent to something already legally marketed, which is why a 510(k) can often be carried on bench data, and why holding one tells a European notified body a great deal less than manufacturers expect.
+
+The route runs in four steps:
+
+Selecting the predicate: you identify a legally marketed device to which you will claim substantial equivalence, and that choice shapes the entire submission. It is the most consequential decision in the package, it is often made casually, and a predicate that has been recalled or withdrawn is a problem you want to find early rather than late.
+
+Establishing substantial equivalence: the same intended use as the predicate, and either the same technological characteristics, or different ones that do not raise different questions of safety and effectiveness and are supported by performance data.
+
+Assembly of the submission: device description, predicate comparison, performance testing, biocompatibility, sterilisation, software documentation and labelling, submitted electronically through eSTAR.
+
+Acceptance review and then substantive review: fail the acceptance check and the submission is refused before review begins, and the clock then pauses whenever FDA asks you a question and restarts when you answer, so a team that takes two months to answer an additional information request has added two months that nobody scheduled.
+
+Before any of that, check whether you need a 510(k) at all, because a great many Class II device types are exempt from premarket notification, subject to limitations set out in the classification regulation; reading those limitations for your product code is a cheap check that occasionally saves an entire submission.
+
+SLIDE 40
+
+There are obligations either side of clearance, and because this is a reference slide for a room that mostly knows it, I will draw out two of them.
+
+Special Controls: for Class II devices the classification regulation that assigns your class often carries special controls, which may be specific performance standards, labelling requirements or required testing. People read the classification regulation to find the class and then stop reading, and those special controls are binding and frequently define your test plan, so read the whole regulation.
+
+The Quality Management System Regulation, or QMSR: 21 CFR 820 now incorporates ISO 13485:2016, and it has been in force since the second of February 2026. The substance largely carries over from the old regulation, but the clause numbers you cite do not, so procedures that still reference the old clause structure are out of date, and that is visible to an investigator.
+
+SLIDE 41
+
+Japan is the most structurally different of the four markets we are covering this morning. Under the PMD Act two things decide your premarket path, and you control neither of them directly, so I will separate them carefully because they are commonly conflated.
+
+The first is your class. Devices sit in Class I through to Class IV, and that classification follows the JMDN code your device maps to. Running alongside the class is a regulatory category, which is a parallel label that tracks the class: Class I devices are general medical devices, Class II devices are controlled medical devices, and Class III and Class IV devices are specially controlled medical devices. The second determinant is whether an official certification standard exists for your code, and it is the combination of the two that produces your route.
+
+Working down the classes:
+
+Class I: a general medical device follows the Todokede route, which is a notification submitted to the PMDA.
+
+Class II: a controlled medical device splits two ways. Where a certification standard exists for the code, the route is Ninsho, which is certification by a Registered Certification Body; where no certification standard exists, the same device goes down the Shonin route, which is approval by MHLW on a review conducted by the PMDA.
+
+Class III: a specially controlled medical device follows the same split, Ninsho where a certification standard exists for the code and Shonin where one does not.
+
+Class IV: a specially controlled medical device goes to Shonin approval in every case, decided by MHLW on PMDA review.
+
+The row that matters most to this room is Class II, because that is what a United States Class II device most often maps to, and the split within it is worth the time because the two branches are not variations of one another. Third party certification through a Registered Certification Body is faster and more predictable, while approval by MHLW with the PMDA conducting the review is a materially longer and more demanding path, so two devices of identical risk can take completely different routes purely on whether a standard has been published for their code.
+
+Both determinants are lookups and not arguments. You research the JMDN code your device maps to, and then you check whether a certification standard exists for that code, and until you have done both of those things you cannot forecast Japan at all: not the timeline, not the cost and not the evidence. Teams that skip that research and assume that being Class II in the United States means Japan will behave like the United States can be wrong by a year.
+
+SLIDE 42
+
+Japan requires a company established in Japan to hold the marketing authorisation and to carry the quality and safety responsibility, and that company is your MAH. Some of you may be asking whether a foreign manufacturer can hold that itself; it cannot, because there must be a Japanese entity, which leaves two options. You establish your own Japanese subsidiary, which is expensive and slow, or you appoint a Designated MAH, or DMAH, which is fast and creates a dependency. Alongside that, the overseas manufacturing site is separately registered through Foreign Manufacturer Registration, and your quality system is assessed against the Japanese QMS Ordinance, which is ISO 13485 with Japan specific additions and is confirmed on a cycle.
+
+The trap here costs real money, and most companies entering Japan walk straight into it, because they use their distributor as their DMAH: it is convenient, the distributor is willing, and it bundles the regulatory work with the commercial arrangement, and your marketing authorisation is then held in your distributor's name. Two years later the relationship sours, or you want a larger partner, and your market access sits with the other party, who has no incentive to release it quickly.
+
+The fix costs nothing at the start. Negotiate transfer terms into the original agreement: what triggers a transfer, what it costs, what the timeline is and what cooperation is required. Nobody objects to that clause at the beginning of a relationship, and everybody objects at the end. The alternative is an independent DMAH service provider, separate from your distributor, which decouples market access from the commercial relationship entirely and is often the right answer for a decade in Japan. Finally, treat the manufacturer registration as a parallel workstream, because teams that queue it behind the product application add months for no reason.
+
+SLIDE 43
+
+Japan does accept clinical data generated elsewhere, and the old story that everything must be repeated in a Japanese population is out of date; acceptability depends on whether differences in population, clinical practice or device use affect the conclusions, and where they do, bridging data may be required. Ask that at the start, because bridging data dominates a timeline and a budget, and where it is not needed Japan can be quick. Japanese labelling, instructions and application text are not optional, and QMS conformity is confirmed on a cycle rather than once. Then the one that surprises people: approval and reimbursement are separate processes on separate clocks, so a device that is approved and not reimbursed has regulatory access and no commercial access, and whoever owns Japan should own both clocks, with reimbursement in the plan from the beginning, because in Japan it is often the longer of the two.
+
+SLIDE 44
+
+The good news is that you do not need four quality systems; you need one, built well, with four sets of additions, because ISO 13485 is the common substrate under all four regimes. The Medical Device Single Audit Program, or MDSAP, is where the pattern is not intuitive. FDA accepts MDSAP audit reports in place of routine inspections. Japan participates, but that means the inspection of a covered manufacturing site becomes a document review rather than an on-site visit; it does not remove the inspection, and it changes nothing about your Japanese entity. The European Union does not participate, so MDSAP does not replace your notified body audit, probably your most demanding audit, and for Great Britain, confirm current MHRA policy rather than assert it from a slide. Build to ISO 13485 and layer the jurisdictional additions on top, because parallel systems are the most expensive mistake available in this room.
+
+SLIDE 45
+
+The horizontal standards a Class II device usually needs make up a checklist rather than a lecture: risk management, biological evaluation, electrical equipment, software lifecycle and usability, and sterilisation, packaging and shelf life. The trap is on the right, because test programmes are expensive and slow to repeat. Each regulator maintains its own list of recognised or harmonised standards, the lists carry editions, and they are not synchronised, so testing to the newest edition does not guarantee it is the edition a given regulator recognises, while testing to an older edition can put you outside the harmonised list in Europe and cost you the presumption of conformity. Check every relevant list before you book the test, and record the edition you tested to and why, because that hour of work protects a six figure test programme. That is the map, and now let us find out whether it is usable.
+
+SLIDE 46
+
+The second working session is the part of the morning I enjoy most, so please stay at the same tables and turn to page nine of your workbook.
+
+Here is the situation. You are the regulatory lead, and your company has the wearable monitor from the first session, cleared in the United States and selling modestly. You have eighteen months of runway, one regulatory hire you have not yet made, and a board that wants international revenue in this financial year. Your chief executive has decided that you will do Europe, the United Kingdom and Japan; your clinical evidence is bench testing and a sixty-patient usability study; you have no notified body contract; and your Japanese distributor has offered to act as your DMAH at no cost.
+
+There is no clean answer here, and I am not asking for the correct answer because there is not one; I am asking for the trade-off you are willing to defend.
+
+There are three rounds of three minutes, I will call them, and the questions are on the screen. Round one is sequencing: which market first, what you tell the board about revenue this year, and what your one hire needs to be good at. Round two is finding what breaks, and round three is the decisions you cannot reverse.
+
+[WORKING TIME: three rounds of 3 minutes. Call each round. Circulate and listen. Then resume below.]
+
+I want to take the last question first, because it is the professional judgement question: what would you refuse to do, even under board pressure?
+
+[REPORT BACK: take one answer from each table. Then continue below.]
+
+Whatever your tables concluded, the refusals I would defend are these: refusing to promise European revenue this financial year, refusing to sign a DMAH agreement with no transfer clause, and refusing to make a deterioration-detection claim the evidence will not support.
+
+Here are my own answers. On sequencing, the conventional response is Europe first, because it is the largest and hardest market; the more interesting response is Great Britain first, because a CE certificate is not required there yet and the incremental work is registration and a UK Responsible Person, and that produces international revenue in this financial year, which is what the board asked for. On what you tell the board, European revenue this financial year is not achievable, and saying so now is better than saying it in nine months. On the hire, someone who has taken a device through an MDR clinical evaluation understands where the risk sits, and a generalist does not.
+
+The clinical evidence is the crux, because bench testing and a usability study will not carry an MDR clinical evaluation for a device making a deterioration-detection claim, so you need a clinical strategy measured in quarters. On the earliest realistic European date, add it up honestly: clinical strategy, notified body contracting, the queue, the assessment, then the findings; any answer under a year has not been listening to Part Two. On the United Kingdom, you may rely on CE marking once you have it, however you cannot sell in Great Britain on a CE mark you do not yet hold, so for Great Britain today the decision is UKCA or wait.
+
+On the distributor offer, at no cost means that the distributor holds your marketing authorisation, and the correct response is not to refuse it but to negotiate the transfer terms into the agreement now, while they want your business. In the next thirty days you need classification determinations in writing for each market, a decision on the clinical strategy, and the start of a notified body conversation, and everything else can wait. Everything you have just decided is what Part Five is about, and the decisions you flagged as irreversible are the ones worth the most attention.
+
+SLIDE 47
+
+Part Five is about making it work: one file, four submissions, and the decisions that are expensive to reverse. Everything your tables have just argued about is what this last section is for. There are three ideas in it, and then I want your questions, and none of it is new regulation; it is a matter of how you organise yourself around everything we have already covered in the previous four parts.
+
+SLIDE 48
+
+This slide is a reference rather than a lecture, and I am not going to read it to you. It is reproduced in your workbook and on the quick-reference card, so I will give you a few moments to scan it before making two observations.
+
+My first observation concerns the row I would ask you to read straight across, the core question each regulator is asking. The United States asks whether your device is substantially equivalent to a predicate; the European Union asks whether it meets the general safety and performance requirements; Great Britain asks whether it meets the requirements of the directives; and Japan asks whether it meets the standard for its code. Four regulators, four different questions, and that row on its own explains why the evidence packages differ, why an FDA clearance does not carry Europe, and why the same device is straightforward in one market and a programme in another. If you remember one row from this matrix, make it that one.
+
+My second observation concerns the bottom row, because each market has its own characteristic expensive mistake, and they are different mistakes. In the United States the trap is assuming the file travels; in the European Union it is discovering the clinical evidence gap after you have signed with a notified body and started the clock; in Great Britain it is building a UKCA route you may never need; and in Japan it is letting your distributor hold your marketing authorisation. Notice that three of those four are decisions made early, cheaply, and usually without much thought.
+
+If you want to argue with a particular cell, please do, because a matrix is a summary and summaries lose nuance; the fuller treatment is in your workbook and the sources are at the end.
+
+SLIDE 49
+
+Your evidence and your submissions are two different things, and that distinction changes how people organise their work. Test reports, the risk file, clinical data and design records are assets, whereas a 510(k), an Annex II file, a UKCA file and a Ninsho application are views of those assets, assembled for different readers; teams that conflate the two copy evidence into submissions, and the copies drift.
+
+The practical trick is to index against MDR Annex II and the GSPR checklist, the strictest requirement set, because everything else is then a subset or a reformatting. Beyond that, four dated classification rationales, one per jurisdiction, and a single register of standards, editions, reports and which regulator recognises them, will answer the first question every assessor asks. So ask yourself whether you have single-source control of your risk file, because when I ask that, the hesitation is usually the most honest answer.
+
+SLIDE 50
+
+The conventional answer to which market comes first is Europe, and I want to put that case fairly, because it is a strong one. Europe is the most demanding of the four, so everything afterwards is a subset of work you have already done. The MDR technical file over-satisfies UKCA and much of it serves Japan, a CE certificate currently reaches the whole United Kingdom, and notified body queues are long, so starting early carries option value. If you have the clinical evidence or the runway to generate it, and Europe is a commercial priority rather than an aspiration, that is the right route.
+
+The honest objection is that it is also the slowest and most expensive first step. Revenue arrives last, which is the opposite of what most boards need, and the clinical evidence gap lands squarely on the critical path rather than beside it, so for a company with eighteen months of runway, Europe first can be a plan that runs out of money before it produces anything.
+
+The alternative is not to do the easy market and forget Europe; it is to sequence by what unblocks revenue soonest while building toward the strictest file, using the cash and the learning to fund the European programme. The distinction matters, because the mistake is not entering an easier market first, it is entering it instead of starting the European work.
+
+Whichever order you choose, the clinical evidence strategy starts on day one. Almost everything else can be accelerated by spending money, with more consultants, more workstreams and expedited services, but generating clinical evidence cannot, because patients are enrolled at the rate patients are enrolled, which makes it the only incompressible item and the reason it must start first whatever market you target.
+
+SLIDE 51
+
+These five are what people repeat to colleagues:
+
+Class II is a United States term that does not travel: four jurisdictions, four classification systems, four determinations from one intended purpose, written down at the time.
+
+Four regulators ask four different questions, and different questions need different evidence however similar the device.
+
+Clinical evidence is the incompressible item: it is the largest gap between an FDA clearance and a CE certificate, and the only workstream money cannot accelerate.
+
+Legal status: the European simplification package is a proposal, the United Kingdom pre-market framework is an intention and its post-market regulations are law, and you plan on the third category only, a distinction rarer than it should be.
+
+The expensive decisions are made early and cheaply: the intended purpose sentence, the predicate, the notified body and the DMAH agreement, none of which feels like a decision at the time, and all costly to reverse.
+
+SLIDE 52
+
+These sources are in your workbook with a note on what each is for, so I will not read them; if you read only three, make them these:
+
+The MDR consolidated text on EUR-Lex: the actual regulation, not a consultancy summary, because the articles are more readable than people expect and summaries lose the conditions.
+
+The gov.uk guidance on regulating medical devices in the United Kingdom: the authoritative statement of the acceptance dates, which change.
+
+The PMDA's English-language pages on approval and certification: Japan is the market this room knows least, and it explains its own system better than any third party.
+
+The caveat bears repeating for a room that may cite these: confirm the current versions, because the United Kingdom acceptance dates, the EUDAMED module position and the stage of the simplification proposal are all live, and better to verify than to quote a seminar slide in a submission.
+
+SLIDE 53
+
+That brings us to your questions, and there are five prompts on the screen if you would rather begin from one of them; my own preference is the last, which turns the matrix into a self-assessment. Before you leave, please write down one thing you will do this week. This concludes the presentation portion of this discussion. I want to thank each of you who attended, and I welcome any questions you may have at this time.

@@ -15,6 +15,7 @@ this repository.
 | `Participant_Workbook.docx` | 17 pages. Note pages keyed to each section, both exercise worksheets, the four-market comparison matrix, EU and UK quick references, a 43-term glossary, an annotated source list and an action page. Print double-sided. |
 | `Facilitator_Guide.docx` | 6 pages. Run of show, ranked cut list, answer keys for both working sessions, and expected questions with suggested handling. |
 | `Quick_Reference_Card.docx` | 2 pages. Print double-sided: side 1 the four markets side by side, side 2 EU MDR and the UK. |
+| `Speaker_Transcript.docx` | 30 pages, also supplied as `.txt`. The full word-for-word script, marked by slide number, written to be read from the lectern. Lines in square brackets are the only thing on the page you do not read aloud: they mark where you stop and the room works. |
 
 ## Structure
 
