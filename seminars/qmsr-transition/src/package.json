@@ -1,0 +1,12 @@
+{
+  "name": "qmsr-transition-seminar",
+  "private": true,
+  "description": "Generators for the QMSR Transition seminar deck, companion documents and gap assessment workbook",
+  "scripts": {
+    "build": "mkdir -p out && node deck.js && python3 fix_notes.py out/QMSR-Transition-Seminar.pptx && node docs.js && python3 workbook.py"
+  },
+  "dependencies": {
+    "docx": "^9.0.0",
+    "pptxgenjs": "^4.0.0"
+  }
+}
