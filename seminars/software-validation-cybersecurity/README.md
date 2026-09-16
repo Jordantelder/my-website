@@ -9,8 +9,8 @@ Designed as a **90-minute seminar** with two facilitated working sessions.
 | File | What it is |
 |---|---|
 | `Software_Validation_and_Cybersecurity_Seminar.pptx` | 52-slide deck. Every slide carries speaker notes — the argument to make, what to emphasise, what to cut, and clock checkpoints. |
-| `Participant_Workbook.docx` | 25 pages. Note pages keyed to each section, both exercise worksheets, a 12-item readiness self-assessment, reference checklists, a 30-term glossary, an annotated standards list, and an action-plan page. Print double-sided, one per attendee. |
-| `Facilitator_Guide.docx` | 8 pages. Run of show with clock times, ranked cut list, answer keys for both working sessions, expected questions with suggested handling, and a materials checklist. |
+| `Participant_Workbook.docx` | 18 pages. Note pages keyed to each section, both exercise worksheets, a 12-item readiness self-assessment, reference checklists, a 30-term glossary, an annotated standards list, and an action-plan page. Print double-sided, one per attendee. |
+| `Facilitator_Guide.docx` | 7 pages. Run of show with clock times, ranked cut list, answer keys for both working sessions, expected questions with suggested handling, and a materials checklist. |
 | `Quick_Reference_Card.docx` | 2 pages. Print double-sided on card: side 1 validation (classification, safety class, documentation level, requirements test, traceability), side 2 cybersecurity (524B, threat modelling, controls, architecture views, SBOM, vulnerability loop, testing). |
 
 ## Structure
@@ -48,9 +48,10 @@ document is actually useful for.
 
 ## Cross-references
 
-The deck points attendees at workbook pages 7 (working session 1) and 11 (working session 2).
-If the workbook is re-edited, re-run `resolve_toc.py` to refresh its contents page, and check
-those two references in the deck still match.
+The deck points attendees at workbook pages 5 (working session 1) and 7 (working session 2).
+If the workbook is re-edited its pagination will move, so re-check those two references in the
+deck. The workbook's own contents page is generated from the rendered document rather than
+hand-maintained.
 
 ## Rebuilding
 
