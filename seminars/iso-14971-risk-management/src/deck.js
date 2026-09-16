@@ -534,11 +534,12 @@ If Clause 8 in your file is a sentence saying "the overall residual risk is acce
   const cw = (CW - 0.4) / 3;
   cards3.forEach((c, i) => card(s, { x: M + i * (cw + 0.2), y: 1.2, w: cw, h: 2.0, kicker: c.k, title: c.t, titleSize: 12.5, titleH: 0.3, fill: c.f, body: c.b, bodySize: 10, gap: 4 }));
   table(s, ['What a credible Clause 8 evaluation considers', ''], [
-    ['Risks that share a single common cause', 'Conflicting requirements between risk controls'],
-    ['The number and nature of warnings safety rests on', 'Comparison with similar devices and the state of the art'],
-    ['The clinical benefit and the benefit-risk conclusion', 'Information from production and post-production'],
-    ['Disclosure of significant residual risks in the accompanying information', 'The conclusion, against the criteria the plan declared, signed by someone with the authority'],
-  ], { y: 3.35, colW: [4.5, 4.5], fontSize: 9.5, rowH: 0.3, boldFirst: false });
+    ['The combination of individual residual risks', 'Risks that share a single common cause'],
+    ['Conflicting requirements between risk controls', 'The number and nature of warnings safety rests on'],
+    ['Comparison with similar devices and the state of the art', 'The clinical benefit and the benefit-risk conclusion'],
+    ['Information from production and post-production', 'Disclosure of significant residual risks in the accompanying information'],
+    ['The conclusion, against the criteria the plan declared, signed by someone with the authority', ''],
+  ], { y: 3.3, colW: [4.5, 4.5], fontSize: 8.5, rowH: 0.26, boldFirst: false });
 }
 
 // 26 Divider Exercise B
@@ -718,13 +719,13 @@ Individual, not group. Exercise pack page 6.`);
 `[1:22 | 5 min]
 Individual work, deliberately. Five minutes of quiet, then two or three people read out their first action.
 The framing that makes this useful: not "what should we improve" but "what will I have done by this day next month". One action per row, an owner who is in the building, and a date.
-The prompts on the right are the six checks that come straight out of today. Point at the Excel toolkit: its Dashboard sheet computes five of these six for you once you have loaded your own rows, and the sixth - the Clause 8 evaluation - is the one it deliberately leaves blank, because it is the last thing you do.
+The prompts on the right are the six checks that come straight out of today. Point at the Excel toolkit: its Dashboard sheet computes the first five of these six for you once you have loaded your own rows. The sixth, whether your risk management plan criteria and your clinical evaluation plan parameters actually agree, is a document comparison that no formula can do for you. The toolkit also leaves the Clause 8 overall residual risk evaluation blank on purpose, because it is the last thing you do.
 As they write, put the toolkit's delivered state on the screen if you have it open: sixteen rows, two deliberately defective, one control missing its effectiveness verification, one justification citing cost, one open post-production item. The facilitator guide names all five so you can point at them.`);
   card(s, { x: M, y: 1.2, w: 4.35, h: 3.3, kicker: 'THE SHEET', title: 'Write five rows', fill: C.tint, titleSize: 12.5, titleH: 0.3,
     body: ['What I will change', 'Which clause or GSPR it answers', 'Who owns it - a name, not a function', 'Done by - a date inside 30 days', 'How I will know it worked'], bodySize: 10.5, gap: 5 });
   card(s, { x: M + 4.55, y: 1.2, w: 4.45, h: 3.3, kicker: 'IF YOU NEED PROMPTS', title: 'Six checks from today', fill: C.goldTint, titleSize: 12.5, titleH: 0.3,
     body: ['Does the plan state what you do when probability cannot be estimated? (4.4 d)', 'Does every control have an EFFECTIVENESS record? (7.2)', 'Does any justification for skipping a higher-priority option rest on cost? (MDR I.2)', 'Does the procedure have a 7.6 completeness step?', 'Can you find the file revision one old complaint produced? (10.3, 10.4)', 'Do the RM plan criteria and the clinical evaluation plan parameters agree?'], bodySize: 9.5, gap: 3 });
-  band(s, 'The toolkit Dashboard computes five of these six. The sixth is the Clause 8 evaluation, and it is left blank on purpose.', { y: 4.62, h: 0.42, fontSize: 11, fill: C.navy });
+  band(s, 'The Dashboard computes the first five of these six. The sixth, whether the plan criteria and the clinical evaluation plan agree, is a document comparison no formula can do - as is the Clause 8 evaluation, which the toolkit leaves blank on purpose.', { y: 4.62, h: 0.46, fontSize: 9.5, fill: C.navy });
 }
 
 // 37 Ten things

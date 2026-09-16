@@ -1,0 +1,614 @@
+SLIDE 1
+
+Hello and thank you for that introduction and thank you to those who are joining us for today's presentation.
+
+My name is Jordan Elder and today we are going to discuss the QMSR Transition, and specifically a strategic roadmap for shifting from FDA Part 820 to the Quality Management System Regulation. I work as a regulatory consultant on device quality systems, and I spend my time on the industry side of this transition, supporting gap assessments, remediation programs, and firms preparing for and hosting inspections under the new framework.
+
+We will discuss what actually changed on February 2, 2026 and, just as importantly, what did not change. We will also identify the 4 FDA-specific provisions which decide most first inspections, because those are the provisions an investigator is most likely to open with. We will explore how the inspection process itself now works, since the Quality System Inspection Technique, or QSIT, has been withdrawn and Compliance Program 7382.850 has taken its place. We will delve into an exposure-weighted method for gap assessment, which you will work through in the electronic workbook sitting on your table. Finally, we will discuss a phased roadmap with exit criteria, and you will write the first 90 days of that roadmap yourself before we finish.
+
+I want to frame the date before we go any further. The Quality Management System Regulation, or QMSR, has been in force since February 2, 2026, FDA has said the transition period is over, QSIT has been retired, and the first Warning Letters arising from QMSR inspections were issued in May and July of 2026. So this is not a seminar about what is coming. It is a roadmap for finishing the shift wherever it is unfinished at your site, and for proving that it is finished on your first inspection under Compliance Program 7382.850.
+
+You have 3 companion materials with you today, and those are the following: the Participant Handout, which carries the reference tables, the checklists, and the one-pager on the compliance program, the Workshop Exercise Pack, which carries the exercise materials and the cards we will use at the tables, and the Gap Assessment Workbook, which is the spreadsheet you will take back to your site.
+
+So with that said, lets dive in.
+
+
+SLIDE 2
+
+How the Next 90 Minutes Run
+
+The next 90 minutes are built as a working session rather than a lecture, so I want to walk the shape of it quickly before we start.
+
+We spend the first 6 minutes on welcome, objectives, and a short room poll. From there we take roughly 14 minutes on what changed on February 2, 2026 and what did not, and that segment ends with a myth-or-fact round. We then take 10 minutes on the 4 load-bearing FDA-specific provisions, with a spot check against real record content, followed by 15 minutes on the inspection itself and on Compliance Program 7382.850, which is the single largest change in this whole transition. Exercise A runs from 45 minutes in, where your table red-teams a set of newly inspectable records and then writes the observation an investigator would write. After that we move from the crosswalk to the gap assessment for 10 minutes, Exercise B gives you gap triage under time pressure, and the last 15 minutes cover the roadmap, the metrics that belong in management review, and your own 90-day plan.
+
+The 3 table exercises carry most of the value in this session, and those are the record red-team, the gap triage, and the 90-day plan, so I would ask you to sit in tables of four to six now if you are not already. The reference tables we will move through quickly are all reproduced in the handout, which means you do not need to copy anything down as we go.
+
+
+SLIDE 3
+
+Three Quick Questions Before We Start
+
+I would like to take a moment to ask 3 questions before we start, because the answers change how I weight the back half of this session.
+
+The first question is simply where you are. Is your QMSR transition complete and verified, complete but untested, still closing gaps, or not yet started in earnest?
+
+[PAUSE FOR SHOW OF HANDS]
+
+[WRITE ROUGH COUNTS ON FLIPCHART]
+
+I am keeping rough counts, because a room full of firms who are complete and verified wants Track A of the roadmap, which is verify and sustain, while a room still closing gaps wants Track B, which is compress and prioritize. I am also listening for what the word "complete" meant at your firm, and for who signed that off.
+
+The second question is about inspection. Has your firm hosted an FDA inspection, or received a records request, since February 2, 2026?
+
+[PAUSE FOR SHOW OF HANDS]
+
+What I am listening for there is what the investigator asked for first, because that is the most useful piece of information in this room.
+
+The third question is the one the rest of the session is built around, and I will call it the 15-minute test. Could you hand an investigator your last 2 management reviews and this year's internal audit reports within 15 minutes, and then be comfortable while they sat there and read them?
+
+[PAUSE FOR SHOW OF HANDS]
+
+Most rooms go quiet on the second half of that question, and that is the right instinct, because the old 21 CFR 820.180(c) 'shield' over management review, internal audit, and supplier audit records is gone. FDA's own frequently asked questions page indicates that these records should be readily available upon inspection, which is the single biggest behavioral change in the QMSR.
+
+
+SLIDE 4
+
+What Changed on February 2, 2026, and What Did Not
+
+Before we go any further, I want us to agree on the facts, because a surprising amount of what circulates about the QMSR is wrong, and that includes a section number which does not exist. The regulation text shrank on February 2, 2026, while the inspection surface around it grew, and those 2 movements in opposite directions are the reason a number of firms believe they finished this transition when their records tell a different story.
+
+
+SLIDE 5
+
+The QMSR Timeline, 2022 to 2026
+
+There are 7 points on this timeline, and I want to walk them in order because the sequence explains why enforcement arrived as quickly as it did.
+
+The proposed rule published on February 23, 2022 at 87 FR 10119, and comments closed on May 24, 2022. The final rule published on February 2, 2024 at 89 FR 7496, incorporating ISO 13485:2016 by reference, and FDA's frequently asked questions page describes that rule as issued January 31, 2024, which is the public-inspection date rather than the publication date. On October 15, 2024 a correction restored the "batch or lot" definition in 820.3(a), which had been left out of the codified text. Then on December 4, 2025 the technical amendments published at 90 FR 55978, and those re-pointed 179 sections across 18 CFR parts from the old Quality System Regulation, or QSR, citations to 820.35 and 820.10(c), which was purely conforming work and added no new obligations.
+
+FDA then spent the winter explaining the rule. The agency ran a Key Takeaways webinar on December 16, 2025 and town halls on January 14 and April 1, 2026, covering risk, design, and inspections. On February 2, 2026 the rule took effect, QSIT was withdrawn, and Compliance Program 7382.850 replaced Compliance Program 7382.845 and Compliance Program 7383.001. The compliance program's own cover page says issued February 2, 2026, while law firms reported it posted on January 30, and either way it applied from day one.
+
+Then come the Warning Letters. The first Warning Letters arising from QMSR inspections went to Linemaster Switch on May 27, 2026, Koven Technologies on July 21, and Nipro Renal Solutions USA on July 24. Finally, at the town hall on April 1, 2026, FDA put it plainly, stating that "The transition period has ended ... companies need to be compliant with the QMSR now."
+
+
+SLIDE 6
+
+The New Part 820 on One Slide
+
+In order to work out what your own system now has to look like, you have to start from what the regulation actually says today. The whole of Part 820 is now 6 operative sections, and everything else is ISO 13485:2016, clauses 4 through 8, read together with the standard's Introduction, which means Clauses 0.1, 0.2, and 0.4 are incorporated as well, while the ISO notes explain the requirements without adding to them.
+
+820.1 sets the scope, which covers finished devices for human use, including human cells, tissues, and cellular and tissue-based products, or HCT/Ps, that are regulated as devices, and components remain excluded. The check in your own system is whether the scope statement in your manual cites both 21 CFR 820 and ISO 13485:2016, and names the roles you actually perform.
+
+820.3 handles definitions. The ISO 13485 and ISO 9000 Clause 3 definitions now apply, paragraph (a) keeps 6 FDA-only terms, and paragraph (b) provides that the definitions in section 201 of the Federal Food, Drug, and Cosmetic Act prevail, along with 5 superseding terms, and no procedure of yours should still be relying on a definition which was dropped.
+
+820.7 is the incorporation by reference, bringing in ISO 13485:2016(E), third edition, together with Clause 3 of ISO 9000:2015, both of which are readable at no cost through the ANSI portal, so the question is whether a controlled copy reaches the people who need it.
+
+820.10 carries the requirements. Paragraph (a) requires you to document a quality management system, or QMS, complying with ISO 13485, and paragraph (b) is the set of hooks into the rest of Title 21, specifically Parts 830, 821, 803, and 806. Paragraph (c) requires Clause 7.3 for Class II, Class III, and listed Class I devices, paragraph (d) applies Clause 7.5.9.2 to life-supporting devices, and paragraph (e) provides that noncompliance renders a device "adulterated". What that translates into is a procedure index mapped to the ISO clauses and to the 820.10(b) hooks, along with a documented 7.3 decision.
+
+820.35 adds FDA-specific content on top of Clause 4.2.5, covering complaint and servicing record content, unique device identification, or UDI, per device or batch, and confidentiality marking, while 820.45 adds to Clause 7.5.1, requiring documented procedures, a 5-point examination before release, a documented release, and mix-up prevention.
+
+The remaining sections are reserved, and those are the following: 820.5, 820.20 through 820.30, 820.40, and Subparts C through O. There is no action in the placeholders themselves. However, there is very much an action in your own documents, which is the old citations to those sections still sitting inside your procedures.
+
+I want to stress 2 points here. The first is 820.1(b), which provides that where an ISO clause conflicts with the FD&C Act or its regulations, the Act and the regulations control. The second is a section number. Some of you may be asking what happened to 820.15? There is no 820.15. The proposed rule carried a "Clarification of concepts" section at that number, FDA deleted it, and the clarifications moved into 820.3(b), so if a procedure or a consultant cites 820.15 as current law, I will always caution that this tells you something about the rest of their crosswalk. My sources here are the eCFR text of Part 820 as of September 2026, along with 89 FR 7496, section III.F and Comment 41.
+
+
+SLIDE 7
+
+Which Definition Wins
+
+In order to read the new Part 820 correctly, you have to work through 4 layers of definitions in a fixed order, and that order decides which word governs where the regulation and the standard differ. The first layer is the Federal Food, Drug, and Cosmetic Act itself, and the section 201 definitions prevail over the correlating ISO terms, which means that "device" governs over "medical device" and "labeling" governs over "labelling" in every instance. The second layer is the 5 superseding terms that FDA placed into 820.3(b), which include: implantable medical device, defined by pointing back to "implant" at 21 CFR 860.3, manufacturer, organization, rework, which FDA defines as work done before release for distribution and in accordance with the medical device file, and safety and performance.
+
+The third layer is the 6 FDA-only terms at 820.3(a), which include: batch or lot, component, Federal Food, Drug, and Cosmetic Act, finished device, HCT/P regulated as a device, and remanufacturer. The fourth layer is everything else, and everything else comes from ISO 13485 Clause 3 and ISO 9000 Clause 3, which covers customer, top management, nonconformity, verification, validation, product, correction, corrective action, preventive action, risk, and the rest of the working vocabulary.
+
+I want to highlight what FDA dropped between the proposed rule and the final rule. You will note below that the 820.15 deletion we just discussed appears on this slide as well, with its content moved into 820.3(b). The proposed definitions for customer, design validation, nonconformity, process agent, process validation, top management, and verification were all removed, so the ISO definitions apply instead. The proposed requirement to sign and date every approved record was also removed, although where ISO 13485 says "approved" that still means signed and dated, and electronic signatures are acceptable.
+
+There are 2 traps buried in this hierarchy. "Organization" in the standard means "manufacturer" as FDA defines it, which pulls in contract sterilizers, relabelers, specification developers, and initial distributors of foreign entities. And "safety and performance" is read as "safety and effectiveness" only in Clause 0.1 of the Introduction, which FDA narrowed in the final rule after commenters pointed out that the 2 phrases are not interchangeable. In practice, do not rewrite your design inputs, and do make sure that your quality management system, or QMS, demonstrably assures safety and effectiveness. All of this sits in 21 CFR 820.3 as in force, and at 89 FR 7496, Comments 22 to 29 and 51.
+
+
+SLIDE 8
+
+What Disappeared, and Where It Went
+
+A good deal of the old Part 820 did not so much move to a new clause as stop existing as a defined term, and the fastest way through this table is to take it in 3 groups.
+
+The record types went first. There is no longer a device master record, a design history file, a device history record, or a quality system record as a defined term anywhere in Part 820. FDA's reasoning in Comment 31 is that the elements of each of those records are already required by ISO 13485 Clause 4.2 and by Clause 7. The content of the old device master record at 820.181 now lives in the medical device file at Clause 4.2.3, which has to hold the specifications, procedures, and requirements that are current on the floor. The design history file, or DHF, from old 820.30(j) becomes the design and development file at Clause 7.3.10. The device history record content from old 820.184 sits in the medical device or batch records under Clause 7.5.1, read together with 7.5.8 and 7.5.9, and the unique device identifier is now recorded under 820.35(c). The old quality system record at 820.186 is replaced by QMS documentation under Clause 4.2, which covers the quality manual at 4.2.2, documents at 4.2.4, and records at 4.2.5.
+
+The exemption went next, and this is the row I would stop on. Old 820.180(c) kept management review reports, quality audit reports, and supplier audit reports out of routine FDA review. That exemption is gone, which FDA addressed in Comment 55, and FDA's FAQ number 8 says plainly that the agency has authority to inspect those records. Expect them in baseline surveillance inspections and in premarket approval, or PMA, preapproval inspections.
+
+Then a set of smaller changes. "Management with executive responsibility" becomes "top management" under the ISO 9000 definition, while the expectation of executive-led quality culture is unchanged. The explicit independent design reviewer of old 820.30(e) is not carried over, and Clause 7.3.5 governs instead, which calls for representatives of the functions concerned plus other specialist personnel. Statistical techniques at old 820.250 became analysis of data at Clause 8.4. Corrective and preventive action, which sat in one section at old 820.100, is 2 clauses again, corrective action at 8.5.2 and preventive action at 8.5.3, both sitting under Improvement at 8.5. And QSIT itself, along with Compliance Program 7382.845 and Compliance Program 7383.001, is replaced by Compliance Program 7382.850, which brings 6 QMS Areas, 4 Other Applicable FDA Requirements, and 2 inspection models.
+
+FDA stated its position on legacy documents at the town hall on April 1, 2026. There is no need to revise or recreate records created before 2026, and no need to scrub terms such as design history file and device master record out of documents you already have. Do a gap analysis and fix the real process gaps.
+
+
+SLIDE 9
+
+What Did Not Change
+
+The left column here is the reassurance, and the right column is the warning.
+
+Starting with certification. FDA does not require ISO 13485 certification, will not accept a certificate in lieu of an inspection or an establishment inspection report, and will not issue certificates of conformity itself, which the agency addressed in Comments 79 to 81 and repeated in FAQ number 13. At the town hall on April 1, 2026 FDA added that a notified body audit does not replace your own internal audit under Clause 8.2.4, which catches firms who assumed the 2 could be merged.
+
+The Medical Device Single Audit Program, or MDSAP, continues in the form you already know. FDA continues to use MDSAP audit reports in place of routine surveillance inspections, and sites that are actively enrolled are not scheduled for surveillance inspections, while remaining subject to for-cause inspections, compliance follow-up inspections, specific product risk inspections, and PMA inspections, which is set out in Compliance Program 7382.850 at Part I.9 and Figure 3.
+
+Parts 803, 806, 821, and 830 are unchanged, and they are now hooked into the QMS through 820.10(b), while Part 11 is untouched. The scope of "manufacturer" is unchanged, and it should be noted that this scope has always reached beyond the finished device maker to contract sterilizers, relabelers, specification developers, and initial distributors of foreign entities. The Class I current good manufacturing practice, or CGMP, exemptions are retained, and exempt firms still keep complaint files and 820.35 records. Design and development applicability is preserved for Class II, Class III, and the listed Class I devices.
+
+The right column is shorter and it matters more. The 2 year transition is over, and there is no phase-in, no grace period, and no enforcement discretion announced. Every inspection since February 2, 2026 is conducted to the QMSR, including compliance follow-ups after Warning Letters or consent decrees. The compliance-action threshold has not changed, and the Situation 1 examples, which are FDA's own examples of the conduct that warrants compliance action, were simply updated for the QMSR. Records created before February 2, 2026 are "fair game" if the inspection leads there. And old QSR citations still sitting in your procedures, your audit checklists, and your 483 responses are read by investigators as an incomplete transition.
+
+
+SLIDE 10
+
+Myth or Fact
+
+I want to run this one as a rapid fire exercise. There are 6 statements here, and every one of them is something a quality team has said to me this year. I read the statement, your table calls it, myth or fact, and then I give you the one line answer.
+
+[READ THE 6 STATEMENTS ONE AT A TIME AND TAKE CALLS FROM THE ROOM BEFORE GIVING EACH ANSWER]
+
+Statement 1, that an ISO 13485 certificate shortens or replaces an FDA inspection, is a Myth. FAQ number 13 states that a certificate does not exempt a manufacturer from inspection, and that FDA inspections will not follow the MDSAP audit plan.
+
+Statement 2, that FDA investigators can now read your internal audit reports and management review minutes, is a Fact. FAQ number 8 confirms that the 820.180(c) exceptions are not maintained, and that those records should be readily available upon inspection.
+
+Statement 3, that you must rename the DHF to "design and development file" in records created before 2026, is a Myth. FDA does not expect firms to revise pre-2026 records or to remove terms such as design history file, which the agency said at the town hall on April 1, 2026. Content matters, and titles do not.
+
+Statement 4, that a Form 483 or a Warning Letter can cite ISO 13485:2016 Clause 7.1 directly, is a Fact. Warning Letters issued to Linemaster and to Koven in 2026, on May 27 and on July 21, cite "as required by ISO 13485:2016, Clause 7.1", and the letter to Koven also cites 21 CFR 820.35(a).
+
+Statement 5, that statistical sampling tables decide how many records FDA pulls, is a Myth. Compliance Program 7382.850 at Part III.1.B(3) provides that records are selected on identified product risk and on investigator judgment, and there are no sampling tables.
+
+Statement 6, that ISO 14971 is now mandatory for FDA, is a Myth, and it is the one with a caveat. ISO 14971 is not incorporated by reference, which FDA addressed in Comment 9; however, risk management throughout the QMS is required through ISO 13485 at Clauses 4.1, 7.1, 7.3, 7.4, 7.5, 7.6, and 8.2, and FDA officials have indicated that arguing "14971 is not mandatory" to an investigator fares poorly.
+
+
+SLIDE 11
+
+The Four Load-Bearing FDA-Specific Provisions
+
+So now that we have a baseline understanding of what changed and what did not, we can move on to the part of the QMSR that ISO 13485 alone will not carry for you. FDA stated in Comment 8 that compliance with ISO 13485 alone does not fully satisfy the QMSR, and this section is where that difference actually lives. There are 4 provisions to work through: the 820.10 hooks, the 820.35 records, the 820.45 labeling and packaging controls, and the 820.3 definitions we just walked.
+
+
+SLIDE 12
+
+820.10 and the Hooks Into the Rest of Title 21
+
+820.10(b) is the bridge between the standard's phrase "applicable regulatory requirements" and specific FDA regulations, and FDA stated in Comment 44 that the list is not comprehensive, so manufacturers remain responsible for identifying every applicable requirement, including Part 807 registration and listing, which is not named here.
+
+The hooks in 820.10(b) are the following: Unique Device Identification, or UDI, assignment, product tracking, reporting to FDA, and advisory notices. Paragraph (b)(1) attaches to Clause 7.5.8 and requires a documented system that assigns a UDI in accordance with Part 830, and the investigator will test that against your UDI procedure, your Global Unique Device Identification Database, or GUDID, records, the labels themselves, and the UDI recorded for each device or batch under 820.35(c). Paragraph (b)(2) sits on Clause 7.5.9.1 and requires traceability procedures under Part 821, which only bite where a tracking order applies.
+
+Paragraph (b)(3) sits on Clause 8.2.3, reporting to regulatory authorities, and requires you to notify FDA of complaints meeting the criteria of Part 803, which means a Medical Device Reporting procedure under 803.17, documented reportability evaluations, and reports that went out on time. Paragraph (b)(4) points advisory notices, from Clauses 7.2.3, 8.2.3, and 8.3.3, at Part 806, which means a corrections and removals procedure, the reports, and the documented decisions not to report under 806.20.
+
+820.10(c) preserves the old design control scope, which is to say Class II, Class III, Class I devices automated with software, and the 5 listed Class I types. Most Class I devices therefore sit outside Clause 7.3, and that exclusion and its justification must be documented in the quality manual, which FDA stated in Comment 45 is consistent with Clause 1 of ISO 13485. Devices under an investigational device exemption are not exempt, and the investigator will expect a documented applicability decision and the design and development files required by Clause 7.3.10.
+
+820.10(d) extends implant traceability in Clause 7.5.9.2 to devices that support or sustain life, which is where old 820.65 went, and those records must trace to the consignee. 820.10(e) carries the most consequence, because failure to comply renders a device adulterated under section 501(h), and you will note in the last row that every 483 and every Warning Letter opens with that sentence.
+
+
+SLIDE 13
+
+Records With FDA-Specific Content
+
+820.35 sits on top of Clause 4.2.5, the clause that governs records generally, and it adds back the content FDA has always required for complaints, for servicing, and for UDI. The most useful thing you can do with this slide is read the complaint list against your own complaint form, line by line, before an investigator does it for you.
+
+The elements required for a complaint record under 820.35(a) include: the name of the device, the date the complaint was received, any UDI or Universal Product Code, or UPC, and any other device identification, the name, address, and telephone number of the complainant, the nature and details of the complaint, any correction or corrective action taken, and any reply to the complainant. That is 7 elements, and the rule then requires the record of the review, the evaluation, and the investigation, or a documented justification where a similar complaint has already been investigated and a new investigation is not performed. It is important to know that this content applies to complaints that must be reported under Part 803, to complaints you decide to investigate, and to complaints you investigated anyway.
+
+Servicing records under 820.35(b) carry 6 elements, which include: the name of the device serviced, any UDI or UPC and other device identification, the date of service, the individual or individuals who serviced the device, the service performed, and any test and inspection data. FDA clarified in Comment 54 that the test and inspection data are required only where your process actually generates them, and Clause 7.5.4 then closes the loop, because servicing records must be analyzed to decide whether what you are holding is in fact a complaint.
+
+820.35(c) requires the UDI to be recorded for each medical device or batch, in addition to Clauses 7.5.1, 7.5.8, and 7.5.9, and it is not required for devices under development. This is the single item that ISO-only firms have most often missed, and it is also embedded in the UDI review steps of the compliance program.
+
+820.35(d) allows records you consider confidential to be marked as such, which aids FDA's disclosure decisions under Part 20. Mark them in advance of the inspection, because a confidentiality marking isn't a shield against review.
+
+One requirement did not survive from the proposal to the final rule, which was the signature and date on every record, and FDA's position is that "approved" means signed and dated, with electronic methods acceptable. The quotation at the bottom of the slide comes from the Koven Technologies Warning Letter of July 21, 2026, and it reads, in part, "Failure to maintain records of the review, evaluation, and investigation for any complaints", and then, skipping a line, "as required by 21 CFR 820.35(a)."
+
+
+SLIDE 14
+
+Labeling and Packaging Controls
+
+FDA kept 820.45 because Clause 7.5.1(e) of ISO 13485 says only that defined labeling and packaging operations must be implemented, and because labeling and packaging errors drive recalls every year, which is set out in Comments 60 and 64.
+
+The items 820.45(a) requires to be examined for accuracy before release or storage include: the correct UDI or UPC, or other device identification, the expiration date, the storage instructions, the handling instructions, and any additional processing instructions. 820.45(b) requires the release of labeling to be documented under Clause 4.2.5, and 820.45(c) requires operations that prevent mix-ups, including inspection of labeling and packaging before use against the medical device file, with the results documented.
+
+The record that survives an inspection has one line per lot, showing each of the 5 elements checked, by whom, when, and against which revision of the medical device file. It shows label stock reconciliation and controlled storage of labeling, and it shows a change history, because label content changes flow through design change control under Clause 7.3.9 and into the medical device file, while distribution is evaluated through the initial consignee. It is important to note that this is a general description, and the specific evidence will depend on your process and your device.
+
+So now you may be asking, how much of this can be automated? FDA allows automated readers where the process is followed by human oversight, and a designated individual must examine at minimum a representative sample of the labels checked by the reader, which the agency stated in Comment 60 and repeated in its webinar of December 16, 2025, so the record carries both the reader result and that examination.
+
+A few words changed between the proposal and the final rule, which matters if you are working from older analysis: "establish" became "document", "where appropriate" became "as appropriate", and "immediately" before use was removed, while the substance is old 820.120 and old 820.130. Practice reports from 2026 gap assessments are consistent here, in that certified-only firms often had no signed, element-by-element label release record, and a single "labels verified" checkbox is the typical finding, which is not a record that will survive a review of this requirement.
+
+
+SLIDE 15
+
+Special Cases in Part 4, Class I, and Contract Roles
+
+I want to highlight 3 situations where the QMSR lands differently, because these generate the most questions. For drug-led combination products, 21 CFR 4.4(b)(1) now lists ISO 13485 clauses in place of QSR sections for manufacturers using the streamlined approach. The clauses named include: Clause 4.1, Clause 5 and its subclauses, and 6.1, together with 820.10, then Clause 7.3 and its subclauses, Clause 7.4 and its subclauses, and Clause 8.2.2 together with 820.35(a), and then Clauses 8.4 and 8.5, Clause 7.5.3, and Clause 7.5.4 together with 820.35(b). The final rule added a sentence requiring documented risk management in product realization, with records, and combination products remain outside the Medical Device Single Audit Program for FDA purposes, while device-led firms use the full QMSR.
+
+Most Class I devices sit outside Clause 7.3 under 820.10(c), and that exclusion needs to be documented rather than assumed. Devices exempt from Current Good Manufacturing Practice requirements still keep complaint files and the records required by 820.35, which is why the technical amendments of December 2025 re-pointed 162 classification regulations to 820.35. Registration, listing, Medical Device Reporting, corrections and removals, and UDI all still apply, and while Class I firms sit at the lowest inspection priority, for-cause and signal-driven inspections do happen.
+
+Contract manufacturers, specification developers, relabelers, and the initial distributors of foreign entities are all "manufacturers" under 820.3(b), so the regulation reaches each of them directly. A contract manufacturer must document risk management in product realization under Clause 7.1 regardless of who owns the design, which FDA indicated at its town hall of January 14, 2026, as reported. A specification developer owns design and development along with supplier controls over its contract manufacturer, and an initial importer that performs no design need not apply Clause 7.3 but must still handle complaints, Medical Device Reporting, distribution records, and traceability. These are 3 common arrangements and not a complete map, and each firm documents its own applicability decision.
+
+
+SLIDE 16
+
+Spot Check on 5 Complaint Records
+
+Before we leave this section we are going to put the content requirements to work, and we are going to move quickly. You are looking at 4 complaint records and 1 service report, and for each one your table votes compliant or gap, testing it against 820.35(a) and (b), Clauses 8.2.2, 8.2.3, and 7.5.4, and 820.10(b)(3). Take 10 seconds on each and call it out, and I will give you the answer before we move on.
+
+[VOTE ON EACH RECORD IN TURN - 10 SECONDS, THEN REVEAL]
+
+Record 1 is a gap. The tray complaint gives you the device, the complainant, the date, the failure, the investigation, and the reply, but no UDI, no UPC, and no other device identification, which 820.35(a)(3) requires.
+
+Record 2 is a gap. The Doppler complaint has a completed investigation and a firmware update as the correction; however, there is no documented evaluation against the reporting criteria of Part 803, which you owe under Clauses 8.2.2 and 8.2.3 and under 820.10(b)(3).
+
+Record 3 is a gap. Declining to investigate a similar complaint is permitted, but only where you record a justification referencing the earlier investigation, and pointing at complaint C-25-118 without it does not satisfy 820.35(a).
+
+Record 4 is a gap, and this is the one I see most often. The root cause and the reportability rationale are both there, but a correction was taken, a replacement was shipped, and neither that correction nor the reply was recorded, which 820.35(a)(6) and (a)(7) require.
+
+Record 5, the service report, is a gap. An alarm that failed to sound during a pressure excursion could meet Medical Device Reporting criteria, and this report was filed in the service log without ever being analyzed as a possible complaint, which Clause 7.5.4 and 820.35(b) require.
+
+Every one of the 5 was a gap, and that is deliberate, because each of them would read as complete against the standard alone. The same 5-item checklist is in the handout, at section 3.
+
+
+SLIDE 17
+
+The Inspection Changed More Than the Regulation
+
+FDA declined to describe the new inspection approach in the rule itself, which left manufacturers reading the regulation for clues about how an investigator would actually work their way through a quality system. Then, 3 days before the effective date, the agency published the whole thing, and most firms still have not read it. What that gives us for the next 15 minutes is Compliance Program 7382.850, the first QMSR inspections, and how an observation reads now.
+
+
+SLIDE 18
+
+QSIT Is Gone: What Replaced It
+
+The Quality System Inspection Technique, or QSIT, governed device inspections from 1999 until February 1, 2026, and it was built on 4 subsystems: Management Controls, Design Controls, Corrective and Preventive Action, and Production and Process Controls. It was a top-down approach, conducted either as a Level 1 abbreviated inspection or a Level 2 comprehensive inspection, and sampling tables prescribed how many records the investigator was to pull. The old section 820.180(c) exemption was written directly into the guide, which meant that management review reports, internal audit reports, and supplier audit reports were off the table.
+
+Compliance Program 7382.850 carries an implementation date of February 2, 2026, and it supersedes both CP 7382.845 and the separate PMA inspection program, CP 7383.001, which means that PMA preapproval and postmarket inspections now run through the same process as everything else. It is a total product life cycle program. FDA states the goal as evaluating whether the quality management system meets FDA requirements and provides reasonable assurance that devices will be safe and effective, and whether risk management and risk-based decision making are effectively used.
+
+There are 2 structural changes here that drive everything else in this section. The 4 subsystems are gone, replaced by 6 QMS Areas and 4 Other Applicable FDA Requirements, or OAFRs. And record review is now driven by identified product risk and investigator judgment rather than by sampling tables, with the program directing investigators to review "multiple records" in most cases.
+
+The program also removes the fixed order of operations and asks the investigator to apply what FDA calls "critical thinking", which in practice means that evaluating one requirement may require evaluating other requirements elsewhere in the quality system. Investigators are expected to go beyond the stated minimum. And the records that QSIT exempted – management review, internal audit, and supplier audit records – are now squarely in scope.
+
+What that combination does is remove the 2 features of QSIT that manufacturers had learned to prepare for, which were a predictable entry point at the top of a named subsystem and a predictable number of records. Under the new program the entry point is your own product risk documentation and the number of records is a matter of judgment, which is a very different preparation problem.
+
+There are 2 additions to the program that are easy to miss because they do not sit inside the regulation at all. Cybersecurity for cyber devices under section 524B of the Federal Food, Drug, and Cosmetic Act is now part of the inspection, and so are Remote Regulatory Assessments conducted under section 704(a)(4).
+
+
+SLIDE 19
+
+Six QMS Areas and Four OAFRs
+
+The table in front of you is best read as the investigator's menu, and it is taken directly from Attachment A of Compliance Program 7382.850. Management Oversight is the largest of the 6 areas at 14 elements, and FDA deliberately placed the risk-based approach under Clause 4.1.2 b) and the planning of product realization under Clause 7.1 inside that area, and Clause 7.1 is where risk management in product realization actually lives. What that placement tells you is that top management owns risk management under this program.
+
+Design and Development carries 12 elements and asks whether design results in a safe and effective device that meets its intended use, running from the customer-related processes through planning, inputs, outputs, review, verification, validation, software validation, transfer, changes, and the design files. Production and Service Provision carries 11 elements and covers the planning, monitoring, and control of production and service. Measurement, Analysis and Improvement carries 10 elements, and that is where feedback, complaint handling, internal audits, nonconforming product, analysis of data, corrective action, and preventive action all sit.
+
+Outsourcing and Purchasing carries 3 elements and Change Control carries 4, and both of these are first-class areas now rather than sub-bullets buried inside production. Change Control asks whether changes are evaluated for risk and impact before implementation, and it reaches across quality system changes, software changes, product and process changes, and purchasing changes.
+
+You will note below that the 2 FDA-specific records provisions travel with the areas rather than sitting off in a corner of their own. Sections 820.35 and 820.45 appear in Control of Documents and Records, in Complaint Handling, in Control of Production and Service Provision, in Installation and Servicing, and in Identification and Traceability, which tells you that the FDA-specific content is inspected inside the ISO clause and not alongside it. This is by no means an exhaustive map of every element in every area, and each firm will find that its own procedures route those records somewhat differently.
+
+The 4 Other Applicable FDA Requirements are Medical Device Reporting under Part 803, Corrections and Removals under Part 806, Tracking under Part 821, and Unique Device Identification under Part 830 and section 820.45, and each one is hooked into the quality system through section 820.10(b). They are evaluated in every risk-based inspection except a PMA preapproval inspection, and tracking is evaluated only where a tracking order exists. In these first inspections of 2026, UDI ranked fourth among the 483 observations that have been issued, which matters because UDI is the requirement manufacturers most often treat as a labeling afterthought.
+
+
+SLIDE 20
+
+Seven Inspection Types, Two Models
+
+Figure 3 of the compliance program sorts inspections into 7 types, and each type is assigned 1 of 2 models. Non-baseline surveillance, which applies where a prior FDA inspection or MDSAP audit was classified No Action Indicated or Voluntary Action Indicated and the site is not enrolled in MDSAP, runs under Model 1. So do compliance follow-up, where a prior inspection or audit led to regulatory action, for-cause, which follows a signal, an issue, or a complaint such as a recall, a Medical Device Report, a prior observation, or the follow-up to a Remote Regulatory Assessment, a Specific Product Risk Assignment, where FDA has identified a specific product risk, and PMA postmarket inspections, which FDA conducts eight to twelve months after approval. Baseline surveillance, which applies where there is no FDA inspection or MDSAP audit history or where risk factors indicate a need, and PMA preapproval, for which your validations must be complete before FDA arrives, both run under Model 2.
+
+Most firms in this room will be inspected under Model 1, which is at least 1 element from each of the 6 areas chosen on product risk, the 4 OAFRs as applicable, and the general items – registration and listing, marketing authorizations, and prior 483s. Model 2 is a prescribed minimum list of 22 elements, or 23 for sterile product, and that list includes management review, internal audits, complaint handling, corrective and preventive action, design and development inputs through transfer, process validation, and outsourcing. I will always caution that the type you draw depends on your own history, so treat this as a general picture rather than a prediction for any single site.
+
+So now you may be asking, how do the OAFRs apply under Model 2? Model 2 has only 2 uses, and the answer is different for each one, which is exactly where the crosswalks you will read online get this wrong. On a baseline surveillance inspection the 4 OAFRs come with it, so the list is 22 or 23 elements plus those 4. On a PMA preapproval inspection they do not, so the list is 22 or 23 elements and no OAFRs, because Part III.D.1 through 4 each say to evaluate during all risk-based inspections except PMA preapproval, and Part III.C tells the investigator to exclude the OAFR elements where the subject device is not yet on the US market.
+
+FDA's own words at the town hall in April were that both models are "minimum" and "flexible", and investigators routinely cover more than the model requires. A prior inspection or MDSAP audit classified in either of those 2 categories counts the same as a prior FDA inspection when the type is selected, and sites actively enrolled in MDSAP are not scheduled for surveillance inspections at all.
+
+
+SLIDE 21
+
+Risk Management Is the Roadmap
+
+Before an investigator ever arrives at your site, they have already read a considerable amount about you, and that pre-arrival review may include: medical device reports, corrections and removals, your GUDID entries, complaints, the Total Product Life Cycle report, your compliance history in FDA's own systems, and any prior 483 observations. On arrival they confirm roles, products, and processes, and then they ask for the risk management documentation early. That documentation is what selects the elements, which is the single most important sentence on this slide.
+
+From there the investigator picks the product risks that could harm patients or users, selects the elements that are supposed to control those risks, and then pulls the thread across the areas, which runs from a complaint into the risk file, into the change that was made, into the supplier who makes the part, into corrective and preventive action, and finally into management review.
+
+Situation 1 of the compliance program, which holds the Official Action Indicated, or OAI, examples, was rewritten for the QMSR, and the rewritten examples include: no documented process for risk management in product realization under Clause 7.1, feedback and postmarket surveillance not used as inputs to risk management, design, process, or supplier changes not evaluated for risk and impact before implementation, the same or similar significant deficiencies not corrected since the last inspection, and nonconforming product distributed with injury potential and no effective mitigation in place. Changes which appear to require a new 510(k) or a new PMA also trigger an OAI recommendation.
+
+FDA officials have been consistent since February, and the line that keeps coming back is "Risk, risk, risk, risk. That is the fundamental change to QMSR." The recurring deficiencies named at MedCon include: procedures that regurgitate the standard without stating what the firm actually does, vague or missing risk controls, inconsistent scoring across departments, hazard and harm used interchangeably, and risk analyses that were never updated with postmarket data, and we will come back to that list when we look at the enforcement data in a few minutes.
+
+There is some relief in this, however. FDA does not expect a separate risk assessment for administrative processes such as document control or training, so you don't need to build one, and manufacturers can reference the product risk documentation and then document the decisions they made from it.
+
+So when an investigator says show me how risk informed this decision, there is a three-part answer, and manufacturers should rehearse that answer before anyone is standing in their conference room: the risk you identified, the record where the decision lives, and the evidence that the control worked. If any one of those 3 is missing, the answer reads as a story rather than as evidence, which is the point at which an observation gets written.
+
+
+SLIDE 22
+
+The Old Records Shield Is Gone
+
+We have said twice already this morning that the old 820.180(c) shield over management review, internal audit, and supplier audit records is gone, and this is the slide where I show you the exact words, because you will want to quote them back inside your own firm. FDA answered the question in Frequently Asked Question number 8, and I am going to read the operative sentences as the agency wrote them. "Yes. The QMSR gives the FDA the authority to inspect management review, quality audits, and supplier audit reports. The exceptions that existed in the QS regulation at section 820.180(c) are not maintained in the QMSR." And then, skipping a line, "Such records are maintained in the regular course of business and should be readily available upon inspection."
+
+At the town hall on April 1, 2026, FDA indicated that these processes are expected to be reviewed in baseline surveillance inspections and in PMA preapproval inspections, and that they may be reviewed in any other inspection depending on the focus of that inspection. Records created before February 2, 2026 do not need to be rewritten. However, as Keisha Thomas of CDRH said on that same date, pre-2026 records "are still fair game for us to look at if the inspection direction leads us there."
+
+The worst available response to this change is to sanitize the records. Minutes that record no real decisions, and internal audits that never find anything, are a Management Oversight observation waiting to happen, and FDA's compliance program lists "failure to correct the same or similar deficiencies" and "feedback not used as risk input" among its OAI examples.
+
+What FDA is looking for instead is decision-quality records. For management review that means every input required under Clause 5.6.2 is present, the decisions and the resource commitments are recorded under Clause 5.6.3, and the follow-up of prior actions is tracked to closure. Internal audits need to be scoped to product risk and to the six QMS Areas, with findings that carry an evidence trail through to closure, which means the Part 820 checklist can be retired. Supplier audit reports need documented follow-up, and re-approval is never defensible "based on scorecard" alone.
+
+Write these records candidly and close the loop on every action you open, and do not redact anything you hand over. I said earlier that a confidentiality marking is not a shield, and the timing point is that you mark the records that are genuinely confidential under section 820.35(d) before the inspection rather than in the middle of it, while records held at a remote location must be producible by the next working day or two, which FDA addressed in Comment 58. It is important to note, and I will repeat it from the what-did-not-change column, that an ISO 13485 audit performed by your notified body does not replace your own internal audit under Clause 8.2.4.
+
+
+SLIDE 23
+
+How an Observation Reads Now
+
+These are verbatim excerpts from the first Warning Letters to come out of QMSR inspections. One went to Linemaster Switch Corporation on May 27, 2026, from an inspection conducted February 4 through March 6, 2026, and one went to Koven Technologies on July 21, 2026, from an inspection conducted February 2 through 6, 2026. What matters here is the format rather than the firms.
+
+The citation now reads "as required by ISO 13485:2016, Clause 7.1", and the firm's own procedure is quoted back at it by document number. In the Linemaster letter that procedure is a risk management procedure, TM-112. FDA names 4 things it does not define, which are how risk management activities are performed and documented, who is responsible for conducting and approving them, when the documentation must be updated, and how post-market feedback data including complaints, adverse events, and recalls is incorporated.
+
+Supplier controls read the same way. The Koven letter cites Clause 7.4.1, where there was no documentation that a site assessment had been conducted for a contract manufacturer that the firm's own procedure defined as "Highest/Critical Impact". Where an FDA-specific provision applies you get a direct CFR citation instead, and in that same letter it is the failure to maintain records of the review, evaluation, and investigation of complaints as required by 21 CFR 820.35(a).
+
+Both letters open with the same sentence, which is that the devices are adulterated under section 501(h) of the Federal Food, Drug, and Cosmetic Act because the methods, facilities, or controls do not conform to the QMSR at 21 CFR Part 820. Every device 483 now also carries the standard statement that the observations are not exhaustive and that the firm remains responsible for auditing itself. I always recommend briefing your leadership on this format before it lands on your own form, because a 483 written in ISO clauses isn't "worse" than one written in QSR sections, it simply reads differently, and you will need to respond in the same vocabulary within 15 business days.
+
+
+SLIDE 24
+
+The First Seven Months of QMSR Enforcement
+
+I want to stay with what FDA officials have said on the record. At MedCon in April 2026, FDA described roughly 100 QMSR inspections conducted by March 31, 2026, and by May 6, at FDLI, the number was "just north of 100." For February to mid-April 2026, Keisha Thomas ranked the top 483 observation areas in the following order: risk management by a wide margin, then outsourcing and purchasing, complaint handling and feedback, unique device identification, and corrective action. Her summary at the RAPS Quality Conference in June was that these are largely the same citations FDA was writing before the QMSR, reordered into a new vocabulary. By August 2026 there were 3 Warning Letters out of QMSR inspections, those being Linemaster, Koven, and Nipro Renal Solutions USA, and all 3 cite Clause 7.1.
+
+The deficiencies those officials have described seeing repeatedly are the themes I read out a few slides ago, which are procedures that "regurgitate the regulation or the standard" and never say what is done or when, risk controls that are vague, missing, or hard to interpret, hazards confused with harms, risk scoring that is inconsistent between departments, and risk analyses that are never updated with complaints, Medical Device Reports, or recalls. The addition on this slide is supplier controls that are not aligned to the product risk assessment, so that a critical supplier and a trivial supplier carry identical controls.
+
+For a baseline, FDA's own 483 data for FY2025 records 791 system-generated device 483s. The top citations in that year were corrective and preventive action procedures, or CAPA, under 820.100(a) at 279, complaint procedures under 820.198(a) at 211, purchasing controls at 115, nonconforming product at 95, and process validation at 93. The percentages circulating this year come from vendor compilations of FDA databases rather than from an FDA publication, and that applies both to the claim that roughly 90% of observations cite ISO clauses and to the claim that almost all of these inspections were classified Voluntary Action Indicated, so I would treat both of those as indicative only.
+
+
+SLIDE 25
+
+Exercise A: Red-Team the Records
+
+I would like each table to open the Workshop Exercise Pack to Exercise A, which is one page of Q2 2026 management review minutes, an internal audit summary, and a supplier audit excerpt from a fictional firm called Brightwater Instruments. For the next 6 minutes your table is not the manufacturer. You are the investigator working under compliance program 7382.850, and you are reading those 3 records the way that program tells you to read them.
+
+The first task I want you to complete is: write down the 3 questions you would ask first, and the one element you would go and dig into. After that, write a single observation in QMSR style, which means it names the ISO 13485:2016 clause or the QMSR section, the specific record, and the specific failure. Then swap sheets with the table next to you and draft the response skeleton for their observation, which is the correction, the root cause, the systemic action, the evidence date, and the effectiveness metric.
+
+A few rules of the game before you start. An observation needs a record, a clause, and a failure, so "Management review is weak" is not an observation. A response needs containment, a system fix, and a way to prove that the fix worked, so "We retrained" is not a response. Sanitizing the minutes is not an option on the table.
+
+[TABLE WORK - 6 MINUTES, CIRCULATE]
+
+So let's bring it back together and hear from 2 tables, 90 seconds each. Give me the observation first, in the clause, record, failure form, and then the table that received it can read us the response they drafted.
+
+[TAKE ONE OBSERVATION AND THE MATCHING RESPONSE FROM EACH OF 2 TABLES, 90 SECONDS EACH]
+
+Now I want the room to decide. Hands up if you believe that response, as it was read, would close that observation.
+
+[PAUSE FOR SHOW OF HANDS]
+
+The model observations I am working from all do the same thing, which is that they point at a record and a clause and then name what the record failed to show. The message I want you to leave this exercise with is that you fix the process and you close the loop, and you don't sanitize the minutes.
+
+
+SLIDE 26
+
+From Crosswalk to Gap Assessment
+
+So now that we have a baseline understanding of how a QMSR inspection actually runs, we can move on to what you need to build in order to be ready for one. FDA declined to publish a crosswalk between the QS regulation and the QMSR, and in Comment 18 the agency explained that a one-to-one comparison would be cumbersome and not useful. What I would say from practice is that a crosswalk is still where this work starts, and the point I want to carry into this section is that it is not where the work finishes.
+
+
+SLIDE 27
+
+Crosswalk: QSR to QMSR, 1 of 2
+
+I am going to give you headlines only on these next two slides, because the full tables are reproduced in your handout and in the workbook on your table. The column that earns its place here is the fourth one, the substantive delta, which is what your gap assessment has to test with evidence rather than with a procedure revision.
+
+Before we walk any of these rows, I want to be clear about where this table came from. I said a moment ago that FDA declined to publish a crosswalk, and the consequence for this table is that every clause-level crosswalk in circulation, this one included, is industry-authored. FDA's QMSR page does list AAMI TIR102:2019, which maps the old Part 820 to ISO 13485:2016, and it is important to remember that this technical information report predates the QMSR.
+
+Starting at the top of the table, old 820.5 maps to Clause 4.1, supplemented by 820.10(a), which requires manufacturers to document a quality management system complying with ISO 13485. The deltas to test in that first row include: the risk-based approach to quality management system processes in 4.1.2(b), outsourced processes in 4.1.5, and validation of quality management system software in 4.1.6. Management responsibility in 820.20 maps across 5.1 through 5.6, where "top management" replaces "management with executive responsibility", and the review inputs listed in 5.6.2 are now inspectable.
+
+Quality audit moves to 8.2.4, audit reports are reviewable, and the audit program should cover the six QMS Areas and risk integration. Personnel under old 820.25 moves to 6.2, where the delta is competence and training effectiveness proportionate to risk, with the records to show it. Design controls land in 7.3.1 through 7.3.10, with applicability by class preserved in 820.10(c), which brings the design and development file in 7.3.10, usability written explicitly into the design inputs, and an independent reviewer that is no longer mandated under 7.3.5.
+
+Document controls run to 4.2.4 and 4.2.5 with 820.35 on top, and the delta in that row is that "document" now means establish, implement, and maintain under Clause 0.2, and that records must be readily identifiable and retrievable. Purchasing controls under old 820.50 move to 7.4.1 through 7.4.3, which brings risk-proportionate selection criteria, monitoring and re-evaluation, supplier audit reports that are reviewable, and outsourced processes under 4.1.5, and I would mark that row, because purchasing and outsourcing ranked second in the 2026 observations. Identification and traceability move to 7.5.8 and 7.5.9 with the UDI system carried through Part 830, and production and process controls to 7.5.1 with 820.45, process agents in 7.5.2, contamination control in 6.4.2, and software validation across 4.1.6, 7.5.6, and 7.6.
+
+This is a general mapping, and the delta that matters at your site will depend on your device class and on how tightly your old procedures were written to the subpart structure.
+
+
+SLIDE 28
+
+Crosswalk: QSR to QMSR, 2 of 2
+
+The second half of the crosswalk carries the rows where the old FDA language has genuinely gone away, and there are 3 of them I want to point out before we get to the row that matters most for this session. The first row I want to discuss today is process validation. Old 820.75 maps to 7.5.6, which carries the validation requirement itself, and 7.5.7 adds explicit validation of sterilization processes and sterile barrier systems, while the revalidation criteria are now defined in the clause. The change to test is that the QMSR no longer defines "process validation" at all, which means your validation program has to stand on the ISO language rather than on FDA's old definition.
+
+Nonconforming product moves to 8.3.1 through 8.3.4, and concessions granted under 8.3.2 need both a justification and a recorded approval. FDA did keep its own definition of "rework" in 820.3(b), together with the hook in 820.10(b)(4), which means rework is only rework before distribution, and anything you do to product after it has been distributed is a correction or a removal under Part 806.
+
+Complaint files under 820.198 now map to 3 clauses rather than 1, which are feedback in 8.2.1, complaint handling in 8.2.2, and reporting to regulatory authorities in 8.2.3, and then 820.35(a) adds the record content while 820.10(b)(3) adds the Medical Device Reporting evaluation hook. What that row asks you to test includes: the 7 complaint record elements, a documented justification whenever a complaint is not investigated, and evidence that every complaint received a reportability evaluation.
+
+Then there is the row that matters most for this session, which is the records row. 820.180, 820.181, 820.184, and 820.186 map to 4.2.5, 4.2.3, 7.5.1, and 4.2, they are supplemented by 820.35(a) through (d) for UDI content and confidentiality marking, and the exemption that used to sit in 820.180(c) is gone, which is the change we spent the inspection section on.
+
+The remaining rows carry fewer surprises, although every one of them still carries a delta. Measuring equipment moves to 7.6, and any software used for monitoring and measurement must be validated. Acceptance activities under old 820.80 and 820.86 move to 7.4.3, 8.2.6, and 7.5.8, where purchased product verification is proportionate to risk and inspection status has to be identified. Corrective and preventive action under old 820.100 splits into correction, corrective action at 8.5.2, and preventive action at 8.5.3, read together with 8.4 and 8.2.1, with effectiveness verified. Handling and storage under old 820.140 through 820.160 become risk-based preservation under 7.5.11, with consignee records where 7.5.9.2 applies. Servicing carries 6 record elements including UDI under 820.35(b), and statistical techniques becomes documented analysis of data under 8.4.
+
+
+SLIDE 29
+
+Terminology: Old Words, New Words
+
+Terminology is where most firms have already spent some time arguing, and the decision every firm faces is a narrow one: rename, or bridge. FDA's position is that content matters, that legacy names may stay in the old records, and that no scrubbing of historical files is expected, so a design history file does not have to be retitled a design and development file in order to be compliant. However, practice reports from the first inspections of 2026 indicate that procedures still organized by the QSR subpart structure and still citing "21 CFR 820.50" were flagged early as signs of an incomplete transition.
+
+A few of the renames on this table carry a requirement rather than a label. "Establish", which used to mean define, document, and implement, becomes "document", which under Clause 0.2 means establish, implement, and maintain, and FDA's own note is that "document" is the broader of the 2 words. A manufacturing material becomes a process agent under 7.5.2, which has to be assessed and controlled commensurate with risk. And "reasonably accessible" and "readily available" become "readily identifiable and retrievable" under 4.2.5, which for records held remotely means the next working day or two.
+
+So the approach I always recommend sits between the two. Write new records in the ISO terms, so that a device master record becomes a medical device file under 4.2.3 and a device history record becomes a medical device or batch record under 7.5.1 with UDI captured per 820.35(c), then build a one-page mapping card for everyone who may sit in front of an investigator, and put a controlled definitions table in the quality manual so that the bridge itself is documented.
+
+
+SLIDE 30
+
+A Gap Assessment That Survives an Inspection
+
+A flat crosswalk of the kind we just walked will produce something like 200 rows with no priority attached to any of them, and a list of 200 rows with nothing ranked in it will not function as a transition plan. So you may be asking, you have given me the mapping, but how do I work out what my site fixes first? The version that works scores every requirement on 3 things: whether there is a true regulatory gap, how exposed the requirement is, which means asking whether an investigator would read this record on day one, whether it sits in Model 2's minimum list, and whether it is one of the top-cited areas, and how much effort the remediation will take. Sort by exposure, and the top 15 rows are your transition.
+
+The other rule is evidence, not procedures. The column that carries the weight on this slide is the one headed evidence sampled, because it records what was actually pulled and what it lacked, and Compliance Program 7382.850 tests whether the process works rather than whether the procedure reads well.
+
+You will note below that the top row is complaint handling against 8.2.2, 8.2.3, and 820.35(a), where 20 complaint records were sampled, 6 of them lacked a UDI, and 4 lacked a reportability evaluation, which scores as a real regulatory gap, high exposure, small effort, and priority 1. Management review against 5.6.1 through 5.6.3 comes in at priority 2, because the last 2 reviews carried no complaint trends, no regulatory reporting, and no recorded decisions. Third is planning of product realization under 7.1, where the risk file has not been touched since a 2021 transfer despite 14 complaints and 2 design changes, and fourth is purchasing under 7.4.1, where the same questionnaire was used for a contract sterilizer and for office supplies and a critical supplier was re-approved on a scorecard. Set that against the documents row, where 40 procedures still cite "21 CFR 820.30" and "DHF" but the content itself is compliant, which is not a regulatory gap at all, and it lands at medium exposure and priority 9.
+
+The workbook on your table is built exactly this way, with one row per compliance program element carrying its ISO clause and QMSR hook, the legacy QSR section, the current procedure, the evidence sampled, the gap, the exposure, the effort, a computed priority, an owner, a due date, and a verification method, with a dashboard by QMS Area on top.
+
+The assumptions that certified firms made include: that the notified body or the MDSAP auditor had already tested these areas at FDA depth, that the complaint and service templates already carried UDI and a Part 803 evaluation, that label release was already a signed element-by-element record, and that audit reports and management review minutes would stay private. And the fifth assumption is the one that does the damage, which is that they measured "procedure updated" instead of "record produced", when what the compliance program tests is the record.
+
+
+SLIDE 31
+
+What 2026 Gap Assessments Keep Finding
+
+What you have in front of you is a composite, and I want to be precise about where it comes from. It is drawn from consultancy practice reports, from remarks by FDA officials, and from the first Warning Letters issued under the QMSR, and it is grouped by the compliance program's areas. The consultancy items are practice reports rather than FDA data, while the Warning Letter items are verbatim citations against named firms.
+
+Under management oversight, the findings that keep coming back include: risk management confined to design while production, purchasing, and complaints never reference the risk file, a management review that is a set of operational metrics with no decisions and no follow-up, internal audits still running on Part 820 checklists, quality management system software validated once years ago and never revalidated after upgrade, which is 4.1.6, and a quality manual still organized by the QSR subparts.
+
+Under measurement, analysis, and improvement, the findings include: complaint records without UDI or a documented Part 803 evaluation, CAPAs closed on the immediate fix with no root cause and no effectiveness data, service reports never analyzed for complaints, and feedback and postmarket data that is never fed back into risk, which is a Situation 1 example. The verbatim citation in that group is a corrective action procedure that was silent on cause determination and effectiveness, cited to Linemaster under Clause 8.5.2.
+
+Under purchasing, production, and design, the findings include: supplier controls organized by purchasing category rather than by risk, with no supplier audit of a critical contract manufacturer, cited to Koven under 7.4.1, no signed element-by-element label release under 820.45, design changes made without a significance assessment or a regulatory evaluation, cited to Koven under 7.3.9, rework performed without documented procedures, cited to Linemaster under 8.3.4, and monitoring and measurement software that was not validated, cited to Linemaster under 7.6. This is by no means an exhaustive list.
+
+I would like to take a moment to make this concrete for your own site. Read down the 3 columns and mark the 3 findings you recognize, and by recognize I mean the ones where you are not confident a record exists today.
+
+[PAUSE WHILE TABLES MARK THEIR 3]
+
+Keep those 3 in front of you, because they are what I want you thinking about as we go into the next exercise.
+
+
+SLIDE 32
+
+Exercise B: Gap Triage Under Time Pressure
+
+Building the gap list is one skill, and ranking that list when you have a fixed budget and a fixed calendar is a different skill entirely, which is the one this next exercise is built around. In your Exercise Pack you will find Exercise B, which is 8 gap cards and a one-page triage grid, and every one of those 8 cards is drawn from a real 2026 finding rather than written to make a point. The 3 findings you just marked are the ones to hold alongside these cards as you score them. You have 6 minutes on the clock once I stop talking, so I want to walk the scoring first.
+
+Your table scores each card on the 3 questions printed on the grid, which are whether it is a true regulatory gap, yes or no, what the inspection exposure is, high, medium, or low, and what the effort is, small, medium, or large.
+
+The exposure column is the one that does the real work, and it is the one tables argue about. Exposure is high on the same 3 tests I gave you on the last slide, which are whether an investigator reads that record on day one, whether it sits in Model 2's minimum list, and whether it is a top-5 cited area. Exposure is medium when the record is reached only because a thread leads there. Exposure is low when the item is housekeeping, and the point to hold onto there is that investigators judge the content of a record and not the title on the front of it.
+
+Effort is the simpler column. Small is a form or a clause, medium is a procedure and the training that goes with it, and large is a system, a validation, or a file rebuild.
+
+Once all 8 cards are scored, sort them by exposure first and not by effort, and then take your top 3 and give me an owner role, and I do mean a role rather than a person's name, together with a first-30-day action for each one.
+
+2 of the 8 cards are deliberately arguable, and rather than let your table skip them I want you to record the position you land on. The first is the firm with 40 procedures that still say Design History File and still cite 21 CFR 820.30. The second is the internal audit report that calls the Corrective and Preventive Action process a "systemic failure" with no evidence trail sitting behind that phrase. There is a defensible argument in both directions on each of those, so let the argument run for a minute, because working out why your table disagrees is the part that travels back to your site.
+
+[TABLE WORK - 6 MINUTES, CIRCULATE]
+
+So let's come back together. I would like 2 tables to give me their top 3 and the first action against each, and I will hold you to about 90 seconds.
+
+[TAKE THE TOP 3 AND THE FIRST ACTION FROM 2 TABLES, 90 SECONDS EACH]
+
+I am not going to settle the 2 arguable cards from the front of the room, and the reasoning on both of them sits in my facilitator notes, so come and find me at the break if you want it. What I do want to name is the pattern sitting underneath the scoring, which is that most firms over-invest in terminology housekeeping and under-invest in the records an investigator reads on day one. The 40 procedures feel urgent because they are easy to see and easy to count, while the complaint record that is missing 2 of its required elements does not feel urgent at all until an investigator asks you to produce it.
+
+
+SLIDE 33
+
+The Roadmap in Five Phases
+
+So now that we have established what the 2026 gap assessments keep finding, we can move on to what a transition plan looks like when it is written down. Everything we have covered so far becomes a plan across the next 4 slides, and that plan carries a deliverable and an exit criterion for every phase, because "we updated the procedures" is not a finish line you can report to top management. The plan also runs on 2 tracks, which lets the firms in this room who consider the transition finished and the firms who are still closing gaps work from the same 5 phases.
+
+
+SLIDE 34
+
+Five Phases, Two Tracks
+
+Phase 0 is Mobilize, and the deliverables are a charter, a named executive sponsor, a scope and applicability statement that states your products and sites, how Part 4 applies to you, and which Class I exclusions you are taking, along with 1 named owner for every QMS process. The exit criterion is that 100% of your QMS processes have a named owner, and I would read the third column across this whole table as the sentence you say to top management when a phase is done.
+
+Phase 1 is Assess, and the deliverable is the evidence-based gap workbook we looked at earlier, in which every element of Compliance Program 7382.850 has been sampled, with an exposure-weighted heat map built on top of it. You do not exit Phase 1 until every requirement has been sampled against at least 1 actual record and the heat map has been approved by top management.
+
+Phase 2 is Design. The deliverables here include: a document architecture decision, which is to say whether you rewrite, bridge, or run a hybrid, a definitions table, and template changes to the complaint record, the service record, the label release record, the supplier file, and the management review agenda. You exit when every gap is linked to a change with an owner and a date against it.
+
+Phase 3 is Implement and train, which means procedures effective, templates live, and competence verified proportionate to risk under Clause 6.2. The exit criteria here are percentages rather than a yes or a no, and those are the percentage of procedures effective, the percentage of staff whose competence has been verified, and the percentage of new records being created on the new templates.
+
+Phase 4 is Verify, and it is the phase most programs skip. You internal audit the way Compliance Program 7382.850 would audit you, you run record-retrieval drills, and you run a mock inspection under whichever inspection model applies to your site. You exit with zero inspection-critical findings open, a median retrieval time under 15 minutes, and a mock Form FDA 483 closed out with evidence.
+
+Phase 5 is Sustain, which means metrics in management review, quarterly drills, the watch list monitored, and the risk file updated on every trigger. Phase 5 does not have a closing date, and that is intentional, but the working test is metrics running green 2 quarters in a row and every complaint, change, and CAPA visibly updating the risk file.
+
+Now to the last 2 columns. Track A is the firms that have finished the transition, and Phase 4 is what those firms are aiming at now, which they reach by running the earlier phases in compressed form. Confirm your process owners and refresh the applicability statement, which is Phase 0. Re-run the assessment on the high-exposure rows only, which is Phase 1. Confirm that your templates actually carry the 820.35 and 820.45 elements, which is Phase 2. Refresh training for your front-room staff, which is Phase 3. And then run the mock inspection under the model that applies to you, which will be Model 1 for most of you and Model 2 if you have never been inspected or you hold a Premarket Approval, or PMA. Start that mock from the risk file, pull one thread end to end, and move your readiness metrics into management review.
+
+Track B is the firms still closing gaps, and the week numbers in the last column compress the work from mobilizing through verification into 90 days: week 1 to mobilize, weeks 1 through 3 to assess, weeks 3 through 5 to design, weeks 5 through 9 to implement and train, weeks 9 through 13 to verify, and sustain from week 13 onward. Take the load-bearing provisions first, and that order is the 820.35 and 820.45 record content, risk-file linkage, management review and internal audit evidence, and then supplier controls. I would leave the quality manual alone until those are done.
+
+The sequencing rule that comes out of real programs is short, which is the records an investigator reads on day one before terminology, and evidence before procedures. This ordering does not excuse the terminology work, which still has to happen, it changes what you do with the first 30 days.
+
+
+SLIDE 35
+
+Sizing the Roadmap to Your Firm
+
+While the 5 phases apply to every firm in this room, the weight of the program that sits inside them does not, and there are 3 archetypes on this slide that account for most of the sites I see. The first is the small Class I or CGMP-exempt firm, and a firm in that position does not need a 200-procedure program. What it does need includes: a 2-page applicability statement that says what applies, what is excluded, and why, with the 7.3 exclusion documented, complaint records that meet 820.35(a), Medical Device Reporting, or MDR, and Part 806 procedures, Unique Device Identification, and a label release record under 820.45. On top of that, something in the order of 3 revised forms, 1 retrieval drill, and 1 management review that runs with the new inputs.
+
+A certified Class II or Class III firm, already certified to ISO 13485 and often audited through the Medical Device Single Audit Program, is closing the last 20% rather than building. That last 20% includes: the 820.35 and 820.45 record content with UDI carried inside the records themselves, management review, internal audit, and supplier audit records written so that somebody who was not in the meeting can read them, risk linkage that runs visibly from complaint, to risk file, to change, to supplier, to management review, an internal audit program restructured to the 6 QMS Areas, and a mock inspection under Model 1.
+
+A drug-led combination product manufacturer has the harder mapping problem, because the device requirements have to be demonstrated inside a pharmaceutical quality system. That work includes: mapping the clauses called up by 21 CFR 4.4(b)(1) with evidence behind each one, and those clauses are 4.1, 5, 6.1, 7.3, 7.4, 8.2.2, 8.4, 8.5, 7.5.3, and 7.5.4, then documented risk management inside product realization with records standing behind it, complaint handling under 8.2.2 together with 820.35(a), and servicing records under 820.35(b). You also have to verify that your contract manufacturers are aligned with all of this, and there is no MDSAP route available on this pathway. These are archetypes rather than categories, and a firm can sit across 2 of them at once.
+
+
+SLIDE 36
+
+Metrics That Belong in Management Review
+
+Measuring transition readiness is not the same exercise as measuring compliance, and the 12 candidate metrics in front of you are built for readiness. My advice is that you pick 5 of them rather than adopt all 12, because a management review that carries 12 new metrics tends to carry none of them well. Every one of these measures readiness for the inspection process as it actually runs today, rather than activity that merely looks like compliance from the inside.
+
+The first group is evidence coverage, and the targets are 100% of Compliance Program 7382.850 elements with evidence sampled in the last 12 months, and zero open inspection-critical gaps, meaning items that are both high exposure and a true regulatory gap. Both of those come straight out of the gap workbook, so there is no new system to stand up in order to report them.
+
+The second group is record content and speed. The targets include: complaint records 100% complete against the 820.35(a) elements, servicing records 100% complete with UDI and the required elements, and 100% of lots with a documented 5-point label examination and release. Those 3 come out of your complaint system audit, your service records audit, and your batch records, and the fourth target in that group is a median time to produce a requested record of 15 minutes or less, which is measured in your own retrieval drills rather than estimated in a meeting.
+
+The last group tests whether the system actually moves. The targets include: risk files updated after every complaint, CAPA, or change trigger, 100% of them inside a defined time, CAPAs closed with effectiveness data at 100%, risk-tiered controls and a current evaluation for 100% of your critical suppliers, internal audit coverage of all 6 QMS Areas and the 4 Other Applicable FDA Requirements in every cycle, management review actions closed on time at 95% or better, and competence verified for high-risk processes, beyond read-and-sign, at 100%.
+
+The workbook in your pack has a metrics sheet already built with a red, amber, and green status column, which you can lift straight into your management review inputs. It belongs in those inputs permanently, because FDA reads the minutes.
+
+
+SLIDE 37
+
+Watch List and Resources
+
+Keeping current with the Quality Management System Regulation, or QMSR, is going to be part of the job for a while yet, and the sources listed here are the ones I would go and read yourself rather than take second hand. The first is the final rule itself at 89 FR 7496, published February 2, 2024, and in particular the preamble responses to Comments 8, 18, 31, 51, 55, and 79 through 81, which is where FDA sets out its own reasoning in language you can quote back in a response to an observation.
+
+FDA's QMSR page carries the Frequently Asked Questions, which stood at 13 questions as of February 2, 2026, and the compliance program itself, 7382.850, Inspection of Medical Device Manufacturers, runs 78 pages, of which Attachment A is the part you will actually use. CDRH Learn holds 7 QMSR modules, including the town halls from January 14 and April 1, 2026, and the Warning Letter database is the other place to keep checking, where the letters I would read first are Linemaster from May 27, 2026, Koven from July 21, 2026, and Nipro Renal Solutions USA from July 24, 2026. ISO 13485:2016 is available read-only at the ANSI incorporation by reference portal, and the AAMI TIR102:2019 crosswalk maps the old Part 820 across to ISO.
+
+A few points in regards to how stable all of this is. ISO 13485:2016 was confirmed in its 2025 systematic review, FDA staff have indicated that it will not be revised before at least April 2030, and any future edition would require rulemaking before it entered the QMSR. The MDSAP Audit Approach was revised in February 2026 to cite the QMSR. It is important to note that anything in your handout marked "reported" comes from secondary sources, so verify it before you rely on it.
+
+
+SLIDE 38
+
+Exercise C: Your 90-Day Plan
+
+The last piece of work in this session is to put dates against the first 90 days of that plan. In your Exercise Pack you will find Exercise C, and there is one card for each participant. You will have 3 minutes on your own with that card, and then I am going to ask every table for a single sentence.
+
+The card asks you for 5 decisions. The first is your track, which is Track A if you consider the build finished and the work in front of you is verifying and sustaining, or Track B if you are still closing gaps and the work is compressing and prioritizing. The second is the 3 records you will fix first, drawn from what you saw in Exercise A and Exercise B, each one carrying an owner and a date. The third is the mock inspection, and that means the date you will run it, whether you run it under Model 1 or Model 2, who on your staff plays the investigator, and which product risk the thread starts from. The fourth is one behavior you will train, and the card gives you 3 candidates to choose between: the three-part risk answer, handing over management review and internal audit records without stalling, and keeping old Quality System Regulation vocabulary out of the front room. The fifth is the one public-footprint check you will do this month, which may include registration and listing, your Medical Device Reporting history, recalls, prior 483s, and your GUDID entries checked against your actual labels.
+
+I always recommend that you do not leave a line on that card without a name and a date against it, because an item with nobody's name on it does not get worked.
+
+[SOLO WORK - 3 MINUTES, CIRCULATE]
+
+So, one sentence from each table, and start the sentence with a date and the words "we will".
+
+[TAKE ONE COMMITMENT FROM EACH TABLE BEFORE ADVANCING]
+
+Thank you. Those are documented commitments rather than intentions, and the useful part of saying it out loud at a table is that other people in this room heard the date you picked.
+
+
+SLIDE 39
+
+Five Things to Take Back to Your Site
+
+There are 5 of these, and I want to go through them slowly, because these are the 5 I would most want you to be carrying when you get back to your site.
+
+The First Thing to Take Back is that Renaming a File is Not Compliance
+FDA does not care what you call the file. What the agency cares about is whether the record exists, whether it holds the content the regulation requires, and whether it shows that the process actually worked.
+
+Four Provisions Decide Most First Inspections
+Those 4 are the 820.10 hooks into the rest of Title 21, the FDA-specific record content under 820.35, the labeling and packaging controls under 820.45, and the definitions under 820.3. Conformance to ISO 13485 on its own does not get you there.
+
+The Investigator Opens Your Risk File Before Your Manual
+The inspection now runs through 6 QMS Areas and 4 OAFRs, with the records themselves chosen according to product risk, which means that every process you own must be able to show how risk informed the decisions taken inside it.
+
+Management Review and Audit Records Are Inspection Documents Now
+Write them to be read by somebody outside your company, which means the inputs, the decisions, the resources committed, and the follow-up. Never sanitize them, and close the loop on every action you open. A record that shows a problem being worked is stronger evidence than a record that shows no problems at all.
+
+Five Phases, Two Tracks, Exit Criteria, and a Mock Inspection
+Sequence the load-bearing provisions first, hold yourself to written exit criteria at each phase, and run a mock inspection under your own model before FDA runs the real one.
+
+
+SLIDE 40
+
+References
+
+The full reference list sits here in 2 columns, and the same list with live links is in your participant handout, so there is no need to copy any of it down.
+
+On the left is the regulation and the rulemaking history. That column carries Part 820 as in force from February 2, 2026 on the eCFR, the final rule at 89 FR 7496 together with the correction at 89 FR 82945, the proposed rule at 87 FR 10119, and the technical amendments at 90 FR 55978. It also carries 21 CFR 4.4 for combination products along with Parts 803, 806, 821, 830, and Part 11, and then ISO 13485:2016 and Clause 3 of ISO 9000:2015.
+
+On the right is FDA's own implementation and enforcement material. That column carries the QMSR page and the FAQ, compliance program 7382.850, the December 2025 webinar and the 2 town halls with their slides and transcripts on CDRH Learn, the 3 Warning Letters, the FY2025 inspection observations data, and the AAMI TIR102:2019 mapping.
+
+
+SLIDE 41
+
+Questions
+
+If the room is quiet, I will start us off with the question on the screen. If an investigator opened your risk file tomorrow and picked one high-severity hazard, could your people walk them to a complaint, a change, a supplier control, and a management review decision in 10 minutes? If the answer to that is anything other than yes, then you already know what the first 90 days of your plan is for.
+
+The areas that tend to come up when I run this session include: certificates and MDSAP credit, whether you can keep the Design History File and Device Master Record names on your existing files, redacting or refusing audit records, ISO 14971, Model 1 versus Model 2, 820.45 and automated inspection, how to write the response to a 483, and Part 11. The Participant Handout, the Workshop Exercise Pack, and the Gap Assessment Workbook are all linked below, along with my contact details, and I am glad to take follow-up questions by email once you are back at your site.
+
+So with that said, it is easy to recognize why the evidence, and not the vocabulary, is what decides how these inspections go for manufacturers working through this transition. This concludes the presentation portion of this discussion. I want to thank each of you who attended, and I welcome any questions you may have at this time.
+
+

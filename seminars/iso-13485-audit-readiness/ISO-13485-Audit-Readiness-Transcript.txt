@@ -1,0 +1,648 @@
+SLIDE 1
+
+Hello and thank you for that introduction and thank you to those who are joining us for today's presentation. My name is Jordan Elder and today we are going to discuss ISO 13485 and Audit Readiness. We will discuss why audit readiness has become a permanent state rather than a project you schedule, and we will also identify who can arrive at your site without advance notice. We will explore the clauses of ISO 13485 that decide the outcome of most audits, along with the evidence chain behind each of them. We will delve into the anatomy of an unannounced audit, which includes the first 60 minutes, the next 72 hours, and the response roles that have to be filled on the day. Finally, we will discuss how to maintain a single Quality Management System, or QMS, across several jurisdictions, and the operating rhythm that keeps that system credible between audits.
+
+My own background is in device quality and regulatory work, and I have sat on the manufacturer's side of the table for audits and inspections, which is the reason this topic matters to me.
+
+By the time we finish you will leave with 4 things, which include: a first-hour protocol you can install at your site next week, a 10-question readiness self-test, a working model for running one QMS across several jurisdictions, and 4 case studies to argue about at your table.
+
+There are 2 documents on your table. The Participant Handout carries the first-hour protocol, the response roles, the checklists, the reporting timelines, the self-test, and the references, and the Case Study Workshop Pack carries the 4 cases with their discussion questions and room for your notes.
+
+A brief word on housekeeping. We run 90 minutes straight through with no formal break, so please stretch during the case work. Questions are welcome at any time, and if one belongs to a later section I will park it on the flipchart and come back to it.
+
+So with that said, lets dive in.
+
+
+SLIDE 2
+
+The next 90 minutes run in 7 segments, and I want to walk them quickly so that you know where we are going and when. The first 8 minutes are the welcome, the objectives, and a quick poll. From 8 minutes to 20 minutes we look at why readiness is now a permanent state and at the regulatory landscape as it stands in 2026. From 20 minutes to 32 minutes we take ISO 13485 as the backbone and work through the clauses that decide audits, and that segment is built to carry your questions. From 32 minutes to 47 minutes we walk the protocol for an unannounced audit, which covers the first 60 minutes and the next 72 hours.
+
+From 47 minutes to the 1 hour and 16 minute mark we run the 4 case studies as table discussion with a debrief after each one. From there to the 1 hour and 26 minute mark we discuss maintaining a global QMS, which includes the architecture, the operating rhythm, and the readiness KPIs, or key performance indicators. The final 4 minutes are the takeaways, the 30-60-90 day plan, and any remaining questions.
+
+I want to highlight that the case studies are the core of this session and not a filler segment at the back of the deck. That is nearly 30 minutes of table work, so if you are not already sitting in a group of 4 to 6 people, this is the moment to move a chair and make one.
+
+One request in regards to the materials. Please keep the Case Study Workshop Pack closed until we reach the case study section, because those cases land very differently when you meet them cold, which is exactly how they arrive in real life.
+
+
+SLIDE 3
+
+I would like to take a moment to ask you 3 questions before we start, and I want a show of hands on each one.
+
+The first question is about experience. Who here has lived through an unannounced audit or an FDA inspection? Keep your hand up for a moment so the room can see how many of you there are, and then let me take one story in a single sentence, because what I am listening for is how you found out the auditors were on site, and how long it took you to get organized.
+
+[PAUSE FOR SHOW OF HANDS, THEN TAKE ONE STORY]
+
+The second question is about footprint. Who here ships product into 3 or more regulatory jurisdictions? What I am listening for from one of you is how many separate procedures, or how many local versions of the same procedure, you are maintaining today to serve those markets.
+
+[PAUSE FOR SHOW OF HANDS, THEN TAKE ONE STORY]
+
+The third question is the one this whole session is built around, and I will call it the 30-minute test. Who here could hand an auditor the complete Device History Record, or DHR, and full traceability for any lot you shipped last month, within 30 minutes?
+
+[PAUSE FOR SHOW OF HANDS]
+
+In most rooms very few hands go up on that third question. That is the test an unannounced auditor runs in the first hour, whether or not they call it that. Nobody arrives and announces that they are running a traceability drill. They pick a lot, they ask for the record, and they watch how long the room takes to produce it.
+
+I am writing the rough counts from all 3 questions on the flipchart, and we will come back to those numbers near the end of the session when we run the 10-question readiness self-test, at which point I am going to ask whether anybody in the room would change their answer.
+
+
+SLIDE 4
+
+For 20 years most of us prepared for audits, and the calendar told us when to start. That model is gone. This first section deals with why readiness has become a permanent state rather than a seasonal activity, and we turn to 3 different areas to make that case: the rise of unannounced audits, the convergence of the major regulations onto a common quality management framework, and what auditors actually test once they are inside the building.
+
+
+SLIDE 5
+
+The first of those 3 areas is who can arrive at your site without warning, and it is a significantly longer list than most manufacturers assume.
+
+The PIP breast-implant scandal exposed how little a scheduled surveillance audit could actually see, which led the European Commission to issue Recommendation 2013/473/EU, asking notified bodies to audit unannounced at least once every 3 years. The MDR, which is the European Union's Medical Device Regulation, then wrote unannounced audits into law under Annex IX, section 3.4, with a minimum of at least once every 5 years per manufacturer and an explicit right to extend those visits to critical suppliers and subcontractors. The notified body must keep a plan for these audits and must not disclose that plan to you, which means there is no version of this process where you negotiate the date, and the same expectation applies under the IVDR, the In Vitro Diagnostic Regulation, for those of you on the diagnostics side.
+
+In regards to FDA, domestic routine and for-cause inspections have always been unannounced, and the agency's inspection authority sits in section 704 of the Federal Food, Drug, and Cosmetic Act. What changed in 2025 is the announced expansion of unannounced inspections at foreign sites, which means the old assumption that "overseas means pre-announced" no longer holds for anyone. The QMSR, which is the Quality Management System Regulation at 21 CFR 820, has also been in force since 2 Feb 2026.
+
+MDSAP, the Medical Device Single Audit Program, covers Australia, Brazil, Canada, Japan, and the United States, and those audits are normally announced and run on a 3-year cycle made up of an initial certification audit, 2 surveillance audits, and a recertification audit. However, the program does allow special and unannounced audits when a regulator requests one or when serious signals appear, so announced is the normal case and not a guarantee.
+
+The fourth row is competent authorities and other regulators, and it includes the EU member-state authorities, ANVISA in Brazil, the TGA in Australia, and the PMDA in Japan. Notice from these bodies varies, and for-cause visits are often unannounced, which are typically driven by market surveillance activity, vigilance signals, complaints, or recalls. The last row is the one manufacturers forget, which is customers and distributors, and while those customer quality audits are usually announced and arrive through the quality agreements you have already signed, they are run against the same records an auditor would ask for.
+
+This table is a general one, and the notice you actually receive may or may not match what is written here, which depends on your markets, your certificate scope, and your own history with each of these organizations. The point I want to land before we go further is that the model where a manufacturer prepares for an audit is finished, and the only workable posture left is to be ready every day.
+
+
+SLIDE 6
+
+The 2026 Regulatory Snapshot
+
+In order to talk about audit readiness in any useful way, we first have to agree on what the regulatory landscape actually looks like in 2026, and there are 6 things I want you to carry in your head for the rest of this session. While all 6 of them will touch your quality system somewhere, the first 2 are where the majority of your readiness effort is going to land.
+
+FDA QMSR
+
+On 2 February 2026, the Quality System Regulation was replaced by the QMSR, which incorporates ISO 13485:2016 into 21 CFR 820 by reference instead of restating the requirements in FDA's own language. On top of that incorporation, FDA has added a small number of agency-specific requirements. The first, at 820.10, carries the general requirements for the quality management system. The second, at 820.35, covers records, including complaint and servicing records and the Unique Device Identification, or UDI, information tied to them. The third, at 820.45, covers labeling and packaging controls.
+
+The Quality System Inspection Technique, otherwise known as QSIT, is retired, which matters to this room because a great many mock audit programs were built around the QSIT subsystems. It is important to note that the old exemption under 820.180(c), which kept management review records, internal audit records, and supplier audit records out of routine FDA review, did not carry over into the new regulation. Plan for investigators to ask for all 3 of those record sets, and plan for them to read what they are given.
+
+EU MDR and IVDR
+
+The extended transition dates under the Medical Device Regulation and the In Vitro Diagnostic Regulation keep a large number of legacy devices in scope for years to come. Stipulated through Regulation 2023/607, MDR legacy devices run to the end of 2027 or 2028 depending on the device and the certificate, and under Regulation 2024/1860 the IVDR dates run from 2027 through 2029. However, unannounced audits continue regardless of transition status, under the same Annex IX provision we looked at a moment ago.
+
+Alongside those dates, the duties of the Person Responsible for Regulatory Compliance, or PRRC, your post-market surveillance obligations, and the Periodic Safety Update Report, or PSUR, all remain live, and EUDAMED continues its phased roll-out.
+
+MDSAP
+
+MDSAP gives you one audit that serves 5 regulators, across the same 5 countries I named a moment ago, further jurisdictions participate as affiliates, and it is mandatory for Health Canada Class II through Class IV licences. Nonconformities are graded 1 through 5, and grades 4 and 5 are escalated to the participating regulators within 5 business days, which means a finding can be sitting with a regulator before your team has finished drafting a response.
+
+United Kingdom
+
+UK MDR 2002, as amended, remains the operative regulation in the United Kingdom, and CE marking is accepted there to 30 June 2028 for certificates issued under the old directives, the MDD, the AIMDD, or the IVDD, and to 30 June 2030 for certificates issued under the MDR or the IVDR. New post-market surveillance regulations have been in force since 16 June 2025, and manufacturers based outside the United Kingdom are required to appoint a UK Responsible Person.
+
+ISO 13485 Itself
+
+The standard sitting underneath all of this is still the 2016 edition, together with Amendment 1 from 2024, which adds climate change considerations, and it is the harmonised European version, EN ISO 13485:2016 with the A11 amendment of 2021, that carries the presumption of conformity under the MDR and the IVDR. A revision is under way in ISO/TC 210, so track the draft stages as they publish and expect a transition period rather than an overnight switch. I always recommend building a comprehensive transition plan once the draft stabilizes, instead of waiting for a published standard.
+
+Other Major Markets
+
+The remaining markets most of you deal with include Brazil under RDC 665/2022, the Brazilian Good Manufacturing Practices, Japan under MHLW Ordinance 169, China under NMPA GMP, Korea under KGMP, Saudi Arabia under its own SFDA requirements, and India under MDR 2017. Each of these is largely aligned with ISO 13485, which is the good news, and each of them carries local deltas on registration, records, language, and reporting, which is where the work actually is. Every date on this snapshot is current as of September 2026, and this is an area where dates move, so verify them against the source before you plan around them.
+
+
+SLIDE 7
+
+What Auditors Actually Test
+
+Whatever badge is on the lanyard, and whatever regime sent them, auditors ask the same 3 questions, and they ask them in the same sequence.
+
+The First Question is Show Me the Procedure.
+
+Here the auditor is establishing whether a documented process exists at all, and then whether that process meets both the standard and the regulations that apply to this device in this market, which is a test that a surprising number of well-written procedures fail on the second half.
+
+The Next Question is Show Me the Records.
+
+This is a different test from the first one, because the auditor is no longer reading your intent, they are looking for proof that the procedure is followed every time and not only on the days when somebody is watching.
+
+The Third Question is Show Me It Happening.
+
+This question is answered on the floor rather than in the conference room. The auditor will walk the production area, interview the operators who do the work, pick a single unit, and follow it, which is the only reliable way to find out whether practice matches paper. Most quality management system failures live in the gap between the second question and the third.
+
+Where Findings Cluster, Year After Year
+
+The areas that account for the bulk of findings include: corrective and preventive action, or CAPA, and specifically root cause and effectiveness under 8.5.2, complaint handling and reporting to regulators under 8.2.2 and 8.2.3, purchasing and supplier controls under 7.4, and process validation and revalidation under 7.5.6. The list continues with design controls and design changes under 7.3, nonconforming product and rework under 8.3, document and record control under 4.2.4 and 4.2.5, management review effectiveness under 5.6, and competence, training, and the effectiveness of that training under 6.2.
+
+Whether you are reading FDA 483 observation data, notified body nonconformity summaries, or MDSAP audit reports, the order of that list shifts from year to year and the membership of it does not, and CAPA and complaint handling have led it for more than a decade. This is a pattern rather than a prediction, and your own audit and complaint history will tell you more about where your particular exposure sits than any published summary will.
+
+
+SLIDE 8
+
+The Clauses That Decide Audits, and the Evidence Chain Behind Them
+
+Every regime we have just looked at either adopts ISO 13485 outright or sits directly on top of it, which makes the standard the backbone of readiness rather than one more document in the stack. So now that we have a baseline understanding of who can arrive and what they are empowered to ask for, we can move on to the clauses those auditors work through, and to the chain of evidence that has to sit behind each one.
+
+
+SLIDE 9
+
+ISO 13485 as the Backbone
+
+Before we get too deep into the audit-critical sub-clauses, I want to put the same map in front of everyone, because this is a mixed room. Some of you live inside this standard every day, and for the rest of you, you'll find the case studies later land far better with this structure in view.
+
+Quality Management System
+
+Clause 4 requires a risk-based approach to the processes of the system under 4.1, control of outsourced processes under 4.1.5, and validation of the software you use in the quality system itself under 4.1.6. It also carries the documentation architecture, which includes: the quality manual, the medical device file under 4.2.3, control of documents under 4.2.4, and control of records under 4.2.5.
+
+Management Responsibility
+
+Clause 5 runs from commitment, customer focus, and the quality policy in 5.1 through 5.3, into planning and quality objectives under 5.4, and then responsibility, authority, and the management representative under 5.5. It closes with management review under 5.6, which specifies both the inputs that have to go into the review and the outputs that have to come out of it.
+
+Resource Management
+
+Clause 6 covers human resources under 6.2, which is competence, training, and the effectiveness of that training, infrastructure and maintenance under 6.3, and the work environment and contamination control under 6.4.
+
+Product Realization
+
+Clause 7 is the largest of the 5 and the one auditors spend the most hours inside, covering planning and risk management under 7.1, design and development under 7.3, purchasing under 7.4, and production and service provision under 7.5, which brings in process validation under 7.5.6, sterile device requirements under 7.5.7, and traceability under 7.5.9. Control of measuring and monitoring equipment sits at 7.6.
+
+Measurement and Improvement
+
+Clause 8 closes the loop with feedback, complaints, and reporting to regulators under 8.2.1 through 8.2.3, internal audit under 8.2.4, process and product monitoring under 8.2.5 and 8.2.6, nonconforming product under 8.3, analysis of data under 8.4, and improvement, which is where CAPA sits, under 8.5.
+
+Two threads run through all 5 of those clauses. The first is the risk-based approach to every process, which is stated at 4.1.2 and then assumed everywhere after it. The second is the phrase "applicable regulatory requirements", which appears dozens of times across the standard, and that phrase is precisely what allows a regulator to adopt this document as its own: the QMSR incorporates it, MDSAP audits against it, and the MDR grants a presumption of conformity through the harmonised EN version. The sub-clauses carried in bold across the next 2 slides are the ones auditors spend their time on, and those are the ones we are going to work through together.
+
+
+SLIDE 10
+
+The Audit-Critical Clauses
+
+So now that we have established the shape of the standard, we can begin to look at the clauses where audits are actually decided. So now you may be asking, which of these clauses decides an audit? These 6 rows are the answer, and the middle column is the auditor's request list while the right-hand column is the pattern of failure. It is important to know that every item in that middle column is something you should be able to produce within minutes for the product the auditor has just picked up.
+
+The first row I want to discuss today is: outsourced processes and suppliers, under 4.1.5 and 7.4. The auditor will ask for the approved supplier list, the evaluations, the quality agreements, and the incoming inspection records for the components in the unit they have sampled. The failures here are predictable, which are evaluations years out of date, agreements silent on change notification and on regulator access to the supplier's site, and scorecards nobody has ever verified.
+
+The medical device file under 4.2.3, which much of the American side of the room knows as the Device Master Record, or DMR, is requested for the sampled device specifically, which means the current specifications, drawings, labeling, instructions for use, process specifications, and acceptance criteria. It fails when uncontrolled drawings are in use on the floor, and when the file does not match what is being built today.
+
+Under 4.2.4 and 4.2.5, the auditor works through revision history, control of obsolete documents, completeness of the Device History Record, or DHR, and the retention and legibility of records. The failures here are small ones that carry real weight, which include handwritten "corrections" with no initials and no date, missing signatures, and unapproved forms still in circulation.
+
+Management review is tested against the inputs required by 5.6.2, which include internal audits, complaints, regulatory reporting, and supplier performance, and then against the decisions, the resource actions, and the follow-up those inputs produced. It fails as a slide deck with no decisions in it, overdue actions, and a review in which regulatory reporting was never discussed.
+
+For 6.2, the request is narrower than most manufacturers expect, because the auditor wants the training matrix and the effectiveness evaluation for the operators they have just finished interviewing. Two failures recur, which are operators trained on a superseded revision of a work instruction, and a "read and understood" signature with no effectiveness check behind it.
+
+Design and development under 7.3 brings requests for design changes under 7.3.9, verification and validation, the risk management file, and the evidence of design transfer. The dominant failure here is a production or supplier change made with no design impact assessment and no risk impact assessment attached to it. Don't wait for an auditor to test that one. Pull a unit yourself and try to assemble the middle column against it.
+
+Before we take the second half of this table, look down the right-hand column and raise your hand for the row you recognise from your own site.
+
+[PAUSE FOR SHOW OF HANDS]
+
+Suppliers and change control usually take the most hands, and both of those rows come back in the case studies, so hold on to whichever one you raised.
+
+
+SLIDE 11
+
+Process validation under clause 7.5.6 is the row where the auditor asks for the installation qualification, the operational qualification, and the performance qualification, the IQ, OQ and PQ, for the process being observed that day, together with your revalidation triggers and the software validation for any automated equipment. The failure mode here is new equipment or new software running on the old validation package, which manufacturers discover at the moment the auditor asks which configuration was qualified, and the quieter failure is that no revalidation criteria were ever defined, so nobody can say what change would have obligated a requalification.
+
+Traceability under clause 7.5.9 is the row that decides unannounced audits, and the reason is that the auditor has product in hand. They will ask for the full trace of the lot they sampled, which means the components and component lots that went in, the build records, the test results, the release decision, and the distribution records showing where each unit went. Where manufacturers fail is that the lot cannot be reconstructed within the audit day, or the distribution record is incomplete, and the reality is that if you cannot reconstruct the lot on the day, everything else is theory.
+
+Clause 7.6, monitoring and measuring equipment, is more literal than manufacturers expect, because the question is the calibration status and records for every gauge and every tool the auditor sees in use. Overdue calibration is a finding by itself, while overdue calibration with no assessment of the product accepted on that gauge is a significantly worse one. I will always caution manufacturers about the uncalibrated tool on the bench marked "reference only" that inspectors have quietly started using for acceptance decisions.
+
+The last 3 rows are complaints and reporting under 8.2.2 and 8.2.3, nonconforming product under 8.3, and corrective action under 8.5.2. For complaints, the auditor asks for the complaint log, the investigation records, the reportability decisions with their rationale, and the submission timelines. For nonconforming product, it is the nonconformance report log, the dispositions, the rework instructions required under 8.3.4 with their re-verification, and the concession records, and for corrective action it is your open and closed corrective and preventive actions, or CAPAs, with root cause analysis, action plans, and effectiveness verification.
+
+It is important to note that across all 3 of those rows, the failure is rarely the absence of a system, but rather an undocumented decision. No rationale is recorded behind a decision of "not reportable", complaints are closed without an investigation, product is dispositioned "use as is" with no risk rationale, and rework goes back into stock without re-verification. Repeat nonconformances are never trended into a CAPA, the fix addresses the symptom instead of the cause, training becomes the universal corrective action, CAPAs sit open past a year with no approved justification, and there is no data behind the word "effective".
+
+Here is how those rows connect when an auditor follows a single unit backwards through your quality system.
+
+
+SLIDE 12
+
+This diagram is the mental model for the whole session, and I want to spend a moment on it, because the rest of what we do today hangs off it. An unannounced auditor walks onto the floor and picks up a unit, which may be finished product, in-process product, or a lot sitting in stock. From that unit they pull the thread backwards.
+
+The first stop is the device history record, or the batch record, which carries the build, inspection, and test records, and shows who did what, with which tools, and when. Behind that sits the medical device file, the device master record we named a moment ago, holding the specifications, drawings, labeling, and process specifications the unit was supposed to meet. Behind that sits the design evidence, which is verification and validation, the risk management file, and the change history.
+
+The thread also runs sideways and forwards. Sideways to your critical suppliers, which means their approvals, their quality agreements, and the incoming inspection records for the components inside that unit, and sideways again to the complaints, nonconformances, and CAPAs of that product family, and whether any of that history fed back into risk management and design. Forwards to release and distribution, which means the release decision, the labeling and unique device identifier, and where every unit in that lot was shipped.
+
+Every box on this diagram is a place where readiness is either real or it is not. The readiness test on the band at the bottom is meant literally, and it is a broader test than the 30-minute question I opened the session with: pick a random lot, start the clock, and see whether you can reconstruct it end-to-end in 60 minutes, with all of the records in hand and with the people who did the work available to explain them.
+
+
+SLIDE 13
+
+ISO 13485 is necessary and never sufficient, since each regime adds documents, roles, and reporting duties of its own, and each one bites in a characteristic place. I will keep this to headlines, because the Participant Handout carries the detail.
+
+For FDA, the QMSR at 21 CFR 820 adds 3 requirements of its own. 820.10 carries the general requirements. 820.35 carries the records requirements, which tie complaint and servicing records to unique device identification and to the reporting decisions you make under Part 803. 820.45 carries the labeling and packaging controls. Alongside those additions the regulation sits with Part 803 on medical device reporting, Part 806 on corrections and removals, Part 807 on registration and listing, and Part 830 on UDI. The audit bites in the complaint files and reportability decisions, in labeling inspection records, and in CAPA, and what I want to stress is that management review, internal audit, and supplier audit records are now open to review, which changes how they should be written.
+
+For European Union Medical Device Regulation 2017/745, the additions are the technical documentation of Annexes II and III, the post-market surveillance plan and the Periodic Safety Update Report under Articles 83 through 86, and vigilance under Articles 87 through 92. Alongside those sit the person responsible for regulatory compliance under Article 15, UDI and EUDAMED, the economic operator duties of Articles 10 through 14, and the Annex IX quality system assessment, which is what carries the unannounced audits. Here the audit bites when the sampled product is compared against the technical documentation, in the control of critical suppliers, and in whether post-market surveillance data is genuinely feeding risk management and design.
+
+MDSAP adds country-specific chapters, which include Health Canada licensing, ANVISA RDC 665/2022, Japan's MHLW Ordinance 169, TGA conformity assessment, and FDA registration, listing, and reporting. It bites in adverse-event reporting timelines per jurisdiction, in marketing authorization records, and in the automatic grading escalations, and those chapters are where multi-site companies stumble, which is what Case 4 shows.
+
+For the United Kingdom, you're working with UK MDR 2002 as amended, the post-market surveillance regulations of 2025, the UK Responsible Person, and CE recognition running to 2028 and 2030, and the audit bites in vigilance reporting to the MHRA, in UKRP obligations, and in UK-specific labeling.
+
+
+SLIDE 14
+
+Let us make this concrete. It is 08:10 on a Tuesday morning, and 2 people you have never met are standing at your reception desk holding their credentials. In this section we are going to work through who actually shows up, what they do once they are inside the building, how to run the first 60 minutes, and what has to happen in the 72 hours after they leave.
+
+
+SLIDE 15
+
+The Mechanics
+
+An unannounced audit by a notified body is typically 2 auditors for at least 1 audit day, and it takes place either at your manufacturing site or at a critical supplier or subcontractor named in your technical documentation. There is no agenda in advance and the auditors expect to be admitted immediately, which in practice means that whoever is sitting at reception at 08:10 on a Tuesday is part of your quality system.
+
+Delay is written into the report, and I want to be precise about that, because a badly handled arrival is not a neutral event. The time between the knock at the door and the opening meeting becomes a documented fact in a document you do not control. Refusal of access is grounds for suspension of your certificate. Product may also be tested on site in front of the auditors, or samples may be taken away for testing elsewhere.
+
+There is one obligation in the mechanics column that manufacturers forget until it costs them, which is that you must have told your notified body when your lines will not be running. That covers holiday shutdowns and campaign manufacturing where a given product only runs for a few weeks in the year. If they arrive and nothing is being made, that is a wasted audit day for them and a significant problem for you.
+
+The Focus
+
+What they want to see is whether the certified device is being made here, and made as it was certified, which means units pulled from the line or from stock and checked against the technical documentation, traceability of critical components and materials, the recent design, process, or supplier changes and whether the notified body was notified of them, the validation status of the processes that are actually running that day, and interviews with the production and inspection staff.
+
+That last item deserves a sentence of its own, because manufacturers prepare documents and they don't prepare people. The auditors will have conversations with the people at the bench, and the answer an operator gives about what they do when a part looks wrong either matches your procedure or it does not.
+
+The callout at the bottom of the slide states it more plainly than I can. They are not there to read your quality manual. They are there to see whether the product being built today matches the product you certified.
+
+
+SLIDE 16
+
+The First 60 Minutes
+
+In order to keep an unannounced audit from becoming a finding before it has properly started, it is essential that the first 60 minutes on site are governed by a written protocol and not by reaction, and the version in front of you is reproduced in full in the Participant Handout, which means nobody needs to copy it down. We will walk the 4 phases from left to right.
+
+Reception
+
+The first 5 minutes belong to whoever is sitting at the front desk. Identity is verified before anything else, which means photographic identification, agency or notified body credentials, and for an FDA investigator, Form FDA 482. Reception then makes exactly 1 call, to the Audit Response Lead or to the named deputy on the 24/7 roster, and then escorts and waits.
+
+Auditors are never left unattended, they are never refused, and they are never stalled while somebody upstairs works out what to do. A laminated script at the front desk is the cheapest readiness investment you will ever make, and it is the one thing most sites do not have.
+
+Mobilize
+
+Mobilization is the phase where readiness either exists already or does not exist at all. Auditors are escorted to the audit room and offered water and wifi as per your own policy, while the notifications go out in parallel to the site head, to quality assurance and regulatory affairs leadership, to corporate quality, and to legal.
+
+At the same time the request log is opened, the scribe, the runner and the subject matter experts are assigned by name, and the back room is established with the appropriate personnel, system access, and printing capability already in place.
+
+Opening Meeting
+
+The opening meeting is where the boundaries of the day are set, and manufacturers who rush it or skip it spend the rest of the audit negotiating from behind. We confirm the scope, the standard and the regulation being audited against, the sites included, and the auditors' own plan for the day. You then give the site overview along with the environmental health and safety and gowning briefing, which you owe them as visitors on your floor.
+
+The logistics agreed in that room include the rooms themselves, printing, system access, your photo and sample policy, and the route by which document requests and findings will be communicated to you during the day. Agreeing that communication route at the opening meeting is what lets you correct a misunderstanding at 11 in the morning instead of discovering it at the closing meeting.
+
+On the Floor
+
+Once they are on the floor, the auditors select the product and the audit follows it. Every sample taken and every document requested is logged with a timestamp, which gives you the reconciliation you are going to need later that week. Your subject matter experts answer what is asked and then stop, while the scribe records every statement made in the room.
+
+Runners retrieve the Device History Record, the Device Master Record and the validation records, and factual errors are corrected immediately and politely, at the moment they are made and not at the end of the day.
+
+I want to highlight 1 number before we go on, which is 50 minutes. That is how long the auditors in our first case study sat in a lobby, and we will come back to what those 50 minutes cost that company when we reach the case studies.
+
+
+SLIDE 17
+
+Audit Response Roles
+
+So now that we have established how the first hour should run, we can move on to who is actually running it. There are 8 roles on this slide, and in a small company 1 person may reasonably hold 2 of them, but every role carries a name and every name carries a named deputy behind it. The roster covers nights, weekends, and holiday shutdowns, and reception holds it on paper, because an auditor arriving at 7 on a Monday morning does not wait while you look for a phone number in a system nobody has logged into yet.
+
+The Audit Response Lead owns the audit and is the single voice to the auditors, which includes deciding what is provided and when. The site head carries resources and decisions and is visible at both the opening and the closing meeting. Front-room SMEs come from production, quality control, engineering, supplier quality, and regulatory affairs, and they answer what is asked and nothing more.
+
+So now you may be asking, who decides whether a document is fit to go in front of an auditor? That is the back room. The back-room coordinator reviews every document before it goes into the front room, spots the issue inside it first, and prepares the SME before that person walks in, and the runners retrieve records on the strict understanding that nothing reaches the front room unreviewed. Document control and IT hold system access, controlled copies, record retrieval, and printing, and reception and security hold the script, the roster, the badges and the escort, which is to say they hold the first 5 minutes.
+
+The scribe is the most under-rated role here. A verbatim log of the questions asked, the answers given, the documents shown, and the samples taken is what allows you to challenge a finding accurately at the closing meeting, and to write a precise response afterwards rather than a defensive one.
+
+
+SLIDE 18
+
+Do and Don't On the Day
+
+The full list on both sides of this slide sits in your handout, so I am going to read a few from each column and then stop. On the do side, the essentials include: giving exactly what is asked when it is asked, keeping a copy of everything you hand over, answering the question and then stopping, challenging factual errors at the time and with evidence in your hand, taking your own notes on every potential finding, and preparing your operators to answer normally, because they can and will be interviewed. On the don't side, the ones that hurt people most often include: refusing, stalling or "losing" documents, volunteering unrelated information or unrequested tours, guessing, speculating or saying "we usually", leaving auditors unescorted or with open system access, and offering gifts or hospitality beyond basic courtesy.
+
+There are 2 I want to stress. The first is that you never correct, backdate or create a record while auditors are on your site, and I will always caution manufacturers hard on this one, because a finding is a finding and a finding gets closed, while falsification is a career event and a company event. The second is that "I don't know, I will find out" is a complete answer and a respected one, and it only works if it is followed by actually finding out and coming back with the record.
+
+On signatures, FDA investigators may ask for affidavits or signed statements. Company policy on that needs to be settled in advance, agreed with regulatory affairs and legal counsel, and known to the Audit Response Lead before the day arrives, which is not a decision you want to be making in a conference room with an investigator waiting on you. Arguing the grading of a finding in the room doesn't help you either, that argument belongs in writing. The last item on the do side is the one worth reading twice, which is to treat every finding as a free consultancy report.
+
+
+SLIDE 19
+
+The 72-Hour Plan
+
+The audit is not over when the car leaves the car park, and what your organization does in the following 72 hours largely determines the quality of the response that regulator or notified body eventually reads.
+
+Day zero is the same day. Debrief within 2 hours, while memories are fresh and while the scribe's log still makes sense to the people who were in the room. Reconcile the request log against the auditors' list of findings, verbatim, and secure copies of everything you provided. Senior management is briefed that day, and you make any notification your procedures or your contracts require, which may include corporate, the Person Responsible for Regulatory Compliance (PRRC), and your other sites.
+
+Day 1 is classify and contain. Classify each finding, name an owner and a date against every one of them, and contain anything that touches product or patient safety before you do anything else. For FDA, the clock that matters on a Form FDA 483 is 15 business days, which is the window for the agency to consider your response before it reaches a decision on a Warning Letter.
+
+Days 2 and 3 are root cause and plan. Root cause analysis, not symptom fixes, and a clear distinction between a correction and a corrective action, with your effectiveness criteria defined up front rather than reverse-engineered later into whatever the data happened to show. The response plan goes to the notified body inside its stated window, and you should check your own contract for that number, while for the Medical Device Single Audit Program, or MDSAP, you should expect around 15 calendar days for the plan.
+
+After that you implement, you collect objective evidence of closure, you verify effectiveness with data rather than with an assertion, and you feed the findings, the trends and the lessons into management review and into the next internal audit plan. It is important to remember that a finding closed without effectiveness data is a finding you will see again, and a repeat costs you considerably more than the original did.
+
+
+SLIDE 20
+
+Findings and Consequences by Regime
+
+Before the case studies I want to give you the vocabulary of findings, because each regime expresses them differently and escalates them differently.
+
+FDA works in inspectional observations recorded on a Form FDA 483, with the inspection then classified as No Action Indicated, Voluntary Action Indicated, or Official Action Indicated, and escalation running to a Warning Letter and then to seizure, injunction, consent decree, and import alert for foreign sites. What escalates an FDA inspection is a repeat observation, an inadequate 483 response, a data integrity problem, or a failure to report.
+
+Notified bodies under the Medical Device Regulation work in minor and major nonconformities, with the definitions coming from the notified body itself and from MDCG guidance, and they work through corrective action plans and, at the far end, suspension or withdrawal of the certificate. What escalates with a notified body is a systemic major, refusal of access, an unreported significant change, or a nonconformity found on the sampled product.
+
+MDSAP grades every nonconformity from 1 to 5 using the GHTF nonconformity grading method, and the arithmetic is worth hearing once. Direct-impact clauses start at grade 3 and indirect clauses start at grade 1. Add 1 grade where there is no documented process, and add 1 more for a repeat, capped at 5. A grade 4 or 5 is notified by the auditing organization to all 5 participating regulators within 5 business days, and those regulators may then act independently. Case 4 lands on a grade 4.
+
+
+SLIDE 21
+
+So now that we have established how findings are graded and what each grade costs you in the different regimes, we can move on to look at what all of that looks like on an ordinary working morning.
+
+Please open the Case Study Workshop Pack that is in front of you, because this next segment belongs to your table rather than to me. There are 4 cases in the pack, and every one of them runs on the same 7-minute rhythm: 2 minutes to read the case at your table, 3 minutes to discuss the questions printed underneath it, and then a 2-minute plenary debrief where I show you what the auditors actually wrote. I am going to be strict with that clock, and the timer will be running in front of me where you can all see it.
+
+It is important to note that these are composite cases built from real audits and inspections, and every identifying detail has been changed, which includes the names, the places, and the product descriptions. If you read one of them and feel that you recognise "your" story, that is rather the point.
+
+
+SLIDE 22
+
+The first case is set in Germany. The company is the legal manufacturer of Class IIb powered surgical instruments, it runs about 220 staff on a single manufacturing site, and it holds an MDR certificate through a notified body. On the Tuesday morning in question the QA Director was away on leave, and no deputy was named anywhere in the reception instructions, which is the detail I would ask you to hold on to while you read.
+
+Two notified body auditors presented their credentials at reception at 08:10. Reception called HR, then called the QA Director's mobile, and reached voicemail. The auditors were finally taken into the building at 09:00, and those 50 minutes are written into the audit report.
+
+The rest of the morning is in your pack, so I am not going to read it out to you. Take 2 minutes to read the case, and then spend 3 minutes on the three questions underneath it: what the first 30 minutes should have looked like, how you would rank the three findings and why, and what that 50-minute delay told the auditors before they had seen a single record.
+
+[TABLE WORK - 5 MINUTES: 2 TO READ, 3 TO DISCUSS. CIRCULATE.]
+
+That is 3 minutes on the discussion, so let me bring us back together.
+
+
+SLIDE 23
+
+Before I show you what the notified body wrote, I want to hear the ranking question answered by 2 tables.
+
+[TAKE ANSWERS FROM TWO TABLES BEFORE ADVANCING]
+
+Most tables rank the calibration finding as the most serious on the grounds that product has already shipped, and some tables rank the supplier agreement ahead of it because that goes to the heart of supplier oversight under the MDR. Both of those positions are defensible, and I want to be clear that the notified body chose calibration.
+
+The major finding was written against clause 7.6, for out-of-calibration equipment in use with no assessment of the product built since the due date. The torque driver in question was 3 weeks past its calibration due date and still in use on the line, and the severity sat less in the tool itself than in the silence around it, because units had shipped and nobody had asked what that overdue tool meant for the patients who received them.
+
+The 2 minor findings both trace back to change, and this is the change-control row that a good number of you raised your hands for on the clause table. The first, against clauses 7.3.9 and 7.5.6, was a process change on a dispensing station installed 4 months earlier that nobody assessed for design and risk impact, even though the installation, operational, and performance qualification records all existed. The second, against clause 7.4.1, was a printed circuit board supplier last audited 4 years earlier, with a supplier evaluation that had not been maintained and an agreement that said nothing about notified body access or change notification.
+
+Then there is the observation, which is the line I would ask you to dwell on. Delayed access was recorded, and the notified body reminded the firm in writing that refusal of access is grounds for suspension. Those 50 minutes were not refusal; however, they set the tone for everything that came after.
+
+The corrective actions include: a reception script on a laminated card, and a 24/7 roster with named deputies that covers shutdown periods. Calibration became a recall, so equipment is tagged and quarantined on its due date with no exceptions. The change-control form now carries a mandatory design and risk impact section signed by the design authority, the supplier agreement template now carries unannounced access, change notification, and deviation reporting clauses, and the site head personally sponsors an annual mock unannounced audit.
+
+The transferable lesson sits on the band at the bottom. The auditors formed their view of this quality management system in the lobby, and everything after that confirmed it.
+
+
+SLIDE 24
+
+I want to highlight the provision this case turns on. Annex IX section 3.4 permits the notified body to audit your suppliers and subcontractors unannounced, and while this manufacturer had read that sentence, its subcontractor had not been made aware of it, which is where the case begins.
+
+The second case is a Dutch legal manufacturer of Class IIa sterile single-use devices holding an Annex IX certificate under the European Medical Device Regulation, and final assembly, packaging, and sterilization release are all outsourced to a contract manufacturer in Malaysia, which is named in the technical documentation as a critical subcontractor. At 09:00 local time the auditors arrived unannounced at that subcontractor's gate in Penang, and security turned them away, because there was no appointment and no visitor request anywhere in the system.
+
+What happened over the hours that followed is in your pack. Read it for 2 minutes, and then take 3 minutes on the 3 questions: whose audit this really was, what the control of outsourced processes under clause 4.1.5 requires of the manufacturer in this situation, and how production calendars and site access ought to be arranged with your notified body in advance.
+
+[TABLE WORK - 5 MINUTES: 2 TO READ, 3 TO DISCUSS. CIRCULATE.]
+
+That is time, so let me pull us back to the room.
+
+
+SLIDE 25
+
+I could hear several tables putting this one at the subcontractor's door, and I want to steer that gently, because the certificate holder is the legal manufacturer in the Netherlands, and clause 4.1.5 makes that manufacturer responsible for controlling outsourced processes in proportion to risk. This is also the supplier row from the clause table, so if that was your hand, this case is yours.
+
+So the major finding went to the legal manufacturer and not to the subcontractor, written against clauses 4.1.5 and 7.4 for inadequate control of an outsourced process, which surprises a great many people and is the whole lesson of this case. There were 4 deviations closed locally at the subcontractor over 6 months, and none of them had been communicated to the manufacturer, in spite of a quality agreement which required notification within 5 days, and the manufacturer's oversight rested on a supplier scorecard that rated the subcontractor "green" across the entire period. The scorecard is the tell, and it was green because nobody had verified the data underneath it.
+
+The minor finding, against clause 7.5.6, was the seal-temperature excursion on the pouch sealer, which was never evaluated for revalidation and where the affected lots were never assessed. That one matters because sterile barrier integrity is a patient-safety issue, and the disposition of "use as is" was decided by the wrong party. The notified body also attached a condition, which was a retrospective review of every lot from the affected period before the certificate was maintained.
+
+The changes that came out of it include: a rewritten quality agreement covering unannounced access for the notified body and regulators, cooperation duties, 24-hour deviation notification, and escalation contacts in both time zones. That last item is the direct answer to a 03:00 call to the Netherlands that went unanswered until 08:00 CET, with 3 hours of delay recorded in the audit report. The notified body was also given the subcontractor's production calendar for this device, because campaign manufacturing meant the device was not in production that week and the auditors sampled from finished-goods stock instead.
+
+However, the change that did the most work was the quietest one. Supplier oversight became rigorous data verification and not scorecards alone, through a quarterly sample of Device History Records and deviation logs, and the 2 companies now run a joint mock unannounced audit at the subcontractor, whose front-desk protocol names the notified body. Your certificate travels to your critical suppliers, and so does your audit.
+
+Before we go to the third case, I want a show of hands. Who here has a quality agreement that gives your notified body the right to walk into your supplier unannounced, and gives that supplier a name to call at 3 a.m.?
+
+[PAUSE FOR SHOW OF HANDS]
+
+That is about the number of hands I see in most rooms, which tells you where the work is.
+
+
+SLIDE 26
+
+The First Inspection Under the QMSR
+
+This is the inspection that every US site will have between now and 2028, and I have put it third in the sequence because the company in this case had done everything the industry told it to do. The firm is a US manufacturer in Indiana making Class II reusable orthopedic instruments and sterilization trays, with about 400 staff, ISO 13485 certification held for 10 years, and an MDSAP certificate covering Canada. Its last FDA inspection, in 2021, was classified No Action Indicated, and it had a gap assessment against the QMSR which concluded that nothing needed to change.
+
+In March 2026, at 09:00, an FDA investigator presented credentials and Form FDA 482. The first request was for the procedure index, cross-referenced both to ISO 13485 clauses and to the QMSR, and the firm had an ISO index only. The investigator then asked for the last 2 management reviews and the internal audit results, and at that point the firm's own policy still cited the retired exemption at 820.180(c), which cost 40 minutes on the phone with corporate Regulatory Affairs before the records appeared.
+
+You will note below that the sampling went on to produce 4 separate problems. The management review minutes carried no regulatory-reporting metrics, and 2 actions from 2024 were still open. Of 20 complaint files sampled, 6 had no documented reportability decision under the medical device reporting requirements of Part 803, and the complaint records did not capture Unique Device Identification, or UDI, at all, which is required under 820.35(a). Label and Instructions for Use inspection records for one tray family showed no verification of content, as required under 820.45. Finally, there were 2 CAPAs open for the same cleaning-validation issue, both marked "closed - effective", with no effectiveness data behind either one.
+
+I want to put this case to your tables before I show you what FDA wrote down. There are 3 questions in the discussion block. The first asks what mindset caused that 40-minute standoff. The second, which is the one I most want you to argue about, asks which of these observations are genuinely QMSR-specific and which are plain ISO 13485 failures. The third asks you to draft the opening paragraph of the 483 response to the CAPA observation, and I will ask one table to read theirs aloud in a moment.
+
+[TABLE WORK - 5 MINUTES: 2 TO READ, 3 TO DISCUSS. CIRCULATE.]
+
+That is time, so let me bring us back together.
+
+
+SLIDE 27
+
+Findings and What Changed
+
+Before I put the outcome up against your answers, I want to hear one table's opening paragraph for that 483 response.
+
+[TAKE ONE TABLE'S 483 RESPONSE PARAGRAPH ALOUD]
+
+On the first question, the mindset that caused that 40-minute standoff was the belief that holding a certificate settles the matter, and it is the same belief that produced a gap assessment saying nothing needed to change. A policy that still cited a retired exemption had never been read against the new regulation by anybody.
+
+The strongest responses to an observation like this one have 4 parts. The first is a plain acknowledgement of the observation as written. The correction comes next, which here means reopening both CAPAs. The corrective action is the part that decides whether the observation comes back, which means effectiveness criteria and independent verification built into the CAPA procedure itself. Finally the systemic check, which is a comprehensive review of every CAPA closed in the last 24 months, and each part needs a date against it.
+
+I also owe you the second question, which is the teaching point of this case. Only the UDI field and the labeling record are genuinely QMSR-specific. Reportability decisions, CAPA effectiveness, and management review are ISO 13485 requirements this firm had been certified against for 10 years, and the certificate did not make them true.
+
+The inspection itself closed with a Form FDA 483 carrying 4 observations, which were the following: complaint handling, where reportability decisions were not documented and the records themselves were incomplete, cited against clause 8.2.2 and against 820.35(a); CAPA, where effectiveness was not verified, under clause 8.5.2; management review, where the inputs were incomplete and actions were overdue, under clause 5.6; and labeling controls, where content verification was not documented, under 820.45. The firm filed its response in 12 business days and the inspection was classified Voluntary Action Indicated.
+
+The changes that followed include: a QMSR gap assessment done properly this time, as a crosswalk of the ISO clauses against 820.10, 820.35, and 820.45 and against Parts 803, 806, and 830; an inspection-readiness procedure rewritten so that management review, internal audit, and supplier audit records are producible on request; a complaint form carrying a UDI field, a reportability decision tree, and a mandatory rationale; a CAPA process in which effectiveness requires data and independent sign-off; and a mock FDA inspection structured around the QMSR rather than around the Quality System Inspection Technique, or QSIT. This list is specific to one firm's findings, and your own crosswalk will land elsewhere.
+
+One of those changes says the records must be written to be read, and that does not mean sanitized. It means management review and internal audit records showing real problems, real decisions, and real follow-up. An investigator who reviews a candid record with closed actions behind it will be reassured by what they see. However, an investigator who is handed a glossy record with nothing of substance in it will draw the opposite conclusion. As the band at the bottom has it, "we are ISO certified, nothing changes" was the most expensive sentence of that company's year.
+
+
+SLIDE 28
+
+Three Sites, One Certificate
+
+The company in this case operated 3 well-run sites, each with its own honest procedures, all under a single certificate, and the gap identified here sat in the interfaces between those sites and not inside any one of them. It is a multinational of about 1,800 staff, with US headquarters carrying design and manufacturing, a German site acquired in 2023 which had been a legacy manufacturer under the Medical Device Directive, and a high-volume plant in Costa Rica. All 3 sites sit under a single MDSAP certificate, alongside a certificate under the European Medical Device Regulation and Health Canada licences.
+
+The audit was an MDSAP surveillance audit at the German site. While the auditors were on site, a complaint from a Canadian hospital reporting a serious deterioration in health arrived through the distributor, and it was assessed under the German legacy complaint procedure. The reportability decision took 14 days, and the report reached Health Canada on day 22, against a Canadian limit of 10 days. The headquarters procedure would have flagged that same complaint within 48 hours, which is the detail that made this a systemic finding and not a local one, because neither site knew what the other site's process actually was.
+
+Underneath that there were 3 versions of the complaint form in use across the company, and the German trend data had never reached global management review. The previous audit had already raised inconsistent complaint intake as a grade 2 nonconformity, and it had been closed with "training".
+
+There are 3 questions for your tables on this one. The first asks why training failed as a corrective action. The next asks what a single global complaint process must contain in order to work in Germany, Costa Rica, and the United States at the same time. The last asks who owns the regulatory requirements matrix, and, separately, who owns keeping it current.
+
+[TABLE WORK - 5 MINUTES: 2 TO READ, 3 TO DISCUSS. CIRCULATE.]
+
+That is time, so let me bring us back together.
+
+[TAKE ANSWERS FROM TWO OR THREE TABLES BEFORE ADVANCING]
+
+
+SLIDE 29
+
+Findings and What Changed
+
+On the first question, training failed because the root cause was structural and not a knowledge gap, and no amount of retraining reaches a structural cause. There were 3 procedures in use, no single decision tree, and no shared timelines, so the corrective action addressed the symptom at the level of the individual, which is why the finding came back.
+
+On the second question, what a single global complaint process has to contain is a single intake point, one global reportability decision tree carrying every market's timelines, and 48-hour triage, which is exactly what this company ended up building.
+
+So now you may be asking how one late report becomes a grade 4 nonconformity. Reporting to regulatory authorities under clause 8.2.3 is a direct-impact clause, which means the nonconformity starts at grade 3 rather than being built up from the bottom. Because the previous audit had flagged complaint intake and the fix had not worked, this one is also a repeat, and a repeat adds 1, which takes it to grade 4. It should be noted that a grade 4 carries an escalation of its own: the auditing organization notified the MDSAP regulators, and that notification went out within 5 business days. Health Canada then requested a corrective action plan, and the notified body asked for a 24-month retrospective review of the German site's complaints.
+
+The third question usually exposes an argument that is already running inside your own organizations, and it is worth hearing out loud. In this case the answer was Global Regulatory Affairs, with a link into change control so that the matrix moves whenever a requirement moves.
+
+This is where the tiered architecture we will look at next comes in, and I will only sketch it here. The company rebuilt on 3 tiers, with a global manual and policies at Tier 1, global procedures with named process owners at Tier 2, and site work instructions plus a Country Regulatory Annex for each market at Tier 3. They moved to one complaint system built exactly the way I have just described. Global management review now runs on site KPIs covering on-time reporting, CAPA age, and audit findings, internal audits test the interfaces between sites, and legacy procedures are retiring on a 12-month plan.
+
+The lesson on the band is the frame for everything that follows, which is to harmonize the process, localize the annex, and govern the interfaces.
+
+
+SLIDE 30
+
+Maintaining a Global QMS
+
+Case 4 gives us the frame, and I want to spend the next 10 minutes on how you build it and how you run it. One process, local annexes, governed interfaces, and audit-ready every day is the whole of this section in a single line, and the distance between a company that holds all 4 of those principles and a company that holds 3 of them is usually visible inside the first hour of an unannounced audit.
+
+
+SLIDE 31
+
+Global QMS Architecture: Core Plus Annex
+
+Building a quality management system that holds up in every market at once is an exercise in deciding what has to be identical everywhere and what is allowed to be local, and the 4 tiers on this slide are how that decision gets written down. The organizing principle is that ISO 13485 is the spine, and that regulatory requirements are referenced rather than copied into your procedure text, which stops one market's change to one timeline from invalidating documents across the whole system.
+
+The First Tier is the Global Quality Manual and Policies. This is one scope statement, one process map, and one site register, and I mean one of each, because the moment a site maintains its own quality manual you have created a second system that nobody reconciles.
+
+The Next Tier is the Global Procedures, one procedure per process, each with a named global process owner behind it. The processes that belong at this tier include: complaints, corrective and preventive action, change control, supplier controls, design controls, document control, training, management review, and internal audit. A named owner is essential, because a procedure owned by a committee is a procedure that nobody keeps current, and divergence between sites is exactly what produced the systemic finding in Case 4.
+
+The Third Tier is Where Locality Is Allowed to Live. Site work instructions describe how the work is physically done on that floor, with that equipment, and alongside them sits one Country Regulatory Annex per market which lists only the deltas for that market: the timelines, the forms, the authorities, the language requirements, and the roles.
+
+Finally the Last Tier is Records and Forms, and the rule at this tier is one form per process globally. Local-language versions are controlled as translations and never as variants, because an uncontrolled local variant becomes a second process carrying the same document number.
+
+A comprehensive governance structure is what stops the architecture quietly decaying between certification cycles, and the elements on the right include: global process owners, site quality heads accountable for Tier 3, a regulatory-intelligence feed wired into change control with an impact assessment completed within 30 days, a quarterly global quality council, and an annual review of the scope, the site register, and the requirements matrix. That 30-day impact assessment is the element that turns a regulatory change from an email somebody read into a controlled change.
+
+
+SLIDE 32
+
+Vigilance Reporting Timelines by Market
+
+This is the table that Case 4 needed and did not have. Read across a single row, because the same event, reported by the same manufacturer, starts a different clock in every market you sell into, and some of those clocks run in calendar days while others run in working days.
+
+Take the first row. In the United States, under 21 CFR 803, FDA requires a report within 30 calendar days for a death or serious deterioration, and 30 calendar days again for a reportable malfunction. Where remedial action is needed to prevent an unreasonable risk of substantial harm, the clock is 5 work days.
+
+Move down to the European Union. Under Article 87 of the European Medical Device Regulation, the competent authorities work to 10 days for a death or an unanticipated serious deterioration, 15 days for other serious incidents, and 2 days for a serious public-health threat, and the MHRA in the United Kingdom holds to those same 3 clocks.
+
+Health Canada, under SOR/98-282 sections 59 through 61, sets 10 days for a death or serious deterioration, and 30 days for an event that could lead to one if it recurred. The TGA in Australia works to 10 days for a death or serious injury, 30 days for near-adverse events, and 48 hours for a serious public-health threat. Japan's MHLW and the PMDA work to 15 days and then 30 days. Neither Canada nor Japan defines a separate public-health threat clock at all.
+
+Brazil's ANVISA, under RDC 551/2021, is the one that catches people out, and it carries the shortest clock on this table: 72 hours for a death, 10 days for a serious injury, 30 days for other events, and 72 hours again for a serious public-health threat.
+
+The design consequence is the part I want you to take away. A single global decision tree has to carry every one of these clocks, and for triage the shortest clock wins, which is why 48-hour triage is the design rule.
+
+This is a teaching aid, current as of September 2026, and the day counts are written as each regulation words them. Verify every cell against the current regulatory text before you rely on it, and the Participant Handout repeats that caveat alongside the table.
+
+
+SLIDE 33
+
+The Regulatory Requirements Matrix
+
+The matrix is the operating tool that sits behind the country annexes and keeps them current. Each row is one requirement area, and across that row you record what differs by market, the named owner, where in the QMS the requirement lives, and the trigger that forces a review.
+
+The rows shown include: adverse event and vigilance reporting, where definitions, timelines of 2 to 30 days, forms, portals, and foreign-event rules all differ, owned by Global Regulatory Affairs and living in the vigilance procedure plus the country annex; field actions and recalls, where notification timing, classification schemes, and customer letter content differ; registration, listing and licensing, which sits with regional RA and is triggered by any new product, site or market; labeling and UDI, where languages, symbols, issuing agencies, and databases such as GUDID and EUDAMED differ; complaint and servicing records, where the required data fields – UDI capture under 820.35 is the current example – and the retention periods differ; and responsible persons, covering the management representative, the PRRC in the European Union, the UK Responsible Person, the US Agent, and the marketing authorization holder in Japan.
+
+The matrix is owned by Global RA, it is reviewed annually, and every regulatory change runs through it under change control, which is what makes it an operating document rather than a reference document. This is by no means an exhaustive list, as 6 rows are shown here and a real matrix runs 40 to 80 rows, so use the starter structure in your handout and build out from there.
+
+
+SLIDE 34
+
+Operating Rhythm and Readiness KPIs
+
+Readiness is produced by routines and not by heroics, and the rhythm on the left is what produces it. Daily, supervisors walk the floor and check device history records at the point of work. Weekly, CAPA and complaints are reviewed and overdue actions are chased, and monthly the site quality council takes up the readiness metrics, audits, changes, and suppliers.
+
+Quarterly, global management review picks up supplier performance and the regulatory-intelligence review, and annually you run the full internal audit cycle, a mock unannounced audit at each site and at your top critical suppliers, and the review of the requirements matrix.
+
+On the right are key performance indicators, or KPIs, chosen to measure readiness and not the appearance of compliance. The first target is 30 minutes or less to produce the full DHR and traceability for a random lot. There are then 3 targets set at 0, which are 0 procedures past their periodic review date, 0 pieces of equipment in use past the calibration due date, and 0 CAPAs open more than 12 months without an approved justification. There are 2 targets set at 100%, which are staff trained on the current revision before performing the task, and vigilance reports submitted on time. Supplier audit plan adherence is set at 95% or more, and the reception script and the 24/7 roster are verified quarterly.
+
+The first of those targets is the one we opened this session with, and I would caution manufacturers against rehearsing it on one favorite lot, because the auditor picks the lot. Put these into management review as standing items and watch them move over 2 or 3 quarters, because a metric that is reported and never trended will not tell you whether readiness is improving.
+
+
+SLIDE 35
+
+Readiness Self-Test: 10 Questions
+
+Before we talk about mock audits, I want you to score yourselves against these 10 statements, and the same 10 sit in your handout with tick boxes next to them. Give yourself a point for each one you could defend with evidence today.
+
+The first 5 cover the ground we have been over all morning. Reception has a written script and the 24/7 roster, including deputies and shutdown periods. Every production or supplier change in the last year has a documented design and risk impact assessment. Your notified body knows when your lines will not be running. No CAPA is open beyond 12 months without a documented and approved justification. And you can produce the complete DHR and traceability for any lot within 30 minutes.
+
+The remaining 5 are these. Your management review records could be handed to an FDA investigator today. Every critical supplier agreement grants unannounced access to your notified body and regulators, and requires deviation notification. Every site assesses complaint reportability with the same decision tree and all market timelines. No equipment in use is past its calibration due date. And you have run a mock unannounced audit in the last 12 months.
+
+Score it silently, and I will ask for hands in a moment.
+
+[PAUSE - 60 SECONDS FOR SILENT SCORING]
+
+Hands up if you scored 9 or 10. Now look at the flipchart, because the 3 questions we opened with this morning are these same questions without the evidence attached, and I promised to come back to those counts. Would anybody in the room change the answer they gave me at the start?
+
+[PAUSE FOR SHOW OF HANDS AGAINST THE FLIPCHART COUNTS]
+
+So, 9 or 10 means you are ready, and the only thing I would say is to keep drilling, because readiness decays the moment the drilling stops. A score of 6 to 8 means you are exposed and you now know exactly where, which is a better position than most manufacturers are in on a Tuesday morning. A score of 5 or fewer means you start Monday with the reception script and the roster, and I say Monday deliberately, because those 2 items cost nothing, they need no capital request, and they buy you the first hour.
+
+
+SLIDE 36
+
+So now that we have established where your own gaps sit, we can begin to look at the exercise that turns that list into a schedule of fixes.
+
+A mock unannounced audit that actually counts has 5 steps, which include: sponsoring it secretly, using an outsider, following product, grading honestly, and debriefing and tracking.
+
+The first step I want to discuss today is the sponsorship, and the rule there is that only 2 people know the date, the site head who sponsors it and the person who runs it, with no tidy-up week beforehand.
+
+Use an outsider, either corporate quality from another site or a consultant, in notified-body format with 2 auditors and 1 day. Follow product exactly as a notified body would, which means reception, the opening meeting, a sample taken from the line, a trace through the Device History Record and the Device Master Record, a supplier file, and the complaint and corrective and preventive action history.
+
+Grade honestly against notified body or MDSAP definitions, time every retrieval, and interview your operators. Debrief within a day, put the findings into CAPA and the readiness KPIs into management review, and repeat the exercise yearly at every site and at your top critical suppliers.
+
+The first mock audit is always humbling, and that is the point, because a humbling Tuesday you chose costs far less than the Tuesday your notified body chooses.
+
+
+SLIDE 37
+
+I want to highlight the 5 sentences that I would like you to be repeating to each other in the car park.
+
+Readiness Is a State, Not an Event
+
+Manufacturers should assume that auditors arrive tomorrow at 08:00, and should build appropriate routines into the quality system instead of preparation projects tied to a date on a calendar.
+
+Auditors Follow Product
+
+The evidence chain that runs from a single unit on the line back to design and to your suppliers, and forward to the patient, is the chain you have to master, because it is the chain they will walk.
+
+The First Hour Sets the Verdict
+
+It is critical that a site has a documented reception script, a 24/7 roster, defined response roles, and named deputies, because the people sitting at reception are a working part of your Quality Management System.
+
+Findings Are Root-Cause Problems
+
+Fix the system, verify effectiveness with data, and write your records to be read.
+
+A Global QMS Is One Process With Local Annexes
+
+Harmonize the process, localize the annex, and govern the interfaces.
+
+Those are the 5 sentences that survive contact with a real audit day.
+
+
+SLIDE 38
+
+Your 30-60-90 day plan begins with what is cheap and immediate.
+
+In the first 30 days, write the reception script and the 24/7 roster with deputies, build the audit go-kit, inventory your quality agreements for their access and notification clauses, and tell your notified body your shutdown calendar.
+
+The go-kit itself should include: your certificates, an organization chart, a site map, a procedure index cross-referenced to the ISO clauses and to each regulation that applies to you, a contact list, a blank request log, visitor and confidentiality forms, and your photograph and sample policy.
+
+Days 31 through 60 are for the drills and the checks. Run the 30-minute Device History Record and traceability drill and fix whatever breaks, complete a QMSR and MDR overlay gap check against that procedure index, fix your calibration recall and your change-impact form, and build version 1 of the regulatory requirements matrix.
+
+Days 61 through 90 are where you prove it. Run a mock unannounced audit at 1 site and at 1 critical supplier, add the readiness KPIs to management review, retire duplicate site procedures onto the global tier, and schedule the next drill along with the annual cycle.
+
+Everything here is in the handout with space to assign an owner, and it is important to note that this is a general plan, which each site will need to adjust to its own registrations and product mix.
+
+
+SLIDE 39
+
+I am not going to read this slide. Everything we have covered today is sourced on it, and the same list is in your handout with links to each one, so there is nothing to copy down.
+
+
+SLIDE 40
+
+Before we go wider I want to put the question below back to you, which is simply this: what would break first at your site if they knocked tomorrow at 08:00?
+
+[TAKE ANSWERS FROM TWO OR THREE PARTICIPANTS BEFORE OPENING THE FLOOR]
+
+Those first answers are usually the honest ones, and they are usually the items you already suspected. I also want to clear the flipchart, so if a question of yours was parked there earlier in the session, this is the moment to put it back to me. If the room would rather start somewhere else, the questions I am asked most often include: how to handle FDA requests for photographs, what to do when an auditor asks to see a record that you already know is deficient, and how to keep a global complaint process fast enough to hold a 48-hour triage.
+
+You will note below that my email address sits alongside the link to the participant handout and the case study workshop pack, which carries the 30-60-90 day plan we just walked through with space for an owner and a date against every line.
+
+So with that said, it is easy to recognize why readiness has to be built as a routine and not as a project, for manufacturers who intend to navigate an unannounced audit with a certificate and a global Quality Management System intact.
+
+This concludes the presentation portion of this discussion. I want to thank each of you who attended, and I welcome any questions you may have at this time.
+
+

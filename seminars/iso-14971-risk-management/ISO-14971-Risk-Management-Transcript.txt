@@ -1,0 +1,640 @@
+SLIDE 1
+
+Hello and thank you for that introduction and thank you to those who are joining us for today's presentation. My name is Jordan Elder and today we are going to discuss ISO 14971 in Practice, Aligning Risk Files With EU MDR and FDA Expectations. We will discuss what ISO 14971:2019 actually requires of a risk file across its 10 clauses, including the risk management plan, the hazard analysis, risk control, and residual risk evaluation. We will also identify where the expectations of the European Union Medical Device Regulation, or MDR, and the expectations of FDA genuinely part company, and where they do not. We will explore all of that through three hands-on exercises, which are a hazard chain repair, a red-team of a risk file extract, and a 30-day plan that you write for your own file. Finally, we will discuss closing the loop from production and post-production information back into the risk file. Although several adjacent standards touch this material, they are excluded from the scope of this discussion, and I will name them in a moment.
+
+In regards to materials, there are three: the participant handout is your reference, the hands-on exercise pack is what we write on, and the Excel toolkit is what you take back to your desk. By the time we finish you will have taken a real hazard row apart, rebuilt it, and written the deficiency you would have received for the original. Everything in this deck is sourced, and the sources slide near the end tells you what to re-verify before you rely on any of it. I want to set one expectation before we start, which is that this session assumes you already have a risk file, and if you are starting from nothing, the risk management plan comes first, and the 'RM Plan' sheet in the toolkit is where to start.
+
+So with that said, lets dive in.
+
+
+SLIDE 2
+
+Nobody Fails an Audit for Not Owning the Standard
+
+There is an asymmetry at the heart of most risk-management findings, and I want to name it before we go anywhere else. Manufacturers prepare one set of deliverables, reviewers do a different set of things entirely, and the space between the two is where findings come from.
+
+What manufacturers prepare typically includes: a procedure that restates the standard clause by clause, a spreadsheet with a color matrix, a risk management report signed at design transfer, and a plan that was written after the analysis was already finished. Each of those is a real deliverable and each one is auditable. However, not one of them is what a reviewer does when the file is in front of them.
+
+A reviewer pulls one hazard and walks it end to end, asks where a probability number came from, asks for the effectiveness record rather than the implementation record, and asks what post-market data changed after the file was signed. Those moves are broadly the same in a notified body audit and in an FDA inspection.
+
+The gap then opens in 4 fairly predictable places, and these are the 4 places findings come from. Traceability breaks at the control, estimates have no stated basis, the Clause 10 log is either empty or entirely historical, and the acceptability criteria turn out to have been reverse-engineered from the scores the team already had. Risk files very rarely fail because a procedure is missing. They fail on traceability, and on arithmetic that cannot be defended.
+
+Before we go further I want a show of hands. Hands up if you have ever had a risk-management finding. Keep them up if the finding was verification of effectiveness.
+
+[PAUSE FOR SHOW OF HANDS]
+
+That is close to what I see in most rooms, where most people have had at least one risk-management finding and verification of effectiveness is the single most common one, and I will come back to what this room has told me when we reach the takeaways. The three findings I see most often are a probability with no stated basis, a control that was verified as implemented but never as effective, and an empty Clause 10 log on a device that has been on the market for 4 years.
+
+
+SLIDE 3
+
+What You Will Be Able to Do by the End of Today
+
+The objectives are written deliberately as verbs rather than as topics, because a workshop should leave you able to do something you could not do this morning, and each one of them maps onto an exercise: A is the chain, B is the red-team, and C is the plan.
+
+The first is that you will be able to draw a hazard chain that a reviewer cannot collapse, which means a hazard, a foreseeable sequence of events, a hazardous situation, and a harm, with one row per hazardous situation and with P1 and P2 kept separate.
+
+You will be able to defend a probability estimate by naming the basis, the population, the period, and the record it came from. An estimate with no stated basis is itself the finding.
+
+You will be able to work the order of priority as an order. ISO 14971 Clause 7.1 and Annex I point 4 of the MDR both put inherently safe design first, then protective measures, then information for safety, with a record of why you stopped where you stopped.
+
+You will be able to produce both verifications for every risk control, because Clause 7.2 asks for verification of implementation and verification of effectiveness. Those are 2 records with different evidence behind them.
+
+You will be able to say which regulator asks for what, which is to say where the EU and FDA expectations actually differ and, just as usefully, where they do not.
+
+Finally, you will be able to close the loop from post-market data back into the file, which is Clause 10 together with the MDR plumbing it has to connect to: the post-market surveillance, or PMS, plan indicators, the Periodic Safety Update Report, or PSUR, post-market clinical follow-up, and trend reporting.
+
+It is important to note what is out of scope so that nobody sits waiting for it. We are not covering usability engineering under IEC 62366-1 as a discipline, we are not covering the software life cycle under IEC 62304, and we are not covering security risk management beyond the point where it touches the risk file. The handout names the standards that carry those three subjects.
+
+
+SLIDE 4
+
+Ninety Minutes, Thirty-Five of Them Yours
+
+The shape of the session matters, because the three shaded blocks are the reason you are in a room today rather than on a webinar. The first 5 minutes are this opening, the asymmetry, the objectives, and the poll we have just run. The next 13 minutes are the first section, on what ISO 14971:2019 actually requires, and the 12 minutes after that are the second section, on where EU and FDA expectations part. Exercise A, repairing the hazard chain, runs 15 minutes. We then spend 13 minutes on risk control and residual risk that survive review, and Exercise B, red-teaming a risk file against the General Safety and Performance Requirements, or GSPRs, runs 14 minutes. The closing section is 10 minutes on production and post-production information, and the last 8 minutes are Exercise C, your own 30-day plan, the takeaways, and any questions.
+
+That puts 35 of the 90 minutes in your hands, which is deliberate for a workshop. If we overrun, the compression comes out of section 6, the closing-the-loop section, and not out of the exercises.
+
+There are three materials in front of you: the participant handout, the hands-on exercise pack, and the ISO 14971 Risk File Toolkit, which is an Excel workbook of 10 sheets. I am flagging the toolkit now so that nobody meets it for the first time in Exercise C.
+
+
+SLIDE 5
+
+The File Is the Argument
+
+Understanding what ISO 14971:2019 actually requires of a risk file is where this session has to start, and we have 13 minutes here. The aim is not to teach you the standard, because the standard is in your handout and most of you have read it more than once. The aim is to fix the 4 places where risk files reliably break in practice, which are the working versions of the gap I showed you a moment ago, and they include: the plan written too late, the chain collapsed into a single row, the estimate recorded with no stated basis, and the file that is a folder nobody can walk. There are 10 clauses in the standard, and they carry one obligation between them, which is to make every risk decision traceable and defensible.
+
+
+SLIDE 6
+
+A File, Not a Folder
+
+Clause 3.25 is deliberately thin, and it is the right place to start, because it defines the risk management file as the set of records and other documents that are produced by risk management. There is no list of contents, no prescribed format, and no template, which means the content requirements are distributed through the standard, and almost every clause ends with a sentence sending its own output into the file.
+
+Clause 4.5 is where the actual obligation sits. It requires the file to provide traceability for each identified hazard to the risk analysis, the risk evaluation, the risk control measures, and the assessment of the acceptability of any residual risk. That is the sentence that turns a folder into a file, and it is the sentence manufacturers fail.
+
+The file may be a set of references to other records, so manufacturers do not have to physically bind the usability engineering file into it. What the file may not be is unwalkable. The 'RM File Index' sheet in your toolkit is that index, and it is there so that somebody who has never seen your device can move from a single hazard out to every decision you made about it.
+
+The questions a reviewer arrives with are predictable, and the file has to be able to answer each of them:
+
+- Where did this hazard come from? That is answered from 5.3, characteristics related to safety, and 5.4, hazard identification.
+- How did this hazard reach a harm? That is 5.4 again, the foreseeable sequences of events and the resulting hazardous situation.
+- Where did this number come from? That is 5.5 risk estimation, together with whatever categorization system you used.
+- Why is this acceptable? That draws on your 4.4 d) criteria, Clause 6 risk evaluation, and the 7.3 residual risk evaluation.
+- What did you do about it, and does it work? That is 7.1 option analysis, and both of the verifications in 7.2.
+- What has changed since? That is 10.2 collection, 10.3 review, and 10.4 actions.
+
+
+SLIDE 7
+
+Ten Clauses, and the Three People Skip
+
+The spine of the standard is short enough to walk in under a minute. Clause 4 sets up the system, 5 analyses, 6 evaluates, 7 controls, 8 evaluates the whole, 9 reviews and reports, and 10 keeps the file alive once the device is on the market. You will note in the last column that the usual state is fairly consistent. The procedure exists while the plan underneath it is thin, and the hazard chain in Clause 5 has collapsed with the basis for the estimates gone missing. Clause 6 is done, however the criteria were written late, and Clause 7's order of priority was not worked as an order. Clause 8 has been confused with the sum of the rows, and the Clause 9 report is signed, sometimes early.
+
+I want to stop on the 3 rows in gold, because these are the 3 that are most often simply absent. Clause 7.5 requires manufacturers to review every risk control measure for new hazards and for effects on the existing estimates. Clause 7.6 requires manufacturers to show that every identified hazardous situation has been considered. Additionally, Clause 10 as a whole, production and post-production information, is very often an empty log.
+
+There is one structural point I will flag here and work properly in the risk control section. Clause 7 has a sixth part, and most of the procedures I read stop short of it, which leaves them with no completeness step at all.
+
+Clause 2 is new in the 2019 edition, and it states that there are no normative references. That is a trap for anyone who assumes that conforming to ISO 14971 pulls in ISO/TR 24971, because it does not. The TR is a technical report, and it is guidance only.
+
+
+SLIDE 8
+
+Three Definitions That Arrived in 2019
+
+Clause 3 carries 31 definitions, and 3 of them are new in the third edition. None of the 3 is cosmetic, because each one creates an obligation somewhere else in the standard, and each one costs you work.
+
+3.2 defines 'benefit' as a positive impact or desirable outcome of use on the health of an individual, or a positive impact on patient management or on public health. Having a definition at all is what makes Clause 7.4 and Clause 8 workable, because you cannot weigh a benefit you have never characterized. What that costs you is a benefit statement with a nature, a magnitude, a probability, and a duration attached to it, and "it treats the disease" is not a benefit statement.
+
+3.15 defines 'reasonably foreseeable misuse' as use in a way not intended by the manufacturer, but which can result from readily predictable human behaviour. That definition is why 5.2 changed its title to "intended use and reasonably foreseeable misuse", and why the use-related analysis now has to reach beyond what you wrote in the instructions for use. Misuse can be intentional, and the workarounds your own service team already knows about are foreseeable by definition.
+
+3.28 defines 'state of the art' as the developed stage of technical capability at a given time, based on consolidated findings of science, technology, and experience. You will note that this is not the most advanced solution available, it is generally accepted good practice. It is an input to your Clause 4.2 policy and a trigger in 10.3, which means a movement in the state of the art ages your file without a single complaint or failure having occurred.
+
+There is some plumbing underneath these definitions that I want to flag. Most of the 2019 definitions are now sourced from ISO/IEC Guide 63:2019 rather than Guide 51, and defined terms are printed in italics in the body text, so you can see when the standard is using a term of art. "Use error" is drawn from IEC 62366-1, which is the textual bridge between this standard and your usability engineering work.
+
+
+SLIDE 9
+
+The Plan Decides the Answer Before You Know It
+
+This is the single highest-yield slide in this first section. Clause 4.4 requires 7 things of the risk management plan, a) through g), and every one of them is a decision that has to be made before the analysis is done. The most common finding in this area is a plan whose acceptability criteria were quite clearly written after the risk table had been colored in.
+
+The 7 required elements include:
+
+a) Scope: The plan has to identify and describe the device and the life cycle phases covered, which in practice decides what is in, what is excluded, and for what reason.
+
+b) Responsibilities and Authorities: This is an assignment of authority, and there are 2 authorities in play, because someone signs that an individual residual risk is acceptable and someone signs the overall residual risk.
+
+c) Requirements for Review: These are the milestones that eventually produce your Clause 9 risk management report.
+
+d) Criteria for Risk Acceptability: The criteria must be based on the manufacturer's policy for determining acceptable risk, and they must include criteria for the case where the probability of occurrence of harm cannot be estimated.
+
+e) A Method to Evaluate Overall Residual Risk: The method and the criteria for its acceptability are both declared here.
+
+f) Verification Activities: These cover verification of both the implementation and the effectiveness of risk control measures.
+
+g) Production and Post-Production Activities: These are the activities for collection and review of relevant production and post-production information.
+
+I want to come back to d), because it is 2 obligations and not one. The first is the matrix, and the policy that sits behind the matrix. The second is the severity-only rule, which is what manufacturers do when the probability of occurrence of harm cannot be estimated, and almost every plan is silent on that second obligation.
+
+So let me ask the room. Hands up if your risk management plan actually says what you do when a probability cannot be estimated.
+
+[PAUSE FOR SHOW OF HANDS]
+
+That is about what I see in most rooms, which is usually 2 or 3 hands out of a room this size, and it is a gap that a great deal of the industry is carrying.
+
+Then e). The method for evaluating overall residual risk, and the criteria for its acceptability, have to be declared in advance. If the plan does not say how Clause 8 will be done, then Clause 8 cannot be done credibly, because the method will end up being chosen once the answer is already visible.
+
+And g). The plan has to name the production and post-production activities, and a plan that is silent here is exactly why the Clause 10 log is still empty 3 years later.
+
+You will note below that changes to the plan are themselves recorded in the risk management file. A plan sitting at revision 1 next to a risk table at revision 7 is a finding on its own.
+
+
+SLIDE 10
+
+Two Regulators, One Standard
+
+So now that we have a baseline understanding of the file and the plan, we can move on to look at what the 2 regulators actually do with this standard, and we will spend the next 12 minutes here. ISO 14971 is the common language of risk management, but it is not the legal requirement in either jurisdiction, because it is not incorporated into US law and it is only narrowly harmonised in the EU. Both regulators still expect it, and the gap between that expectation and the legal text is where findings live.
+
+
+SLIDE 11
+
+The Legal Position
+
+In order to use any of this in front of an investigator, we have to take the legal position and the practical position separately, because manufacturers draw the wrong conclusion in both directions. ISO 14971 is not incorporated by reference into 21 CFR Part 820. Section 820.7 incorporates ISO 13485:2016, and it does not incorporate ISO 14971. In the Quality Management System Regulation final rule FDA was asked to incorporate ISO 14971 as well and declined, on the basis that the risk management requirements it needs are already captured through ISO 13485. That is the first half of the answer.
+
+The Practical Position
+
+The second half is the half manufacturers miss. Declining to incorporate ISO 14971 did not reduce the obligation, it relocated it. Risk management is enforced through the ISO 13485 clauses that Part 820 does incorporate, and those clauses include:
+
+- Clause 4.1.2 b), which requires a risk-based approach applied to the control of the appropriate quality management system processes. This is an inspectable element in its own right.
+- Clause 7.1, which requires risk management in product realization, with documented requirements and records of the results.
+- Clauses 7.3 design, 7.4 purchasing, 7.5 production and 7.6 monitoring equipment, each of which carries risk proportionality. Manufacturers are required to size supplier controls, process validation and acceptance activities to the risk.
+- Clause 8.2 on feedback, complaints and reporting, which uses post-market information as an input to risk management. This is the FDA analogue of Clause 10.
+
+It is important to note that this list is a general list, and each manufacturer's process architecture will file those records in slightly different places.
+
+Compliance Program 7382.850 lists "Risk-based Approach" under Management Oversight as an inspectable element. So the practical answer to the question of whether ISO 14971 is mandatory for FDA is that the standard is not, and the activity is. An observation is written against the clause, not against ISO 14971, and arguing the first half of that answer in front of an investigator without the second half goes badly.
+
+Recognition and Incorporation
+
+Separately from Part 820, ISO 14971:2019 is an FDA-recognized consensus standard, so conformity to it can be declared in a submission. The entry is recognition number 5-125, ISO 14971 Third edition 2019-12, with the extent of recognition given as the complete standard. It entered the database on 23 December 2019 and was published in Recognition List Number 053 at 85 FR 17584 on 30 March 2020, replacing recognition 5-40 for the 2007 edition. It was still unchanged in Recognition List Number 066 of 24 August 2026. Recognition is not incorporation. This means that the entry supports a submission, however it does not create a regulation. I always recommend checking the entry before you cite it, because recognition numbers and transition notices change.
+
+One more fact makes the point better than any argument of mine. If you search the 78 pages of Compliance Program 7382.850 for the string 14971, you get zero hits. The inspection program is written entirely against ISO 13485 clauses and 21 CFR Part 820, and FDA therefore inspects the activity without ever naming the standard.
+
+
+SLIDE 12
+
+Harmonised Status Under the MDR
+
+Writing a GSPR matrix that holds up depends on knowing exactly how far the harmonised standard actually reaches, and that is narrower than most manufacturers assume. EN ISO 14971:2019, as amended by A11:2021, is a harmonised standard for the MDR. The citation is Commission Implementing Decision (EU) 2022/757 of 11 May 2022, published in the Official Journal L 138 on 17 May 2022. It is also harmonised for the In Vitro Diagnostic Regulation, or IVDR, by Decision 2022/729, and both citations were still live on the Commission's summary list generated on 17 June 2026, with no end of legal effect.
+
+Two facts here reliably surprise people. The first is that there was no harmonised risk management standard under the MDR between 26 May 2021 and 17 May 2022, because the base decision did not cite EN ISO 14971 at all, as A11 did not yet exist. Additionally, A11:2021 does not change a word of the normative text, which is to say it replaces the European foreword and adds Annex ZA for the MDR and Annex ZB for the IVDR.
+
+Annex ZA
+
+Now the part that matters for your file. Annex ZA is a correspondence table, and it is narrow, which is what the title of this slide is pointing at. It addresses MDR Annex I Chapter I points 3, 4, 5, 8, and 9, and you will note in the right hand column that points 1, 2, 6 and 7 are not listed as covered, and neither is any requirement in Chapter II or Chapter III. So conformity with the standard gives you a presumption of conformity for the risk management system and the iterative process at point 3, for the risk control measures and the mandatory order of priority at point 4, for use error at point 5, for the minimization requirement at point 8, and for the Annex XVI devices without an intended medical purpose at point 9. It gives you none at all for the intended performance and benefit-risk requirement in point 1, for the definition of "as far as possible" in point 2, for the lifetime of the device at point 6, or for transport and storage at point 7.
+
+There is a common misconception I want to correct before we move on. The 7 content deviations that manufacturers still cite belong to EN ISO 14971:2012, which was withdrawn, with conflicting national standards withdrawn by 30 June 2020. A11:2021 has no content deviations at all, so if your gap analysis is built on the 7 deviations, it is built on a withdrawn standard.
+
+MDCG 2021-5 rev.1, from the Medical Device Coordination Group, or MDCG, is the authority on what an Annex Z is and how far it reaches. An Annex Z identifies the requirements that are not covered, and presumption of conformity can be claimed only for what the Annex Z lists as covered.
+
+
+SLIDE 13
+
+ALARP and AFAP
+
+There is one distinction in this section that changes how far manufacturers have to go, and it is the difference between ALARP and AFAP. The cleanest way to make it land is by what is absent from the regulation. "ALARP", as low as reasonably practicable, does not appear anywhere in the MDR. Neither does any reference to economic considerations. The old Medical Devices Directive, 93/42/EEC, carried a recital permitting "technical and economical considerations compatible with a high level of protection of health and safety", and that recital was not carried over into the MDR. There is also no "negligible risk" carve-out in Annex I point 8, which requires that all known and foreseeable risks are minimized and acceptable when weighed against the evaluated benefits, and not only the ones sitting above some threshold.
+
+ALARP is the familiar test, and it is familiar for understandable reasons. It comes out of occupational safety regimes and out of the Directive era, it admits cost, effort, and time into the judgment of how far to go, and it produces a defensible stopping point on economic grounds. However, it is not the MDR test. The MDR's only stated limit on how far a risk must be reduced is the one in Annex I point 2, which defines reduction "as far as possible", or AFAP, as reduction without adversely affecting the benefit-risk ratio. It is important to note that cost, schedule and manufacturability are not permitted limits under that provision. In practice the test is bounded by the state of the art, and the hook for that sits in Annex I points 1 and 4 rather than in the definition itself.
+
+I would like to take a moment to discuss the practical consequence, because this is the one that generates findings. A risk your matrix calls acceptable still has to be reduced as far as possible, and "it is in the green zone" is not a stopping argument in the EU. What manufacturers need in the file is a record of the control options considered and why the higher-priority ones were not practicable, on a basis that isn't economic.
+
+So where does the choice between ALARP and AFAP actually live in the standards system? It lives in ISO/TR 24971:2020 Annex C, as guidance on the Clause 4.2 policy for establishing risk acceptability criteria. Annex C sets out the possible elements of that policy and lists the available approaches, which include: ALARP, AFAP, ALARA, and ALAP. The standard does not choose for you, your policy does, and for an EU device the regulation constrains that choice.
+
+It should be noted that there is one asymmetry here. The IVDR has recital 13 tying reduction as far as possible to the generally acknowledged state of the art in medicine, while the MDR has no equivalent recital, and its state of the art hook sits in Annex I points 1 and 4 instead.
+
+
+SLIDE 14
+
+Where They Agree, and Where They Differ
+
+Closing this section out, the picture for a manufacturer selling into both markets is calmer than this section may have made it sound, because the overlap is large and the differences are narrow but sharp. On whether ISO 14971 is required, the EU answer is voluntary but harmonised, with a presumption of conformity for the points Annex ZA lists, while for FDA it is not incorporated into Part 820 but is a recognized consensus standard, and therefore declarable in a submission. On where the file is filed, the MDR puts the benefit-risk analysis and the results of risk management inside the technical documentation at Annex II point 5, while FDA expects them in the design and development file, or the medical device file, reviewed at inspection rather than submitted.
+
+On post-market information the routes are different and the evidence is much the same. The EU routes it through Article 83(3)(a), and through the indicators and thresholds at Annex III point 1(b). It also routes it through the PSUR, post-market clinical follow-up, and trend reporting under Article 88. FDA routes it through ISO 13485 Clause 8.2 feedback and complaints, and through Medical Device Reporting under 21 CFR 803, which is a second and entirely different MDR.
+
+There are 3 rows here that carry a genuine difference. How far risk must be reduced is the one that changes your file, which is as far as possible in the EU, limited only by the benefit-risk ratio, against reduction to acceptable levels as defined by the manufacturer for FDA, through ISO 13485 Clauses 4.1.2 b) and 7.1.
+
+Whether benefit-risk is expected for an individual risk is the one that changes your record count. Annex I point 4 speaks of the residual risk associated with each hazard, which means each one, individually. Team-NB, the notified bodies' own association, says the same thing in its best practice guidance on technical documentation. The MDR does not permit risk acceptance on a Risk Priority Number, or RPN, alone or on a "green" zone, and acceptability must be decided individually against predefined criteria. That wording is identical in V3 and V4 of the guidance, so it has been their position for over a year, and I will come back to that document at the end of Exercise B. For FDA, ISO 14971 Clause 7.4 applies if you declare conformity to the standard, and it is not separately mandated by Part 820. The filing location row is a documentation difference and not a difference of substance.
+
+So you have told me where each regulator lands, but can I run one risk file for both markets? Yes, and you should. Build to the stricter test, which is the EU's, and make sure the FDA-facing trail through the ISO 13485 clauses stays visible in that same file. The handout has the two-column mapping.
+
+
+SLIDE 15
+
+Before I explain anything at all about this exercise, I want to get the room into groups, because it is much harder to move people once they have heard the task. If you would find the people on either side of you and form groups of 3 or 4, and if you are sitting on your own, please join the nearest table that has room.
+
+[PAUSE WHILE THE ROOM FORMS GROUPS OF 3 OR 4]
+
+Now that the groups are settled, turn to page 2 of the exercise pack, which is where Exercise A begins. We have 15 minutes for this one, and the shape of it is that each table takes one broken row out of a risk file, rebuilds that row, and then we look together at the deficiency you would have received for the version in front of you. Before I give you the task itself, I want to walk through the chain a reviewer expects to see.
+
+
+SLIDE 16
+
+The Chain a Reviewer Expects to See
+
+In order to estimate a risk that anybody can argue with, we have to agree on the four positions in the chain, and I am going to draw this on the board as I talk, because the picture is the whole teaching point. A hazard, defined at 3.4, is a potential source of harm, and on its own it does nothing at all. A foreseeable sequence of events is what turns that hazard into a hazardous situation, which at 3.5 is a circumstance in which people are exposed to the hazard, and only then can harm occur, harm being physical injury or damage to health at 3.3.
+
+The two probabilities in your file sit at two different arrows on that chain. P1 is the probability that the hazardous situation arises, and P2 is the conditional probability that the hazardous situation goes on to lead to the harm, and the product of the two is the probability of occurrence of harm. Annex C.5 of the standard and Clause 5.5 of ISO/TR 24971 both describe that decomposition.
+
+So now you may be asking, why do we bother separating the two? Because each half is defended with completely different evidence. P1 is engineering and field data, meaning failure rates, bench test results, field return rates, use frequency and exposure in the intended environment, and observed rates out of complaints and service data. P2 is clinical, meaning who is exposed and for how long, whether the harm is detectable before it becomes harm, whether it is reversible, and whether anyone intervenes in time.
+
+Most files that combine the two into a single number cannot defend either half, and a reviewer who asks which half of this number is clinical gets silence. The rule that follows is one row per hazardous situation, and not one row per hazard. A single hazard can reach more than one hazardous situation by more than one sequence of events, and each of those carries its own probability, which is why collapsing several sequences into one row makes a probability estimate impossible to defend.
+
+
+SLIDE 17
+
+There are three steps to this, and the steps are the following:
+
+1. Taking the Row Apart: Identify what the row has actually written in each of the four positions, which are hazard, sequence of events, hazardous situation, and harm. Name which of those positions are empty and which ones are duplicated.
+
+2. Rebuilding It: Write as many rows as the hazard needs, one per hazardous situation. Assign P1, P2 and severity, and for each one write down the basis you would cite.
+
+3. Writing the Finding: Draft the deficiency a notified body reviewer would raise against the original row, and cite the clause. One or two sentences is enough.
+
+I want to highlight step 3, because the deficiency wording matters considerably more than the rebuilt row does, and writing the finding is the part that makes people see the gap. You have 10 minutes in groups of three or four, working from exercise pack page 2 and using the blank rows on page 3, and then 5 minutes where two or three tables read us their wording.
+
+The device is a programmable ambulatory infusion pump for home use with a single-use administration set, which is the same device as the Excel toolkit, so the exercise and the toolkit line up.
+
+
+SLIDE 18
+
+HZ-15, Exactly as It Appears in the File
+
+This is HZ-15, exactly as it appears in the file, and it is HZ-15 in the Excel toolkit as well, so you will be able to find it in situ afterwards. I would ask you to take a moment to read the row through before we go on.
+
+[PAUSE 10 SECONDS WHILE THEY READ]
+
+I am not going to pre-empt any of the findings in that row, because the whole value of the next 10 minutes is in you finding them yourselves.
+
+I will be circulating while you work, and the two things I will be pushing on are groups that produce one rebuilt row rather than several, and groups that write down a P1 with no basis sitting behind it. So if I stop at your table and ask you where that 4 came from, that is why I am asking.
+
+That is your 10 minutes, starting now.
+
+[TABLE WORK - 10 MINUTES. CIRCULATE.]
+
+[TAKE ANSWERS FROM TWO OR THREE TABLES BEFORE ADVANCING]
+
+
+SLIDE 19
+
+What the Row Should Have Been
+
+The room's rebuilt rows can now be held against the model answer, and the key move in it is that one line about the pumping mechanism becomes 3 rows, because there are 3 distinct hazardous situations reached by 3 distinct sequences, and their severities and their probabilities are genuinely different.
+
+I want to walk the first row as the exemplar. The hazard is stored mechanical energy in the compliant fluid path, recorded here as mechanical energy leading to unintended delivery, and the sequence is that a downstream occlusion raises the pressure in the compliant set, the occlusion then clears, and the stored volume is released before the pump can decompress the line. The hazardous situation is that the patient receives a bolus above the prescribed rate, and the harm is over-infusion, presenting as hypotension and respiratory depression. P1 is a 4, which comes from the complaint trend, P2 is a 4, which comes from the clinical argument about an unattended patient in the home, and severity is a 4.
+
+The P1 versus P2 point becomes concrete if you hold the third row against that one. The hazard category is the same, and yet the third row's under-infusion carries a lower severity and a different P2, because loss of therapy is usually detectable and recoverable, whereas the bolus is neither. That third row is a plunger seal that creeps so that delivered volume drifts below the set rate inside the alarm window, undetected. The second row is a drive train worn beyond its qualified cycle count, where the pump stalls, the stall is not detected by the motion sensor, and therapy stops without the user being alerted.
+
+Then we have the links across to the MDR. This device supplies substances to the patient, so Annex I point 21 is directly on point, and specifically 21.1 requires that the amount delivered is set and maintained accurately, while 21.2 requires means of preventing or indicating inadequacies in the amount delivered. Most files cite point 4 and stop there, and citing 21.1 and 21.2 is what tells a reviewer you have read Chapter II.
+
+The wording at the bottom is what a reviewer would write against the original row. The file does not identify the foreseeable sequences by which the hazard leads to a hazardous situation and does not distinguish that situation from the hazard or the harm, which is 5.4, and no basis is recorded for the probability estimate, which is 5.5. The stated control, "mitigated by design", does not identify a risk control measure at all, and it is not traceable to a verification of implementation or of effectiveness, which is 7.2. No residual risk has been evaluated, which is 7.3, and the row is linked to no general safety and performance requirement at all.
+
+
+SLIDE 20
+
+The Four Things the Room Reliably Gets Wrong
+
+These are the recurring patterns, and they are the 4 mistakes this exercise produces every time I run it, so naming them is what makes the lesson stick beyond today. The first one I want to name is rebuilding one row instead of several, because the hazard reached more than one hazardous situation, and if your rebuild has a single row in it then you have renamed the problem rather than analyzed it.
+
+Writing a sequence that is only one step long. "Pump fails" is a state and it is not a sequence, because a sequence has a first event, an intermediate condition and an exposure, which is why 5.4 asks for sequences, plural, and combinations of events.
+
+Assigning P1 and P2 without separating the evidence behind them. If you cannot say which half of the number is engineering and which half is clinical, then what you have is a single number that cannot be defended on either basis.
+
+The fourth one is the subtle one and it is worth 20 seconds. Manufacturers write the harm as the clinical event that would be reported rather than as the harm the patient experiences, and a harm, at 3.3, is physical injury or damage to health. The words reportable incident, complaint and recall all name consequences of harm, and none of them is a harm. A reportable event under Medical Device Reporting is not a harm, while hypotension requiring intervention is.
+
+
+SLIDE 21
+
+Risk Control and Residual Risk
+
+So now that we have established the 4 things the room reliably gets wrong, we can move on to risk control and residual risk, and this is where we will spend the next 13 minutes. Everything in this section sits inside Clause 7 and Clause 8, and Clause 7 on its own runs to 6 parts. It is critical that manufacturers recognize that 7.3, 7.4 and Clause 8 are three different questions, because files routinely answer all three of them as one, and that single confusion is the most valuable thing this section has to offer.
+
+
+SLIDE 22
+
+The Order of Priority Is an Order, Not a Menu
+
+Both ISO 14971 and the EU Medical Device Regulation say the same thing about risk control, and both of them say it as a sequence rather than as a set of alternatives. Clause 7.1 and MDR Annex I point 4 each give 3 options in a fixed order, and I want to highlight the specific wording of point 4, because it leaves very little room: "In selecting the most appropriate solutions, manufacturers shall, in the following order of priority". You will note that the regulation uses the word shall, and that it sets the options out in a fixed order.
+
+The 3 options, in the order the regulation sets them out, are the following:
+
+1. Inherent Safety by Design: Eliminate the hazard outright, or eliminate the sequence of events that reaches it. This is the category that changes P1, the probability that the hazardous situation arises in the first place.
+
+2. Protective Measures in the Device Itself or in Manufacture: Guards, interlocks, alarms, and detection all sit in this category. These usually change P1, and sometimes they change P2 instead.
+
+3. Information for Safety, and Training: Warnings, precautions, contra-indications, the instructions for use, or IFU, and user training all sit here, and this category rarely changes P1 at all.
+
+The obligation that this order creates is a documentation obligation. Manufacturers do not have to use option 1. They have to be able to show that option 1 was considered, and to record why it was not practicable, and the same holds before the file settles at option 3. A file full of category 3 controls with no option analysis behind them is the commonest Clause 7.1 finding there is, and under MDR point 2 that record cannot rest on cost.
+
+You will note that point 4 requires something before the list even begins, which is that the residual risk associated with each individual hazard and the overall residual risk are both judged acceptable. Both of those determinations are required, and they are required separately.
+
+Then there is the sting in the tail of point 4, which manufacturers forget because it sits after the list rather than inside it: "Manufacturers shall inform users of any residual risks." That obligation reaches any residual risk and not only the significant ones, which makes it a broader disclosure obligation than the one in ISO 14971 Clause 8, where the standard speaks of significant residual risks in the accompanying documentation.
+
+The last point here is one I want to make firmly. Information for safety does not reduce the probability that the hazardous situation arises. A warning cannot stop an occlusion forming. It may reduce P2, if it changes what the user does in time, and that is a legitimate claim. However, if your file shows a category 3 control dropping P1 by 3 bands, that is the row a reviewer will open first.
+
+
+SLIDE 23
+
+Clause 7.2 Asks for Two Verifications
+
+If you take one slide home from today, take this one. Clause 7.2 requires verification of the implementation of each risk control measure, and it separately requires verification of the effectiveness of each risk control measure. That is 2 verifications, 2 records, and 2 genuinely different kinds of evidence.
+
+Implementation answers a narrow question, which is whether the control is actually in the product as it was designed. A drawing revision, a build record, an incoming inspection result, or a code review carries that.
+
+Effectiveness answers a much harder question, which is whether the control does the job it was credited with doing in the risk estimate. It is the harder question, it is also the one that gets skipped, because the answer has to connect back to the number you wrote in the residual risk column. If you credited a control with dropping P1 from 4 to 2, your effectiveness record has to support a factor-of-a-hundred claim.
+
+The table sets out the pattern for each control category. For inherent safety by design, implementation is the drawing or specification revision, the design verification report, and the build records showing that the change is in the product, while effectiveness is a test showing that the hazardous situation can no longer arise, or that it arises at the claimed lower rate, together with field data after the change. For a protective measure, implementation is the specification and design verification of the guard, interlock, alarm or detector along with the production test records, while effectiveness means challenging the measure under worst-case conditions across the full operating range, not only at nominal, and showing it triggers. For an alarm specifically, implementation is the alarm specification, levels and priorities verified against the design input, while effectiveness is audibility and comprehension in the real use environment with the real user, which means that a bench sound-pressure measurement is implementation and not effectiveness.
+
+Look at the bottom row, because that row is where most files fail. For information for safety, implementation is the IFU or label approval record, the artwork release, and the training material release. Effectiveness is comprehension and behavior. An approved IFU proves implementation and it proves nothing whatsoever about effectiveness, and the only credible effectiveness evidence for a category 3 control is usability evidence that users find it, understand it, and act on it, which is the bridge across to IEC 62366-1.
+
+So now you may be asking where the enforcement of this comes from. FDA reaches it through ISO 13485 Clause 7.3 design verification and validation, while a notified body reaches it through Annex ZA point 4, and both arrive at the same place. The test for any effectiveness record is whether it supports the size of the reduction you claimed in the residual risk column, and if it does not, then your residual estimate is unsupported.
+
+
+SLIDE 24
+
+7.5 and 7.6, the Two Clauses Procedures Stop Short Of
+
+Clause 7.5 requires manufacturers to review the effects of the risk control measures themselves, and it asks for a review against 2 things: any new hazards or hazardous situations that the controls have introduced, and whether the estimated risks for previously identified hazardous situations are affected. Any new or increased risk is then managed in accordance with 5.5 through 7.4, which means it goes back through estimation, evaluation, control, and residual risk evaluation. It gets its own row.
+
+The examples down the left of the slide are all real, and they make the clause concrete rather than procedural, and they include: the escalating alarm that solves audibility and creates alarm fatigue, the plasticizer-free set, otherwise described as the DEHP-free set, that solves leachables and changes stiffness and therefore pumping accuracy, and the stronger pouch seal that solves sterility and makes aseptic opening harder.
+
+Clause 7.6 is the completeness step, and it asks manufacturers to confirm that the risks from all identified hazardous situations have been considered. This is where the routing out of Clause 6 matters, and it is the part manufacturers miss. An acceptable risk goes straight to 7.6, and its estimated risk is treated as the residual risk. So 7.6 applies to every hazardous situation in your file, including all of the ones that never needed a control in the first place, and a procedure that ends at 7.5 has no completeness step at all. Manufacturers assume the acceptable rows drop out of the process, and they do not.
+
+Check your own procedure tonight and ask whether it has a step for 7.6, because Clause 7 runs to 7.6, not to 7.5, and if it doesn't, that is a gap you can close this month. The Excel toolkit flags both of these for you: "New risks not assessed (Clause 7.5)" on the Risk Controls sheet, and a completeness check on every hazard row.
+
+
+SLIDE 25
+
+7.3, 7.4 and 8 Are Three Different Questions
+
+This slide is the conceptual center of the section: three questions, three records, and three answers that get collapsed into one.
+
+7.3 is asked per risk. Is this residual risk acceptable against the criteria that the plan declared? If the answer is yes, you are done and you move on. If the answer is no, you go on to 7.4.
+
+7.4 is also asked per risk, but it is conditional, and it applies only where the residual risk is not acceptable and further risk control is not practicable. Where both of those gates are met, manufacturers gather and review the data and literature in order to decide whether the benefits of the intended use outweigh that residual risk. It is important to note that both gates have to be met, and not just one of them. A benefit-risk analysis used as a shortcut around risk control will itself be written up as a finding.
+
+Clause 8 is not asked per risk at all, because it is asked per device. It asks whether the overall residual risk of the device is acceptable, by the method the plan declared and against the criteria the plan declared. Several individually acceptable risks can be collectively unacceptable, and that is especially true where those risks share a single common cause, or where the safety of the device rests on a stack of warnings.
+
+The toolkit's Residual Risk sheet lists the inputs that a credible Clause 8 evaluation considers, and they include:
+
+- The combination of individual residual risks, particularly where several of them affect the same patient episode
+- Risks that share a single common cause
+- Conflicting requirements between risk controls
+- The number and nature of the warnings that safety rests on
+- Comparison with similar devices and the state of the art
+- The clinical benefit and the benefit-risk conclusion
+- Information from production and post-production
+- Disclosure of significant residual risks in the accompanying information
+- The conclusion itself, recorded against the criteria the plan declared and signed by someone who holds the authority to sign it
+
+If Clause 8 in your file is a single sentence saying that "the overall residual risk is acceptable" sitting underneath a table of green cells, then you don't have a Clause 8 evaluation at all. What you have is a roll-up of the rows above it.
+
+
+SLIDE 26
+
+Exercise B: Red-Team the File
+
+We are going to stay in the same groups for the second exercise, and this one is a red-team exercise rather than a repair exercise. You have 14 minutes in total, and what you are working from is exercise pack page 4, which is a real-looking risk file excerpt. By the end of the 14 minutes we will have the deficiencies a notified body would raise against it, and they come from you rather than from the page. The excerpt is not a caricature, and that is deliberate. It is the kind of file that passes an internal review comfortably and then does not survive a technical documentation assessment.
+
+
+SLIDE 27
+
+Find the Deficiencies
+
+For the next 14 minutes you are the notified body technical reviewer assessing this technical documentation, and you have the excerpt in front of you and nothing else. The question you are answering is a narrow one, which is what do you ask for? I want one line for each finding, and each finding has to cite either the ISO 14971 clause or the point in Annex I of the MDR, because that citation is what separates an opinion from a finding.
+
+There are at least 6 defensible findings in the excerpt, and the group which finds the most is not necessarily the group that wins here. The group whose findings cite the right clause is. Then rank what you have, be ready to tell me which single one you would raise as a major nonconformity, and be ready to defend that ranking.
+
+There is one trap to watch for while you work, which is that groups tend to critique only the numbers. The deeper findings in this excerpt are structural: the order of priority was not worked, the verification of effectiveness is absent, and the disclosure obligation is unmet.
+
+You have 9 minutes in your groups, working from page 4 and writing into the findings grid on page 5, and then 5 minutes round the room, one finding per table with no repeats. If you find yourselves stalling, read the residual risk numbers next to the control category.
+
+
+SLIDE 28
+
+This is the extract, and it is 2 rows, HZ-16 and HZ-11, with the same fields down the left that you have on page 4. I am not going to narrate it for you.
+
+Your 9 minutes starts now.
+
+[TABLE WORK - 9 MINUTES. CIRCULATE.]
+
+That is time. I want one finding from each table and no repeats, so if the table ahead of you has taken yours, you will need to go to your second one. I am going to write them up on the board as we go, with the clause each table cites next to it.
+
+[TAKE ONE FINDING PER TABLE, NO REPEATS. WRITE THEM UP. 5 MINUTES.]
+
+
+SLIDE 29
+
+Seven Findings, Ranked
+
+So now that we have the room's findings up on the board, we can hold them against the model answer and fill in the gaps between the two.
+
+The First Finding is the Major One, and it sits in the risk control row of HZ-16. A category 3 control, which is to say information for safety, a warning added to section 6 of the instructions for use, is credited with taking P1 from 5 down to 1 and P2 from 5 down to 1. That is a claim that a sentence in an instruction manual reduced the probability of the hazardous situation arising by 4 bands, and information for safety does not do that. The residual estimate is therefore unsupported, and the verification of effectiveness field that would have to carry the evidence behind it is blank. That places you in Clauses 7.1, 7.2 and 7.3 at the same time, and this is the row that fails the file.
+
+The Second Finding is the Structural Twin of the first, which is that the order of priority was never worked on HZ-16 at all. The field asking why a higher option was not practicable is empty. Before a warning goes into the instructions for use, the file has to show that inherent safety by design was considered and that a protective measure was considered, and for an alarm-silence hazard the obvious category 2 control is a self-re-arming alarm silence, a time-limited silence which re-arms itself automatically. Option 2 was available, and it is not discussed anywhere in that row, which takes you to Clause 7.1 and to point 4 of Annex I.
+
+The Third Finding is the One Most Rooms Miss, and it is a good one, because it is in the row that otherwise looks healthy. HZ-11 justifies rejecting a higher-priority option in the words "single-patient-use durable rejected on cost of therapy". Under point 2 of Annex I the only permitted limit on reducing risks as far as possible is the benefit-risk ratio, and cost of therapy is not in that sentence. The thermal argument for rejecting the sealed enclosure is a perfectly good argument and it can stay. The cost argument has to come out of the file.
+
+Those are the 3 findings that decide the file. There are 4 more, and I will take them quickly.
+
+HZ-16 records no disclosure of the residual risk in the accompanying information, while resting its entire safety case on information given to the user, which engages Clause 8 and point 4 of Annex I together.
+
+The basis for the estimate on HZ-16 is given as "engineering judgement", which is not a recorded basis under Clause 5.5, and that particular judgment happened to place the estimate at the top of both probability scales.
+
+There is no Clause 7.5 assessment of the risks arising out of HZ-16's own risk control measure either, and a warning is exactly the kind of control that needs one, because it changes user behavior and can introduce a new hazardous situation of its own.
+
+Finally, the general safety and performance requirement link on HZ-16 is point 1 and nothing else. This is a use-error hazard involving an alarm on a home-use device, so points 5, 18.4, 21.2 and 22.1 are all engaged, and that link has to be rebuilt.
+
+I want to end with a fair word for HZ-11, because the room has just spent 14 minutes attacking it. Its numbers are honest. It is a category 3 control that changed nothing numerically, which is exactly right, and it carries both verifications, a disclosure reference in section 7.3 of the instructions for use and on the label, and a 7.5 assessment of the new risk that an unlisted agent gets used anyway. The only thing wrong with that row is one clause of its justification, and that is what good looks like.
+
+
+SLIDE 30
+
+How a Reviewer Actually Walks a Risk File
+
+You have now been the reviewer for 14 minutes, so the moves I sketched at the start of the session can be named properly, and there are 6 of them. What a reviewer does with a risk file is not a document review. It is a traversal, in a fixed order, and it starts from the device rather than from the file. This is also the slide people tend to photograph.
+
+The first move is that they pick the hazard, and you do not. They pick it from the device's clinical profile, from your own complaint data, or from the recall history of devices like yours, and never from your hazard index. Then they walk that one row end to end, and if the file holds for a row picked at random, they will believe the rest of them. If it breaks, they pick 3 more.
+
+The second move is to the estimate, where they ask for the basis. Where did P1 come from, what population, over what period, and out of which record? "Engineering judgement" ends that conversation badly.
+
+The third move is to the control, where they read the option analysis. Was the order of priority worked, and is there a record of why a higher option was not practicable, on a non-economic basis? The fourth move is to ask for the effectiveness record instead of the implementation record, which is really a question of whether the evidence supports the size of the reduction claimed, and it is where most traversals stop.
+
+The fifth move is out to the labeling and the clinical evaluation. Is the residual risk disclosed, and do the criteria in the risk file and the benefit-risk parameters in the clinical evaluation plan agree? The sixth and last move is out to the post-market data and back. What has come in since, did any of it change a probability, a severity, or the state of the art, and can you show the file revision it produced?
+
+For the documentation expectations behind that traversal, I would point you back to the Team-NB best practice guidance on technical documentation, now at V4, adopted 21 April 2026, which replaced the V3 of 9 April 2025 that most people are still citing. Section 5 is Benefit-Risk Analysis and Risk Management, and section 5.5 is a named list of the common pitfalls in risk management that notified bodies observe. The guidance expects you to state whether your risk management process is based on EN ISO 14971. It expects no acceptance on an RPN alone and no green zone, each risk decided individually against predefined criteria, a statement that the clinical benefits outweigh all of the residual risks, and 3 distinct risk assessments covering design, production and process, and clinical or application, which catches the firms that have only ever done the design one.
+
+What V4 added is precisely the finding this room has just written: a pitfall for a warning or a caution in the instructions for use offered as a risk control with no usability engineering evidence of its effectiveness. A notified body association wrote that down as a named pitfall in April 2026, so if your file does that, it is not an obscure risk that you have been unlucky to be caught on. It is on their list.
+
+
+SLIDE 31
+
+Closing the Loop
+
+Maintaining a risk file after the device has been released is what separates a risk file from a historical document, and that is the whole business of Clause 10. We have about 10 minutes here, and this is the section I would compress if we were running behind on time. I am going to try very hard not to, because post-production information is the part of the standard that fails most often in the field.
+
+
+SLIDE 32
+
+Clause 10 and the Four Questions
+
+Clause 10 has 4 subclauses, and each does a different job: 10.1 is general, 10.2 is information collection, 10.3 is information review, and 10.4 is actions. The risk management plan has to name these activities under clause 4.4 g), which means the plan is the first place a reviewer looks to see whether the manufacturer ever intended to do any of this. This is the clause most often found completely empty on a device that has been marketed for years.
+
+10.2 is the list of collection sources, and manufacturers are required to collect from each of them. Those sources include: information generated during production and monitoring of the production process, information from the user, information from installation, servicing and maintenance, publicly available information, and information on the generally acknowledged state of the art. That last one is the source nobody collects, and because it is named alongside the others, its absence is visible to anybody reading your procedure. It should be added that this is a general list, and it is not a complete description of every channel your own device generates.
+
+10.3 is the heart of the clause, and for every piece of safety-relevant information that arrives, manufacturers ask 4 questions and record the answers. There are 4 of them rather than one general review because each one carries a different consequence, and the consequence is the part the file has to show.
+
+The First Question is Whether There is a Previously Unrecognized Hazard or Hazardous Situation
+If the answer is yes, that is a new row, and the row earns full estimation, evaluation, risk control and residual risk evaluation under clauses 5.5 to 7.4.
+
+The Next Question is Whether an Estimated Risk is No Longer Acceptable
+Risk control is reopened, and both the residual risk for that hazardous situation and the overall residual risk are revisited, which is the step teams skip when they update one row and stop.
+
+The Third Question is Whether the Original Risk Estimate is No Longer Valid
+The estimate is corrected and the basis for it is updated, and this is the question that catches the optimistic P1 values that went in when nobody had data.
+
+Finally the Last Question is Whether the State of the Art Has Changed
+Your AFAP position may have moved without anything having failed, and comparator devices, standards and guidance documents all count as evidence that it moved.
+
+10.4 tells you what happens when any answer is yes: the impact is evaluated as an input to the risk management process, the risk management file is reviewed, and if the residual risk has increased or is no longer acceptable, the impact of previously implemented controls is evaluated and fed into the risk management review.
+
+The practical test of whether this works at your firm is one you can run on your own file tonight. Pick one complaint from 18 months ago and try to find the risk file revision it produced. If there is no revision, and no recorded decision that none was needed, then the loop is open.
+
+
+SLIDE 33
+
+The MDR Plumbing That Clause 10 Has to Connect To
+
+In the European Union, Clause 10 is not free-standing. It plugs into a named set of obligations under the Medical Device Regulation, or MDR, and in practice the notified body checks the joints rather than the pipes.
+
+Article 10(2) is the headline, and it is one sentence: manufacturers shall establish, document, implement and maintain a system for risk management as described in Section 3 of Annex I. Article 10(9)(e) then puts risk management inside the quality management system as a named aspect it has to address, which is how it becomes auditable rather than merely required.
+
+Annex I point 3, sub-points (e) and (f), is the loop written into the law itself. Manufacturers are required to evaluate the impact of information from production and from post-market surveillance on hazards, on the frequency of their occurrence, on risk estimates, on the overall risk, on the benefit-risk ratio and on risk acceptability, and then to amend the control measures where that evaluation tells them to.
+
+Article 83(3)(a) makes updating the benefit-risk determination and improving risk management the first named use of post-market surveillance data, and Article 83(3) closes with "the technical documentation shall be updated accordingly." Annex II point 5 is where that lands, because the technical documentation has to contain the benefit-risk analysis in Sections 1 and 8 of Annex I, together with the solutions adopted and the results of the risk management under Section 3.
+
+Annex III point 1(b) is the single most audited joint in the whole set, because the post-market surveillance plan must contain suitable indicators and threshold values used in the continuous reassessment of the benefit-risk analysis and of the risk management. Indicators and thresholds are quantitative, so if your surveillance plan has no numbers in it, that is a finding waiting to be written.
+
+Three more provisions run through the same evidence. Article 86(1)(a) requires the PSUR to set out the conclusions of the benefit-risk determination throughout the lifetime of the device. Article 88(1) requires trend reporting where a statistically significant increase would change the benefit-risk analysis in Sections 1 and 8 of Annex I. Article 61(10) provides that where conformity based on clinical data is not appropriate, the justification rests on the results of the risk management, which is a heavier load than most files are built to carry.
+
+Annex XIV Part B point 8 then sends the conclusions of the post-market clinical follow-up evaluation report back into both the clinical evaluation and the risk management. Recital 33 states that the risk management and clinical evaluation processes should be inter-dependent and regularly updated, which is what a reviewer cites when they ask why your risk file and your clinical evaluation report disagree.
+
+There are 2 numbering traps here that will affect your cross-references. Corrigendum C2 renumbered Annex III from 1.1 and 1.2 to 1 and 2, so an SOP citing "Annex III Section 1.1" is citing superseded numbering. Additionally, Annex XIV Part B point 6.1(d) still refers to the benefit-risk ratio in Sections 1 and 9 of Annex I. Section 9 is the Annex XVI provision on devices without an intended medical purpose, and the benefit-risk sections are 1 and 8. That cross-reference was never corrected, unlike the identical error in Article 88(1), which was.
+
+
+SLIDE 34
+
+The Interfaces That Get Audited
+
+This is the last slide of new material, and it exists because the risk file does not live alone. The findings cluster at the joins between documents rather than inside any one of them, so read down these 4 rows and put the same question after each one: do these two documents actually agree?
+
+Take the first row. The clinical evaluation plan has to specify the parameters used to determine the acceptability of the benefit-risk ratio, based on the state of the art, and those parameters have to be consistent with the risk acceptability criteria in your risk management plan, which is required through Annex VII 4.5.4(c) and 4.5.5, Annex XIV Part A 1(a) and recital 33. Team-NB expects that interface to be "clear and noticeable". Two documents, two sets of criteria, written by two teams, and nobody compared them, and that is the finding.
+
+The remaining 3 rows behave the same way. The surveillance plan's indicators and threshold values have to point at the probabilities and severities in the risk file they are meant to test. The use errors in your use-related risk analysis have to match the critical tasks in the summative evaluation, and the effectiveness of a category 3 control is proven there or nowhere, which is why ISO 14971 takes the definition of use error at 3.30 from IEC 62366-1. Your software safety classification and your security risk records have to connect to the hazardous situations they feed, under MDR Annex I 17.1, 17.2, 17.4 and 18.8, and MDCG 2019-16 revision 1.
+
+MDCG 2025-10 on post-market surveillance, published in December 2025, sets these expectations out explicitly: establish procedures for the interface, link the surveillance plan indicators and thresholds to the risk management documentation, assess the impact of collected data on probability and severity ratings, and evaluate the impact on overall risk, benefit-risk ratio and acceptability. It also confirms in a footnote that EN ISO 14971:2019 plus A11:2021 is harmonised and cited for both the MDR and the IVDR. There is still no MDCG guidance dedicated to risk management, and none in the published pipeline, so Table 3 of that document is the closest thing we have.
+
+Furthermore, there is one 2026 development to mention before we move on. ISO/TS 24971-2:2026, guidance on applying ISO 14971 to machine learning in artificial intelligence, was published in June 2026, and it is guidance on applying the standard rather than an amendment to it.
+
+
+SLIDE 35
+
+Exercise C: Your 30-Day Plan
+
+That brings us to the last exercise of the day, and this one is about your own file rather than mine. We have about 8 minutes for this exercise and the close together, and 5 of them are yours to write in. Unlike the first two exercises this one is individual and not group work, so I am not going to ask you to talk to your table. What I want out of it is what you will actually change when you are back at your desk, and in what order you will change it, because the order is the part manufacturers get wrong. You will find it in your exercise pack, and the sheet you want is on page 6.
+
+
+SLIDE 36
+
+Five Minutes, on Your Own, on One Page
+
+This last exercise is individual work, and that is deliberate. An action item without a single owner is very rarely completed, which is why I am asking each of you to write your own. The framing that makes the next 5 minutes useful is not the question of what we should improve, which always produces a list that sits in a meeting summary, but the question of what you will have done by this day next month. So you have 5 rows to write on one page, and each row carries the same 5 things: what you will change, which clause or which GSPR that change answers, who owns it, and by that I mean a name and not a function, the date it is done by, which has to sit inside 30 days, and how you will know that it worked.
+
+One action per row, an owner who is in the building, and a date. If you are looking at a blank sheet, the prompts on the right are the 6 checks that come straight out of today, and they include:
+
+- Does the plan state what you do when probability cannot be estimated, under 4.4 d)?
+- Does every risk control have a verification of effectiveness record, and not only an implementation record, under 7.2?
+- Does any justification for skipping a higher-priority control option rest on cost, which point 2 of Annex I does not permit?
+- Does the procedure have a 7.6 completeness step at all?
+- Can you find the file revision that one old complaint produced, under 10.3 and 10.4?
+- Do the acceptability criteria in your risk management plan and the parameters in your clinical evaluation plan agree with each other?
+
+The Dashboard sheet in the Excel toolkit computes the first 5 of those 6 for you once you have loaded your own rows. The sixth one, whether the acceptability criteria in your risk management plan and the parameters in your clinical evaluation plan agree, is a comparison between two documents, and no formula can do that for you. The toolkit also leaves the Clause 8 evaluation of overall residual risk blank on purpose, because that is the last thing you do and not something a spreadsheet can decide for you. While you write, I will leave the toolkit in its delivered state up on the screen, which is 16 rows carrying 5 planted features: 2 deliberately defective rows, a control missing its verification of effectiveness, a justification citing cost, and an open post-production item. The facilitator guide names all 5 of them, so you can point at them again when you work through the toolkit on your own.
+
+You have 5 minutes. Please work on your own rather than with the table.
+
+[5 MINUTES OF INDIVIDUAL WORK. CIRCULATE.]
+
+I want to hear the first action only, and not the whole page, from 2 or 3 of you.
+
+[TAKE FIRST ACTIONS FROM 2 OR 3 PEOPLE BEFORE ADVANCING]
+
+
+SLIDE 37
+
+Ten Things to Fix on Monday
+
+There are 10 items that come up most often when I do this work, and I am going to read them quickly, because this is the page people keep.
+
+1. Put the acceptability criteria in the risk management plan, and date them before the risk table was written.
+
+2. Add a verification of effectiveness record to every control that has only an implementation record.
+
+3. Separate P1 and P2 in every row, and write the basis for each of them.
+
+4. Split every row where one hazard reaches more than one hazardous situation.
+
+5. Add the severity-only rule for the case where probability cannot be estimated, which is 4.4 d.
+
+6. Add a 7.6 completeness step to the procedure, and run it over the acceptable rows as well as the ones you argued about.
+
+7. Strike every cost argument out of the order-of-priority justifications.
+
+8. Add residual risk disclosure references for every category 3 control.
+
+9. Put indicators and threshold values into the post-market surveillance plan, and link them to the rows they are testing.
+
+10. Rebuild the GSPR matrix against Annex I as it reads now, and not against the 7 deviations from 2012.
+
+Remember the hands that stayed up at the start of this session, when I asked whose finding was verification of effectiveness. That is why, of these 10 items, the one I would address first is number two. It is the finding that appears most often in the files I review, and it is also the cheapest one to close, because the work has usually already been done and it simply was not written down anywhere as effectiveness.
+
+
+SLIDE 38
+
+Sources, and What to Re-Verify
+
+I am not going to read this list to you, and the handout carries all of it in full with the Official Journal references, split into the standards, the EU law, the US law, and the guidance and position papers, which are labeled as secondary because that is what they are.
+
+What I do want to point at is the band across the bottom. This material was verified in September 2026. Harmonised-standard citations move, MDCG guidance is revised and superseded, and FDA recognition entries change as well, which means a source list of this kind has a shelf life measured in months rather than years. The facilitator guide therefore carries a pre-delivery accuracy checklist, and that checklist needs to be re-run against the primary sources before anyone presents this material or relies on a citation out of it.
+
+
+SLIDE 39
+
+A Risk File Is an Argument, Not an Archive
+
+If you take one idea out of today, take this one. A risk file is an argument, and not an archive. Every number in it has a basis, every control has 2 verifications, every unacceptable residual risk has a benefit-risk record, and every post-production input has a recorded answer to 4 questions. If any one of those is missing, the file does not hold as an argument, and that is precisely the row a reviewer pulls. It is important to note that everything today is workshop material, and it is not legal or regulatory advice for your specific device.
+
+Before I open it up, there are 3 questions that come at the end of every delivery of this workshop, so I want to answer them now.
+
+The first is always whether you have to use ISO 14971 at all. The answer is not as law, in either jurisdiction, and that is the whole of the two-regulator section, with the two-column mapping sitting in your handout. What matters is the last clause of that answer, which is that the activity is inspected regardless of which standard you name.
+
+The next question is whether you can keep your three-band matrix. You can, but be ready to say which clause the middle band implements, because ISO 14971:2019 does not have one, and under point 2 of Annex I an amber "acceptable with justification" band does not create a stopping point that cost can justify.
+
+The last one is how many rows a risk file should have, and that is the wrong question. It is 1 row per hazardous situation, which is determined by the device and not by a target. However, a file with fewer rows than the device has failure modes has collapsed the analysis somewhere, and that collapse is findable.
+
+If we have time once the questions are done, I am happy to put one of your own rows up on the screen and walk it end to end, which is usually the most useful 10 minutes of the session.
+
+So with that said, it is easy to recognize why it is so critical to maintain a traceable and defensible risk management file for manufacturers who intend to defend their risk management before a notified body or an FDA investigator. This concludes the presentation portion of this discussion. I want to thank each of you who attended, and I welcome any questions you may have at this time.
+
+
