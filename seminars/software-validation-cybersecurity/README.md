@@ -18,13 +18,18 @@ Designed as a **90-minute seminar** with two facilitated working sessions.
 | Clock | Slides | Segment |
 |---|---|---|
 | 0:00 | 1–4 | Open, objectives, room calibration poll |
-| 0:09 | 5–11 | Part 1 — The new operating environment |
-| 0:31 | 12–28 | Part 2 — Software validation |
-| 1:21 | 29 | **Working session 1** — Classify and scope (12 min) |
-| 1:33 | 30–44 | Part 3 — Cybersecurity |
-| 2:17 | 45 | **Working session 2** — Tabletop (15 min) |
-| 2:32 | 46–51 | Part 4 — Making it work |
-| 2:45 | 52 | Discussion |
+| 0:05 | 5–11 | Part 1 — The new operating environment |
+| 0:18 | 12–28 | Part 2 — Software validation |
+| 0:39 | 29 | **Working session 1** — Classify and scope (10 min) |
+| 0:49 | 30–44 | Part 3 — Cybersecurity |
+| 1:10 | 45 | **Working session 2** — Tabletop (12 min) |
+| 1:22 | 46–51 | Part 4 — Making it work |
+| 1:29 | 52 | Discussion |
+
+Content runs to 1:29, leaving the last minute of the ninety for the close; discussion
+continues for as long as you have. It is a full ninety minutes — the facilitator guide
+carries a ranked cut list, and if the room is talkative it is better to cut early than to
+compress the working sessions at the end.
 
 ## Before you present
 
